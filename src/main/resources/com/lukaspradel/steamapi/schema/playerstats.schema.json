@@ -15,7 +15,7 @@
                             "required":false,
                             "properties":{
                                 "achieved": {
-                                    "type":"number",
+                                    "type":"integer",
                                     "required":false
                                 },
                                 "name": {
@@ -44,7 +44,7 @@
                                     "required":false
                                 },
                                 "value": {
-                                    "type":"number",
+                                    "type":"integer",
                                     "required":false
                                 }
                             }
