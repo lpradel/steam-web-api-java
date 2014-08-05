@@ -1,0 +1,33 @@
+{
+    "type":"object",
+    "required":false,
+    "properties":{
+        "achievementpercentages": {
+            "type":"object",
+            "required":false,
+            "properties":{
+                "achievements": {
+                    "type":"array",
+                    "required":false,
+                    "items":
+                        {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "name": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "percent": {
+                                    "type":"number",
+                                    "required":false
+                                }
+                            }
+                        }
+
+
+                }
+            }
+        }
+    }
+}
