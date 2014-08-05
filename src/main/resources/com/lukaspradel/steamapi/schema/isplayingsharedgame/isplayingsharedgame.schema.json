@@ -1,0 +1,16 @@
+{
+    "type":"object",
+    "required":false,
+    "properties":{
+        "response": {
+            "type":"object",
+            "required":false,
+            "properties":{
+                "lender_steamid": {
+                    "type":"string",
+                    "required":false
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "type":"object",
+    "required":false,
+    "properties":{
+        "response": {
+            "type":"object",
+            "required":false,
+            "properties":{
+                "players": {
+                    "type":"array",
+                    "required":false,
+                    "items":
+                        {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "avatar": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "avatarfull": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "avatarmedium": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "communityvisibilitystate": {
+                                    "type":"integer",
+                                    "required":false
+                                },
+                                "lastlogoff": {
+                                    "type":"integer",
+                                    "required":false
+                                },
+                                "loccityid": {
+                                    "type":"integer",
+                                    "required":false
+                                },
+                                "loccountrycode": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "locstatecode": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "personaname": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "personastate": {
+                                    "type":"integer",
+                                    "required":false
+                                },
+                                "personastateflags": {
+                                    "type":"integer",
+                                    "required":false
+                                },
+                                "primaryclanid": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "profilestate": {
+                                    "type":"integer",
+                                    "required":false
+                                },
+                                "profileurl": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "realname": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "steamid": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "timecreated": {
+                                    "type":"integer",
+                                    "required":false
+                                }
+                            }
+                        }
+
+
+                }
+            }
+        }
+    }
+}

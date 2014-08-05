@@ -1,0 +1,49 @@
+{
+    "type":"object",
+    "required":false,
+    "properties":{
+        "response": {
+            "type":"object",
+            "required":false,
+            "properties":{
+                "game_count": {
+                    "type":"integer",
+                    "required":false
+                },
+                "games": {
+                    "type":"array",
+                    "required":false,
+                    "items":
+                        {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "appid": {
+                                    "type":"integer",
+                                    "required":false
+                                },
+                                "img_icon_url": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "img_logo_url": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "name": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "playtime_forever": {
+                                    "type":"integer",
+                                    "required":false
+                                }
+                            }
+                        }
+
+
+                }
+            }
+        }
+    }
+}
