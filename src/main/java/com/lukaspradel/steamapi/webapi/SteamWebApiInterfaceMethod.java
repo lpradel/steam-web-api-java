@@ -1,4 +1,4 @@
-package com.lukaspradel.steamapi.core;
+package com.lukaspradel.steamapi.webapi;
 
 /**
  * Currently supported Steam Web API Interface Methods as listed on Valve's Dev

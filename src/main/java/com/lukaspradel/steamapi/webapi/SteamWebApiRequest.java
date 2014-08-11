@@ -1,4 +1,8 @@
-package com.lukaspradel.steamapi.core;
+package com.lukaspradel.steamapi.webapi;
+
+import java.util.Map;
+
+import com.lukaspradel.steamapi.core.SteamApiRequest;
 
 /**
  * Encapsulates a request to the Steam Web API with all its required and
@@ -19,7 +23,7 @@ public class SteamWebApiRequest extends SteamApiRequest {
 
 	private SteamWebApiRequest(SteamWebApiRequestBuilder builder) {
 
-		this.baseUrl = WEB_API_BASE_URL;
+		super(WEB_API_BASE_URL, builder.parameters);
 
 		this.apiInterface = builder.apiInterface;
 		this.interfaceMethod = builder.interfaceMethod;
@@ -46,13 +50,16 @@ public class SteamWebApiRequest extends SteamApiRequest {
 
 		private final SteamWebApiVersion version;
 
+		private final Map<String, String> parameters;
+
 		public SteamWebApiRequestBuilder(SteamWebApiInterface apiInterface,
 				SteamWebApiInterfaceMethod interfaceMethod,
-				SteamWebApiVersion version) {
+				SteamWebApiVersion version, Map<String, String> parameters) {
 
 			this.apiInterface = apiInterface;
 			this.interfaceMethod = interfaceMethod;
 			this.version = version;
+			this.parameters = parameters;
 		}
 	}
 }

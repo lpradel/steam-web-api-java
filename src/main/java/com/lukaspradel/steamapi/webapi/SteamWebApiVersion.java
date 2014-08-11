@@ -1,4 +1,4 @@
-package com.lukaspradel.steamapi.core;
+package com.lukaspradel.steamapi.webapi;
 
 /**
  * Wraps the currently supported versions of the various Web API Interface
