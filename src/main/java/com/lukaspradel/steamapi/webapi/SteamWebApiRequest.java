@@ -61,5 +61,10 @@ public class SteamWebApiRequest extends SteamApiRequest {
 			this.version = version;
 			this.parameters = parameters;
 		}
+
+		public SteamWebApiRequest build() {
+
+			return new SteamWebApiRequest(this);
+		}
 	}
 }
