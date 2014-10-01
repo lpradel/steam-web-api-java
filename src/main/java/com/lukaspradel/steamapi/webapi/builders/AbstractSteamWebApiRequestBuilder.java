@@ -7,16 +7,27 @@ import java.util.Map;
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.SteamWebApiRequest;
-import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
 import com.lukaspradel.steamapi.webapi.SteamWebApiRequest.SteamWebApiRequestBuilder;
+import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
 
+/**
+ * Skeleton of {@link SteamWebApiRequest} that holds (common) request parameters
+ * and implements shared instantiation of {@link SteamWebApiRequest}.
+ *
+ * @author lpradel
+ *
+ */
 public abstract class AbstractSteamWebApiRequestBuilder {
 
 	protected Map<String, String> parameters = new HashMap<String, String>();
 
+	static final String REQUEST_PARAM_FORMAT = "format";
+
+	static final String REQUEST_PARAM_FORMAT_JSON = "json";
+
 	public AbstractSteamWebApiRequestBuilder() {
 
-		parameters.put("format", "json");
+		parameters.put(REQUEST_PARAM_FORMAT, REQUEST_PARAM_FORMAT_JSON);
 	}
 
 	protected abstract SteamWebApiInterface getInterface();

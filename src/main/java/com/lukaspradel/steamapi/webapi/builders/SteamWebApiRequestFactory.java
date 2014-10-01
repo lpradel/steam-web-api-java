@@ -2,6 +2,13 @@ package com.lukaspradel.steamapi.webapi.builders;
 
 import com.lukaspradel.steamapi.webapi.SteamWebApiRequest;
 
+/**
+ * Convenience class to create instances of {@link SteamWebApiRequest}.
+ * Alternatively use the *RequestBuilder builders.
+ *
+ * @author lpradel
+ *
+ */
 public abstract class SteamWebApiRequestFactory {
 
 	public static SteamWebApiRequest createGetNewsForAppRequest(int appId) {

@@ -21,6 +21,12 @@ public class GetNewsForAppRequestBuilder extends
 
 	private Integer maxLength;
 
+	static final String REQUEST_PARAM_APP_ID = "appid";
+
+	static final String REQUEST_PARAM_COUNT = "count";
+
+	static final String REQUEST_PARAM_MAX_LENGTH = "maxlength";
+
 	public GetNewsForAppRequestBuilder(Integer appId) {
 
 		this.appId = appId;
@@ -59,14 +65,14 @@ public class GetNewsForAppRequestBuilder extends
 	@Override
 	public SteamWebApiRequest buildRequest() {
 
-		addParameter("appid", appId);
+		addParameter(REQUEST_PARAM_APP_ID, appId);
 
 		if (count != null) {
-			addParameter("count", count);
+			addParameter(REQUEST_PARAM_COUNT, count);
 		}
 
 		if (maxLength != null) {
-			addParameter("maxlength", maxLength);
+			addParameter(REQUEST_PARAM_MAX_LENGTH, maxLength);
 		}
 
 		return super.buildRequest();
