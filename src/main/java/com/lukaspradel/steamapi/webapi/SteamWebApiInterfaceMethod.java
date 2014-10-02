@@ -1,5 +1,14 @@
 package com.lukaspradel.steamapi.webapi;
 
+import com.lukaspradel.steamapi.data.json.achievementpercentages.AchievementpercentagesSchema;
+import com.lukaspradel.steamapi.data.json.appnews.AppnewsSchema;
+import com.lukaspradel.steamapi.data.json.friendslist.FriendslistSchema;
+import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsplayingsharedgameSchema;
+import com.lukaspradel.steamapi.data.json.ownedgames.OwnedgamesSchema;
+import com.lukaspradel.steamapi.data.json.playerstats.PlayerstatsSchema;
+import com.lukaspradel.steamapi.data.json.playersummaries.PlayersummariesSchema;
+import com.lukaspradel.steamapi.data.json.recentlyplayedgames.RecentlyplayedgamesSchema;
+
 /**
  * Currently supported Steam Web API Interface Methods as listed on Valve's Dev
  * Wiki.
@@ -12,17 +21,29 @@ package com.lukaspradel.steamapi.webapi;
  */
 public enum SteamWebApiInterfaceMethod {
 
-	GET_NEWS_FOR_APP("GetNewsForApp"), GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP(
-			"GetGlobalAchievementPercentagesForApp"), GET_PLAYER_SUMMARIES(
-			"GetPlayerSummaries"), GET_FRIEND_LIST("GetFriendList"), GET_USER_STATS_FOR_GAME(
-			"GetUserStatsForGame"), GET_OWNED_GAMES("GetOwnedGames"), GET_RECENTLY_PLAYED_GAMES(
-			"GetRecentlyPlayedGames"), IS_PLAYING_SHARED_GAME(
-			"IsPlayingSharedGame");
+	GET_NEWS_FOR_APP("GetNewsForApp", AppnewsSchema.class), GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP(
+			"GetGlobalAchievementPercentagesForApp",
+			AchievementpercentagesSchema.class), GET_PLAYER_SUMMARIES(
+			"GetPlayerSummaries", PlayersummariesSchema.class), GET_FRIEND_LIST(
+			"GetFriendList", FriendslistSchema.class), GET_USER_STATS_FOR_GAME(
+			"GetUserStatsForGame", PlayerstatsSchema.class), GET_OWNED_GAMES(
+			"GetOwnedGames", OwnedgamesSchema.class), GET_RECENTLY_PLAYED_GAMES(
+			"GetRecentlyPlayedGames", RecentlyplayedgamesSchema.class), IS_PLAYING_SHARED_GAME(
+			"IsPlayingSharedGame", IsplayingsharedgameSchema.class);
 
 	private final String interfaceMethod;
 
-	private SteamWebApiInterfaceMethod(String interfaceMethod) {
+	private final Class<?> responseType;
+
+	private SteamWebApiInterfaceMethod(String interfaceMethod,
+			Class<?> responseType) {
+
 		this.interfaceMethod = interfaceMethod;
+		this.responseType = responseType;
+	}
+
+	public Class<?> getReponseType() {
+		return responseType;
 	}
 
 	@Override

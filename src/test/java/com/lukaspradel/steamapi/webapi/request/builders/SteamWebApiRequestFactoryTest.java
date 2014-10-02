@@ -11,9 +11,8 @@ import org.testng.annotations.Test;
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
-import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
-import com.lukaspradel.steamapi.webapi.request.builders.GetNewsForAppRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
+import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
 
 public class SteamWebApiRequestFactoryTest {
 
@@ -22,7 +21,7 @@ public class SteamWebApiRequestFactoryTest {
 
 		int appId = 400;
 
-		SteamWebApiRequest request = SteamWebApiRequestFactory
+		GetNewsForAppRequest request = SteamWebApiRequestFactory
 				.createGetNewsForAppRequest(appId);
 
 		assertNotNull(request);
@@ -51,7 +50,7 @@ public class SteamWebApiRequestFactoryTest {
 		int count = 100;
 		int maxLength = 300;
 
-		SteamWebApiRequest request = SteamWebApiRequestFactory
+		GetNewsForAppRequest request = SteamWebApiRequestFactory
 				.createGetNewsForAppRequest(appId, count, maxLength);
 
 		assertNotNull(request);

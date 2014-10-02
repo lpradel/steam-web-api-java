@@ -4,20 +4,18 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
-import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest.SteamWebApiRequestBuilder;
-import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
 
 /**
- * Skeleton of {@link SteamWebApiRequest} that holds (common) request parameters
- * and implements shared instantiation of {@link SteamWebApiRequest}.
+ * Skeleton of {@link SteamWebApiRequestBuilder} that holds (common) request
+ * parameters and implements shared instantiation of {@link SteamWebApiRequest}.
  *
  * @author lpradel
  *
  */
-public abstract class AbstractSteamWebApiRequestBuilder {
+public abstract class AbstractSteamWebApiRequestBuilder extends
+		SteamWebApiRequestBuilder {
 
 	protected Map<String, String> parameters = new HashMap<String, String>();
 
@@ -30,11 +28,7 @@ public abstract class AbstractSteamWebApiRequestBuilder {
 		parameters.put(REQUEST_PARAM_FORMAT, REQUEST_PARAM_FORMAT_JSON);
 	}
 
-	protected abstract SteamWebApiInterface getInterface();
-
-	protected abstract SteamWebApiInterfaceMethod getInterfaceMethod();
-
-	protected abstract SteamWebApiVersion getVersion();
+	public abstract SteamWebApiRequest buildRequest();
 
 	protected void addParameter(String name, String value) {
 
@@ -46,15 +40,8 @@ public abstract class AbstractSteamWebApiRequestBuilder {
 		parameters.put(name, String.valueOf(value));
 	}
 
+	@Override
 	public Map<String, String> getParameters() {
 		return Collections.unmodifiableMap(parameters);
-	}
-
-	public SteamWebApiRequest buildRequest() {
-
-		SteamWebApiRequestBuilder builder = new SteamWebApiRequestBuilder(
-				getInterface(), getInterfaceMethod(), getVersion(),
-				getParameters());
-		return builder.build();
 	}
 }
