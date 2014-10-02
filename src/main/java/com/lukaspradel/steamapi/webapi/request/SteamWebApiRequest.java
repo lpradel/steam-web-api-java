@@ -1,8 +1,11 @@
-package com.lukaspradel.steamapi.webapi;
+package com.lukaspradel.steamapi.webapi.request;
 
 import java.util.Map;
 
 import com.lukaspradel.steamapi.core.SteamApiRequest;
+import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
+import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
+import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
 
 /**
  * Encapsulates a request to the Steam Web API with all its required and

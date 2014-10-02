@@ -1,4 +1,4 @@
-package com.lukaspradel.steamapi.webapi.builders;
+package com.lukaspradel.steamapi.webapi.request.builders;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -6,8 +6,8 @@ import java.util.Map;
 
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
-import com.lukaspradel.steamapi.webapi.SteamWebApiRequest;
-import com.lukaspradel.steamapi.webapi.SteamWebApiRequest.SteamWebApiRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
+import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest.SteamWebApiRequestBuilder;
 import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
 
 /**

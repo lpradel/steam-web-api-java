@@ -1,6 +1,6 @@
-package com.lukaspradel.steamapi.webapi.builders;
+package com.lukaspradel.steamapi.webapi.request.builders;
 
-import com.lukaspradel.steamapi.webapi.SteamWebApiRequest;
+import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 
 /**
  * Convenience class to create instances of {@link SteamWebApiRequest}.

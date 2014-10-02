@@ -3,6 +3,12 @@ package com.lukaspradel.steamapi.core;
 import java.util.Collections;
 import java.util.Map;
 
+/**
+ * General purpose request class for requests to some Steam API.
+ *
+ * @author lpradel
+ *
+ */
 public abstract class SteamApiRequest {
 
 	protected final String baseUrl;

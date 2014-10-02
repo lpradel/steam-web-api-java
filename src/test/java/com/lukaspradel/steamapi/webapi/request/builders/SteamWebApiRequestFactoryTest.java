@@ -1,4 +1,4 @@
-package com.lukaspradel.steamapi.webapi.builders;
+package com.lukaspradel.steamapi.webapi.request.builders;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
@@ -10,8 +10,10 @@ import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
-import com.lukaspradel.steamapi.webapi.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
+import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
+import com.lukaspradel.steamapi.webapi.request.builders.GetNewsForAppRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
 
 public class SteamWebApiRequestFactoryTest {
 
