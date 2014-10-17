@@ -1,13 +1,13 @@
 package com.lukaspradel.steamapi.webapi;
 
-import com.lukaspradel.steamapi.data.json.achievementpercentages.AchievementpercentagesSchema;
-import com.lukaspradel.steamapi.data.json.appnews.AppnewsSchema;
-import com.lukaspradel.steamapi.data.json.friendslist.FriendslistSchema;
-import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsplayingsharedgameSchema;
-import com.lukaspradel.steamapi.data.json.ownedgames.OwnedgamesSchema;
-import com.lukaspradel.steamapi.data.json.playerstats.PlayerstatsSchema;
-import com.lukaspradel.steamapi.data.json.playersummaries.PlayersummariesSchema;
-import com.lukaspradel.steamapi.data.json.recentlyplayedgames.RecentlyplayedgamesSchema;
+import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
+import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
+import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
+import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsPlayingSharedGame;
+import com.lukaspradel.steamapi.data.json.ownedgames.GetOwnedGames;
+import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
+import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
+import com.lukaspradel.steamapi.data.json.recentlyplayedgames.GetRecentlyPlayedGames;
 
 /**
  * Currently supported Steam Web API Interface Methods as listed on Valve's Dev
@@ -21,15 +21,15 @@ import com.lukaspradel.steamapi.data.json.recentlyplayedgames.Recentlyplayedgame
  */
 public enum SteamWebApiInterfaceMethod {
 
-	GET_NEWS_FOR_APP("GetNewsForApp", AppnewsSchema.class), GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP(
+	GET_NEWS_FOR_APP("GetNewsForApp", GetNewsForApp.class), GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP(
 			"GetGlobalAchievementPercentagesForApp",
-			AchievementpercentagesSchema.class), GET_PLAYER_SUMMARIES(
-			"GetPlayerSummaries", PlayersummariesSchema.class), GET_FRIEND_LIST(
-			"GetFriendList", FriendslistSchema.class), GET_USER_STATS_FOR_GAME(
-			"GetUserStatsForGame", PlayerstatsSchema.class), GET_OWNED_GAMES(
-			"GetOwnedGames", OwnedgamesSchema.class), GET_RECENTLY_PLAYED_GAMES(
-			"GetRecentlyPlayedGames", RecentlyplayedgamesSchema.class), IS_PLAYING_SHARED_GAME(
-			"IsPlayingSharedGame", IsplayingsharedgameSchema.class);
+			GetGlobalAchievementPercentagesForApp.class), GET_PLAYER_SUMMARIES(
+			"GetPlayerSummaries", GetPlayerSummaries.class), GET_FRIEND_LIST(
+			"GetFriendList", GetFriendList.class), GET_USER_STATS_FOR_GAME(
+			"GetUserStatsForGame", GetUserStatsForGame.class), GET_OWNED_GAMES(
+			"GetOwnedGames", GetOwnedGames.class), GET_RECENTLY_PLAYED_GAMES(
+			"GetRecentlyPlayedGames", GetRecentlyPlayedGames.class), IS_PLAYING_SHARED_GAME(
+			"IsPlayingSharedGame", IsPlayingSharedGame.class);
 
 	private final String interfaceMethod;
 
