@@ -14,25 +14,25 @@
 
         <!-- Plugin versions -->
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-        <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
         <maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
-        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
-        <maven-source-plugin.version>2.3</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>2.4</maven-source-plugin.version>
         <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.2</nexus-staging-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.5</nexus-staging-maven-plugin.version>
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
-        <jsonschema2pojo-maven-plugin.version>0.4.4</jsonschema2pojo-maven-plugin.version>
+        <jsonschema2pojo-maven-plugin.version>0.4.5</jsonschema2pojo-maven-plugin.version>
 
         <!-- Dependencies versions -->
         <commons-lang.version>2.6</commons-lang.version>
         <commons-io.version>2.4</commons-io.version>
         <slf4j.version>1.7.7</slf4j.version>
-        <jackson.version>2.4.1.3</jackson.version>
+        <jackson.version>2.4.3</jackson.version>
         <httpclient.version>4.3.5</httpclient.version>
 
         <!-- Test dependencies versions -->
         <testng.version>6.8.8</testng.version>
-        <mockito.version>1.9.5</mockito.version>
+        <mockito.version>1.10.8</mockito.version>
     </properties>
 
     <licenses>
