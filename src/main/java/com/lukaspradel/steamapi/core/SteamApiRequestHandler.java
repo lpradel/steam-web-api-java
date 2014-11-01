@@ -34,14 +34,4 @@ public abstract class SteamApiRequestHandler {
 
 		return isUseHttps() ? PROTOCOL_HTTPS : PROTOCOL_HTTP;
 	}
-
-	// public SteamApiRequestHandler() {
-	//
-	// this.handleRequest(null);
-	// }
-	//
-	// public <T> T handleRequest(SteamApiRequest request) {
-	//
-	// return null;
-	// }
 }
