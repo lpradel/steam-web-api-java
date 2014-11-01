@@ -1,0 +1,41 @@
+{
+    "appnews": {
+        "appid": 440,
+        "newsitems": [
+            {
+                "gid": "521616685377513917",
+                "title": "Team Fortress 2 Update Released",
+                "url": "http://store.steampowered.com/news/14820/",
+                "is_external_url": false,
+                "author": "Valve",
+                "contents": "An update to Team Fortress 2 has been released. The update will be applied automatically when you restart Team Fortress 2. The major changes include: * Fixed a dedicated server crash related to the new map sd_doomsday_event and server-wide curses; * Fixed Blue team hearing the win audio instead of t...",
+                "feedlabel": "Product Update",
+                "date": 1414720320,
+                "feedname": "steam_updates"
+            },
+            {
+                "gid": "521616685377493347",
+                "title": "Team Fortress 2 Update Released",
+                "url": "http://store.steampowered.com/news/externalpost/tf2_blog/521616685377493347",
+                "is_external_url": true,
+                "author": "",
+                "contents": "An update to Team Fortress 2 has been released. The update will be applied automatically when you restart Team Fortress 2. The major changes include: * Fixed a dedicated server crash related to the new map sd_doomsday_event and server-wide curses ;* Fixed Blue team hearing the win audio instead of t...",
+                "feedlabel": "TF2 Blog",
+                "date": 1414720320,
+                "feedname": "tf2_blog"
+            },
+            {
+                "gid": "521616685342703195",
+                "title": "Team Fortress 2's Halloween event adds evil carnival",
+                "url": "http://store.steampowered.com/news/externalpost/pcgamer/521616685342703195",
+                "is_external_url": true,
+                "author": "",
+                "contents": "<a href=\"/team-fortress-2s-halloween-event-adds-evil-carnival-bumper-cars/\"></a><a href=\"http://www.pcgamer.com/team-fortress-2-activates-previous-halloween-events/\" target=\"_blank\">Last week</a>, Valve reactivated TF2's five previous Halloween parties, and now the main event&mdash;the sixth&mdash;has gone live.&nbsp;<a href=\"http://www.teamfortress.com/screamfortress6/\" target=\"_blank\">Scream Fortress 6</a> adds a spooky carnival map, an evil hypnowizard controlling it, plenty of Halloween gear and achievements, oh and bumper cars, because why not. You h...",
+                "feedlabel": "PC Gamer",
+                "date": 1414677744,
+                "feedname": "pcgamer"
+            }
+        ]
+
+    }
+}

@@ -11,12 +11,12 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.testng.annotations.Test;
 
-import com.lukaspradel.steamapi.AbstractTest;
+import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
 
-public class SteamWebApiRequestHandlerTest extends AbstractTest {
+public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	private String key = "12345";
 
