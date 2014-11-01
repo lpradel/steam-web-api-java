@@ -3,7 +3,7 @@ package com.lukaspradel.steamapi.core.exception;
 public class SteamApiException extends Exception {
 
 	public enum Cause {
-		HTTP_ERROR, FORBIDDEN, INTERNAL_ERROR
+		HTTP_ERROR, FORBIDDEN, INTERNAL_ERROR, MAPPING
 	}
 
 	private String message;
@@ -14,6 +14,21 @@ public class SteamApiException extends Exception {
 
 	public SteamApiException(String message, Throwable cause) {
 		super(message, cause);
+	}
+
+	public SteamApiException(Cause cause, Throwable exceptionCause) {
+
+		super(exceptionCause);
+
+		switch (cause) {
+		case MAPPING:
+			this.message = "The JSON response could not be parsed or mapped to the designated POJO. The most likely cause for this is that"
+					+ " the Steam API itself changed. Check for newer versions of this library to compensate for this.";
+			break;
+		default:
+			this.message = "The Web API request failed due to an unexpected error: "
+					+ exceptionCause.getMessage();
+		}
 	}
 
 	public SteamApiException(Cause cause, Integer statusCode, String message) {
