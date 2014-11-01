@@ -1,8 +1,8 @@
 package com.lukaspradel.steamapi.webapi.request;
 
-import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
-import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
-import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
 import com.lukaspradel.steamapi.webapi.request.builders.AbstractSteamWebApiRequestBuilder;
 
 /**

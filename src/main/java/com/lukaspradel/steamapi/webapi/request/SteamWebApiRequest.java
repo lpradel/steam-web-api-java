@@ -4,9 +4,9 @@ import java.util.Collections;
 import java.util.Map;
 
 import com.lukaspradel.steamapi.core.SteamApiRequest;
-import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
-import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
-import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
 
 /**
  * Encapsulates a request to the Steam Web API with all its required and

@@ -1,4 +1,4 @@
-package com.lukaspradel.steamapi.webapi;
+package com.lukaspradel.steamapi.webapi.core;
 
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;

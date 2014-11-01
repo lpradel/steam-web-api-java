@@ -12,9 +12,9 @@ import org.mockito.Mockito;
 import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.BaseTest;
-import com.lukaspradel.steamapi.webapi.SteamWebApiInterface;
-import com.lukaspradel.steamapi.webapi.SteamWebApiInterfaceMethod;
-import com.lukaspradel.steamapi.webapi.SteamWebApiVersion;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
 
 public class SteamWebApiRequestHandlerTest extends BaseTest {
 
