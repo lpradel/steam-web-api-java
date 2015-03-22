@@ -101,6 +101,11 @@
                         <format>xml</format>
                     </formats>
                     <aggregate>true</aggregate>
+                    <instrumentation>
+                        <excludes>
+                            <exclude>com/lukaspradel/steamapi/data/json/**/*.class</exclude>
+                        </excludes>
+                    </instrumentation>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -114,11 +119,6 @@
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
                 <version>${coveralls-maven-plugin.version}</version>
-                <configuration>
-                    <sourceDirectories>
-                        <sourceDirectory>target/generated-sources/</sourceDirectory>
-                    </sourceDirectories>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
