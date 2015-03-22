@@ -115,7 +115,9 @@
                 <artifactId>coveralls-maven-plugin</artifactId>
                 <version>${coveralls-maven-plugin.version}</version>
                 <configuration>
-                    <sourceDirectories>target/generated-sources</sourceDirectories>
+                    <sourceDirectories>
+                        <sourceDirectory>target/generated-sources/</sourceDirectory>
+                    </sourceDirectories>
                 </configuration>
             </plugin>
             <plugin>
