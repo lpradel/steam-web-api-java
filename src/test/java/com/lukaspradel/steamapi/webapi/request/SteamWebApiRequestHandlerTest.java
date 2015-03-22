@@ -3,6 +3,7 @@ package com.lukaspradel.steamapi.webapi.request;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,7 +53,10 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		parameters.put("test-parameter", "test-value");
 
 		String actual = requestHandlerHttps.getParametersUrl(parameters);
-		assertEquals(actual, "test-parameter=test-value&format=json&key=12345");
+		assertTrue(actual.contains("test-parameter=test-value"));
+		assertTrue(actual.contains("format=json"));
+		assertTrue(actual.contains("key=12345"));
+		assertTrue(actual.contains("&"));
 	}
 
 	@Test
