@@ -114,6 +114,9 @@
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
                 <version>${coveralls-maven-plugin.version}</version>
+                <configuration>
+                    <sourceDirectories>target/generated-sources</sourceDirectories>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
