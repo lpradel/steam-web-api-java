@@ -11,6 +11,8 @@ import org.testng.annotations.Test;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
 
@@ -73,5 +75,30 @@ public class SteamWebApiRequestFactoryTest {
 				parameters
 						.get(GetNewsForAppRequestBuilder.REQUEST_PARAM_MAX_LENGTH),
 				String.valueOf(maxLength));
+	}
+
+	@Test
+	public void testCreateGetGlobalAchievementPercentagesForAppRequest() {
+
+		int gameId = 400;
+
+		GetGlobalAchievementPercentagesForAppRequest request = SteamWebApiRequestFactory
+				.createGetGlobalAchievementPercentagesForAppRequest(gameId);
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER_STATS);
+		assertEquals(
+				request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_TWO);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetGlobalAchievementPercentagesForAppRequestBuilder.REQUEST_PARAM_GAME_ID),
+				String.valueOf(gameId));
 	}
 }

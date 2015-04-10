@@ -14,7 +14,9 @@ import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
@@ -37,7 +39,8 @@ public class SteamWebApiClientTest extends BaseTest {
 	}
 
 	@Test
-	public void testProcessRequest() throws SteamApiException, IOException {
+	public void testProcessGetNewsForAppRequest() throws SteamApiException,
+			IOException {
 
 		GetNewsForAppRequest getNewsForAppRequest = SteamWebApiRequestFactory
 				.createGetNewsForAppRequest(0);
@@ -56,5 +59,35 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getNewsForApp.getAppnews().getAppid(),
 				Integer.valueOf(440));
 		assertEquals(getNewsForApp.getAppnews().getNewsitems().size(), 3);
+	}
+
+	@Test
+	public void testProcessGetGlobalAchievementPercentagesForAppRequest()
+			throws SteamApiException, IOException {
+
+		GetGlobalAchievementPercentagesForAppRequest getGlobalAchievementPercentagesForAppRequest = SteamWebApiRequestFactory
+				.createGetGlobalAchievementPercentagesForAppRequest(0);
+
+		String mockAnswer = readResourceAsString("GetGlobalAchievementPercentagesForApp.json");
+
+		when(
+				requestHandlerMock
+						.getWebApiResponse(getGlobalAchievementPercentagesForAppRequest))
+				.thenReturn(mockAnswer);
+
+		GetGlobalAchievementPercentagesForApp getGlobalAchievementPercentagesForApp = client
+				.<GetGlobalAchievementPercentagesForApp> processRequest(getGlobalAchievementPercentagesForAppRequest);
+
+		assertNotNull(getGlobalAchievementPercentagesForApp);
+		assertTrue(getGlobalAchievementPercentagesForApp
+				.getAdditionalProperties().isEmpty());
+		assertNotNull(getGlobalAchievementPercentagesForApp
+				.getAchievementpercentages());
+		assertEquals(
+				getGlobalAchievementPercentagesForApp
+						.getAchievementpercentages().getAchievements().get(0)
+						.getName(), "no_one_cared_who_i_was");
+		assertEquals(getGlobalAchievementPercentagesForApp
+				.getAchievementpercentages().getAchievements().size(), 316);
 	}
 }

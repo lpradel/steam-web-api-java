@@ -1,0 +1,1271 @@
+{
+    "achievementpercentages": {
+        "achievements": [
+            {
+                "name": "no_one_cared_who_i_was",
+                "percent": 64.179924011230469
+            },
+            {
+                "name": "no_turning_back",
+                "percent": 61.197566986083984
+            },
+            {
+                "name": "tip_the_scales",
+                "percent": 55.442661285400391
+            },
+            {
+                "name": "how_do_you_like_me_now",
+                "percent": 53.406143188476563
+            },
+            {
+                "name": "you_gotta_start_somewhere",
+                "percent": 48.061004638671875
+            },
+            {
+                "name": "armed_to_the_teeth",
+                "percent": 45.672996520996094
+            },
+            {
+                "name": "would_you_like_your_receipt",
+                "percent": 43.651847839355469
+            },
+            {
+                "name": "guilty_of_crime",
+                "percent": 41.824356079101563
+            },
+            {
+                "name": "gage2_8",
+                "percent": 36.581806182861328
+            },
+            {
+                "name": "spend_money_to_make_money",
+                "percent": 35.899906158447266
+            },
+            {
+                "name": "gone_in_30_seconds",
+                "percent": 35.779056549072266
+            },
+            {
+                "name": "going_places",
+                "percent": 31.106632232666016
+            },
+            {
+                "name": "yeah_hes_a_gold_digger",
+                "percent": 30.303352355957031
+            },
+            {
+                "name": "diamonds_are_forever",
+                "percent": 29.282739639282227
+            },
+            {
+                "name": "f_in_chemistry",
+                "percent": 29.043710708618164
+            },
+            {
+                "name": "masked_villain",
+                "percent": 24.835851669311523
+            },
+            {
+                "name": "armed_and_dangerous",
+                "percent": 24.606611251831055
+            },
+            {
+                "name": "lord_of_war",
+                "percent": 23.676708221435547
+            },
+            {
+                "name": "death_31",
+                "percent": 22.239538192749023
+            },
+            {
+                "name": "murphys_laws",
+                "percent": 21.467784881591797
+            },
+            {
+                "name": "fish_ai",
+                "percent": 21.463834762573242
+            },
+            {
+                "name": "fully_loaded",
+                "percent": 20.833747863769531
+            },
+            {
+                "name": "the_first_line",
+                "percent": 19.827022552490234
+            },
+            {
+                "name": "hot_wheels",
+                "percent": 17.574001312255859
+            },
+            {
+                "name": "frappucino_to_go_please",
+                "percent": 17.228498458862305
+            },
+            {
+                "name": "armored_11",
+                "percent": 17.16748046875
+            },
+            {
+                "name": "kosugi_1",
+                "percent": 16.428272247314453
+            },
+            {
+                "name": "bulldog_1",
+                "percent": 16.209064483642578
+            },
+            {
+                "name": "like_an_angry_bear",
+                "percent": 15.137399673461914
+            },
+            {
+                "name": "going_all_in",
+                "percent": 14.032035827636719
+            },
+            {
+                "name": "big_shot",
+                "percent": 13.99677562713623
+            },
+            {
+                "name": "armored_2",
+                "percent": 13.487201690673828
+            },
+            {
+                "name": "charliesierra_3",
+                "percent": 13.385614395141602
+            },
+            {
+                "name": "iron_man",
+                "percent": 13.11186695098877
+            },
+            {
+                "name": "bigbank_8",
+                "percent": 12.811182022094727
+            },
+            {
+                "name": "death_13",
+                "percent": 12.204951286315918
+            },
+            {
+                "name": "death_17",
+                "percent": 12.172053337097168
+            },
+            {
+                "name": "charliesierra_2",
+                "percent": 12.005498886108398
+            },
+            {
+                "name": "gmod_1",
+                "percent": 11.654183387756348
+            },
+            {
+                "name": "gage4_4",
+                "percent": 11.516861915588379
+            },
+            {
+                "name": "bigbank_1",
+                "percent": 11.178050994873047
+            },
+            {
+                "name": "bob_5",
+                "percent": 11.140849113464355
+            },
+            {
+                "name": "death_14",
+                "percent": 11.115350723266602
+            },
+            {
+                "name": "doctor_fantastic",
+                "percent": 10.827426910400391
+            },
+            {
+                "name": "gmod_2",
+                "percent": 10.785229682922363
+            },
+            {
+                "name": "gage_9",
+                "percent": 10.629563331604004
+            },
+            {
+                "name": "kosugi_4",
+                "percent": 10.515419006347656
+            },
+            {
+                "name": "death_18",
+                "percent": 10.456655502319336
+            },
+            {
+                "name": "weapon_collector",
+                "percent": 10.364370346069336
+            },
+            {
+                "name": "i_wasnt_even_there",
+                "percent": 10.348674774169922
+            },
+            {
+                "name": "gmod_3",
+                "percent": 10.215494155883789
+            },
+            {
+                "name": "charliesierra_4",
+                "percent": 10.035837173461914
+            },
+            {
+                "name": "charliesierra_5",
+                "percent": 9.7901411056518555
+            },
+            {
+                "name": "i_knew_what_i_was_doing_was_wrong",
+                "percent": 9.6557111740112305
+            },
+            {
+                "name": "gage3_1",
+                "percent": 9.4350643157958984
+            },
+            {
+                "name": "pink_panther",
+                "percent": 9.3991928100585938
+            },
+            {
+                "name": "gmod_4",
+                "percent": 9.3191671371459961
+            },
+            {
+                "name": "kosugi_6",
+                "percent": 9.2533035278320312
+            },
+            {
+                "name": "death_1",
+                "percent": 9.2465686798095703
+            },
+            {
+                "name": "bigbank_3",
+                "percent": 9.0368795394897461
+            },
+            {
+                "name": "king_of_the_hill",
+                "percent": 8.8876504898071289
+            },
+            {
+                "name": "death_15",
+                "percent": 8.8728103637695313
+            },
+            {
+                "name": "gmod_6",
+                "percent": 8.7481422424316406
+            },
+            {
+                "name": "gmod_5",
+                "percent": 8.7060394287109375
+            },
+            {
+                "name": "pig_7",
+                "percent": 8.6969156265258789
+            },
+            {
+                "name": "halloween_9",
+                "percent": 8.6230535507202148
+            },
+            {
+                "name": "death_16",
+                "percent": 8.4327526092529297
+            },
+            {
+                "name": "ignominy_1",
+                "percent": 8.3472423553466797
+            },
+            {
+                "name": "charliesierra_7",
+                "percent": 8.2469997406005859
+            },
+            {
+                "name": "gage3_3",
+                "percent": 8.2433071136474609
+            },
+            {
+                "name": "death_19",
+                "percent": 8.1524333953857422
+            },
+            {
+                "name": "kosugi_5",
+                "percent": 8.1103439331054687
+            },
+            {
+                "name": "most_wanted",
+                "percent": 8.0072908401489258
+            },
+            {
+                "name": "ameno_8",
+                "percent": 7.9324932098388672
+            },
+            {
+                "name": "death_3",
+                "percent": 7.9178562164306641
+            },
+            {
+                "name": "big_deal",
+                "percent": 7.833798885345459
+            },
+            {
+                "name": "im_a_healer_tank_damage_dealer",
+                "percent": 7.4483633041381836
+            },
+            {
+                "name": "gage3_9",
+                "percent": 7.4250235557556152
+            },
+            {
+                "name": "bulldog_4",
+                "percent": 7.4004898071289062
+            },
+            {
+                "name": "gage2_2",
+                "percent": 7.3491940498352051
+            },
+            {
+                "name": "charliesierra_8",
+                "percent": 7.3404231071472168
+            },
+            {
+                "name": "gage3_4",
+                "percent": 7.269956111907959
+            },
+            {
+                "name": "lets_do_this",
+                "percent": 7.106905460357666
+            },
+            {
+                "name": "death_4",
+                "percent": 7.053654670715332
+            },
+            {
+                "name": "bullet_dodger",
+                "percent": 6.8341073989868164
+            },
+            {
+                "name": "kosugi_3",
+                "percent": 6.7980594635009766
+            },
+            {
+                "name": "death_2",
+                "percent": 6.7930765151977539
+            },
+            {
+                "name": "gage2_6",
+                "percent": 6.7829346656799316
+            },
+            {
+                "name": "gage_5",
+                "percent": 6.7726969718933105
+            },
+            {
+                "name": "bob_3",
+                "percent": 6.7027053833007812
+            },
+            {
+                "name": "caribbean_pirate",
+                "percent": 6.4237847328186035
+            },
+            {
+                "name": "armored_3",
+                "percent": 6.1731324195861816
+            },
+            {
+                "name": "bob_1",
+                "percent": 6.1723580360412598
+            },
+            {
+                "name": "deer_1",
+                "percent": 6.0897126197814941
+            },
+            {
+                "name": "bigbank_9",
+                "percent": 5.9223709106445313
+            },
+            {
+                "name": "ignominy_2",
+                "percent": 5.8145260810852051
+            },
+            {
+                "name": "bob_4",
+                "percent": 5.808497428894043
+            },
+            {
+                "name": "gage3_5",
+                "percent": 5.7568626403808594
+            },
+            {
+                "name": "death_8",
+                "percent": 5.6781268119812012
+            },
+            {
+                "name": "gage3_10",
+                "percent": 5.4584579467773437
+            },
+            {
+                "name": "window_cleaner",
+                "percent": 5.3046941757202148
+            },
+            {
+                "name": "gage_6",
+                "percent": 5.2817888259887695
+            },
+            {
+                "name": "death_35",
+                "percent": 5.2778515815734863
+            },
+            {
+                "name": "death_10",
+                "percent": 5.1955723762512207
+            },
+            {
+                "name": "gage2_7",
+                "percent": 5.1387643814086914
+            },
+            {
+                "name": "bigbank_5",
+                "percent": 5.1187243461608887
+            },
+            {
+                "name": "death_7",
+                "percent": 5.0826764106750488
+            },
+            {
+                "name": "gage_7",
+                "percent": 4.980125904083252
+            },
+            {
+                "name": "deer_2",
+                "percent": 4.9454631805419922
+            },
+            {
+                "name": "gmod_8",
+                "percent": 4.9227209091186523
+            },
+            {
+                "name": "bob_7",
+                "percent": 4.8851385116577148
+            },
+            {
+                "name": "you_shall_not_pass",
+                "percent": 4.8809022903442383
+            },
+            {
+                "name": "bob_9",
+                "percent": 4.8367214202880859
+            },
+            {
+                "name": "halloween_2",
+                "percent": 4.8269863128662109
+            },
+            {
+                "name": "bulldog_3",
+                "percent": 4.8086977005004883
+            },
+            {
+                "name": "death_11",
+                "percent": 4.7882227897644043
+            },
+            {
+                "name": "pig_2",
+                "percent": 4.7211503982543945
+            },
+            {
+                "name": "gage3_12",
+                "percent": 4.6891217231750488
+            },
+            {
+                "name": "ignominy_3",
+                "percent": 4.6592240333557129
+            },
+            {
+                "name": "death_32",
+                "percent": 4.6257419586181641
+            },
+            {
+                "name": "gage3_6",
+                "percent": 4.5692873001098633
+            },
+            {
+                "name": "gage4_9",
+                "percent": 4.5677261352539062
+            },
+            {
+                "name": "gage3_17",
+                "percent": 4.5375704765319824
+            },
+            {
+                "name": "payback_3",
+                "percent": 4.5261244773864746
+            },
+            {
+                "name": "bob_2",
+                "percent": 4.5033550262451172
+            },
+            {
+                "name": "death_5",
+                "percent": 4.4537434577941895
+            },
+            {
+                "name": "death_6",
+                "percent": 4.341132640838623
+            },
+            {
+                "name": "deer_3",
+                "percent": 4.301201343536377
+            },
+            {
+                "name": "gage3_7",
+                "percent": 4.2883844375610352
+            },
+            {
+                "name": "halloween_nightmare_1",
+                "percent": 4.2825322151184082
+            },
+            {
+                "name": "armored_6",
+                "percent": 4.2372245788574219
+            },
+            {
+                "name": "squek",
+                "percent": 4.2288198471069336
+            },
+            {
+                "name": "armored_1",
+                "percent": 4.2258739471435547
+            },
+            {
+                "name": "deer_4",
+                "percent": 4.2042450904846191
+            },
+            {
+                "name": "ignominy_5",
+                "percent": 4.1931519508361816
+            },
+            {
+                "name": "bigbank_4",
+                "percent": 4.1805386543273926
+            },
+            {
+                "name": "gage3_11",
+                "percent": 4.0981917381286621
+            },
+            {
+                "name": "death_33",
+                "percent": 4.0858907699584961
+            },
+            {
+                "name": "gmod_10",
+                "percent": 4.0731010437011719
+            },
+            {
+                "name": "bigbank_2",
+                "percent": 4.0725851058959961
+            },
+            {
+                "name": "halloween_3",
+                "percent": 4.0590753555297852
+            },
+            {
+                "name": "gage3_15",
+                "percent": 4.0408949851989746
+            },
+            {
+                "name": "ignominy_4",
+                "percent": 4.0369982719421387
+            },
+            {
+                "name": "bob_6",
+                "percent": 4.0150165557861328
+            },
+            {
+                "name": "kosugi_2",
+                "percent": 3.9944331645965576
+            },
+            {
+                "name": "armored_5",
+                "percent": 3.9900205135345459
+            },
+            {
+                "name": "gage5_2",
+                "percent": 3.9488406181335449
+            },
+            {
+                "name": "halloween_nightmare_2",
+                "percent": 3.9356701374053955
+            },
+            {
+                "name": "gage5_4",
+                "percent": 3.8937296867370605
+            },
+            {
+                "name": "gage2_10",
+                "percent": 3.8926026821136475
+            },
+            {
+                "name": "gage3_13",
+                "percent": 3.8332288265228271
+            },
+            {
+                "name": "death_24",
+                "percent": 3.8320746421813965
+            },
+            {
+                "name": "death_20",
+                "percent": 3.8309340476989746
+            },
+            {
+                "name": "bilbo_baggin",
+                "percent": 3.8174378871917725
+            },
+            {
+                "name": "death_21",
+                "percent": 3.8010094165802002
+            },
+            {
+                "name": "pig_4",
+                "percent": 3.7787697315216064
+            },
+            {
+                "name": "death_34",
+                "percent": 3.7669844627380371
+            },
+            {
+                "name": "death_22",
+                "percent": 3.7582137584686279
+            },
+            {
+                "name": "gage4_11",
+                "percent": 3.7514383792877197
+            },
+            {
+                "name": "gage3_14",
+                "percent": 3.7275149822235107
+            },
+            {
+                "name": "death_23",
+                "percent": 3.7173590660095215
+            },
+            {
+                "name": "short_fuse",
+                "percent": 3.7025463581085205
+            },
+            {
+                "name": "gage4_2",
+                "percent": 3.672553539276123
+            },
+            {
+                "name": "deer_7",
+                "percent": 3.6519429683685303
+            },
+            {
+                "name": "gage3_16",
+                "percent": 3.6151618957519531
+            },
+            {
+                "name": "halloween_nightmare_3",
+                "percent": 3.6144285202026367
+            },
+            {
+                "name": "gage3_8",
+                "percent": 3.5984344482421875
+            },
+            {
+                "name": "ovk_4",
+                "percent": 3.5318779945373535
+            },
+            {
+                "name": "halloween_nightmare_4",
+                "percent": 3.503596305847168
+            },
+            {
+                "name": "gmod_7",
+                "percent": 3.3517875671386719
+            },
+            {
+                "name": "gage5_10",
+                "percent": 3.3498320579528809
+            },
+            {
+                "name": "cow_6",
+                "percent": 3.3305659294128418
+            },
+            {
+                "name": "halloween_8",
+                "percent": 3.284959077835083
+            },
+            {
+                "name": "gage5_3",
+                "percent": 3.2262370586395264
+            },
+            {
+                "name": "the_wire",
+                "percent": 3.2125511169433594
+            },
+            {
+                "name": "gage_10",
+                "percent": 3.0807685852050781
+            },
+            {
+                "name": "gage2_4",
+                "percent": 3.0772113800048828
+            },
+            {
+                "name": "gage4_7",
+                "percent": 3.0725951194763184
+            },
+            {
+                "name": "gage4_8",
+                "percent": 3.0607962608337402
+            },
+            {
+                "name": "charliesierra_6",
+                "percent": 3.0503280162811279
+            },
+            {
+                "name": "cow_1",
+                "percent": 3.0447070598602295
+            },
+            {
+                "name": "gage_8",
+                "percent": 3.0249383449554443
+            },
+            {
+                "name": "gmod_9",
+                "percent": 3.0232138633728027
+            },
+            {
+                "name": "death_12",
+                "percent": 3.0194802284240723
+            },
+            {
+                "name": "pig_6",
+                "percent": 3.0181088447570801
+            },
+            {
+                "name": "bigbank_7",
+                "percent": 2.9777567386627197
+            },
+            {
+                "name": "death_9",
+                "percent": 2.9703569412231445
+            },
+            {
+                "name": "death_26",
+                "percent": 2.9489319324493408
+            },
+            {
+                "name": "halloween_1",
+                "percent": 2.9479680061340332
+            },
+            {
+                "name": "charliesierra_1",
+                "percent": 2.9312677383422852
+            },
+            {
+                "name": "bulldog_2",
+                "percent": 2.9216549396514893
+            },
+            {
+                "name": "bat_3",
+                "percent": 2.91068434715271
+            },
+            {
+                "name": "death_27",
+                "percent": 2.9020357131958008
+            },
+            {
+                "name": "gage4_1",
+                "percent": 2.8800809383392334
+            },
+            {
+                "name": "bob_8",
+                "percent": 2.8194577693939209
+            },
+            {
+                "name": "grill_4",
+                "percent": 2.8082699775695801
+            },
+            {
+                "name": "death_29",
+                "percent": 2.7849712371826172
+            },
+            {
+                "name": "ameno_5",
+                "percent": 2.7782504558563232
+            },
+            {
+                "name": "gage_2",
+                "percent": 2.7465605735778809
+            },
+            {
+                "name": "halloween_nightmare_5",
+                "percent": 2.7370429039001465
+            },
+            {
+                "name": "gage_1",
+                "percent": 2.7200303077697754
+            },
+            {
+                "name": "death_30",
+                "percent": 2.7194466590881348
+            },
+            {
+                "name": "fort_2",
+                "percent": 2.7085168361663818
+            },
+            {
+                "name": "gage_3",
+                "percent": 2.7077157497406006
+            },
+            {
+                "name": "gage_4",
+                "percent": 2.705869197845459
+            },
+            {
+                "name": "deer_5",
+                "percent": 2.7037646770477295
+            },
+            {
+                "name": "bigbank_6",
+                "percent": 2.7016193866729736
+            },
+            {
+                "name": "halloween_10",
+                "percent": 2.6964735984802246
+            },
+            {
+                "name": "charliesierra_9",
+                "percent": 2.6731069087982178
+            },
+            {
+                "name": "gage4_10",
+                "percent": 2.6551439762115479
+            },
+            {
+                "name": "gage5_9",
+                "percent": 2.6485996246337891
+            },
+            {
+                "name": "death_28",
+                "percent": 2.5953354835510254
+            },
+            {
+                "name": "halloween_6",
+                "percent": 2.5759334564208984
+            },
+            {
+                "name": "eagle_2",
+                "percent": 2.562708854675293
+            },
+            {
+                "name": "gage4_6",
+                "percent": 2.5369663238525391
+            },
+            {
+                "name": "gage2_3",
+                "percent": 2.5310328006744385
+            },
+            {
+                "name": "armored_10",
+                "percent": 2.5187454223632812
+            },
+            {
+                "name": "halloween_4",
+                "percent": 2.5092411041259766
+            },
+            {
+                "name": "bat_1",
+                "percent": 2.5001306533813477
+            },
+            {
+                "name": "pig_3",
+                "percent": 2.4905858039855957
+            },
+            {
+                "name": "halloween_5",
+                "percent": 2.482778787612915
+            },
+            {
+                "name": "gage2_5",
+                "percent": 2.4812037944793701
+            },
+            {
+                "name": "gage2_9",
+                "percent": 2.4805927276611328
+            },
+            {
+                "name": "gage4_5",
+                "percent": 2.449880838394165
+            },
+            {
+                "name": "armored_4",
+                "percent": 2.4273557662963867
+            },
+            {
+                "name": "gage2_1",
+                "percent": 2.4173221588134766
+            },
+            {
+                "name": "eagle_4",
+                "percent": 2.4163174629211426
+            },
+            {
+                "name": "bat_2",
+                "percent": 2.4055640697479248
+            },
+            {
+                "name": "pig_1",
+                "percent": 2.3974447250366211
+            },
+            {
+                "name": "halloween_7",
+                "percent": 2.3973631858825684
+            },
+            {
+                "name": "armored_7",
+                "percent": 2.3720412254333496
+            },
+            {
+                "name": "armored_9",
+                "percent": 2.3150839805603027
+            },
+            {
+                "name": "eagle_5",
+                "percent": 2.2833809852600098
+            },
+            {
+                "name": "bob_10",
+                "percent": 2.2808961868286133
+            },
+            {
+                "name": "armored_8",
+                "percent": 2.2776920795440674
+            },
+            {
+                "name": "bigbank_10",
+                "percent": 2.2449026107788086
+            },
+            {
+                "name": "gage5_5",
+                "percent": 2.1975581645965576
+            },
+            {
+                "name": "gage5_8",
+                "percent": 2.1880810260772705
+            },
+            {
+                "name": "gage3_2",
+                "percent": 2.1635468006134033
+            },
+            {
+                "name": "gage5_1",
+                "percent": 2.15169358253479
+            },
+            {
+                "name": "gage4_12",
+                "percent": 2.1418499946594238
+            },
+            {
+                "name": "pig_5",
+                "percent": 2.1258692741394043
+            },
+            {
+                "name": "ovk_9",
+                "percent": 2.0981307029724121
+            },
+            {
+                "name": "gage5_7",
+                "percent": 2.076474666595459
+            },
+            {
+                "name": "gage4_3",
+                "percent": 2.0690343379974365
+            },
+            {
+                "name": "bat_6",
+                "percent": 2.0687491893768311
+            },
+            {
+                "name": "gage5_6",
+                "percent": 2.0682468414306641
+            },
+            {
+                "name": "deer_6",
+                "percent": 1.971996545791626
+            },
+            {
+                "name": "eagle_1",
+                "percent": 1.8708312511444092
+            },
+            {
+                "name": "eagle_3",
+                "percent": 1.8120003938674927
+            },
+            {
+                "name": "cow_4",
+                "percent": 1.8079543113708496
+            },
+            {
+                "name": "frog_1",
+                "percent": 1.7417781352996826
+            },
+            {
+                "name": "slakt_3",
+                "percent": 1.7328169345855713
+            },
+            {
+                "name": "cow_7",
+                "percent": 1.7220364809036255
+            },
+            {
+                "name": "bat_4",
+                "percent": 1.7163882255554199
+            },
+            {
+                "name": "ameno_7",
+                "percent": 1.6748143434524536
+            },
+            {
+                "name": "ameno_3",
+                "percent": 1.6185088157653809
+            },
+            {
+                "name": "ignominy_6",
+                "percent": 1.5604788064956665
+            },
+            {
+                "name": "ameno_2",
+                "percent": 1.5028291940689087
+            },
+            {
+                "name": "slakt_4",
+                "percent": 1.4938545227050781
+            },
+            {
+                "name": "cow_8",
+                "percent": 1.4285200834274292
+            },
+            {
+                "name": "cow_2",
+                "percent": 1.3618956804275513
+            },
+            {
+                "name": "gorilla_1",
+                "percent": 1.3243949413299561
+            },
+            {
+                "name": "grill_1",
+                "percent": 1.2833095788955688
+            },
+            {
+                "name": "ignominy_7",
+                "percent": 1.2651702165603638
+            },
+            {
+                "name": "bat_5",
+                "percent": 1.258938193321228
+            },
+            {
+                "name": "cow_10",
+                "percent": 1.2553536891937256
+            },
+            {
+                "name": "fort_3",
+                "percent": 1.2355307340621948
+            },
+            {
+                "name": "cow_11",
+                "percent": 1.2082401514053345
+            },
+            {
+                "name": "ameno_1",
+                "percent": 1.1829861402511597
+            },
+            {
+                "name": "cow_9",
+                "percent": 1.1828233003616333
+            },
+            {
+                "name": "ovk_6",
+                "percent": 1.1329126358032227
+            },
+            {
+                "name": "ameno_4",
+                "percent": 1.12862229347229
+            },
+            {
+                "name": "ignominy_8",
+                "percent": 1.1266942024230957
+            },
+            {
+                "name": "ovk_3",
+                "percent": 1.1223359107971191
+            },
+            {
+                "name": "djur_1",
+                "percent": 1.118045449256897
+            },
+            {
+                "name": "ameno_6",
+                "percent": 1.0979915857315063
+            },
+            {
+                "name": "cow_5",
+                "percent": 1.0862336158752441
+            },
+            {
+                "name": "cow_3",
+                "percent": 1.0769194364547729
+            },
+            {
+                "name": "fort_4",
+                "percent": 1.0669128894805908
+            },
+            {
+                "name": "slakt_2",
+                "percent": 1.0487055778503418
+            },
+            {
+                "name": "ignominy_9",
+                "percent": 1.0360379219055176
+            },
+            {
+                "name": "slakt_1",
+                "percent": 1.0358477830886841
+            },
+            {
+                "name": "ovk_2",
+                "percent": 1.0015376806259155
+            },
+            {
+                "name": "slakt_5",
+                "percent": 0.99458599090576172
+            },
+            {
+                "name": "ignominy_10",
+                "percent": 0.97464078664779663
+            },
+            {
+                "name": "payback_2",
+                "percent": 0.95088034868240356
+            },
+            {
+                "name": "ignominy_11",
+                "percent": 0.91348814964294434
+            },
+            {
+                "name": "payback_1",
+                "percent": 0.8859260082244873
+            },
+            {
+                "name": "ignominy_12",
+                "percent": 0.87532204389572144
+            },
+            {
+                "name": "ignominy_13",
+                "percent": 0.84589982032775879
+            },
+            {
+                "name": "ovk_10",
+                "percent": 0.84055030345916748
+            },
+            {
+                "name": "ignominy_14",
+                "percent": 0.82504487037658691
+            },
+            {
+                "name": "ignominy_15",
+                "percent": 0.8105170726776123
+            },
+            {
+                "name": "ovk_8",
+                "percent": 0.80880635976791382
+            },
+            {
+                "name": "ignominy_16",
+                "percent": 0.79372179508209229
+            },
+            {
+                "name": "ignominy_17",
+                "percent": 0.78188228607177734
+            },
+            {
+                "name": "ignominy_18",
+                "percent": 0.77122402191162109
+            },
+            {
+                "name": "ignominy_19",
+                "percent": 0.76360714435577393
+            },
+            {
+                "name": "ignominy_20",
+                "percent": 0.7580946683883667
+            },
+            {
+                "name": "ignominy_25",
+                "percent": 0.75759232044219971
+            },
+            {
+                "name": "ovk_7",
+                "percent": 0.75293529033660889
+            },
+            {
+                "name": "ignominy_21",
+                "percent": 0.75001615285873413
+            },
+            {
+                "name": "ovk_1",
+                "percent": 0.74675750732421875
+            },
+            {
+                "name": "ignominy_22",
+                "percent": 0.74440866708755493
+            },
+            {
+                "name": "ignominy_23",
+                "percent": 0.74076992273330688
+            },
+            {
+                "name": "ignominy_24",
+                "percent": 0.7386246919631958
+            },
+            {
+                "name": "ovk_5",
+                "percent": 0.71096748113632202
+            },
+            {
+                "name": "fort_1",
+                "percent": 0.70618826150894165
+            },
+            {
+                "name": "grill_2",
+                "percent": 0.69592368602752686
+            },
+            {
+                "name": "grill_3",
+                "percent": 0.53121614456176758
+            },
+            {
+                "name": "slakt_6",
+                "percent": 0.13643939793109894
+            },
+            {
+                "name": "djur_2",
+                "percent": 0.13634435832500458
+            },
+            {
+                "name": "death_25",
+                "percent": 0.024833081290125847
+            },
+            {
+                "name": "test",
+                "percent": 0.00020366115495562553
+            },
+            {
+                "name": "",
+                "percent": 0
+            }
+        ]
+
+    }
+}
