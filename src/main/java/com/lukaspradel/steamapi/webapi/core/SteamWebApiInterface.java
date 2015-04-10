@@ -30,6 +30,11 @@ public enum SteamWebApiInterface {
 	public static SteamWebApiInterface getInterfaceForMethod(
 			SteamWebApiInterfaceMethod interfaceMethod) {
 
+		if (interfaceMethod == null) {
+			throw new IllegalArgumentException(
+					"Unsupported Web API Interface method!");
+		}
+
 		switch (interfaceMethod) {
 
 		case GET_FRIEND_LIST:
