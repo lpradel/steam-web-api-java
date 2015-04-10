@@ -27,6 +27,11 @@ public enum SteamWebApiVersion {
 	public static SteamWebApiVersion getCurrentVersionForWebApiInterfaceMethod(
 			SteamWebApiInterfaceMethod interfaceMethod) {
 
+		if (interfaceMethod == null) {
+			throw new IllegalArgumentException(
+					"Unsupported Web API Interface method!");
+		}
+
 		switch (interfaceMethod) {
 
 		case GET_FRIEND_LIST:
