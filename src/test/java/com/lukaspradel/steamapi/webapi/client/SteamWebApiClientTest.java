@@ -4,6 +4,7 @@ import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 
 import java.io.IOException;
 
@@ -18,6 +19,7 @@ import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchiev
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
 
@@ -29,6 +31,9 @@ public class SteamWebApiClientTest extends BaseTest {
 			KEY_MOCK).build();
 
 	@Mock
+	private SteamWebApiRequest requestMock;
+
+	@Mock
 	private SteamWebApiRequestHandler requestHandlerMock = new SteamWebApiRequestHandler(
 			true, KEY_MOCK);
 
@@ -36,6 +41,85 @@ public class SteamWebApiClientTest extends BaseTest {
 	public void init() {
 
 		Whitebox.setInternalState(client, "requestHandler", requestHandlerMock);
+	}
+
+	@Test(expectedExceptions = SteamApiException.class)
+	public void testProcessExceptionMapping() throws SteamApiException {
+
+		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
+				new SteamApiException(SteamApiException.Cause.MAPPING,
+						new Throwable()));
+
+		client.processRequest(requestMock);
+	}
+
+	@Test(expectedExceptions = SteamApiException.class)
+	public void testProcessExceptionUnexpectedError() throws SteamApiException {
+
+		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
+				new SteamApiException(SteamApiException.Cause.INTERNAL_ERROR,
+						new Throwable()));
+
+		client.processRequest(requestMock);
+	}
+
+	@Test(expectedExceptions = SteamApiException.class)
+	public void testProcessExceptionHttpError() throws SteamApiException {
+
+		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
+				new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
+						Integer.valueOf(404), "message"));
+
+		client.processRequest(requestMock);
+	}
+
+	@Test(expectedExceptions = SteamApiException.class)
+	public void testProcessExceptionForbiddenError() throws SteamApiException {
+
+		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
+				new SteamApiException(SteamApiException.Cause.FORBIDDEN,
+						Integer.valueOf(403), "message"));
+
+		client.processRequest(requestMock);
+	}
+
+	@Test(expectedExceptions = SteamApiException.class)
+	public void testProcessExceptionInternalError() throws SteamApiException {
+
+		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
+				new SteamApiException(SteamApiException.Cause.INTERNAL_ERROR,
+						Integer.valueOf(500), "message"));
+
+		client.processRequest(requestMock);
+	}
+
+	@Test(expectedExceptions = SteamApiException.class)
+	public void testProcessExceptionUnexpectedStatusError()
+			throws SteamApiException {
+
+		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
+				new SteamApiException(SteamApiException.Cause.MAPPING, Integer
+						.valueOf(0), "message"));
+
+		client.processRequest(requestMock);
+	}
+
+	@Test
+	public void testProcessExceptionMessage() throws SteamApiException {
+
+		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
+				new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
+						Integer.valueOf(404), "message"));
+
+		try {
+			client.processRequest(requestMock);
+
+			fail("An exception of type SteamApiException should have been thrown here!");
+		} catch (SteamApiException e) {
+			assertEquals(
+					e.getMessage(),
+					"The Web API request failed with the following HTTP error: message (status code: 404).");
+		}
 	}
 
 	@Test
