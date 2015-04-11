@@ -83,7 +83,7 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 
 	String getWebApiResponse(String requestUrl) throws SteamApiException {
 
-		HttpClient client = HttpClientBuilder.create().build();
+		HttpClient client = getHttpClient();
 		HttpGet getRequest = new HttpGet(requestUrl);
 		try {
 			HttpResponse response = client.execute(getRequest);
@@ -108,5 +108,10 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		} finally {
 			getRequest.releaseConnection();
 		}
+	}
+
+	HttpClient getHttpClient() {
+
+		return HttpClientBuilder.create().build();
 	}
 }
