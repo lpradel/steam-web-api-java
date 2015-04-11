@@ -25,17 +25,6 @@ public class SteamWebApiRequest extends SteamApiRequest {
 
 	private final SteamWebApiVersion version;
 
-	protected SteamWebApiRequest(SteamWebApiInterface apiInterface,
-			SteamWebApiInterfaceMethod interfaceMethod,
-			SteamWebApiVersion version, Map<String, String> parameters) {
-
-		super(WEB_API_BASE_URL, parameters);
-
-		this.apiInterface = apiInterface;
-		this.interfaceMethod = interfaceMethod;
-		this.version = version;
-	}
-
 	protected SteamWebApiRequest(SteamWebApiRequestBuilder builder) {
 
 		super(WEB_API_BASE_URL, builder.getParameters());
