@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
+import org.apache.http.ParseException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -100,7 +101,7 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 						statusCode, response.getStatusLine().getReasonPhrase());
 			}
 
-			return EntityUtils.toString(response.getEntity());
+			return getHttpResponseAsString(response);
 		} catch (IOException e) {
 			throw new SteamApiException(
 					"The Web API request failed due to the following error: "
@@ -113,5 +114,11 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 	HttpClient getHttpClient() {
 
 		return HttpClientBuilder.create().build();
+	}
+
+	String getHttpResponseAsString(HttpResponse response)
+			throws ParseException, IOException {
+
+		return EntityUtils.toString(response.getEntity());
 	}
 }

@@ -2,6 +2,7 @@ package com.lukaspradel.steamapi.webapi.request;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
@@ -46,6 +48,9 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	@Mock
 	private StatusLine statusLineMock;
+
+	@Mock
+	private HttpEntity httpEntityMock;
 
 	@Test
 	public void testGetRequestUrl() {
@@ -126,7 +131,8 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	public void testGetWebApiResponseErrorCode()
 			throws ClientProtocolException, IOException, SteamApiException {
 
-		when(statusLineMock.getStatusCode()).thenReturn(500);
+		when(statusLineMock.getStatusCode()).thenReturn(
+				HttpStatus.SC_INTERNAL_SERVER_ERROR);
 		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
 		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
 				httpResponseMock);
@@ -144,5 +150,22 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
 		requestHandlerHttpsSpy.getWebApiResponse("requestUrl");
+	}
+
+	@Test
+	public void testGetWebApiResponse() throws ClientProtocolException,
+			IOException, SteamApiException {
+
+		when(statusLineMock.getStatusCode()).thenReturn(HttpStatus.SC_OK);
+		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
+		when(httpResponseMock.getEntity()).thenReturn(httpEntityMock);
+		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
+				httpResponseMock);
+
+		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
+
+		requestHandlerHttpsSpy.getWebApiResponse(requestMock);
+		verify(requestHandlerHttpsSpy)
+				.getHttpResponseAsString(httpResponseMock);
 	}
 }
