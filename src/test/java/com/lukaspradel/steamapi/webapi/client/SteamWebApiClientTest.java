@@ -7,6 +7,8 @@ import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.mockito.Mock;
 import org.powermock.reflect.Whitebox;
@@ -17,8 +19,10 @@ import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
+import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
@@ -173,5 +177,34 @@ public class SteamWebApiClientTest extends BaseTest {
 						.getName(), "no_one_cared_who_i_was");
 		assertEquals(getGlobalAchievementPercentagesForApp
 				.getAchievementpercentages().getAchievements().size(), 316);
+	}
+
+	@Test
+	public void testProcessGetPlayerSummariesRequest()
+			throws SteamApiException, IOException {
+
+		List<String> steamIds = new ArrayList<String>();
+		steamIds.add("123");
+		steamIds.add("456");
+		steamIds.add("789");
+
+		GetPlayerSummariesRequest getPlayerSummariesRequest = SteamWebApiRequestFactory
+				.createGetPlayerSummariesRequest(steamIds);
+
+		String mockAnswer = readResourceAsString("GetPlayerSummaries.json");
+
+		when(requestHandlerMock.getWebApiResponse(getPlayerSummariesRequest))
+				.thenReturn(mockAnswer);
+
+		GetPlayerSummaries getPlayerSummaries = client
+				.<GetPlayerSummaries> processRequest(getPlayerSummariesRequest);
+
+		assertNotNull(getPlayerSummaries);
+		assertTrue(getPlayerSummaries.getAdditionalProperties().isEmpty());
+		assertNotNull(getPlayerSummaries.getResponse());
+		assertNotNull(getPlayerSummaries.getResponse().getPlayers());
+		assertEquals(getPlayerSummaries.getResponse().getPlayers().size(), 1);
+		assertEquals(getPlayerSummaries.getResponse().getPlayers().get(0)
+				.getSteamid(), "76561197960435530");
 	}
 }

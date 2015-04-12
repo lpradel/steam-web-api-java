@@ -4,6 +4,9 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 import org.testng.annotations.Test;
@@ -15,6 +18,8 @@ import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesFo
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
 
 public class SteamWebApiRequestFactoryTest {
 
@@ -100,5 +105,39 @@ public class SteamWebApiRequestFactoryTest {
 				parameters
 						.get(GetGlobalAchievementPercentagesForAppRequestBuilder.REQUEST_PARAM_GAME_ID),
 				String.valueOf(gameId));
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testCreateGetPlayerSummariesRequestMissingSteamIds() {
+
+		SteamWebApiRequestFactory.createGetPlayerSummariesRequest(Collections
+				.<String> emptyList());
+	}
+
+	@Test
+	public void testCreateGetPlayerSummariesRequest() {
+
+		List<String> steamIds = new ArrayList<String>();
+		steamIds.add("123");
+		steamIds.add("456");
+		steamIds.add("789");
+
+		GetPlayerSummariesRequest request = SteamWebApiRequestFactory
+				.createGetPlayerSummariesRequest(steamIds);
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_PLAYER_SUMMARIES);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_TWO);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetPlayerSummariesRequestBuilder.REQUEST_PARAM_STEAM_IDS),
+				String.valueOf("123,456,789"));
 	}
 }
