@@ -17,7 +17,7 @@ import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
  */
 public class SteamWebApiRequest extends SteamApiRequest {
 
-	private static final String WEB_API_BASE_URL = "api.steampowered.com";
+	static final String WEB_API_BASE_URL = "api.steampowered.com";
 
 	private final SteamWebApiInterface apiInterface;
 

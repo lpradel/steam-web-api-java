@@ -26,6 +26,7 @@ public class SteamWebApiRequestTest extends BaseTest {
 
 		SteamWebApiRequest request = builder.build();
 
+		assertEquals(request.getBaseUrl(), SteamWebApiRequest.WEB_API_BASE_URL);
 		assertEquals(request.getApiInterface(),
 				SteamWebApiInterface.I_STEAM_USER);
 		assertEquals(request.getInterfaceMethod(),
