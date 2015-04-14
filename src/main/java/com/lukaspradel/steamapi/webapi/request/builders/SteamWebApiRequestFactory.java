@@ -2,6 +2,9 @@ package com.lukaspradel.steamapi.webapi.request.builders;
 
 import java.util.List;
 
+import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
+import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.GetFriendListRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
@@ -42,5 +45,17 @@ public abstract class SteamWebApiRequestFactory {
 			List<String> steamIds) {
 
 		return new GetPlayerSummariesRequestBuilder(steamIds).buildRequest();
+	}
+
+	public static GetFriendListRequest createGetFriendListRequest(String steamId) {
+
+		return new GetFriendListRequestBuilder(steamId).buildRequest();
+	}
+
+	public static GetFriendListRequest createGetFriendListRequest(
+			String steamId, Relationship relationship) {
+
+		return new GetFriendListRequestBuilder(steamId).relationship(
+				relationship).buildRequest();
 	}
 }

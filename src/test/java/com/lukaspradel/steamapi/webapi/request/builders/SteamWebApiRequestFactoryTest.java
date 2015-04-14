@@ -14,6 +14,9 @@ import org.testng.annotations.Test;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
+import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
+import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.GetFriendListRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
@@ -139,5 +142,74 @@ public class SteamWebApiRequestFactoryTest {
 				parameters
 						.get(GetPlayerSummariesRequestBuilder.REQUEST_PARAM_STEAM_IDS),
 				String.valueOf("123,456,789"));
+	}
+
+	@Test
+	public void testCreateGetFriendListRequestOnlySteamId() {
+
+		GetFriendListRequest request = SteamWebApiRequestFactory
+				.createGetFriendListRequest("12345");
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_FRIEND_LIST);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetFriendListRequestBuilder.REQUEST_PARAM_STEAM_ID),
+				String.valueOf("12345"));
+	}
+
+	@Test
+	public void testCreateGetFriendListRequestAllParameters() {
+
+		// Relationship ALL
+		GetFriendListRequest request = SteamWebApiRequestFactory
+				.createGetFriendListRequest("12345", Relationship.ALL);
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_FRIEND_LIST);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetFriendListRequestBuilder.REQUEST_PARAM_STEAM_ID),
+				String.valueOf("12345"));
+		assertEquals(
+				parameters
+						.get(GetFriendListRequestBuilder.REQUEST_PARAM_RELATIONSHIP),
+				String.valueOf("all"));
+
+		// Relationship FRIEND
+		request = SteamWebApiRequestFactory.createGetFriendListRequest("12345",
+				Relationship.FRIEND);
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_FRIEND_LIST);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetFriendListRequestBuilder.REQUEST_PARAM_STEAM_ID),
+				String.valueOf("12345"));
+		assertEquals(
+				parameters
+						.get(GetFriendListRequestBuilder.REQUEST_PARAM_RELATIONSHIP),
+				String.valueOf("friend"));
 	}
 }

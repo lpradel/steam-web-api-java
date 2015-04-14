@@ -19,7 +19,10 @@ import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
+import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
 import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
+import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
+import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
@@ -206,5 +209,33 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getPlayerSummaries.getResponse().getPlayers().size(), 1);
 		assertEquals(getPlayerSummaries.getResponse().getPlayers().get(0)
 				.getSteamid(), "76561197960435530");
+	}
+
+	@Test
+	public void testProcessGetFriendListRequest() throws SteamApiException,
+			IOException {
+
+		GetFriendListRequest getFriendListRequest = SteamWebApiRequestFactory
+				.createGetFriendListRequest("76561197960435530");
+
+		String mockAnswer = readResourceAsString("GetFriendList.json");
+
+		when(requestHandlerMock.getWebApiResponse(getFriendListRequest))
+				.thenReturn(mockAnswer);
+
+		GetFriendList getFriendList = client
+				.<GetFriendList> processRequest(getFriendListRequest);
+
+		assertNotNull(getFriendList);
+		assertTrue(getFriendList.getAdditionalProperties().isEmpty());
+		assertNotNull(getFriendList.getFriendslist());
+		assertNotNull(getFriendList.getFriendslist().getFriends());
+		assertEquals(getFriendList.getFriendslist().getFriends().size(), 291);
+		assertEquals(getFriendList.getFriendslist().getFriends().get(5)
+				.getSteamid(), "76561197960268093");
+		assertEquals(getFriendList.getFriendslist().getFriends().get(5)
+				.getRelationship(), Relationship.FRIEND.toString());
+		assertEquals(getFriendList.getFriendslist().getFriends().get(5)
+				.getFriendSince(), Integer.valueOf(1251433222));
 	}
 }
