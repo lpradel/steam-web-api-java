@@ -22,21 +22,21 @@
         <nexus-staging-maven-plugin.version>1.6.5</nexus-staging-maven-plugin.version>
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
         <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
-        <coveralls-maven-plugin.version>3.0.1</coveralls-maven-plugin.version>
-        <jsonschema2pojo-maven-plugin.version>0.4.5</jsonschema2pojo-maven-plugin.version>
+        <coveralls-maven-plugin.version>3.1.0</coveralls-maven-plugin.version>
+        <jsonschema2pojo-maven-plugin.version>0.4.10</jsonschema2pojo-maven-plugin.version>
 
         <!-- Dependencies versions -->
         <commons-lang.version>2.6</commons-lang.version>
         <commons-io.version>2.4</commons-io.version>
-        <slf4j.version>1.7.7</slf4j.version>
-        <jackson.version>2.4.3</jackson.version>
-        <httpclient.version>4.3.5</httpclient.version>
+        <slf4j.version>1.7.12</slf4j.version>
+        <jackson.version>2.5.2</jackson.version>
+        <httpclient.version>4.4.1</httpclient.version>
         <cobertura.version>2.1.1</cobertura.version>
 
         <!-- Test dependencies versions -->
-        <testng.version>6.8.8</testng.version>
-        <mockito.version>1.10.8</mockito.version>
-        <powermock.version>1.5.6</powermock.version>
+        <testng.version>6.8.21</testng.version>
+        <mockito.version>1.10.19</mockito.version>
+        <powermock.version>1.6.2</powermock.version>
     </properties>
 
     <licenses>
