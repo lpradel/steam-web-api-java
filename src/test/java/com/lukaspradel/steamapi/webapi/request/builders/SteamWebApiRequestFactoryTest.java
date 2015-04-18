@@ -21,6 +21,8 @@ import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesFo
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
 
@@ -211,5 +213,59 @@ public class SteamWebApiRequestFactoryTest {
 				parameters
 						.get(GetFriendListRequestBuilder.REQUEST_PARAM_RELATIONSHIP),
 				String.valueOf("friend"));
+	}
+
+	@Test
+	public void testCreateGetPlayerAchievementsRequestOnlySteamIdAndAppId() {
+
+		GetPlayerAchievementsRequest request = SteamWebApiRequestFactory
+				.createGetPlayerAchievementsRequest(123, "12345");
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER_STATS);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_PLAYER_ACHIEVEMENTS);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetPlayerAchievementsRequestBuilder.REQUEST_PARAM_APP_ID),
+				String.valueOf("123"));
+		assertEquals(
+				parameters
+						.get(GetPlayerAchievementsRequestBuilder.REQUEST_PARAM_STEAM_ID),
+				String.valueOf("12345"));
+	}
+
+	@Test
+	public void testGetPlayerAchievementsRequestAllParameters() {
+
+		GetPlayerAchievementsRequest request = SteamWebApiRequestFactory
+				.createGetPlayerAchievementsRequest(123, "12345", "german");
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER_STATS);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_PLAYER_ACHIEVEMENTS);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetPlayerAchievementsRequestBuilder.REQUEST_PARAM_APP_ID),
+				String.valueOf("123"));
+		assertEquals(
+				parameters
+						.get(GetPlayerAchievementsRequestBuilder.REQUEST_PARAM_STEAM_ID),
+				String.valueOf("12345"));
+		assertEquals(
+				parameters
+						.get(GetPlayerAchievementsRequestBuilder.REQUEST_PARAM_LANGUAGE),
+				String.valueOf("german"));
 	}
 }

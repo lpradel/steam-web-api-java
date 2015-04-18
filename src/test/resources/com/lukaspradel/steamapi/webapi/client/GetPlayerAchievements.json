@@ -1,0 +1,2062 @@
+{
+    "playerstats": {
+        "steamID": "76561197972495328",
+        "gameName": "Team Fortress 2",
+        "achievements": [
+            {
+                "apiname": "TF_PLAY_GAME_EVERYCLASS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PLAY_GAME_EVERYMAP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_GET_HEALPOINTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_BURN_PLAYERSINMINIMUMTIME",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_GET_TURRETKILLS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_KILL_NEMESIS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_GET_CONSECUTIVEKILLS_NODEATHS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_GET_HEALED_BYENEMY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PLAY_GAME_FRIENDSONLY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_WIN_MULTIPLEGAMES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_GET_MULTIPLEKILLS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_GET_HEADSHOTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_TOP_SCOREBOARD",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_HEAL_UNDER_FIRE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_SIMUL_CHARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_SETUP_CHARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_RAPID_CHARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_COUNTER_CHARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_SWITCH_TO_MEDIC",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_SAVE_TEAMMATE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_CHARGE_BLOCKER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ASSIST_MEDIC",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_SYRINGE_SCOUTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_BONESAW_MEDICS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ASSIST_HEAVY_LONG",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ASSIST_SCOUT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ASSIST_PYRO",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ASSIST_HEAVY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ASSIST_DEMOMAN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_HEAL_ENGINEER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ASSIST_CAPTURER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_HEAL_CALLERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_WIN_2FORT_NOENEMYCAPS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_WIN_WELL_MINIMUMTIME",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_WIN_HYDRO_NOENEMYCAPS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_WIN_DUSTBOWL_NOENEMYCAPS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_WIN_GRAVELPIT_NOENEMYCAPS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_EXTINGUISH_TEAMMATES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ASSIST_VS_NEMESES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_KILL_WHILE_CHARGED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_BONESAW_NOMISSES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_HEAL_LARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_HEAL_HUGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_HEAL_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_KILL_HEALED_SPY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_SAVE_FALLING_TEAMMATE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_CHARGE_JUGGLE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_FREEZECAM_RAGDOLL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_BONESAW_SPY_CALLERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_CHARGE_FRIENDS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_INVITE_JOIN_CHARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_HEAL_ACHIEVER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ASSIST_SOLDIER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MEDIC_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_MULTIWEAPONS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_SIMULBURN_SCOUTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_FORCE_WATERJUMP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_POSTDEATH",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_SPIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_CARRIERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_REVEAL_SPIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_CAMP_TELEPORTERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_CAMP_POSITION",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_AXE_SMALL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_AXE_LARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_BURN_SPIES_AS_YOU",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_BURN_SNIPERS_ZOOMED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_BURN_MEDICS_CHARGED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_HEAVIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_UNDERWATER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_UBERCHARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_DESTROY_BUILDINGS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_DEFEND_POINTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_DAMAGE_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_TAUNT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_BURN_SPY_TAUNT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_DOMINATE_LEAVESVR",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_TAUNTERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_BURN_RJ_SOLDIER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_FREEZECAM_TAUNTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_BURN_MEDICPAIR",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_FROM_BEHIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_TEAMWORK",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_REFLECT_CROCKET_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_KILL_GRIND_LARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_IGNITE_FLAREGUN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_REFLECT_PROJECTILES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_DOUBLE_KO",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_DAMAGE_TAKEN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_DEFEND_MEDIC",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_ASSIST_MEDIC_LARGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_EARN_MEDIC_DOMINATION",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_TAUNT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_FLAG_CARRIERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_MEDIC_PAIR",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_BLOCK_INVULN_HEAVY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_BLOCK_CART",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_RECEIVE_UBER_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_STAND_NEAR_DISPENSER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_ASSIST_HEAVY_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_CLEAR_STICKYBOMBS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_UNDERWATER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_TAKE_MULTI_DAMAGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_DOMINATED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_SURVIVE_CROCKET",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_ASSIST_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_UNCOVER_SPIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_WHILE_SPUNUP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_FIRE_LOTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_CRIT_PUNCH",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_HEAL_MEDIKITS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_SHOTGUN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_FIRST_TO_CAP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_PAYLOAD_CAP_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_MIDAIR_MINIGUN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_DEFEND_CONTROL_POINT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_CAPPING_ENEMIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_REVENGE_ASSIST",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_TELEPORT_FAST_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_FREEZECAM_TAUNT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_EAT_SANDWICHES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_SCOUTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HEAVY_KILL_HEAVIES_GLOVES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_FIRST_BLOOD",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_FIRST_BLOOD_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_WELL_EARLY_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_LIFETIME_KILLS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_IRON_MAN_KILLS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_DESTROY_TELEPORTERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_DESTROY_BUILDINGS_BEING_BUILT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_DESTROY_SENTRY_WITH_PISTOL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_DOUBLE_JUMPS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_ASSIST_MEDIC",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_STEAL_SANDWICH",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_KILL_CHARGED_MEDICS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_SURVIVE_DAMAGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_DOUBLEJUMP_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_FLAG_CAP_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_THREE_FLAGCAPS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_DODGE_DAMAGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_KNOCK_INTO_TRAIN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_KILL_STUNNED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_STUN_INTO_TRAIN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_STUN_UBER_ENEMIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_STUN_CAPPING_ENEMIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_MAX_STUNS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_STUN_SCOUT_WITH_THEIR_BALL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_KILL_IN_DODGE_COOLDOWN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_KILL_FROM_BEHIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_CAPTURE_LAST_POINT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_CAPTURE_THREE_POINTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_FAST_CAP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_START_AND_FINISH_CAP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_BLOCK_CAPS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_CARRIER_KILL_CARRIER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_CAP_FLAG_WITHOUT_ATTACKING",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_LONG_DISTANCE_RUNNER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_TAUNT_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_JARATE_DOMINATED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_FREEZECAM_HAT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_RIFLE_NO_MISSING",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_CAPTURE_FLAG",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_WEAPONS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_HEADSHOT_SNIPERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_DESTROY_SENTRYGUNS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_INVIS_SPY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_MIDAIR_SCOUT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_FREEZECAM_WAVE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_DOMINATE_SNIPER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_SPIES_MELEE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_HEADSHOT_DEMOMAN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_RJER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_OBJECTIVES",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_UNSCOPED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_CHARGED_MEDIC",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_GET_BACKSTABBED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_AT_ROUNDSTART",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_HEADSHOT_POST_INVULN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_TOP_SCOREBOARD_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_KILL_FAILED_SPY",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_JARATE_GROUP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_JARATE_MEDIC_PAIR",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_JARATE_REVEAL_SPY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_JARATE_EXTINGUISH",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_BOW_PIN_HEAVY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_BOW_KILL_MEDIC_PAIR",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_BOW_KILL_FLAGCARRIER",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_BOW_PINCUSHION",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_JARATE_ASSISTS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_JARATE_KILL_MELEE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_TAUNT_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_BOW_KILL_WHILEDEAD",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_SNIPERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_FREEZECAM_FLICK",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_DISGUISED_SPY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_DISGUISE_TARGET",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_TAUNT_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_MEDIC_HEALING_YOU",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_ENGY_SAP_BUILDING",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_SAP_BUILDING_BACKSTAB_ENGY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_MEDIC_PAIR",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_FRIENDS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_DOMINATE_SNIPER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BUMP_CLOAKED_SPY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_KILL_SPY_WITH_KNIFE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_SURVIVE_BURNING",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BREAK_SHIELD_KILL_SNIPER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_KILL_WORKING_ENGY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_FAST_CAP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_MEDIC_HEALING_KILL_ENEMY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_KILL_CP_DEFENDERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_DOMINATING_ENEMY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_REVENGE_WITH_BACKSTAB",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_KNIFE_KILL_WHILE_JARATED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_QUICK_KILLS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_SAPPER_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SPY_SAPPER_TEAMWORK",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_MEDIC_CHARGED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_CAPPING_ENEMIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_BACKSTAB_ENEMY_SWITCH_PYRO",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_AMBASSADOR_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SPY_AMBASSADOR_SNIPER_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SPY_FEIGN_DEATH_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_AMBASSADOR_SCOUT_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SPY_CAMP_POSITION",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SNIPER_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SPY_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_COLLECT_PUMPKINS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_DOMINATE_FOR_HAT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_KILL_SCARED_PLAYER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_PUMPKIN_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_DISGUISED_SPY_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_GROUP_WITH_CROCKET",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_TWO_DURING_ROCKET_JUMP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_THREE_DOMINATIONS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_DEFEND_MEDIC",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_TAUNT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_DESTROY_SENTRY_OUT_OF_RANGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_SNIPER_WHILE_DEAD",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_AIRBORNE_TARGET_WHILE_AIRBORNE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_ENGY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_NEMESIS_SHOVEL_KILL",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SOLDIER_DESTROY_STICKIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_CROUCH_ROCKET_JUMP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_BUFF_FRIENDS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_TWENTY_FROM_ABOVE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_SHOOT_MULT_CRITS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_DEFENSELESS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_ON_FIRE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_FIVE_STUNNED",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_FREEZECAM_GIBS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_SPY_KILLER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_DEFEND_CAP_THIRTY_TIMES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_GIB_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_RJ_EQUALIZER_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_BUFF_TEAMMATES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_DEMOMAN_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_PYRO",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_EQUALIZER_STREAK",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_WITH_EQUALIZER_WHILE_HURT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_BOUNCE_THEN_SHOTGUN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_KILL_AIRBORNE_WITH_DIRECT_HIT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_FREEZECAM_TAUNT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_DUO_SOLDIER_KILLS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_MVP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_RIDE_THE_CART",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SOLDIER_ASSIST_MEDIC_UBER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_SOLDIER_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DESTROY_BUILDINGS_WITH_MEDIC",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_DECAPITATE_CLOAKED_SPY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_X_WITH_DIRECTPIPE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DECAPITATE_PLAYERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DECAPITATE_PLAYERS_FAST",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DUO_DEMOMAN_KILLS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DECAPITATE_EQUALIZER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_MELEE_KILL_WHILE_STICKYJUMPING",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_BUILDING_DIRECT_HIT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DOMINATE_THREE_ENGINEERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_PLAYER_AFTER_TP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_TWO_DURING_STICKYJUMP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_BOUNCE_AND_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DECAPITATE_NEMESIS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DAMAGE_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_ENGI_SENTRY_DISPENSER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_X_CAPPING_ONEDET",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_X_DEFENDING",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DESTROY_BUILDINGS_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_X_HEAVIES_FULLHP_ONEDET",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_X_SCOUTS_PYROS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_TAUNT_KILL",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_CHARGE_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_CRIT_SWORD_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_AIR_BURST_KILLS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_STICKYJUMP_CAP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_FREEZECAM_SMILE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_FREEZECAM_RUMP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_ENVIRONMENTAL_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_DESTROY_X_STICKYBOMBS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_STICKJUMP_DISTANCE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL3_WITH_DETONATION",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILLXSAPPINGSPIES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL3_WITH_PIPE_SETUPS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_REVENGE_CRIT_SENTRY_KILLER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_MANUAL_SENTRY_KILLS_BEYOND_RANGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_TELEPORT_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_DISPENSER_EXTINGUISH",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_MANUAL_CLOAKED_SPY_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_MANUAL_SENTRY_ABSORB_DMG",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_ENGINEER_REVENGE_CRIT_LIFE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_KILL_SPY_TWO_SAPPERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_KILL_DISGUISED_SPY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_UPGRADE_BUILDINGS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_DESTROY_SAPPERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_REPAIR_SENTRY_W_MEDIC",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_SENTRY_KILL_LIFETIME_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_ENGINEER_SENTRY_AVENGES_YOU",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_FREEZECAM_TAUNT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_FREEZECAM_SENTRY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_SHOTGUN_KILL_PREV_SENTRY_TARGET",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_DISPENSER_HEAL_GROUP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_SENTRY_KILL_CAPS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_KILL_FLAG_CARRIERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_WASTE_METAL_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_HELP_BUILD_STRUCTURE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_REMOVE_SAPPER_LONG_DIST",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_DESTROY_STICKIES",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_ENGINEER_TAUNT_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_KILL_SNIPERS_SENTRY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_HELP_MANUAL_SENTRY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_KILL_SENTRY_WITH_SENTRY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_MOVE_SENTRY_GET_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_BUILDING_CARRY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_KILL_ASSIST",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_DISPENSER_HEAL_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_REPAIR_TEAM_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_ENGINEER_TANK_DAMAGE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_ENGINEER_HEAVY_ASSIST",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_HALLOWEEN_BOSS_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_COLLECT_GOODY_BAG",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_CRAFT_SAXTON_MASK",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_BOSS_KILL_MELEE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_REPLAY_SAVE_REPLAY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_REPLAY_PERFORMANCE_MODE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_REPLAY_BROWSE_REPLAYS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_COMPLETE_TRAINING",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_GENERAL_KILL_ENEMIES_AFTER_TELEPORTING",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_REPLAY_YOUTUBE_VIEWS_TIER1",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_REPLAY_YOUTUBE_VIEWS_TIER2",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_REPLAY_YOUTUBE_VIEWS_TIER3",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_REPLAY_YOUTUBE_VIEWS_HIGHEST",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_REPLAY_EDIT_TIME",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_FIRE_WATERJUMP",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_EYEBOSS_KILL",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_HALLOWEEN_LOOT_ISLAND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_CHRISTMAS_COLLECT_GIFTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_KILL_CAPPING_ENEMY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_PLAY_GAME_FRIENDS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_WIN_MINTIME",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_WIN_ROUNDS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_FAST_FINAL_CAP",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_TELEPORT_AND_CAP",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_PUSH_INTO_CAULDRON",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_PUSH_BACK_AND_WIN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_PLAY_EACH_CLASS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_KILL_ENEMY_ON_ROOF",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_BACK_AND_FORTH_BATTLE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_FOUNDRY_ACHIEVE_PROGRESS1",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_COMPLETE_POP_FILE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_SOLO_CAPTURE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_PLAY_GAME_FRIENDS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_WIN_ROUNDS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_PLAY_EACH_CLASS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_KILL_ENEMIES_ON_ELEVATOR",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_PUSH_BACK_AND_WIN",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_KILL_CARRIERS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_RIDE_THE_ELEVATOR",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_DENY_NEUTRAL_PICKUP",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_PUSH_INTO_EXHAUST",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_DEFEND_CARRIER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MAPS_DOOMSDAY_ACHIEVE_PROGRESS1",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_KILL_BALLOONICORN_OWNERS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MULTIPLE_BFF",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_TEAM_PYROVISION",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DOMINATE_FOR_GOGGLES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_PYRO_IGNITE_WITH_RAINBOW",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_EARN_MONEY_BONUS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_ADVANCED_EARN_ALL_BONUSES",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_PICKUP_MONEY_ABOUT_TO_EXPIRE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_COLLECT_MONEY_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_PLAY_GAME_FRIENDS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_PLAY_EACH_CLASS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_DESTROY_TWO_TANKS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_DESTROY_TANK_WHILE_DEPLOYING",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_DESTROY_TANK_QUICKLY",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_DEFEND_CAP",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_KILL_BOMB_CARRIERS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_COMPLETE_WAVE_WITHOUT_DYING",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_COMPLETE_TOUR",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_USE_TELEPORT_BOTTLE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_USE_CRIT_BOTTLE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_USE_UBER_BOTTLE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_USE_BUILD_BOTTLE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_USE_AMMO_BOTTLE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_MAX_PRIMARY_UPGRADES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_MAX_PLAYER_RESISTANCES",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_NO_ALARMS_IN_FINAL_WAVE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_KILL_MEDICS_CHARGED",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_KILL_ROBOT_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_KILL_ROBOT_MEGA_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_KILL_SENTRY_BUSTER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_SPY_SAP_ROBOTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_MVM_SOLDIER_BUFF_TEAM",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_HEAVY_RAGE_PUSH_DEPLOYING_ROBOT",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MEDIC_SHARE_BOTTLES",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_DEMO_GROUP_KILL",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_SCOUT_MARK_FOR_DEATH",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_SNIPER_KILL_GROUP",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_PYRO_BOMB_RESET",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_ENGINEER_ESCAPE_SENTRY_BUSTER",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_MERASMUS_COLLECT_LOOT",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_MERASMUS_KILL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_HELLTOWER_RARE_SPELL",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_HELLTOWER_WIN_ROUNDS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_HALLOWEEN_HELLTOWER_ENVIRONMENTAL_KILLS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_HALLOWEEN_HELLTOWER_SKELETON_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_HALLOWEEN_HELLTOWER_KILL_GRIND",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_HELLTOWER_MILESTONE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_HALLOWEEN_HELLTOWER_SKULL_ISLAND_REWARD",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_HELLTOWER_KILL_BROTHERS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_STANDIN_WIN_ROUNDS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_PROCESS_WIN_ROUNDS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_SNAKEWATER_WIN_ROUNDS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_SNAKEWATER_PUSH_BACK_AND_WIN",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_SNAKEWATER_TEAM_KILL",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_SNAKEWATER_DOUBLE_AIR_DEATHS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MAPS_SNAKEWATER_KILL_ENEMIES_IN_MIDDLE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MAPS_ROTTENBURG_TANK",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MAPS_ROTTENBURG_BOMB",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MAPS_MANNHATTAN_PIT",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MAPS_MANNHATTAN_MYSTERY",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MAPS_MANNHATTAN_NO_GATES",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MAPS_MANNHATTAN_STUN_RADIOWAVE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MAPS_MANNHATTAN_BOMB_BOT_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_SENTRY_BUSTER_FRIENDLY_FIRE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MAPS_ROTTENBURG_PIT_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_SNIPER_COLLECT_HEADSHOT_MONEY",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MEDIC_SHIELD_BLOCK_DAMAGE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_MEDIC_REVIVE_TEAMMATES",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_ROCKET_SPECIALIST_KILL_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MVM_ROCKET_SPECIALIST_STUN_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_PARACHUTE_KILL_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_MELEE_KILL_CLASSIC_RIFLE_SNIPER",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_KILL_CHARGING_DEMO",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_SCOUT_BACKSCATTER_KILL_SPY_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SCOUT_BACKSCATTER_KILL_HEAVY_MEDIC_PAIR",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SCOUT_BACKSCATTER_KILL_FRIENDS_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_CLASSIC_RIFLE_NOSCOPE_HEADSHOT",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_CLASSIC_RIFLE_HEADSHOT_JUMPER",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_CLASSIC_RIFLE_GIB_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SOLDIER_PARACHUTE_KILL_GROUP",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SOLDIER_PARACHUTE_DISTANCE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SOLDIER_PARACHUTE_KILL_PARACHUTE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_PARACHUTE_KILL_GROUP",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_PARACHUTE_DISTANCE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_PARACHUTE_KILL_PARACHUTE",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_KILL_PLAYER_YOU_DIDNT_SEE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_DEMOMAN_QUICK_KILLS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_DEMOMAN_CHARGE_KILL_CHARGING_DEMO",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SPY_KILL_BACKSCATTER_SCOUT",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SOLDIER_AIRSTRIKE_MAX_CLIP",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SOLDIER_AIRSTRIKE_GROUP_KILL",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_SNIPER_PARACHUTE_GRIND",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_TAUNT_CONGA_KILL",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_TAUNT_CONGA_LINE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_TAUNT_RPS_ROCK",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_TAUNT_RPS_SCISSORS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_TAUNT_DOSIDO_MELLE_KILL",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_TAUNT_WHILE_CAPPING",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_PYRO_IGNITE_PLAYER_BEING_FLIPPED",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_HALLOWEEN_DOOMSDAY_KILL_KARTS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_DOOMSDAY_COLLECT_DUCKS",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_DOOMSDAY_SCORE_GOALS",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_HALLOWEEN_DOOMSDAY_RESPAWN_TEAMMATES",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_DOOMSDAY_TINY_SMASHER",
+                "achieved": 0
+            },
+            {
+                "apiname": "TF_HALLOWEEN_DOOMSDAY_MILESTONE",
+                "achieved": 1
+            },
+            {
+                "apiname": "TF_HALLOWEEN_DOOMSDAY_WIN_MINIGAMES",
+                "achieved": 1
+            }
+        ]
+        ,
+        "success": true
+    }
+}

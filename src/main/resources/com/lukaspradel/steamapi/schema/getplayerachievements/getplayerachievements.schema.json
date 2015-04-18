@@ -1,7 +1,7 @@
 {
     "type":"object",
     "required":false,
-    "javaType":"com.lukaspradel.steamapi.data.json.playerstats.GetPlayerAchievements",
+    "javaType":"com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievements",
     "properties":{
         "playerstats":{
             "type":"object",
@@ -15,7 +15,7 @@
                         "required":false,
                         "properties":{
                             "achieved":{
-                                "type":"number",
+                                "type":"integer",
                                 "required":false
                             },
                             "apiname":{

@@ -9,6 +9,8 @@ import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesFo
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
@@ -57,5 +59,19 @@ public abstract class SteamWebApiRequestFactory {
 
 		return new GetFriendListRequestBuilder(steamId).relationship(
 				relationship).buildRequest();
+	}
+
+	public static GetPlayerAchievementsRequest createGetPlayerAchievementsRequest(
+			int appId, String steamId) {
+
+		return new GetPlayerAchievementsRequestBuilder(steamId, appId)
+				.buildRequest();
+	}
+
+	public static GetPlayerAchievementsRequest createGetPlayerAchievementsRequest(
+			int appId, String steamId, String language) {
+
+		return new GetPlayerAchievementsRequestBuilder(steamId, appId)
+				.language(language).buildRequest();
 	}
 }
