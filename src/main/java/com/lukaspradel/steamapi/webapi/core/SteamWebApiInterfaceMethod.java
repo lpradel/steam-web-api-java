@@ -5,6 +5,7 @@ import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
 import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsPlayingSharedGame;
 import com.lukaspradel.steamapi.data.json.ownedgames.GetOwnedGames;
+import com.lukaspradel.steamapi.data.json.playerstats.GetPlayerAchievements;
 import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
 import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
 import com.lukaspradel.steamapi.data.json.recentlyplayedgames.GetRecentlyPlayedGames;
@@ -25,7 +26,8 @@ public enum SteamWebApiInterfaceMethod {
 			"GetGlobalAchievementPercentagesForApp",
 			GetGlobalAchievementPercentagesForApp.class), GET_PLAYER_SUMMARIES(
 			"GetPlayerSummaries", GetPlayerSummaries.class), GET_FRIEND_LIST(
-			"GetFriendList", GetFriendList.class), GET_USER_STATS_FOR_GAME(
+			"GetFriendList", GetFriendList.class), GET_PLAYER_ACHIEVEMENTS(
+			"GetPlayerAchievements", GetPlayerAchievements.class), GET_USER_STATS_FOR_GAME(
 			"GetUserStatsForGame", GetUserStatsForGame.class), GET_OWNED_GAMES(
 			"GetOwnedGames", GetOwnedGames.class), GET_RECENTLY_PLAYED_GAMES(
 			"GetRecentlyPlayedGames", GetRecentlyPlayedGames.class), IS_PLAYING_SHARED_GAME(

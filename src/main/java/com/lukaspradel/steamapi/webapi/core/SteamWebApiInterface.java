@@ -45,6 +45,8 @@ public enum SteamWebApiInterface {
 			return I_STEAM_NEWS;
 		case GET_OWNED_GAMES:
 			return I_PLAYER_SERVICE;
+		case GET_PLAYER_ACHIEVEMENTS:
+			return I_STEAM_USER_STATS;
 		case GET_PLAYER_SUMMARIES:
 			return I_STEAM_USER;
 		case GET_RECENTLY_PLAYED_GAMES:
