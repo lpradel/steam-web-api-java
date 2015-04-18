@@ -134,33 +134,73 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>generate-achievementpercentages</id>
+                        <id>generate-getnewsforapp</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <targetPackage>com.lukaspradel.steamapi.data.json.achievementpercentages</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/achievementpercentages</sourceDirectory>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getnewsforapp</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getnewsforapp</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-appnews</id>
+                        <id>generate-getglobalachievementpercentagesforapp</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <targetPackage>com.lukaspradel.steamapi.data.json.appnews</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/appnews</sourceDirectory>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getglobalachievementpercentagesforapp</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getglobalachievementpercentagesforapp</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-friendslist</id>
+                        <id>generate-getplayersummaries</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <targetPackage>com.lukaspradel.steamapi.data.json.friendslist</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/friendslist</sourceDirectory>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getplayersummaries</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getplayersummaries</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-getfriendlist</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getfriendlist</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getfriendlist</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-getuserstatsforgame</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getuserstatsforgame</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getuserstatsforgame</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-getownedgames</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getownedgames</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getownedgames</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-getrecentlyplayedgames</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getrecentlyplayedgames</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getrecentlyplayedgames</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
@@ -171,46 +211,6 @@
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.isplayingsharedgame</targetPackage>
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/isplayingsharedgame</sourceDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>generate-ownedgames</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <targetPackage>com.lukaspradel.steamapi.data.json.ownedgames</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/ownedgames</sourceDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>generate-playerstats</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <targetPackage>com.lukaspradel.steamapi.data.json.playerstats</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/playerstats</sourceDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>generate-playersummaries</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <targetPackage>com.lukaspradel.steamapi.data.json.playersummaries</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/playersummaries</sourceDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>generate-recentlyplayedgames</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <targetPackage>com.lukaspradel.steamapi.data.json.recentlyplayedgames</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/recentlyplayedgames</sourceDirectory>
                         </configuration>
                     </execution>
                 </executions>
