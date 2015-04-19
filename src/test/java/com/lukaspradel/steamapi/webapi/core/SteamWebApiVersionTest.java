@@ -1,16 +1,23 @@
 package com.lukaspradel.steamapi.webapi.core;
 
+import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
 
+import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.reflect.Whitebox;
 import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.BaseTest;
 
+@PrepareForTest(SteamWebApiInterfaceMethod.class)
 public class SteamWebApiVersionTest extends BaseTest {
 
-	@Test(expectedExceptions = IllegalArgumentException.class)
+	@Mock
+	private SteamWebApiInterfaceMethod additionalSteamWebApiInterfaceMethod;
+
+	@Test(expectedExceptions = IllegalArgumentException.class, dependsOnMethods = { "testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnumValue" })
 	public void testGetCurrentVersionForWebApiInterfaceMethodError() {
 
 		SteamWebApiVersion.getCurrentVersionForWebApiInterfaceMethod(null);
@@ -25,19 +32,22 @@ public class SteamWebApiVersionTest extends BaseTest {
 		System.arraycopy(values, 0, valuesAndAdditional, 0, values.length);
 
 		// create additional, unknown SteamWebApiInterfaceMethod
-		SteamWebApiInterfaceMethod additionalSteamWebApiInterfaceMethod = PowerMockito
-				.mock(SteamWebApiInterfaceMethod.class);
+		PowerMockito.mockStatic(SteamWebApiInterfaceMethod.class);
+
 		Whitebox.setInternalState(additionalSteamWebApiInterfaceMethod, "name",
 				"ADDITIONAL_STEAMWEBAPIINTERFACEMETHOD");
 		Whitebox.setInternalState(additionalSteamWebApiInterfaceMethod,
 				"ordinal", values.length);
 		valuesAndAdditional[values.length] = additionalSteamWebApiInterfaceMethod;
 
+		when(SteamWebApiInterfaceMethod.values()).thenReturn(
+				valuesAndAdditional);
+
 		SteamWebApiVersion
 				.getCurrentVersionForWebApiInterfaceMethod(additionalSteamWebApiInterfaceMethod);
 	}
 
-	@Test
+	@Test(dependsOnMethods = { "testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnumValue" })
 	public void testGetCurrentVersionForWebApiInterfaceMethod() {
 
 		assertEquals(
