@@ -21,6 +21,7 @@ import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchiev
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
 import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievements;
+import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
 import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
@@ -28,6 +29,7 @@ import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesFo
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
@@ -271,6 +273,46 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getPlayerAchievements.getPlayerstats().getAchievements()
 				.get(1).getApiname(), "TF_PLAY_GAME_EVERYMAP");
 		assertEquals(getPlayerAchievements.getPlayerstats().getAchievements()
+				.get(1).getAchieved(), Integer.valueOf(1));
+	}
+
+	@Test
+	public void testProcessGetUserStatsForGameRequest()
+			throws SteamApiException, IOException {
+
+		GetUserStatsForGameRequest getUserStatsForGameRequest = SteamWebApiRequestFactory
+				.createGetUserStatsForGameRequest(123, "76561197960435530");
+
+		String mockAnswer = readResourceAsString("GetUserStatsForGame.json");
+
+		when(requestHandlerMock.getWebApiResponse(getUserStatsForGameRequest))
+				.thenReturn(mockAnswer);
+
+		GetUserStatsForGame getUserStatsForGame = client
+				.<GetUserStatsForGame> processRequest(getUserStatsForGameRequest);
+
+		assertNotNull(getUserStatsForGame);
+		assertTrue(getUserStatsForGame.getAdditionalProperties().isEmpty());
+		assertNotNull(getUserStatsForGame.getPlayerstats());
+		assertEquals(getUserStatsForGame.getPlayerstats().getGameName(),
+				"Team Fortress 2");
+		assertEquals(getUserStatsForGame.getPlayerstats().getSteamID(),
+				"76561197972495328");
+
+		assertNotNull(getUserStatsForGame.getPlayerstats().getStats());
+		assertEquals(getUserStatsForGame.getPlayerstats().getStats().size(),
+				459);
+		assertEquals(getUserStatsForGame.getPlayerstats().getStats().get(2)
+				.getName(), "Scout.accum.iDominations");
+		assertEquals(getUserStatsForGame.getPlayerstats().getStats().get(2)
+				.getValue(), Integer.valueOf(68));
+
+		assertNotNull(getUserStatsForGame.getPlayerstats().getAchievements());
+		assertEquals(getUserStatsForGame.getPlayerstats().getAchievements()
+				.size(), 393);
+		assertEquals(getUserStatsForGame.getPlayerstats().getAchievements()
+				.get(1).getName(), "TF_PLAY_GAME_EVERYMAP");
+		assertEquals(getUserStatsForGame.getPlayerstats().getAchievements()
 				.get(1).getAchieved(), Integer.valueOf(1));
 	}
 }

@@ -1,0 +1,3420 @@
+{
+    "playerstats": {
+        "steamID": "76561197972495328",
+        "gameName": "Team Fortress 2",
+        "stats": [
+            {
+                "name": "Scout.accum.iBuildingsDestroyed",
+                "value": 123
+            },
+            {
+                "name": "Scout.accum.iDamageDealt",
+                "value": 396994
+            },
+            {
+                "name": "Scout.accum.iDominations",
+                "value": 68
+            },
+            {
+                "name": "Scout.accum.iKillAssists",
+                "value": 515
+            },
+            {
+                "name": "Scout.accum.iNumberOfKills",
+                "value": 1673
+            },
+            {
+                "name": "Scout.accum.iPlayTime",
+                "value": 155076
+            },
+            {
+                "name": "Scout.accum.iPointCaptures",
+                "value": 392
+            },
+            {
+                "name": "Scout.accum.iPointDefenses",
+                "value": 91
+            },
+            {
+                "name": "Scout.accum.iPointsScored",
+                "value": 3308
+            },
+            {
+                "name": "Scout.accum.iRevenge",
+                "value": 30
+            },
+            {
+                "name": "Scout.max.iBuildingsDestroyed",
+                "value": 4
+            },
+            {
+                "name": "Scout.max.iDamageDealt",
+                "value": 1974
+            },
+            {
+                "name": "Scout.max.iDominations",
+                "value": 2
+            },
+            {
+                "name": "Scout.max.iKillAssists",
+                "value": 7
+            },
+            {
+                "name": "Scout.max.iNumberOfKills",
+                "value": 12
+            },
+            {
+                "name": "Scout.max.iPlayTime",
+                "value": 1843
+            },
+            {
+                "name": "Scout.max.iPointCaptures",
+                "value": 4
+            },
+            {
+                "name": "Scout.max.iPointDefenses",
+                "value": 3
+            },
+            {
+                "name": "Scout.max.iPointsScored",
+                "value": 26
+            },
+            {
+                "name": "Scout.max.iRevenge",
+                "value": 2
+            },
+            {
+                "name": "Soldier.accum.iBuildingsDestroyed",
+                "value": 2734
+            },
+            {
+                "name": "Soldier.accum.iDamageDealt",
+                "value": 7211748
+            },
+            {
+                "name": "Soldier.accum.iDominations",
+                "value": 1655
+            },
+            {
+                "name": "Soldier.accum.iKillAssists",
+                "value": 5799
+            },
+            {
+                "name": "Soldier.accum.iNumberOfKills",
+                "value": 28165
+            },
+            {
+                "name": "Soldier.accum.iPlayTime",
+                "value": 1097556
+            },
+            {
+                "name": "Soldier.accum.iPointCaptures",
+                "value": 3045
+            },
+            {
+                "name": "Soldier.accum.iPointDefenses",
+                "value": 1370
+            },
+            {
+                "name": "Soldier.accum.iPointsScored",
+                "value": 40409
+            },
+            {
+                "name": "Soldier.accum.iRevenge",
+                "value": 235
+            },
+            {
+                "name": "Soldier.max.iBuildingsDestroyed",
+                "value": 8
+            },
+            {
+                "name": "Soldier.max.iDamageDealt",
+                "value": 29648
+            },
+            {
+                "name": "Soldier.max.iDominations",
+                "value": 23
+            },
+            {
+                "name": "Soldier.max.iKillAssists",
+                "value": 26
+            },
+            {
+                "name": "Soldier.max.iNumberOfKills",
+                "value": 173
+            },
+            {
+                "name": "Soldier.max.iPlayTime",
+                "value": 2518
+            },
+            {
+                "name": "Soldier.max.iPointCaptures",
+                "value": 17
+            },
+            {
+                "name": "Soldier.max.iPointDefenses",
+                "value": 4
+            },
+            {
+                "name": "Soldier.max.iPointsScored",
+                "value": 186
+            },
+            {
+                "name": "Soldier.max.iRevenge",
+                "value": 2
+            },
+            {
+                "name": "Spy.accum.iBuildingsDestroyed",
+                "value": 550
+            },
+            {
+                "name": "Spy.accum.iDamageDealt",
+                "value": 270807
+            },
+            {
+                "name": "Spy.accum.iDominations",
+                "value": 50
+            },
+            {
+                "name": "Spy.accum.iKillAssists",
+                "value": 146
+            },
+            {
+                "name": "Spy.accum.iNumberOfKills",
+                "value": 1601
+            },
+            {
+                "name": "Spy.accum.iPlayTime",
+                "value": 115087
+            },
+            {
+                "name": "Spy.accum.iPointCaptures",
+                "value": 35
+            },
+            {
+                "name": "Spy.accum.iPointDefenses",
+                "value": 81
+            },
+            {
+                "name": "Spy.accum.iPointsScored",
+                "value": 3689
+            },
+            {
+                "name": "Spy.accum.iRevenge",
+                "value": 25
+            },
+            {
+                "name": "Spy.max.iBuildingsDestroyed",
+                "value": 24
+            },
+            {
+                "name": "Spy.max.iDamageDealt",
+                "value": 2014
+            },
+            {
+                "name": "Spy.max.iDominations",
+                "value": 2
+            },
+            {
+                "name": "Spy.max.iKillAssists",
+                "value": 3
+            },
+            {
+                "name": "Spy.max.iNumberOfKills",
+                "value": 13
+            },
+            {
+                "name": "Spy.max.iPlayTime",
+                "value": 865
+            },
+            {
+                "name": "Spy.max.iPointCaptures",
+                "value": 2
+            },
+            {
+                "name": "Spy.max.iPointDefenses",
+                "value": 3
+            },
+            {
+                "name": "Spy.max.iPointsScored",
+                "value": 38
+            },
+            {
+                "name": "Spy.max.iRevenge",
+                "value": 2
+            },
+            {
+                "name": "Pyro.accum.iBuildingsDestroyed",
+                "value": 319
+            },
+            {
+                "name": "Pyro.accum.iDamageDealt",
+                "value": 786540
+            },
+            {
+                "name": "Pyro.accum.iDominations",
+                "value": 198
+            },
+            {
+                "name": "Pyro.accum.iKillAssists",
+                "value": 970
+            },
+            {
+                "name": "Pyro.accum.iNumberOfKills",
+                "value": 3813
+            },
+            {
+                "name": "Pyro.accum.iPlayTime",
+                "value": 225134
+            },
+            {
+                "name": "Pyro.accum.iPointCaptures",
+                "value": 260
+            },
+            {
+                "name": "Pyro.accum.iPointDefenses",
+                "value": 213
+            },
+            {
+                "name": "Pyro.accum.iPointsScored",
+                "value": 5784
+            },
+            {
+                "name": "Pyro.accum.iRevenge",
+                "value": 37
+            },
+            {
+                "name": "Pyro.max.iBuildingsDestroyed",
+                "value": 6
+            },
+            {
+                "name": "Pyro.max.iDamageDealt",
+                "value": 2883
+            },
+            {
+                "name": "Pyro.max.iDominations",
+                "value": 3
+            },
+            {
+                "name": "Pyro.max.iKillAssists",
+                "value": 6
+            },
+            {
+                "name": "Pyro.max.iNumberOfKills",
+                "value": 15
+            },
+            {
+                "name": "Pyro.max.iPlayTime",
+                "value": 3329
+            },
+            {
+                "name": "Pyro.max.iPointCaptures",
+                "value": 9
+            },
+            {
+                "name": "Pyro.max.iPointDefenses",
+                "value": 6
+            },
+            {
+                "name": "Pyro.max.iPointsScored",
+                "value": 25
+            },
+            {
+                "name": "Pyro.max.iRevenge",
+                "value": 2
+            },
+            {
+                "name": "Medic.accum.iBuildingsDestroyed",
+                "value": 11
+            },
+            {
+                "name": "Medic.accum.iDamageDealt",
+                "value": 102546
+            },
+            {
+                "name": "Medic.accum.iDominations",
+                "value": 246
+            },
+            {
+                "name": "Medic.accum.iKillAssists",
+                "value": 3780
+            },
+            {
+                "name": "Medic.accum.iNumberOfKills",
+                "value": 476
+            },
+            {
+                "name": "Medic.accum.iNumInvulnerable",
+                "value": 1006
+            },
+            {
+                "name": "Medic.accum.iPlayTime",
+                "value": 177725
+            },
+            {
+                "name": "Medic.accum.iPointCaptures",
+                "value": 413
+            },
+            {
+                "name": "Medic.accum.iPointDefenses",
+                "value": 72
+            },
+            {
+                "name": "Medic.accum.iPointsScored",
+                "value": 6389
+            },
+            {
+                "name": "Medic.accum.iRevenge",
+                "value": 46
+            },
+            {
+                "name": "Medic.max.iBuildingsDestroyed",
+                "value": 2
+            },
+            {
+                "name": "Medic.max.iDamageDealt",
+                "value": 1338
+            },
+            {
+                "name": "Medic.max.iDominations",
+                "value": 4
+            },
+            {
+                "name": "Medic.max.iKillAssists",
+                "value": 22
+            },
+            {
+                "name": "Medic.max.iNumberOfKills",
+                "value": 9
+            },
+            {
+                "name": "Medic.max.iNumInvulnerable",
+                "value": 5
+            },
+            {
+                "name": "Medic.max.iPlayTime",
+                "value": 3181
+            },
+            {
+                "name": "Medic.max.iPointCaptures",
+                "value": 5
+            },
+            {
+                "name": "Medic.max.iPointDefenses",
+                "value": 3
+            },
+            {
+                "name": "Medic.max.iPointsScored",
+                "value": 29
+            },
+            {
+                "name": "Medic.max.iRevenge",
+                "value": 2
+            },
+            {
+                "name": "Demoman.accum.iBuildingsDestroyed",
+                "value": 798
+            },
+            {
+                "name": "Demoman.accum.iDamageDealt",
+                "value": 1328157
+            },
+            {
+                "name": "Demoman.accum.iDominations",
+                "value": 317
+            },
+            {
+                "name": "Demoman.accum.iKillAssists",
+                "value": 920
+            },
+            {
+                "name": "Demoman.accum.iNumberOfKills",
+                "value": 5471
+            },
+            {
+                "name": "Demoman.accum.iPlayTime",
+                "value": 290778
+            },
+            {
+                "name": "Demoman.accum.iPointCaptures",
+                "value": 372
+            },
+            {
+                "name": "Demoman.accum.iPointDefenses",
+                "value": 335
+            },
+            {
+                "name": "Demoman.accum.iPointsScored",
+                "value": 8007
+            },
+            {
+                "name": "Demoman.accum.iRevenge",
+                "value": 72
+            },
+            {
+                "name": "Demoman.max.iBuildingsDestroyed",
+                "value": 11
+            },
+            {
+                "name": "Demoman.max.iDamageDealt",
+                "value": 4039
+            },
+            {
+                "name": "Demoman.max.iDominations",
+                "value": 3
+            },
+            {
+                "name": "Demoman.max.iKillAssists",
+                "value": 8
+            },
+            {
+                "name": "Demoman.max.iNumberOfKills",
+                "value": 18
+            },
+            {
+                "name": "Demoman.max.iPlayTime",
+                "value": 1961
+            },
+            {
+                "name": "Demoman.max.iPointCaptures",
+                "value": 9
+            },
+            {
+                "name": "Demoman.max.iPointDefenses",
+                "value": 4
+            },
+            {
+                "name": "Demoman.max.iPointsScored",
+                "value": 31
+            },
+            {
+                "name": "Demoman.max.iRevenge",
+                "value": 2
+            },
+            {
+                "name": "Heavy.accum.iBuildingsDestroyed",
+                "value": 449
+            },
+            {
+                "name": "Heavy.accum.iDamageDealt",
+                "value": 1416645
+            },
+            {
+                "name": "Heavy.accum.iDominations",
+                "value": 423
+            },
+            {
+                "name": "Heavy.accum.iKillAssists",
+                "value": 1381
+            },
+            {
+                "name": "Heavy.accum.iNumberOfKills",
+                "value": 6041
+            },
+            {
+                "name": "Heavy.accum.iPlayTime",
+                "value": 215229
+            },
+            {
+                "name": "Heavy.accum.iPointCaptures",
+                "value": 993
+            },
+            {
+                "name": "Heavy.accum.iPointDefenses",
+                "value": 250
+            },
+            {
+                "name": "Heavy.accum.iPointsScored",
+                "value": 9444
+            },
+            {
+                "name": "Heavy.accum.iRevenge",
+                "value": 74
+            },
+            {
+                "name": "Heavy.max.iBuildingsDestroyed",
+                "value": 5
+            },
+            {
+                "name": "Heavy.max.iDamageDealt",
+                "value": 4840
+            },
+            {
+                "name": "Heavy.max.iDominations",
+                "value": 4
+            },
+            {
+                "name": "Heavy.max.iKillAssists",
+                "value": 12
+            },
+            {
+                "name": "Heavy.max.iNumberOfKills",
+                "value": 19
+            },
+            {
+                "name": "Heavy.max.iPlayTime",
+                "value": 1636
+            },
+            {
+                "name": "Heavy.max.iPointCaptures",
+                "value": 16
+            },
+            {
+                "name": "Heavy.max.iPointDefenses",
+                "value": 4
+            },
+            {
+                "name": "Heavy.max.iPointsScored",
+                "value": 39
+            },
+            {
+                "name": "Heavy.max.iRevenge",
+                "value": 2
+            },
+            {
+                "name": "Engineer.accum.iBuildingsDestroyed",
+                "value": 200
+            },
+            {
+                "name": "Engineer.accum.iDamageDealt",
+                "value": 1539538
+            },
+            {
+                "name": "Engineer.accum.iDominations",
+                "value": 586
+            },
+            {
+                "name": "Engineer.accum.iKillAssists",
+                "value": 2394
+            },
+            {
+                "name": "Engineer.accum.iNumberOfKills",
+                "value": 6536
+            },
+            {
+                "name": "Engineer.accum.iPlayTime",
+                "value": 468988
+            },
+            {
+                "name": "Engineer.accum.iPointCaptures",
+                "value": 110
+            },
+            {
+                "name": "Engineer.accum.iPointDefenses",
+                "value": 375
+            },
+            {
+                "name": "Engineer.accum.iPointsScored",
+                "value": 11200
+            },
+            {
+                "name": "Engineer.accum.iRevenge",
+                "value": 49
+            },
+            {
+                "name": "Engineer.max.iBuildingsDestroyed",
+                "value": 9
+            },
+            {
+                "name": "Engineer.max.iDamageDealt",
+                "value": 7591
+            },
+            {
+                "name": "Engineer.max.iDominations",
+                "value": 7
+            },
+            {
+                "name": "Engineer.max.iKillAssists",
+                "value": 16
+            },
+            {
+                "name": "Engineer.max.iNumberOfKills",
+                "value": 38
+            },
+            {
+                "name": "Engineer.max.iPlayTime",
+                "value": 1951
+            },
+            {
+                "name": "Engineer.max.iPointCaptures",
+                "value": 10
+            },
+            {
+                "name": "Engineer.max.iPointDefenses",
+                "value": 7
+            },
+            {
+                "name": "Engineer.max.iPointsScored",
+                "value": 79
+            },
+            {
+                "name": "Engineer.max.iRevenge",
+                "value": 1
+            },
+            {
+                "name": "Sniper.accum.iBuildingsDestroyed",
+                "value": 46
+            },
+            {
+                "name": "Sniper.accum.iDamageDealt",
+                "value": 184312
+            },
+            {
+                "name": "Sniper.accum.iDominations",
+                "value": 46
+            },
+            {
+                "name": "Sniper.accum.iKillAssists",
+                "value": 202
+            },
+            {
+                "name": "Sniper.accum.iNumberOfKills",
+                "value": 795
+            },
+            {
+                "name": "Sniper.accum.iPlayTime",
+                "value": 67915
+            },
+            {
+                "name": "Sniper.accum.iPointCaptures",
+                "value": 77
+            },
+            {
+                "name": "Sniper.accum.iPointDefenses",
+                "value": 17
+            },
+            {
+                "name": "Sniper.accum.iPointsScored",
+                "value": 1199
+            },
+            {
+                "name": "Sniper.accum.iRevenge",
+                "value": 19
+            },
+            {
+                "name": "Sniper.max.iBuildingsDestroyed",
+                "value": 2
+            },
+            {
+                "name": "Sniper.max.iDamageDealt",
+                "value": 1853
+            },
+            {
+                "name": "Sniper.max.iDominations",
+                "value": 2
+            },
+            {
+                "name": "Sniper.max.iKillAssists",
+                "value": 5
+            },
+            {
+                "name": "Sniper.max.iNumberOfKills",
+                "value": 10
+            },
+            {
+                "name": "Sniper.max.iPlayTime",
+                "value": 1503
+            },
+            {
+                "name": "Sniper.max.iPointCaptures",
+                "value": 15
+            },
+            {
+                "name": "Sniper.max.iPointDefenses",
+                "value": 2
+            },
+            {
+                "name": "Sniper.max.iPointsScored",
+                "value": 42
+            },
+            {
+                "name": "Sniper.max.iRevenge",
+                "value": 1
+            },
+            {
+                "name": "Spy.accum.iBackstabs",
+                "value": 1174
+            },
+            {
+                "name": "Spy.max.iBackstabs",
+                "value": 12
+            },
+            {
+                "name": "Engineer.accum.iBuildingsBuilt",
+                "value": 10503
+            },
+            {
+                "name": "Engineer.max.iBuildingsBuilt",
+                "value": 41
+            },
+            {
+                "name": "Sniper.accum.iHeadshots",
+                "value": 330
+            },
+            {
+                "name": "Sniper.max.iHeadshots",
+                "value": 9
+            },
+            {
+                "name": "Spy.accum.iHealthPointsLeached",
+                "value": 7025
+            },
+            {
+                "name": "Spy.max.iHealthPointsLeached",
+                "value": 583
+            },
+            {
+                "name": "Medic.accum.iHealthPointsHealed",
+                "value": 2039477
+            },
+            {
+                "name": "Medic.max.iHealthPointsHealed",
+                "value": 7292
+            },
+            {
+                "name": "Engineer.accum.iNumTeleports",
+                "value": 4876
+            },
+            {
+                "name": "Engineer.max.iNumTeleports",
+                "value": 92
+            },
+            {
+                "name": "Engineer.max.iSentryKills",
+                "value": 26
+            },
+            {
+                "name": "TF_PYRO_FORCE_WATERJUMP_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_PYRO_KILL_POSTDEATH_STAT",
+                "value": 15
+            },
+            {
+                "name": "TF_PYRO_KILL_SPIES_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_PYRO_KILL_CARRIERS_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_PYRO_REVEAL_SPIES_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_PYRO_BURN_SPIES_AS_YOU_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_PYRO_BURN_SNIPERS_ZOOMED_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_PYRO_BURN_MEDICS_CHARGED_STAT",
+                "value": 3
+            },
+            {
+                "name": "TF_PYRO_KILL_HEAVIES_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_PYRO_KILL_UNDERWATER_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_PYRO_DESTROY_BUILDINGS_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_PYRO_DEFEND_POINTS_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_PYRO_KILL_GRIND_STAT",
+                "value": 500
+            },
+            {
+                "name": "TF_PYRO_KILL_TAUNTERS_STAT",
+                "value": 3
+            },
+            {
+                "name": "TF_PYRO_CAMP_TELEPORTERS_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_PYRO_FREEZECAM_TAUNTS_STAT",
+                "value": 3
+            },
+            {
+                "name": "TF_PYRO_KILL_FROM_BEHIND_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_PYRO_KILL_GRIND_LARGE_STAT",
+                "value": 1000
+            },
+            {
+                "name": "TF_PYRO_IGNITE_FLAREGUN_STAT",
+                "value": 100
+            },
+            {
+                "name": "Pyro.accum.iFireDamage",
+                "value": 527289
+            },
+            {
+                "name": "TF_HEAVY_DEFEND_MEDIC_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_HEAVY_KILL_FLAG_CARRIERS_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_HEAVY_BLOCK_CART_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_HEAVY_RECEIVE_UBER_GRIND_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_HEAVY_STAND_NEAR_DISPENSER_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_HEAVY_ASSIST_HEAVY_GRIND_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_HEAVY_CLEAR_STICKYBOMBS_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_HEAVY_KILL_UNDERWATER_STAT",
+                "value": 100
+            },
+            {
+                "name": "TF_HEAVY_KILL_DOMINATED_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_HEAVY_ASSIST_GRIND_STAT",
+                "value": 1000
+            },
+            {
+                "name": "TF_HEAVY_UNCOVER_SPIES_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_HEAVY_PAYLOAD_CAP_GRIND_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_HEAVY_KILL_MIDAIR_MINIGUN_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_HEAVY_DEFEND_CONTROL_POINT_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_HEAVY_KILL_CAPPING_ENEMIES_STAT",
+                "value": 15
+            },
+            {
+                "name": "TF_HEAVY_REVENGE_ASSIST_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_HEAVY_EAT_SANDWICHES_STAT",
+                "value": 100
+            },
+            {
+                "name": "TF_HEAVY_KILL_SCOUTS_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_HEAVY_KILL_HEAVIES_GLOVES_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_PYRO_KILL_MULTIWEAPONS_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_SCOUT_FIRST_BLOOD_KILL_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_SCOUT_LIFETIME_KILLS_STAT",
+                "value": 2004
+            },
+            {
+                "name": "TF_SCOUT_DESTROY_TELEPORTERS_STAT",
+                "value": 3
+            },
+            {
+                "name": "TF_SCOUT_DESTROY_BUILDINGS_BEING_BUILT_STAT",
+                "value": 3
+            },
+            {
+                "name": "TF_SCOUT_DOUBLE_JUMPS_STAT",
+                "value": 1000
+            },
+            {
+                "name": "TF_SCOUT_DOUBLEJUMP_KILL_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_SCOUT_FLAG_CAP_GRIND_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_SCOUT_KILL_STUNNED_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_SCOUT_STUN_UBER_ENEMIES_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_SCOUT_STUN_CAPPING_ENEMIES_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_SCOUT_KILL_IN_DODGE_COOLDOWN_STAT",
+                "value": 1
+            },
+            {
+                "name": "TF_SCOUT_KILL_FROM_BEHIND_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_SCOUT_START_AND_FINISH_CAP_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_SCOUT_BLOCK_CAPS_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_SCOUT_LONG_DISTANCE_RUNNER_STAT",
+                "value": 25000
+            },
+            {
+                "name": "TF_SNIPER_KILL_GRIND_STAT",
+                "value": 1000
+            },
+            {
+                "name": "TF_SNIPER_HEADSHOT_SNIPERS_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_SNIPER_DESTROY_SENTRYGUNS_STAT",
+                "value": 3
+            },
+            {
+                "name": "TF_SNIPER_KILL_SPIES_MELEE_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_SNIPER_KILL_UNSCOPED_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_SNIPER_GET_BACKSTABBED_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_SNIPER_TOP_SCOREBOARD_GRIND_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_FRIENDS_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_SPY_KILL_CP_DEFENDERS_STAT",
+                "value": 15
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_GRIND_STAT",
+                "value": 1000
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_CAPPING_ENEMIES_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_SPY_AMBASSADOR_GRIND_STAT",
+                "value": 27
+            },
+            {
+                "name": "TF_SPY_AMBASSADOR_SNIPER_GRIND_STAT",
+                "value": 2
+            },
+            {
+                "name": "TF_SPY_AMBASSADOR_SCOUT_GRIND_STAT",
+                "value": 2
+            },
+            {
+                "name": "TF_SPY_SAPPER_GRIND_STAT",
+                "value": 311
+            },
+            {
+                "name": "TF_SPY_KILL_WORKING_ENGY_STAT",
+                "value": 1
+            },
+            {
+                "name": "Spy.accum.iHeadshots",
+                "value": 1
+            },
+            {
+                "name": "Spy.max.iHeadshots",
+                "value": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_COLLECT_PUMPKINS_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_HALLOWEEN_PUMPKIN_KILL_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_SOLDIER_KILL_DEMOMAN_GRIND_STAT",
+                "value": 500
+            },
+            {
+                "name": "TF_SOLDIER_KILL_WITH_EQUALIZER_WHILE_HURT_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_SOLDIER_KILL_AIRBORNE_WITH_DIRECT_HIT_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_SOLDIER_DESTROY_SENTRY_OUT_OF_RANGE_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_SOLDIER_DUO_SOLDIER_KILLS_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_SOLDIER_MVP_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_SOLDIER_KILL_ON_FIRE_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_SOLDIER_GIB_GRIND_STAT",
+                "value": 1000
+            },
+            {
+                "name": "TF_SOLDIER_KILL_TWENTY_FROM_ABOVE_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_SOLDIER_KILL_FIVE_STUNNED_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_SOLDIER_DEFEND_CAP_THIRTY_TIMES_STAT",
+                "value": 30
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_SOLDIER_GRIND_STAT",
+                "value": 500
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_X_WITH_DIRECTPIPE_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_DEMOMAN_DOMINATE_THREE_ENGINEERS_STAT",
+                "value": 3
+            },
+            {
+                "name": "TF_DEMOMAN_DECAPITATE_PLAYERS_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_DEMOMAN_DUO_DEMOMAN_KILLS_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_X_DEFENDING_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_DEMOMAN_DESTROY_BUILDINGS_GRIND_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_X_HEAVIES_FULLHP_ONEDET_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_X_SCOUTS_PYROS_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_DEMOMAN_DESTROY_X_STICKYBOMBS_STAT",
+                "value": 42
+            },
+            {
+                "name": "TF_DEMOMAN_CRIT_SWORD_KILL_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_DEMOMAN_AIR_BURST_KILLS_STAT",
+                "value": 30
+            },
+            {
+                "name": "TF_DEMOMAN_KILLXSAPPINGSPIES_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_ENGINEER_MANUAL_SENTRY_KILLS_BEYOND_RANGE_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_ENGINEER_SENTRY_KILL_CAPS_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_ENGINEER_DESTROY_SAPPERS_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_ENGINEER_HELP_MANUAL_SENTRY_STAT",
+                "value": 62
+            },
+            {
+                "name": "TF_ENGINEER_TELEPORT_GRIND_STAT",
+                "value": 100
+            },
+            {
+                "name": "TF_ENGINEER_DISPENSER_EXTINGUISH_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_ENGINEER_MANUAL_CLOAKED_SPY_KILL_STAT",
+                "value": 3
+            },
+            {
+                "name": "TF_ENGINEER_UPGRADE_BUILDINGS_STAT",
+                "value": 50
+            },
+            {
+                "name": "TF_ENGINEER_SENTRY_KILL_LIFETIME_GRIND_STAT",
+                "value": 2689
+            },
+            {
+                "name": "TF_ENGINEER_WASTE_METAL_GRIND_STAT",
+                "value": 10000
+            },
+            {
+                "name": "TF_ENGINEER_KILL_FLAG_CARRIERS_STAT",
+                "value": 20
+            },
+            {
+                "name": "TF_ENGINEER_DESTROY_STICKIES_STAT",
+                "value": 4
+            },
+            {
+                "name": "TF_ENGINEER_KILL_SNIPERS_SENTRY_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_ENGINEER_BUILDING_CARRY_STAT",
+                "value": 1000
+            },
+            {
+                "name": "TF_ENGINEER_KILL_ASSIST_STAT",
+                "value": 10
+            },
+            {
+                "name": "TF_ENGINEER_DISPENSER_HEAL_GRIND_STAT",
+                "value": 100000
+            },
+            {
+                "name": "TF_ENGINEER_REPAIR_TEAM_GRIND_STAT",
+                "value": 14381
+            },
+            {
+                "name": "TF_CHRISTMAS_COLLECT_GIFTS_STAT",
+                "value": 3
+            },
+            {
+                "name": "TF_MAPS_FOUNDRY_WIN_ROUNDS_STAT",
+                "value": 29
+            },
+            {
+                "name": "Soldier.mvm.accum.iPlayTime",
+                "value": 18
+            },
+            {
+                "name": "Soldier.mvm.max.iPlayTime",
+                "value": 10
+            },
+            {
+                "name": "Spy.mvm.accum.iDamageDealt",
+                "value": 75378
+            },
+            {
+                "name": "Spy.mvm.accum.iKillAssists",
+                "value": 11
+            },
+            {
+                "name": "Spy.mvm.accum.iNumberOfKills",
+                "value": 424
+            },
+            {
+                "name": "Spy.mvm.accum.iPlayTime",
+                "value": 9766
+            },
+            {
+                "name": "Spy.mvm.accum.iPointDefenses",
+                "value": 19
+            },
+            {
+                "name": "Spy.mvm.accum.iPointsScored",
+                "value": 853
+            },
+            {
+                "name": "Spy.mvm.max.iDamageDealt",
+                "value": 7456
+            },
+            {
+                "name": "Spy.mvm.max.iKillAssists",
+                "value": 2
+            },
+            {
+                "name": "Spy.mvm.max.iNumberOfKills",
+                "value": 32
+            },
+            {
+                "name": "Spy.mvm.max.iPlayTime",
+                "value": 528
+            },
+            {
+                "name": "Spy.mvm.max.iPointDefenses",
+                "value": 3
+            },
+            {
+                "name": "Spy.mvm.max.iPointsScored",
+                "value": 65
+            },
+            {
+                "name": "Pyro.mvm.accum.iPlayTime",
+                "value": 18
+            },
+            {
+                "name": "Pyro.mvm.max.iPlayTime",
+                "value": 18
+            },
+            {
+                "name": "Medic.mvm.accum.iDamageDealt",
+                "value": 3561
+            },
+            {
+                "name": "Medic.mvm.accum.iKillAssists",
+                "value": 309
+            },
+            {
+                "name": "Medic.mvm.accum.iNumberOfKills",
+                "value": 12
+            },
+            {
+                "name": "Medic.mvm.accum.iNumInvulnerable",
+                "value": 43
+            },
+            {
+                "name": "Medic.mvm.accum.iPlayTime",
+                "value": 4343
+            },
+            {
+                "name": "Medic.mvm.accum.iPointDefenses",
+                "value": 4
+            },
+            {
+                "name": "Medic.mvm.accum.iPointsScored",
+                "value": 309
+            },
+            {
+                "name": "Medic.mvm.max.iDamageDealt",
+                "value": 1198
+            },
+            {
+                "name": "Medic.mvm.max.iKillAssists",
+                "value": 41
+            },
+            {
+                "name": "Medic.mvm.max.iNumberOfKills",
+                "value": 3
+            },
+            {
+                "name": "Medic.mvm.max.iNumInvulnerable",
+                "value": 6
+            },
+            {
+                "name": "Medic.mvm.max.iPlayTime",
+                "value": 315
+            },
+            {
+                "name": "Medic.mvm.max.iPointDefenses",
+                "value": 2
+            },
+            {
+                "name": "Medic.mvm.max.iPointsScored",
+                "value": 32
+            },
+            {
+                "name": "Demoman.mvm.accum.iDamageDealt",
+                "value": 310840
+            },
+            {
+                "name": "Demoman.mvm.accum.iKillAssists",
+                "value": 116
+            },
+            {
+                "name": "Demoman.mvm.accum.iNumberOfKills",
+                "value": 874
+            },
+            {
+                "name": "Demoman.mvm.accum.iPlayTime",
+                "value": 13089
+            },
+            {
+                "name": "Demoman.mvm.accum.iPointDefenses",
+                "value": 132
+            },
+            {
+                "name": "Demoman.mvm.accum.iPointsScored",
+                "value": 1228
+            },
+            {
+                "name": "Demoman.mvm.max.iDamageDealt",
+                "value": 17898
+            },
+            {
+                "name": "Demoman.mvm.max.iKillAssists",
+                "value": 9
+            },
+            {
+                "name": "Demoman.mvm.max.iNumberOfKills",
+                "value": 38
+            },
+            {
+                "name": "Demoman.mvm.max.iPlayTime",
+                "value": 520
+            },
+            {
+                "name": "Demoman.mvm.max.iPointDefenses",
+                "value": 9
+            },
+            {
+                "name": "Demoman.mvm.max.iPointsScored",
+                "value": 109
+            },
+            {
+                "name": "Heavy.mvm.accum.iDamageDealt",
+                "value": 633572
+            },
+            {
+                "name": "Heavy.mvm.accum.iKillAssists",
+                "value": 600
+            },
+            {
+                "name": "Heavy.mvm.accum.iNumberOfKills",
+                "value": 823
+            },
+            {
+                "name": "Heavy.mvm.accum.iPlayTime",
+                "value": 16779
+            },
+            {
+                "name": "Heavy.mvm.accum.iPointDefenses",
+                "value": 217
+            },
+            {
+                "name": "Heavy.mvm.accum.iPointsScored",
+                "value": 1318
+            },
+            {
+                "name": "Heavy.mvm.max.iDamageDealt",
+                "value": 26191
+            },
+            {
+                "name": "Heavy.mvm.max.iKillAssists",
+                "value": 47
+            },
+            {
+                "name": "Heavy.mvm.max.iNumberOfKills",
+                "value": 39
+            },
+            {
+                "name": "Heavy.mvm.max.iPlayTime",
+                "value": 532
+            },
+            {
+                "name": "Heavy.mvm.max.iPointDefenses",
+                "value": 12
+            },
+            {
+                "name": "Heavy.mvm.max.iPointsScored",
+                "value": 57
+            },
+            {
+                "name": "Engineer.mvm.accum.iDamageDealt",
+                "value": 608535
+            },
+            {
+                "name": "Engineer.mvm.accum.iKillAssists",
+                "value": 533
+            },
+            {
+                "name": "Engineer.mvm.accum.iNumberOfKills",
+                "value": 1682
+            },
+            {
+                "name": "Engineer.mvm.accum.iPlayTime",
+                "value": 27723
+            },
+            {
+                "name": "Engineer.mvm.accum.iPointDefenses",
+                "value": 378
+            },
+            {
+                "name": "Engineer.mvm.accum.iPointsScored",
+                "value": 2444
+            },
+            {
+                "name": "Engineer.mvm.max.iDamageDealt",
+                "value": 29474
+            },
+            {
+                "name": "Engineer.mvm.max.iKillAssists",
+                "value": 34
+            },
+            {
+                "name": "Engineer.mvm.max.iNumberOfKills",
+                "value": 131
+            },
+            {
+                "name": "Engineer.mvm.max.iPlayTime",
+                "value": 1766
+            },
+            {
+                "name": "Engineer.mvm.max.iPointDefenses",
+                "value": 43
+            },
+            {
+                "name": "Engineer.mvm.max.iPointsScored",
+                "value": 198
+            },
+            {
+                "name": "Sniper.mvm.accum.iDamageDealt",
+                "value": 981
+            },
+            {
+                "name": "Sniper.mvm.accum.iKillAssists",
+                "value": 4
+            },
+            {
+                "name": "Sniper.mvm.accum.iNumberOfKills",
+                "value": 4
+            },
+            {
+                "name": "Sniper.mvm.accum.iPlayTime",
+                "value": 244
+            },
+            {
+                "name": "Sniper.mvm.accum.iPointDefenses",
+                "value": 2
+            },
+            {
+                "name": "Sniper.mvm.accum.iPointsScored",
+                "value": 9
+            },
+            {
+                "name": "Sniper.mvm.max.iDamageDealt",
+                "value": 582
+            },
+            {
+                "name": "Sniper.mvm.max.iKillAssists",
+                "value": 2
+            },
+            {
+                "name": "Sniper.mvm.max.iNumberOfKills",
+                "value": 3
+            },
+            {
+                "name": "Sniper.mvm.max.iPlayTime",
+                "value": 115
+            },
+            {
+                "name": "Sniper.mvm.max.iPointDefenses",
+                "value": 1
+            },
+            {
+                "name": "Sniper.mvm.max.iPointsScored",
+                "value": 6
+            },
+            {
+                "name": "Spy.mvm.accum.iBackstabs",
+                "value": 409
+            },
+            {
+                "name": "Spy.mvm.max.iBackstabs",
+                "value": 31
+            },
+            {
+                "name": "Engineer.mvm.accum.iBuildingsBuilt",
+                "value": 875
+            },
+            {
+                "name": "Engineer.mvm.max.iBuildingsBuilt",
+                "value": 24
+            },
+            {
+                "name": "Sniper.mvm.accum.iHeadshots",
+                "value": 3
+            },
+            {
+                "name": "Sniper.mvm.max.iHeadshots",
+                "value": 3
+            },
+            {
+                "name": "Spy.mvm.accum.iHealthPointsLeached",
+                "value": 4
+            },
+            {
+                "name": "Spy.mvm.max.iHealthPointsLeached",
+                "value": 4
+            },
+            {
+                "name": "Medic.mvm.accum.iHealthPointsHealed",
+                "value": 72818
+            },
+            {
+                "name": "Medic.mvm.max.iHealthPointsHealed",
+                "value": 5990
+            },
+            {
+                "name": "Engineer.mvm.accum.iNumTeleports",
+                "value": 304
+            },
+            {
+                "name": "Engineer.mvm.max.iNumTeleports",
+                "value": 26
+            },
+            {
+                "name": "Engineer.mvm.max.iSentryKills",
+                "value": 61
+            },
+            {
+                "name": "TF_MAPS_DOOMSDAY_WIN_ROUNDS_STAT",
+                "value": 19
+            },
+            {
+                "name": "TF_KILL_BALLOONICORN_OWNERS_STAT",
+                "value": 17
+            },
+            {
+                "name": "TF_MVM_COLLECT_MONEY_GRIND_STAT",
+                "value": 21301
+            },
+            {
+                "name": "TF_MVM_KILL_ROBOT_GRIND_STAT",
+                "value": 4273
+            },
+            {
+                "name": "TF_MVM_KILL_ROBOT_MEGA_GRIND_STAT",
+                "value": 4273
+            },
+            {
+                "name": "cp_dustbowl.accum.iPlayTime",
+                "value": 3633
+            },
+            {
+                "name": "cp_egypt_final.accum.iPlayTime",
+                "value": 5034
+            },
+            {
+                "name": "cp_gorge.accum.iPlayTime",
+                "value": 3399
+            },
+            {
+                "name": "cp_gravelpit.accum.iPlayTime",
+                "value": 1897
+            },
+            {
+                "name": "cp_junction_final.accum.iPlayTime",
+                "value": 2408
+            },
+            {
+                "name": "cp_mountainlab.accum.iPlayTime",
+                "value": 2709
+            },
+            {
+                "name": "cp_steel.accum.iPlayTime",
+                "value": 2378
+            },
+            {
+                "name": "cp_gullywash_final1.accum.iPlayTime",
+                "value": 868
+            },
+            {
+                "name": "ctf_2fort.accum.iPlayTime",
+                "value": 2142
+            },
+            {
+                "name": "ctf_doublecross.accum.iPlayTime",
+                "value": 9062
+            },
+            {
+                "name": "ctf_sawmill.accum.iPlayTime",
+                "value": 4255
+            },
+            {
+                "name": "ctf_turbine.accum.iPlayTime",
+                "value": 7708
+            },
+            {
+                "name": "ctf_well.accum.iPlayTime",
+                "value": 9120
+            },
+            {
+                "name": "cp_5gorge.accum.iPlayTime",
+                "value": 1153
+            },
+            {
+                "name": "cp_badlands.accum.iPlayTime",
+                "value": 1477
+            },
+            {
+                "name": "cp_coldfront.accum.iPlayTime",
+                "value": 4105
+            },
+            {
+                "name": "cp_fastlane.accum.iPlayTime",
+                "value": 512
+            },
+            {
+                "name": "cp_granary.accum.iPlayTime",
+                "value": 622
+            },
+            {
+                "name": "cp_well.accum.iPlayTime",
+                "value": 1407
+            },
+            {
+                "name": "cp_yukon_final.accum.iPlayTime",
+                "value": 1667
+            },
+            {
+                "name": "cp_foundry.accum.iPlayTime",
+                "value": 2403
+            },
+            {
+                "name": "koth_badlands.accum.iPlayTime",
+                "value": 1180
+            },
+            {
+                "name": "koth_harvest_final.accum.iPlayTime",
+                "value": 664
+            },
+            {
+                "name": "koth_lakeside_final.accum.iPlayTime",
+                "value": 1946
+            },
+            {
+                "name": "koth_nucleus.accum.iPlayTime",
+                "value": 1511
+            },
+            {
+                "name": "koth_sawmill.accum.iPlayTime",
+                "value": 1649
+            },
+            {
+                "name": "koth_viaduct.accum.iPlayTime",
+                "value": 824
+            },
+            {
+                "name": "koth_king.accum.iPlayTime",
+                "value": 1495
+            },
+            {
+                "name": "pl_badwater.accum.iPlayTime",
+                "value": 5788
+            },
+            {
+                "name": "pl_frontier_final.accum.iPlayTime",
+                "value": 4667
+            },
+            {
+                "name": "pl_goldrush.accum.iPlayTime",
+                "value": 5245
+            },
+            {
+                "name": "pl_hoodoo_final.accum.iPlayTime",
+                "value": 2162
+            },
+            {
+                "name": "pl_thundermountain.accum.iPlayTime",
+                "value": 1888
+            },
+            {
+                "name": "pl_upward.accum.iPlayTime",
+                "value": 6501
+            },
+            {
+                "name": "pl_barnblitz.accum.iPlayTime",
+                "value": 3406
+            },
+            {
+                "name": "plr_hightower.accum.iPlayTime",
+                "value": 2096
+            },
+            {
+                "name": "plr_pipeline.accum.iPlayTime",
+                "value": 902
+            },
+            {
+                "name": "sd_doomsday.accum.iPlayTime",
+                "value": 2187
+            },
+            {
+                "name": "TF_HALLOWEEN_HELLTOWER_WIN_ROUNDS_STAT",
+                "value": 16
+            },
+            {
+                "name": "TF_HALLOWEEN_HELLTOWER_ENVIRONMENTAL_KILLS_STAT",
+                "value": 4
+            },
+            {
+                "name": "TF_HALLOWEEN_HELLTOWER_SKELETON_GRIND_STAT",
+                "value": 70
+            },
+            {
+                "name": "TF_HALLOWEEN_HELLTOWER_KILL_GRIND_STAT",
+                "value": 25
+            },
+            {
+                "name": "TF_HALLOWEEN_HELLTOWER_KILL_BROTHERS_STAT",
+                "value": 5
+            },
+            {
+                "name": "TF_PARACHUTE_KILL_GRIND_STAT",
+                "value": 8
+            },
+            {
+                "name": "TF_MELEE_KILL_CLASSIC_RIFLE_SNIPER_STAT",
+                "value": 2
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_KILL_KARTS_STAT",
+                "value": 30
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_COLLECT_DUCKS_STAT",
+                "value": 250
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_SCORE_GOALS_STAT",
+                "value": 2
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_RESPAWN_TEAMMATES_STAT",
+                "value": 30
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_TINY_SMASHER_STAT",
+                "value": 4
+            }
+        ]
+        ,
+        "achievements": [
+            {
+                "name": "TF_PLAY_GAME_EVERYCLASS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PLAY_GAME_EVERYMAP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_GET_HEALPOINTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_BURN_PLAYERSINMINIMUMTIME",
+                "achieved": 1
+            },
+            {
+                "name": "TF_GET_TURRETKILLS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_KILL_NEMESIS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_GET_CONSECUTIVEKILLS_NODEATHS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_GET_HEALED_BYENEMY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PLAY_GAME_FRIENDSONLY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_WIN_MULTIPLEGAMES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_GET_MULTIPLEKILLS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_GET_HEADSHOTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_TOP_SCOREBOARD",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_HEAL_UNDER_FIRE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_SIMUL_CHARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_SETUP_CHARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_RAPID_CHARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_COUNTER_CHARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_SWITCH_TO_MEDIC",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_SAVE_TEAMMATE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_CHARGE_BLOCKER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ASSIST_MEDIC",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_SYRINGE_SCOUTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_BONESAW_MEDICS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ASSIST_HEAVY_LONG",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ASSIST_SCOUT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ASSIST_PYRO",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ASSIST_HEAVY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ASSIST_DEMOMAN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_HEAL_ENGINEER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ASSIST_CAPTURER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_HEAL_CALLERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_WIN_2FORT_NOENEMYCAPS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_WIN_WELL_MINIMUMTIME",
+                "achieved": 1
+            },
+            {
+                "name": "TF_WIN_HYDRO_NOENEMYCAPS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_WIN_DUSTBOWL_NOENEMYCAPS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_WIN_GRAVELPIT_NOENEMYCAPS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_EXTINGUISH_TEAMMATES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ASSIST_VS_NEMESES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_KILL_WHILE_CHARGED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_BONESAW_NOMISSES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_HEAL_LARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_HEAL_HUGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_HEAL_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_KILL_HEALED_SPY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_SAVE_FALLING_TEAMMATE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_CHARGE_JUGGLE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_FREEZECAM_RAGDOLL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_BONESAW_SPY_CALLERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_CHARGE_FRIENDS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_INVITE_JOIN_CHARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_HEAL_ACHIEVER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ASSIST_SOLDIER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MEDIC_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_MULTIWEAPONS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_SIMULBURN_SCOUTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_FORCE_WATERJUMP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_POSTDEATH",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_SPIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_CARRIERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_REVEAL_SPIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_CAMP_TELEPORTERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_CAMP_POSITION",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_AXE_SMALL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_AXE_LARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_BURN_SPIES_AS_YOU",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_BURN_SNIPERS_ZOOMED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_BURN_MEDICS_CHARGED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_HEAVIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_UNDERWATER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_UBERCHARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_DESTROY_BUILDINGS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_DEFEND_POINTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_DAMAGE_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_TAUNT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_BURN_SPY_TAUNT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_DOMINATE_LEAVESVR",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_TAUNTERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_BURN_RJ_SOLDIER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_FREEZECAM_TAUNTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_BURN_MEDICPAIR",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_FROM_BEHIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_TEAMWORK",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_REFLECT_CROCKET_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_KILL_GRIND_LARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_IGNITE_FLAREGUN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_REFLECT_PROJECTILES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_DOUBLE_KO",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "name": "TF_PYRO_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_DAMAGE_TAKEN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_DEFEND_MEDIC",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_ASSIST_MEDIC_LARGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_EARN_MEDIC_DOMINATION",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_TAUNT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_FLAG_CARRIERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_MEDIC_PAIR",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_BLOCK_INVULN_HEAVY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_BLOCK_CART",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_RECEIVE_UBER_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_STAND_NEAR_DISPENSER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_ASSIST_HEAVY_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_CLEAR_STICKYBOMBS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_UNDERWATER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_TAKE_MULTI_DAMAGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_DOMINATED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_SURVIVE_CROCKET",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_ASSIST_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_UNCOVER_SPIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_WHILE_SPUNUP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_FIRE_LOTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_CRIT_PUNCH",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_HEAL_MEDIKITS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_SHOTGUN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_FIRST_TO_CAP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_PAYLOAD_CAP_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_MIDAIR_MINIGUN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_DEFEND_CONTROL_POINT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_CAPPING_ENEMIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_REVENGE_ASSIST",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_TELEPORT_FAST_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_FREEZECAM_TAUNT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_EAT_SANDWICHES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_SCOUTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HEAVY_KILL_HEAVIES_GLOVES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_FIRST_BLOOD",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_FIRST_BLOOD_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_WELL_EARLY_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_LIFETIME_KILLS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_IRON_MAN_KILLS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_DESTROY_TELEPORTERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_DESTROY_BUILDINGS_BEING_BUILT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_DESTROY_SENTRY_WITH_PISTOL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_DOUBLE_JUMPS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_ASSIST_MEDIC",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_STEAL_SANDWICH",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_KILL_CHARGED_MEDICS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_SURVIVE_DAMAGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_DOUBLEJUMP_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_FLAG_CAP_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_THREE_FLAGCAPS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_DODGE_DAMAGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_KNOCK_INTO_TRAIN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_KILL_STUNNED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_STUN_INTO_TRAIN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_STUN_UBER_ENEMIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_STUN_CAPPING_ENEMIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_MAX_STUNS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_STUN_SCOUT_WITH_THEIR_BALL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_KILL_IN_DODGE_COOLDOWN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_KILL_FROM_BEHIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_CAPTURE_LAST_POINT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_CAPTURE_THREE_POINTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_FAST_CAP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_START_AND_FINISH_CAP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_BLOCK_CAPS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_CARRIER_KILL_CARRIER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_CAP_FLAG_WITHOUT_ATTACKING",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_LONG_DISTANCE_RUNNER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SCOUT_TAUNT_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_JARATE_DOMINATED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_FREEZECAM_HAT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_RIFLE_NO_MISSING",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_CAPTURE_FLAG",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_KILL_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_KILL_WEAPONS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_HEADSHOT_SNIPERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_DESTROY_SENTRYGUNS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_KILL_INVIS_SPY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_KILL_MIDAIR_SCOUT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_FREEZECAM_WAVE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_DOMINATE_SNIPER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_KILL_SPIES_MELEE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_HEADSHOT_DEMOMAN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_KILL_RJER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_KILL_UNSCOPED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_KILL_CHARGED_MEDIC",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_GET_BACKSTABBED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_KILL_AT_ROUNDSTART",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_HEADSHOT_POST_INVULN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_TOP_SCOREBOARD_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_JARATE_GROUP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_JARATE_MEDIC_PAIR",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_JARATE_REVEAL_SPY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_JARATE_EXTINGUISH",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_BOW_PIN_HEAVY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_BOW_PINCUSHION",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_TAUNT_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_BOW_KILL_WHILEDEAD",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_SNIPERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_DISGUISED_SPY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_DISGUISE_TARGET",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_TAUNT_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_MEDIC_HEALING_YOU",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_ENGY_SAP_BUILDING",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_SAP_BUILDING_BACKSTAB_ENGY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_MEDIC_PAIR",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_FRIENDS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_DOMINATE_SNIPER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BUMP_CLOAKED_SPY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_KILL_SPY_WITH_KNIFE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_SURVIVE_BURNING",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BREAK_SHIELD_KILL_SNIPER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_KILL_WORKING_ENGY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_FAST_CAP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_MEDIC_HEALING_KILL_ENEMY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_KILL_CP_DEFENDERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_DOMINATING_ENEMY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_REVENGE_WITH_BACKSTAB",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_KNIFE_KILL_WHILE_JARATED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_QUICK_KILLS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_SAPPER_TEAMWORK",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_MEDIC_CHARGED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_CAPPING_ENEMIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_BACKSTAB_ENEMY_SWITCH_PYRO",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_FEIGN_DEATH_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_CAMP_POSITION",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SNIPER_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SPY_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_COLLECT_PUMPKINS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_DOMINATE_FOR_HAT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_KILL_SCARED_PLAYER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_PUMPKIN_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_DISGUISED_SPY_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_GROUP_WITH_CROCKET",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_TWO_DURING_ROCKET_JUMP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_THREE_DOMINATIONS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_DEFEND_MEDIC",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_TAUNT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_DESTROY_SENTRY_OUT_OF_RANGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_SNIPER_WHILE_DEAD",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_AIRBORNE_TARGET_WHILE_AIRBORNE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_ENGY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_DESTROY_STICKIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_CROUCH_ROCKET_JUMP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_TWENTY_FROM_ABOVE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_SHOOT_MULT_CRITS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_DEFENSELESS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_ON_FIRE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_FIVE_STUNNED",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_FREEZECAM_GIBS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_SPY_KILLER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_DEFEND_CAP_THIRTY_TIMES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_GIB_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_RJ_EQUALIZER_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_BUFF_TEAMMATES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_DEMOMAN_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_PYRO",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_EQUALIZER_STREAK",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_WITH_EQUALIZER_WHILE_HURT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_BOUNCE_THEN_SHOTGUN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_KILL_AIRBORNE_WITH_DIRECT_HIT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_FREEZECAM_TAUNT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_DUO_SOLDIER_KILLS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_MVP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_RIDE_THE_CART",
+                "achieved": 1
+            },
+            {
+                "name": "TF_SOLDIER_ASSIST_MEDIC_UBER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_SOLDIER_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_DECAPITATE_CLOAKED_SPY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_X_WITH_DIRECTPIPE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_DECAPITATE_PLAYERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_DECAPITATE_PLAYERS_FAST",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_DUO_DEMOMAN_KILLS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_DECAPITATE_EQUALIZER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_BUILDING_DIRECT_HIT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_DOMINATE_THREE_ENGINEERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_PLAYER_AFTER_TP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_TWO_DURING_STICKYJUMP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_BOUNCE_AND_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_DECAPITATE_NEMESIS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_ENGI_SENTRY_DISPENSER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_X_DEFENDING",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_DESTROY_BUILDINGS_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_X_HEAVIES_FULLHP_ONEDET",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_X_SCOUTS_PYROS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_CHARGE_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_CRIT_SWORD_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_AIR_BURST_KILLS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_STICKYJUMP_CAP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_FREEZECAM_SMILE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_FREEZECAM_RUMP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_ENVIRONMENTAL_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_STICKJUMP_DISTANCE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL3_WITH_DETONATION",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILLXSAPPINGSPIES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL3_WITH_PIPE_SETUPS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_REVENGE_CRIT_SENTRY_KILLER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_MANUAL_SENTRY_KILLS_BEYOND_RANGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_ACHIEVE_PROGRESS1",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_ACHIEVE_PROGRESS2",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_ACHIEVE_PROGRESS3",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_TELEPORT_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_DISPENSER_EXTINGUISH",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_MANUAL_CLOAKED_SPY_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_REVENGE_CRIT_LIFE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_KILL_SPY_TWO_SAPPERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_KILL_DISGUISED_SPY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_UPGRADE_BUILDINGS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_DESTROY_SAPPERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_REPAIR_SENTRY_W_MEDIC",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_SENTRY_AVENGES_YOU",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_FREEZECAM_TAUNT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_FREEZECAM_SENTRY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_SHOTGUN_KILL_PREV_SENTRY_TARGET",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_DISPENSER_HEAL_GROUP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_SENTRY_KILL_CAPS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_KILL_FLAG_CARRIERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_WASTE_METAL_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_HELP_BUILD_STRUCTURE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_REMOVE_SAPPER_LONG_DIST",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_TAUNT_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_KILL_SNIPERS_SENTRY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_HELP_MANUAL_SENTRY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_KILL_SENTRY_WITH_SENTRY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_MOVE_SENTRY_GET_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_BUILDING_CARRY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_KILL_ASSIST",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_DISPENSER_HEAL_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_ENGINEER_TANK_DAMAGE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_BOSS_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_COLLECT_GOODY_BAG",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_CRAFT_SAXTON_MASK",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_BOSS_KILL_MELEE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_REPLAY_SAVE_REPLAY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_REPLAY_PERFORMANCE_MODE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_GENERAL_KILL_ENEMIES_AFTER_TELEPORTING",
+                "achieved": 1
+            },
+            {
+                "name": "TF_FIRE_WATERJUMP",
+                "achieved": 1
+            },
+            {
+                "name": "TF_CHRISTMAS_COLLECT_GIFTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_FOUNDRY_KILL_CAPPING_ENEMY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_FOUNDRY_PLAY_GAME_FRIENDS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_FOUNDRY_WIN_MINTIME",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_FOUNDRY_PUSH_BACK_AND_WIN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_FOUNDRY_KILL_ENEMY_ON_ROOF",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_FOUNDRY_BACK_AND_FORTH_BATTLE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_COMPLETE_POP_FILE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_DOOMSDAY_SOLO_CAPTURE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_DOOMSDAY_PLAY_GAME_FRIENDS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_DOOMSDAY_PUSH_BACK_AND_WIN",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_DOOMSDAY_RIDE_THE_ELEVATOR",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MAPS_DOOMSDAY_DEFEND_CARRIER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MULTIPLE_BFF",
+                "achieved": 1
+            },
+            {
+                "name": "TF_TEAM_PYROVISION",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DOMINATE_FOR_GOGGLES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_EARN_MONEY_BONUS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_PICKUP_MONEY_ABOUT_TO_EXPIRE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_DESTROY_TWO_TANKS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_DESTROY_TANK_WHILE_DEPLOYING",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_DESTROY_TANK_QUICKLY",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_KILL_BOMB_CARRIERS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_COMPLETE_WAVE_WITHOUT_DYING",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_USE_CRIT_BOTTLE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_USE_UBER_BOTTLE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_USE_BUILD_BOTTLE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_USE_AMMO_BOTTLE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_MAX_PRIMARY_UPGRADES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_NO_ALARMS_IN_FINAL_WAVE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_KILL_SENTRY_BUSTER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_SPY_SAP_ROBOTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_MVM_ENGINEER_ESCAPE_SENTRY_BUSTER",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_MERASMUS_COLLECT_LOOT",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_MERASMUS_KILL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_HELLTOWER_RARE_SPELL",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_HELLTOWER_KILL_GRIND",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_HELLTOWER_SKULL_ISLAND_REWARD",
+                "achieved": 1
+            },
+            {
+                "name": "TF_KILL_CHARGING_DEMO",
+                "achieved": 1
+            },
+            {
+                "name": "TF_DEMOMAN_KILL_PLAYER_YOU_DIDNT_SEE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_TAUNT_CONGA_LINE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_KILL_KARTS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_COLLECT_DUCKS",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_RESPAWN_TEAMMATES",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_MILESTONE",
+                "achieved": 1
+            },
+            {
+                "name": "TF_HALLOWEEN_DOOMSDAY_WIN_MINIGAMES",
+                "achieved": 1
+            }
+        ]
+
+    }
+}

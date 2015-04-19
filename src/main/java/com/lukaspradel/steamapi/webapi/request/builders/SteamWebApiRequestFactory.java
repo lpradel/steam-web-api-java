@@ -13,6 +13,8 @@ import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 
 /**
@@ -73,5 +75,19 @@ public abstract class SteamWebApiRequestFactory {
 
 		return new GetPlayerAchievementsRequestBuilder(steamId, appId)
 				.language(language).buildRequest();
+	}
+
+	public static GetUserStatsForGameRequest createGetUserStatsForGameRequest(
+			int appId, String steamId) {
+
+		return new GetUserStatsForGameRequestBuilder(steamId, appId)
+				.buildRequest();
+	}
+
+	public static GetUserStatsForGameRequest createGetUserStatsForGameRequest(
+			int appId, String steamId, String language) {
+
+		return new GetUserStatsForGameRequestBuilder(steamId, appId).language(
+				language).buildRequest();
 	}
 }

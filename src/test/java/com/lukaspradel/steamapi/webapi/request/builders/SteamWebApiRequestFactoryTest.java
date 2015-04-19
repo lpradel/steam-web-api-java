@@ -25,6 +25,8 @@ import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 
 public class SteamWebApiRequestFactoryTest {
 
@@ -241,7 +243,7 @@ public class SteamWebApiRequestFactoryTest {
 	}
 
 	@Test
-	public void testGetPlayerAchievementsRequestAllParameters() {
+	public void testCreateGetPlayerAchievementsRequestAllParameters() {
 
 		GetPlayerAchievementsRequest request = SteamWebApiRequestFactory
 				.createGetPlayerAchievementsRequest(123, "12345", "german");
@@ -266,6 +268,60 @@ public class SteamWebApiRequestFactoryTest {
 		assertEquals(
 				parameters
 						.get(GetPlayerAchievementsRequestBuilder.REQUEST_PARAM_LANGUAGE),
+				String.valueOf("german"));
+	}
+
+	@Test
+	public void testCreateGetUserStatsForGameRequestOnlySteamIdAndAppId() {
+
+		GetUserStatsForGameRequest request = SteamWebApiRequestFactory
+				.createGetUserStatsForGameRequest(123, "12345");
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER_STATS);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_USER_STATS_FOR_GAME);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_TWO);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetUserStatsForGameRequestBuilder.REQUEST_PARAM_APP_ID),
+				String.valueOf("123"));
+		assertEquals(
+				parameters
+						.get(GetUserStatsForGameRequestBuilder.REQUEST_PARAM_STEAM_ID),
+				String.valueOf("12345"));
+	}
+
+	@Test
+	public void testCreatecreateGetUserStatsForGameRequestAllParameters() {
+
+		GetUserStatsForGameRequest request = SteamWebApiRequestFactory
+				.createGetUserStatsForGameRequest(123, "12345", "german");
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER_STATS);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_USER_STATS_FOR_GAME);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_TWO);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetUserStatsForGameRequestBuilder.REQUEST_PARAM_APP_ID),
+				String.valueOf("123"));
+		assertEquals(
+				parameters
+						.get(GetUserStatsForGameRequestBuilder.REQUEST_PARAM_STEAM_ID),
+				String.valueOf("12345"));
+		assertEquals(
+				parameters
+						.get(GetUserStatsForGameRequestBuilder.REQUEST_PARAM_LANGUAGE),
 				String.valueOf("german"));
 	}
 }
