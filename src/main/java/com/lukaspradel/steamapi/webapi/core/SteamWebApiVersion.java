@@ -42,6 +42,8 @@ public enum SteamWebApiVersion {
 			return VERSION_TWO;
 		case GET_OWNED_GAMES:
 			return VERSION_ONE;
+		case GET_PLAYER_ACHIEVEMENTS:
+			return VERSION_ONE;
 		case GET_PLAYER_SUMMARIES:
 			return VERSION_TWO;
 		case GET_RECENTLY_PLAYED_GAMES:

@@ -2,6 +2,8 @@ package com.lukaspradel.steamapi.webapi.core;
 
 import static org.testng.Assert.assertEquals;
 
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.reflect.Whitebox;
 import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.BaseTest;
@@ -12,6 +14,27 @@ public class SteamWebApiVersionTest extends BaseTest {
 	public void testGetCurrentVersionForWebApiInterfaceMethodError() {
 
 		SteamWebApiVersion.getCurrentVersionForWebApiInterfaceMethod(null);
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnum() {
+
+		SteamWebApiInterfaceMethod[] values = SteamWebApiInterfaceMethod
+				.values();
+		SteamWebApiInterfaceMethod[] valuesAndAdditional = new SteamWebApiInterfaceMethod[values.length + 1];
+		System.arraycopy(values, 0, valuesAndAdditional, 0, values.length);
+
+		// create additional, unknown SteamWebApiInterfaceMethod
+		SteamWebApiInterfaceMethod additionalSteamWebApiInterfaceMethod = PowerMockito
+				.mock(SteamWebApiInterfaceMethod.class);
+		Whitebox.setInternalState(additionalSteamWebApiInterfaceMethod, "name",
+				"ADDITIONAL_STEAMWEBAPIINTERFACEMETHOD");
+		Whitebox.setInternalState(additionalSteamWebApiInterfaceMethod,
+				"ordinal", values.length);
+		valuesAndAdditional[values.length] = additionalSteamWebApiInterfaceMethod;
+
+		SteamWebApiVersion
+				.getCurrentVersionForWebApiInterfaceMethod(additionalSteamWebApiInterfaceMethod);
 	}
 
 	@Test
@@ -35,6 +58,11 @@ public class SteamWebApiVersionTest extends BaseTest {
 		assertEquals(
 				SteamWebApiVersion
 						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_OWNED_GAMES),
+				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_PLAYER_ACHIEVEMENTS),
 				SteamWebApiVersion.VERSION_ONE);
 
 		assertEquals(
