@@ -17,7 +17,7 @@ public class SteamWebApiVersionTest extends BaseTest {
 	}
 
 	@Test(expectedExceptions = IllegalArgumentException.class)
-	public void testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnum() {
+	public void testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnumValue() {
 
 		SteamWebApiInterfaceMethod[] values = SteamWebApiInterfaceMethod
 				.values();

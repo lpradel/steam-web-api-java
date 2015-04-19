@@ -2,6 +2,8 @@ package com.lukaspradel.steamapi.webapi.core;
 
 import static org.testng.Assert.assertEquals;
 
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.reflect.Whitebox;
 import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.BaseTest;
@@ -12,6 +14,27 @@ public class SteamWebApiInterfaceTest extends BaseTest {
 	public void testGetInterfaceMethodError() {
 
 		SteamWebApiInterface.getInterfaceForMethod(null);
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testGetInterfaceMethodAdditionalUnknownEnumValue() {
+
+		SteamWebApiInterfaceMethod[] values = SteamWebApiInterfaceMethod
+				.values();
+		SteamWebApiInterfaceMethod[] valuesAndAdditional = new SteamWebApiInterfaceMethod[values.length + 1];
+		System.arraycopy(values, 0, valuesAndAdditional, 0, values.length);
+
+		// create additional, unknown SteamWebApiInterfaceMethod
+		SteamWebApiInterfaceMethod additionalSteamWebApiInterfaceMethod = PowerMockito
+				.mock(SteamWebApiInterfaceMethod.class);
+		Whitebox.setInternalState(additionalSteamWebApiInterfaceMethod, "name",
+				"ADDITIONAL_STEAMWEBAPIINTERFACEMETHOD");
+		Whitebox.setInternalState(additionalSteamWebApiInterfaceMethod,
+				"ordinal", values.length);
+		valuesAndAdditional[values.length] = additionalSteamWebApiInterfaceMethod;
+
+		SteamWebApiInterface
+				.getInterfaceForMethod(additionalSteamWebApiInterfaceMethod);
 	}
 
 	@Test
