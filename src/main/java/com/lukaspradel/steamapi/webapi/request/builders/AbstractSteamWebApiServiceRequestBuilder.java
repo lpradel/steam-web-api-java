@@ -44,7 +44,7 @@ public abstract class AbstractSteamWebApiServiceRequestBuilder extends
 			addParameter(REQUEST_PARAM_INPUT_JSON, serviceParameterJson);
 		} catch (JsonProcessingException e) {
 			throw new IllegalArgumentException(
-					"The given request parameters cannot mapped to JSON.", e);
+					"The given request parameters cannot be mapped to JSON.", e);
 		}
 	}
 }
