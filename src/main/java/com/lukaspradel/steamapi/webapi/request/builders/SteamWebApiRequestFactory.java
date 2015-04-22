@@ -9,6 +9,8 @@ import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesFo
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest.GetOwnedGamesRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
@@ -89,5 +91,20 @@ public abstract class SteamWebApiRequestFactory {
 
 		return new GetUserStatsForGameRequestBuilder(steamId, appId).language(
 				language).buildRequest();
+	}
+
+	public static GetOwnedGamesRequest createGetOwnedGamesRequest(String steamId) {
+
+		return new GetOwnedGamesRequestBuilder(steamId).buildRequest();
+	}
+
+	public static GetOwnedGamesRequest createGetOwnedGamesRequest(
+			String steamId, boolean includeAppInfo,
+			boolean includePlayedFreeGames, List<Integer> appIdsFilter) {
+
+		return new GetOwnedGamesRequestBuilder(steamId)
+				.includeAppInfo(includeAppInfo)
+				.includePlayedFreeGames(includePlayedFreeGames)
+				.appIdsFilter(appIdsFilter).buildRequest();
 	}
 }

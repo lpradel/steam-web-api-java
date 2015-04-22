@@ -15,6 +15,8 @@ public abstract class SteamApiRequest {
 
 	protected final Map<String, String> parameters;
 
+	protected static final String REQUEST_PARAM_BOOLEAN_TRUE = "1";
+
 	public SteamApiRequest(String baseUrl, Map<String, String> parameters) {
 
 		this.baseUrl = baseUrl;

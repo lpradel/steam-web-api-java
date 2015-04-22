@@ -20,6 +20,7 @@ import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
+import com.lukaspradel.steamapi.data.json.ownedgames.GetOwnedGames;
 import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievements;
 import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
 import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
@@ -27,6 +28,7 @@ import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
@@ -314,5 +316,42 @@ public class SteamWebApiClientTest extends BaseTest {
 				.get(1).getName(), "TF_PLAY_GAME_EVERYMAP");
 		assertEquals(getUserStatsForGame.getPlayerstats().getAchievements()
 				.get(1).getAchieved(), Integer.valueOf(1));
+	}
+
+	@Test
+	public void testProcessGetOwnedGamesRequest() throws SteamApiException,
+			IOException {
+
+		GetOwnedGamesRequest getOwnedGamesRequest = SteamWebApiRequestFactory
+				.createGetOwnedGamesRequest("76561197960435530");
+
+		String mockAnswer = readResourceAsString("GetOwnedGames.json");
+
+		when(requestHandlerMock.getWebApiResponse(getOwnedGamesRequest))
+				.thenReturn(mockAnswer);
+
+		GetOwnedGames getOwnedGames = client
+				.<GetOwnedGames> processRequest(getOwnedGamesRequest);
+
+		assertNotNull(getOwnedGames);
+		assertTrue(getOwnedGames.getAdditionalProperties().isEmpty());
+		assertNotNull(getOwnedGames.getResponse());
+		assertEquals(getOwnedGames.getResponse().getGameCount(),
+				Integer.valueOf(487));
+		assertNotNull(getOwnedGames.getResponse().getGames());
+		assertEquals(getOwnedGames.getResponse().getGames().size(), 487);
+
+		assertEquals(getOwnedGames.getResponse().getGames().get(0).getAppid(),
+				Integer.valueOf(10));
+		assertEquals(getOwnedGames.getResponse().getGames().get(0).getName(),
+				"Counter-Strike");
+		assertEquals(getOwnedGames.getResponse().getGames().get(0)
+				.getPlaytimeForever(), Integer.valueOf(32));
+		assertEquals(getOwnedGames.getResponse().getGames().get(0)
+				.getImgIconUrl(), "6b0312cda02f5f777efa2f3318c307ff9acafbb5");
+		assertEquals(getOwnedGames.getResponse().getGames().get(0)
+				.getImgLogoUrl(), "af890f848dd606ac2fd4415de3c3f5e7a66fcb9f");
+		assertEquals(getOwnedGames.getResponse().getGames().get(0)
+				.getHasCommunityVisibleStats(), Boolean.TRUE);
 	}
 }

@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,6 +12,9 @@ import java.util.Map;
 
 import org.testng.annotations.Test;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
@@ -21,6 +25,8 @@ import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesFo
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest.GetOwnedGamesRequestServiceParameter;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
@@ -297,7 +303,7 @@ public class SteamWebApiRequestFactoryTest {
 	}
 
 	@Test
-	public void testCreatecreateGetUserStatsForGameRequestAllParameters() {
+	public void testCreateGetUserStatsForGameRequestAllParameters() {
 
 		GetUserStatsForGameRequest request = SteamWebApiRequestFactory
 				.createGetUserStatsForGameRequest(123, "12345", "german");
@@ -323,5 +329,71 @@ public class SteamWebApiRequestFactoryTest {
 				parameters
 						.get(GetUserStatsForGameRequestBuilder.REQUEST_PARAM_LANGUAGE),
 				String.valueOf("german"));
+	}
+
+	@Test
+	public void testCreateGetOwnedGamesRequestOnlySteamId()
+			throws JsonParseException, JsonMappingException, IOException {
+
+		GetOwnedGamesRequest request = SteamWebApiRequestFactory
+				.createGetOwnedGamesRequest("12345");
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_PLAYER_SERVICE);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_OWNED_GAMES);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertNotNull(parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON));
+
+		ObjectMapper mapper = new ObjectMapper();
+		String serviceParamJson = parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON);
+		GetOwnedGamesRequestServiceParameter serviceParam = mapper.readValue(
+				serviceParamJson, GetOwnedGamesRequestServiceParameter.class);
+
+		assertNotNull(serviceParam);
+		assertEquals(serviceParam.getSteamId(), "12345");
+	}
+
+	@Test
+	public void testCreateGetOwnedGamesRequestAllParameters()
+			throws JsonParseException, JsonMappingException, IOException {
+
+		List<Integer> appIdsFilter = new ArrayList<Integer>();
+		appIdsFilter.add(10);
+		appIdsFilter.add(20);
+
+		GetOwnedGamesRequest request = SteamWebApiRequestFactory
+				.createGetOwnedGamesRequest("12345", true, true, appIdsFilter);
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_PLAYER_SERVICE);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_OWNED_GAMES);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertNotNull(parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON));
+
+		ObjectMapper mapper = new ObjectMapper();
+		String serviceParamJson = parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON);
+		GetOwnedGamesRequestServiceParameter serviceParam = mapper.readValue(
+				serviceParamJson, GetOwnedGamesRequestServiceParameter.class);
+
+		assertNotNull(serviceParam);
+		assertEquals(serviceParam.getSteamId(), "12345");
+		assertEquals(serviceParam.getIncludeAppInfo(), Integer.valueOf(1));
+		assertEquals(serviceParam.getIncludePlayedFreeGames(),
+				Integer.valueOf(1));
+		assertEquals(serviceParam.getAppIdsFilter(), appIdsFilter);
 	}
 }

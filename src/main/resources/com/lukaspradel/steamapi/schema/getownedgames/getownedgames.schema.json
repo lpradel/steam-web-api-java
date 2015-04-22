@@ -23,6 +23,10 @@
                                     "type":"integer",
                                     "required":false
                                 },
+                                "has_community_visible_stats": {
+                                    "type":"boolean",
+                                    "required":false
+                                },
                                 "img_icon_url": {
                                     "type":"string",
                                     "required":false
