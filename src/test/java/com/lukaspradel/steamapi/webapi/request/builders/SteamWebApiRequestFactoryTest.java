@@ -31,6 +31,8 @@ import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest.GetRecentlyPlayedGamesRequestServiceParameter;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 
@@ -395,5 +397,67 @@ public class SteamWebApiRequestFactoryTest {
 		assertEquals(serviceParam.getIncludePlayedFreeGames(),
 				Integer.valueOf(1));
 		assertEquals(serviceParam.getAppIdsFilter(), appIdsFilter);
+	}
+
+	@Test
+	public void testCreateGetRecentlyPlayedGamesRequestOnlySteamId()
+			throws JsonParseException, JsonMappingException, IOException {
+
+		GetRecentlyPlayedGamesRequest request = SteamWebApiRequestFactory
+				.createGetRecentlyPlayedGamesRequest("12345");
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_PLAYER_SERVICE);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_RECENTLY_PLAYED_GAMES);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertNotNull(parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON));
+
+		ObjectMapper mapper = new ObjectMapper();
+		String serviceParamJson = parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON);
+		GetRecentlyPlayedGamesRequestServiceParameter serviceParam = mapper
+				.readValue(serviceParamJson,
+						GetRecentlyPlayedGamesRequestServiceParameter.class);
+
+		assertNotNull(serviceParam);
+		assertEquals(serviceParam.getSteamId(), "12345");
+	}
+
+	@Test
+	public void testCreateGetRecentlyPlayedGamesRequestAllParameters()
+			throws JsonParseException, JsonMappingException, IOException {
+
+		GetRecentlyPlayedGamesRequest request = SteamWebApiRequestFactory
+				.createGetRecentlyPlayedGamesRequest("12345",
+						Integer.valueOf(5));
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_PLAYER_SERVICE);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_RECENTLY_PLAYED_GAMES);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertNotNull(parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON));
+
+		ObjectMapper mapper = new ObjectMapper();
+		String serviceParamJson = parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON);
+		GetRecentlyPlayedGamesRequestServiceParameter serviceParam = mapper
+				.readValue(serviceParamJson,
+						GetRecentlyPlayedGamesRequestServiceParameter.class);
+
+		assertNotNull(serviceParam);
+		assertEquals(serviceParam.getSteamId(), "12345");
+		assertEquals(serviceParam.getCount(), Integer.valueOf(5));
 	}
 }

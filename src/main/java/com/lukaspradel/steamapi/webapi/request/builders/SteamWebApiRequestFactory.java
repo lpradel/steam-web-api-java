@@ -15,6 +15,8 @@ import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest.GetRecentlyPlayedGamesRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
@@ -106,5 +108,18 @@ public abstract class SteamWebApiRequestFactory {
 				.includeAppInfo(includeAppInfo)
 				.includePlayedFreeGames(includePlayedFreeGames)
 				.appIdsFilter(appIdsFilter).buildRequest();
+	}
+
+	public static GetRecentlyPlayedGamesRequest createGetRecentlyPlayedGamesRequest(
+			String steamId) {
+
+		return new GetRecentlyPlayedGamesRequestBuilder(steamId).buildRequest();
+	}
+
+	public static GetRecentlyPlayedGamesRequest createGetRecentlyPlayedGamesRequest(
+			String steamId, Integer count) {
+
+		return new GetRecentlyPlayedGamesRequestBuilder(steamId).count(count)
+				.buildRequest();
 	}
 }

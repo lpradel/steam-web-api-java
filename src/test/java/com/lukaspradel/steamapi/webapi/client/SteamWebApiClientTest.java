@@ -24,6 +24,7 @@ import com.lukaspradel.steamapi.data.json.ownedgames.GetOwnedGames;
 import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievements;
 import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
 import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
+import com.lukaspradel.steamapi.data.json.recentlyplayedgames.GetRecentlyPlayedGames;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
@@ -31,6 +32,7 @@ import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
@@ -353,5 +355,44 @@ public class SteamWebApiClientTest extends BaseTest {
 				.getImgLogoUrl(), "af890f848dd606ac2fd4415de3c3f5e7a66fcb9f");
 		assertEquals(getOwnedGames.getResponse().getGames().get(0)
 				.getHasCommunityVisibleStats(), Boolean.TRUE);
+	}
+
+	@Test
+	public void testProcessGetRecentlyPlayedGamesRequest()
+			throws SteamApiException, IOException {
+
+		GetRecentlyPlayedGamesRequest getRecentlyPlayedGamesRequest = SteamWebApiRequestFactory
+				.createGetRecentlyPlayedGamesRequest("76561197960435530");
+
+		String mockAnswer = readResourceAsString("GetRecentlyPlayedGames.json");
+
+		when(
+				requestHandlerMock
+						.getWebApiResponse(getRecentlyPlayedGamesRequest))
+				.thenReturn(mockAnswer);
+
+		GetRecentlyPlayedGames getRecentlyPlayedGames = client
+				.<GetRecentlyPlayedGames> processRequest(getRecentlyPlayedGamesRequest);
+
+		assertNotNull(getRecentlyPlayedGames);
+		assertTrue(getRecentlyPlayedGames.getAdditionalProperties().isEmpty());
+		assertNotNull(getRecentlyPlayedGames.getResponse());
+		assertEquals(getRecentlyPlayedGames.getResponse().getTotalCount(),
+				Integer.valueOf(6));
+		assertNotNull(getRecentlyPlayedGames.getResponse().getGames());
+		assertEquals(getRecentlyPlayedGames.getResponse().getGames().size(), 3);
+
+		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
+				.getAppid(), Integer.valueOf(271590));
+		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
+				.getName(), "Grand Theft Auto V");
+		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
+				.getPlaytime2weeks(), Integer.valueOf(190));
+		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
+				.getPlaytimeForever(), Integer.valueOf(190));
+		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
+				.getImgIconUrl(), "1e72f87eb927fa1485e68aefaff23c7fd7178251");
+		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
+				.getImgLogoUrl(), "e447e82f8b0c67f9e001498503c62f2a187bc609");
 	}
 }

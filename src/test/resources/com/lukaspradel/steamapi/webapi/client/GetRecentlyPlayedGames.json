@@ -1,0 +1,32 @@
+{
+    "response": {
+        "total_count": 6,
+        "games": [
+            {
+                "appid": 271590,
+                "name": "Grand Theft Auto V",
+                "playtime_2weeks": 190,
+                "playtime_forever": 190,
+                "img_icon_url": "1e72f87eb927fa1485e68aefaff23c7fd7178251",
+                "img_logo_url": "e447e82f8b0c67f9e001498503c62f2a187bc609"
+            },
+            {
+                "appid": 236430,
+                "name": "DARK SOULS™ II",
+                "playtime_2weeks": 34,
+                "playtime_forever": 2616,
+                "img_icon_url": "8d5b3da903efb047d4efb670c08714a4d1071e83",
+                "img_logo_url": "d16871e0aa9196e5e7d865f76fbed278a0309e85"
+            },
+            {
+                "appid": 335300,
+                "name": "DARK SOULS™ II: Scholar of the First Sin",
+                "playtime_2weeks": 13,
+                "playtime_forever": 13,
+                "img_icon_url": "6e665503e93d1383b774a68dfea23ac7afc0e3aa",
+                "img_logo_url": "6ca16aa1b83311e5e3e8f0f0c2b8046f5d9e95a8"
+            }
+        ]
+
+    }
+}
