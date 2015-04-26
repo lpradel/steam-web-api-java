@@ -20,6 +20,7 @@ import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
+import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsPlayingSharedGame;
 import com.lukaspradel.steamapi.data.json.ownedgames.GetOwnedGames;
 import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievements;
 import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
@@ -34,6 +35,7 @@ import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
@@ -394,5 +396,31 @@ public class SteamWebApiClientTest extends BaseTest {
 				.getImgIconUrl(), "1e72f87eb927fa1485e68aefaff23c7fd7178251");
 		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
 				.getImgLogoUrl(), "e447e82f8b0c67f9e001498503c62f2a187bc609");
+	}
+
+	@Test
+	public void testProcessIsPlayingSharedGameRequest()
+			throws SteamApiException, IOException {
+
+		IsPlayingSharedGameRequest getIsPlayingSharedGameRequest = SteamWebApiRequestFactory
+				.createIsPlayingSharedGameRequest("76561197960435530", 20);
+
+		String mockAnswer = readResourceAsString("IsPlayingSharedGame.json");
+
+		when(
+				requestHandlerMock
+						.getWebApiResponse(getIsPlayingSharedGameRequest))
+				.thenReturn(mockAnswer);
+
+		IsPlayingSharedGame isPlayingSharedGame = client
+				.<IsPlayingSharedGame> processRequest(getIsPlayingSharedGameRequest);
+
+		assertNotNull(isPlayingSharedGame);
+		assertTrue(isPlayingSharedGame.getAdditionalProperties().isEmpty());
+		assertNotNull(isPlayingSharedGame.getResponse());
+
+		assertNotNull(isPlayingSharedGame.getResponse().getLenderSteamid());
+		assertEquals(isPlayingSharedGame.getResponse().getLenderSteamid(),
+				"123");
 	}
 }

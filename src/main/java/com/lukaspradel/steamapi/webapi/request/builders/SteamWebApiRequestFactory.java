@@ -19,6 +19,8 @@ import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest.GetRecentlyPlayedGamesRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
+import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 
 /**
@@ -120,6 +122,13 @@ public abstract class SteamWebApiRequestFactory {
 			String steamId, Integer count) {
 
 		return new GetRecentlyPlayedGamesRequestBuilder(steamId).count(count)
+				.buildRequest();
+	}
+
+	public static IsPlayingSharedGameRequest createIsPlayingSharedGameRequest(
+			String steamId, Integer appIdPlaying) {
+
+		return new IsPlayingSharedGameRequestBuilder(steamId, appIdPlaying)
 				.buildRequest();
 	}
 }

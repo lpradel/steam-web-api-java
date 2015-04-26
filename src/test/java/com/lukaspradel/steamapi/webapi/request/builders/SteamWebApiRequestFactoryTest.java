@@ -35,6 +35,8 @@ import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest.GetRecentlyPlayedGamesRequestServiceParameter;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
+import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestServiceParameter;
 
 public class SteamWebApiRequestFactoryTest {
 
@@ -459,5 +461,36 @@ public class SteamWebApiRequestFactoryTest {
 		assertNotNull(serviceParam);
 		assertEquals(serviceParam.getSteamId(), "12345");
 		assertEquals(serviceParam.getCount(), Integer.valueOf(5));
+	}
+
+	@Test
+	public void testCreateIsPlayingSharedGameRequest()
+			throws JsonParseException, JsonMappingException, IOException {
+
+		IsPlayingSharedGameRequest request = SteamWebApiRequestFactory
+				.createIsPlayingSharedGameRequest("12345", Integer.valueOf(20));
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_PLAYER_SERVICE);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.IS_PLAYING_SHARED_GAME);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertNotNull(parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON));
+
+		ObjectMapper mapper = new ObjectMapper();
+		String serviceParamJson = parameters
+				.get(AbstractSteamWebApiServiceRequestBuilder.REQUEST_PARAM_INPUT_JSON);
+		IsPlayingSharedGameRequestServiceParameter serviceParam = mapper
+				.readValue(serviceParamJson,
+						IsPlayingSharedGameRequestServiceParameter.class);
+
+		assertNotNull(serviceParam);
+		assertEquals(serviceParam.getSteamId(), "12345");
+		assertEquals(serviceParam.getAppIdPlaying(), Integer.valueOf(20));
 	}
 }
