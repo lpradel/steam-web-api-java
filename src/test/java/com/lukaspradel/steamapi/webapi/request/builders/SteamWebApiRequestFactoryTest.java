@@ -33,6 +33,8 @@ import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest.GetRecentlyPlayedGamesRequestServiceParameter;
+import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest.GetSchemaForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
@@ -492,5 +494,30 @@ public class SteamWebApiRequestFactoryTest {
 		assertNotNull(serviceParam);
 		assertEquals(serviceParam.getSteamId(), "12345");
 		assertEquals(serviceParam.getAppIdPlaying(), Integer.valueOf(20));
+	}
+
+	@Test
+	public void testCreateGetSchemaForGameRequest() throws JsonParseException,
+			JsonMappingException, IOException {
+
+		GetSchemaForGameRequest request = SteamWebApiRequestFactory
+				.createGetSchemaForGameRequest(Integer.valueOf(123));
+
+		assertNotNull(request);
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER_STATS);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_SCHEMA_FOR_GAME);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_TWO);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertNotNull(parameters
+				.get(GetSchemaForGameRequestBuilder.REQUEST_PARAM_APP_ID));
+
+		assertEquals(
+				parameters
+						.get(GetSchemaForGameRequestBuilder.REQUEST_PARAM_APP_ID),
+				"123");
 	}
 }

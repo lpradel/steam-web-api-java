@@ -94,5 +94,10 @@ public class SteamWebApiVersionTest extends BaseTest {
 				SteamWebApiVersion
 						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.IS_PLAYING_SHARED_GAME),
 				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_SCHEMA_FOR_GAME),
+				SteamWebApiVersion.VERSION_TWO);
 	}
 }

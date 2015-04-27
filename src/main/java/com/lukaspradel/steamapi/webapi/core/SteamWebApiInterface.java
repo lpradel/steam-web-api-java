@@ -55,6 +55,8 @@ public enum SteamWebApiInterface {
 			return I_STEAM_USER_STATS;
 		case IS_PLAYING_SHARED_GAME:
 			return I_PLAYER_SERVICE;
+		case GET_SCHEMA_FOR_GAME:
+			return I_STEAM_USER_STATS;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");

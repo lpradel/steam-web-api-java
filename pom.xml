@@ -214,6 +214,16 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>generate-getschemaforgame</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getschemaforgame</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getschemaforgame</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>generate-isplayingsharedgame</id>
                         <goals>
                             <goal>generate</goal>

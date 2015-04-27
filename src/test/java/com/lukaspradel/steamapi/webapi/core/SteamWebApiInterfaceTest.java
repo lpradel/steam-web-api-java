@@ -94,5 +94,10 @@ public class SteamWebApiInterfaceTest extends BaseTest {
 				SteamWebApiInterface
 						.getInterfaceForMethod(SteamWebApiInterfaceMethod.IS_PLAYING_SHARED_GAME),
 				SteamWebApiInterface.I_PLAYER_SERVICE);
+
+		assertEquals(
+				SteamWebApiInterface
+						.getInterfaceForMethod(SteamWebApiInterfaceMethod.GET_SCHEMA_FOR_GAME),
+				SteamWebApiInterface.I_STEAM_USER_STATS);
 	}
 }

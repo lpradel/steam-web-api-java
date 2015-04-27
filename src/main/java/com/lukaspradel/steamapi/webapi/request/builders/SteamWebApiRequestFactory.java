@@ -17,6 +17,8 @@ import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest.GetRecentlyPlayedGamesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest.GetSchemaForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
@@ -130,5 +132,11 @@ public abstract class SteamWebApiRequestFactory {
 
 		return new IsPlayingSharedGameRequestBuilder(steamId, appIdPlaying)
 				.buildRequest();
+	}
+
+	public static GetSchemaForGameRequest createGetSchemaForGameRequest(
+			Integer appId) {
+
+		return new GetSchemaForGameRequestBuilder(appId).buildRequest();
 	}
 }

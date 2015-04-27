@@ -3,6 +3,7 @@ package com.lukaspradel.steamapi.webapi.core;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
+import com.lukaspradel.steamapi.data.json.getschemaforgame.GetSchemaForGame;
 import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsPlayingSharedGame;
 import com.lukaspradel.steamapi.data.json.ownedgames.GetOwnedGames;
 import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievements;
@@ -31,7 +32,8 @@ public enum SteamWebApiInterfaceMethod {
 			"GetUserStatsForGame", GetUserStatsForGame.class), GET_OWNED_GAMES(
 			"GetOwnedGames", GetOwnedGames.class), GET_RECENTLY_PLAYED_GAMES(
 			"GetRecentlyPlayedGames", GetRecentlyPlayedGames.class), IS_PLAYING_SHARED_GAME(
-			"IsPlayingSharedGame", IsPlayingSharedGame.class);
+			"IsPlayingSharedGame", IsPlayingSharedGame.class), GET_SCHEMA_FOR_GAME(
+			"GetSchemaForGame", GetSchemaForGame.class);
 
 	private final String interfaceMethod;
 

@@ -52,6 +52,8 @@ public enum SteamWebApiVersion {
 			return VERSION_TWO;
 		case IS_PLAYING_SHARED_GAME:
 			return VERSION_ONE;
+		case GET_SCHEMA_FOR_GAME:
+			return VERSION_TWO;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");

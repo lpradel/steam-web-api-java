@@ -20,6 +20,7 @@ import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
+import com.lukaspradel.steamapi.data.json.getschemaforgame.GetSchemaForGame;
 import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsPlayingSharedGame;
 import com.lukaspradel.steamapi.data.json.ownedgames.GetOwnedGames;
 import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievements;
@@ -34,6 +35,7 @@ import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
@@ -422,5 +424,55 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertNotNull(isPlayingSharedGame.getResponse().getLenderSteamid());
 		assertEquals(isPlayingSharedGame.getResponse().getLenderSteamid(),
 				"123");
+	}
+
+	@Test
+	public void testProcessGetSchemaForGameRequest() throws SteamApiException,
+			IOException {
+
+		GetSchemaForGameRequest getSchemaForGameRequest = SteamWebApiRequestFactory
+				.createGetSchemaForGameRequest(123);
+
+		String mockAnswer = readResourceAsString("GetSchemaForGame.json");
+
+		when(requestHandlerMock.getWebApiResponse(getSchemaForGameRequest))
+				.thenReturn(mockAnswer);
+
+		GetSchemaForGame getSchemaForGame = client
+				.<GetSchemaForGame> processRequest(getSchemaForGameRequest);
+
+		assertNotNull(getSchemaForGame);
+		assertTrue(getSchemaForGame.getAdditionalProperties().isEmpty());
+		assertNotNull(getSchemaForGame.getGame());
+
+		assertEquals(getSchemaForGame.getGame().getGameName(), "PAYDAY 2");
+		assertEquals(getSchemaForGame.getGame().getGameVersion(), "275");
+		assertNotNull(getSchemaForGame.getGame().getAvailableGameStats());
+
+		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
+				.getAchievements().size(), 311);
+		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
+				.getAchievements().get(0).getName(), "hot_wheels");
+		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
+				.getAchievements().get(0).getDefaultvalue(), Integer.valueOf(0));
+		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
+				.getAchievements().get(0).getDisplayName(), "Coming in Hot");
+		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
+				.getAchievements().get(0).getHidden(), Integer.valueOf(0));
+		assertEquals(
+				getSchemaForGame.getGame().getAvailableGameStats()
+						.getAchievements().get(0).getDescription(),
+				"On day 1 of the Watchdogs job, don't let the cops shoot and destroy the escape vehicle.");
+		assertEquals(
+				getSchemaForGame.getGame().getAvailableGameStats()
+						.getAchievements().get(0).getIcon(),
+				"http://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/218620/f6ed9cd6ec9750bcd36193c74e6f16104f6c1267.jpg");
+		assertEquals(
+				getSchemaForGame.getGame().getAvailableGameStats()
+						.getAchievements().get(0).getIcongray(),
+				"http://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/218620/c336adacd88a21a6010c9b5596192322aecaf265.jpg");
+
+		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
+				.getStats().size(), 1100);
 	}
 }
