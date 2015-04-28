@@ -67,16 +67,7 @@ public class GetPlayerSummariesRequest extends SteamWebApiRequest {
 		@Override
 		public GetPlayerSummariesRequest buildRequest() {
 
-			StringBuilder steamIdsParam = new StringBuilder();
-
-			// Steam IDs are transmitted as comma-separated list
-			for (String steamId : steamIds) {
-				steamIdsParam.append(steamId);
-				steamIdsParam.append(",");
-			}
-			steamIdsParam.setLength(steamIdsParam.length() - 1);
-
-			addParameter(REQUEST_PARAM_STEAM_IDS, steamIdsParam.toString());
+			addListParameter(REQUEST_PARAM_STEAM_IDS, steamIds);
 
 			return new GetPlayerSummariesRequest(this);
 		}

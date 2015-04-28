@@ -20,6 +20,7 @@ import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
+import com.lukaspradel.steamapi.data.json.getplayerbans.GetPlayerBans;
 import com.lukaspradel.steamapi.data.json.getschemaforgame.GetSchemaForGame;
 import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsPlayingSharedGame;
 import com.lukaspradel.steamapi.data.json.ownedgames.GetOwnedGames;
@@ -33,6 +34,7 @@ import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesFo
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest;
@@ -474,5 +476,42 @@ public class SteamWebApiClientTest extends BaseTest {
 
 		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
 				.getStats().size(), 1100);
+	}
+
+	@Test
+	public void testProcessGetPlayerBansRequest() throws SteamApiException,
+			IOException {
+
+		List<String> steamIds = new ArrayList<String>();
+		steamIds.add("76561198051682777");
+		steamIds.add("76561198051682776");
+
+		GetPlayerBansRequest getPlayerBansRequest = SteamWebApiRequestFactory
+				.createGetPlayerBansRequest(steamIds);
+
+		String mockAnswer = readResourceAsString("GetPlayerBans.json");
+
+		when(requestHandlerMock.getWebApiResponse(getPlayerBansRequest))
+				.thenReturn(mockAnswer);
+
+		GetPlayerBans getPlayerBans = client
+				.<GetPlayerBans> processRequest(getPlayerBansRequest);
+
+		assertNotNull(getPlayerBans);
+		assertTrue(getPlayerBans.getAdditionalProperties().isEmpty());
+		assertNotNull(getPlayerBans.getPlayers());
+
+		assertEquals(getPlayerBans.getPlayers().size(), 2);
+		assertEquals(getPlayerBans.getPlayers().get(0).getSteamId(),
+				"76561198051682777");
+		assertEquals(getPlayerBans.getPlayers().get(0).getCommunityBanned(),
+				Boolean.FALSE);
+		assertEquals(getPlayerBans.getPlayers().get(0).getVACBanned(),
+				Boolean.FALSE);
+		assertEquals(getPlayerBans.getPlayers().get(0).getNumberOfVACBans(),
+				Integer.valueOf(0));
+		assertEquals(getPlayerBans.getPlayers().get(0).getDaysSinceLastBan(),
+				Integer.valueOf(0));
+		assertEquals(getPlayerBans.getPlayers().get(0).getEconomyBan(), "none");
 	}
 }

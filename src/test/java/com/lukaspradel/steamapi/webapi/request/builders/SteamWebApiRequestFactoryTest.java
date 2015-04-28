@@ -29,6 +29,8 @@ import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest.GetOwnedGamesRequestServiceParameter;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest.GetPlayerBansRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
@@ -519,5 +521,39 @@ public class SteamWebApiRequestFactoryTest {
 				parameters
 						.get(GetSchemaForGameRequestBuilder.REQUEST_PARAM_APP_ID),
 				"123");
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testCreateGetPlayerBansRequestMissingSteamIds() {
+
+		SteamWebApiRequestFactory.createGetPlayerBansRequest(Collections
+				.<String> emptyList());
+	}
+
+	@Test
+	public void testGetPlayerBansRequest() {
+
+		List<String> steamIds = new ArrayList<String>();
+		steamIds.add("123");
+		steamIds.add("456");
+		steamIds.add("789");
+
+		GetPlayerBansRequest request = SteamWebApiRequestFactory
+				.createGetPlayerBansRequest(steamIds);
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_PLAYER_BANS);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetPlayerBansRequestBuilder.REQUEST_PARAM_STEAM_IDS),
+				String.valueOf("123,456,789"));
 	}
 }
