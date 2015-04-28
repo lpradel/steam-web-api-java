@@ -13,6 +13,8 @@ import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest.GetOwnedGamesRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest.GetPlayerBansRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
@@ -138,5 +140,11 @@ public abstract class SteamWebApiRequestFactory {
 			Integer appId) {
 
 		return new GetSchemaForGameRequestBuilder(appId).buildRequest();
+	}
+
+	public static GetPlayerBansRequest createGetPlayerBansRequest(
+			List<String> steamIds) {
+
+		return new GetPlayerBansRequestBuilder(steamIds).buildRequest();
 	}
 }

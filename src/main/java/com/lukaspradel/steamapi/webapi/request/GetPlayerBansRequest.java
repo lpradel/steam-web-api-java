@@ -8,35 +8,35 @@ import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
 import com.lukaspradel.steamapi.webapi.request.builders.AbstractSteamWebApiRequestBuilder;
 
 /**
- * Steam Web API Request GetPlayerSummaries
+ * Steam Web API Request GetPlayerBans
  *
  * @see <a href=
- *      "https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerSummaries_.28v0002.29"
- *      >https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerSummaries_.28v0002.29</a>
+ *      "https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerBans_.28v1.29"
+ *      >https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerBans_.28v1.29</a>
  * @author lpradel
  *
  */
-public class GetPlayerSummariesRequest extends SteamWebApiRequest {
+public class GetPlayerBansRequest extends SteamWebApiRequest {
 
-	private GetPlayerSummariesRequest(SteamWebApiRequestBuilder builder) {
+	private GetPlayerBansRequest(SteamWebApiRequestBuilder builder) {
 		super(builder);
 	}
 
 	/**
 	 * Builder object to create instances of {@link SteamWebApiRequest} for
-	 * request type {@link GetPlayerSummariesRequest}.
+	 * request type {@link GetPlayerBansRequest}.
 	 *
 	 * @author lpradel
 	 *
 	 */
-	public static class GetPlayerSummariesRequestBuilder extends
+	public static class GetPlayerBansRequestBuilder extends
 			AbstractSteamWebApiRequestBuilder {
 
 		private final List<String> steamIds;
 
 		public static final String REQUEST_PARAM_STEAM_IDS = "steamids";
 
-		public GetPlayerSummariesRequestBuilder(List<String> steamIds) {
+		public GetPlayerBansRequestBuilder(List<String> steamIds) {
 
 			if (steamIds.isEmpty()) {
 				throw new IllegalArgumentException(
@@ -55,21 +55,21 @@ public class GetPlayerSummariesRequest extends SteamWebApiRequest {
 		@Override
 		protected SteamWebApiInterfaceMethod getInterfaceMethod() {
 
-			return SteamWebApiInterfaceMethod.GET_PLAYER_SUMMARIES;
+			return SteamWebApiInterfaceMethod.GET_PLAYER_BANS;
 		}
 
 		@Override
 		protected SteamWebApiVersion getVersion() {
 
-			return SteamWebApiVersion.VERSION_TWO;
+			return SteamWebApiVersion.VERSION_ONE;
 		}
 
 		@Override
-		public GetPlayerSummariesRequest buildRequest() {
+		public GetPlayerBansRequest buildRequest() {
 
 			addListParameter(REQUEST_PARAM_STEAM_IDS, steamIds);
 
-			return new GetPlayerSummariesRequest(this);
+			return new GetPlayerBansRequest(this);
 		}
 	}
 }

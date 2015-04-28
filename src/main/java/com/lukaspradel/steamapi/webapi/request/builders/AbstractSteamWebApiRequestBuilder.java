@@ -2,6 +2,7 @@ package com.lukaspradel.steamapi.webapi.request.builders;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
@@ -38,6 +39,27 @@ public abstract class AbstractSteamWebApiRequestBuilder extends
 	protected void addParameter(String name, Integer value) {
 
 		parameters.put(name, String.valueOf(value));
+	}
+
+	/**
+	 * Adds List-parameter as comma-separated strings
+	 *
+	 * @param name
+	 *            Name of the List-parameter
+	 * @param valueList
+	 *            List of the comma-separated strings
+	 */
+	protected void addListParameter(String name, List<String> valueList) {
+
+		StringBuilder paramValue = new StringBuilder();
+
+		for (String value : valueList) {
+			paramValue.append(value);
+			paramValue.append(",");
+		}
+		paramValue.setLength(paramValue.length() - 1);
+
+		addParameter(name, paramValue.toString());
 	}
 
 	@Override

@@ -99,5 +99,10 @@ public class SteamWebApiInterfaceTest extends BaseTest {
 				SteamWebApiInterface
 						.getInterfaceForMethod(SteamWebApiInterfaceMethod.GET_SCHEMA_FOR_GAME),
 				SteamWebApiInterface.I_STEAM_USER_STATS);
+
+		assertEquals(
+				SteamWebApiInterface
+						.getInterfaceForMethod(SteamWebApiInterfaceMethod.GET_PLAYER_BANS),
+				SteamWebApiInterface.I_STEAM_USER);
 	}
 }

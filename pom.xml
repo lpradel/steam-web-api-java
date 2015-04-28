@@ -233,6 +233,16 @@
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/isplayingsharedgame</sourceDirectory>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>generate-getplayerbans</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getplayerbans</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getplayerbans</sourceDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

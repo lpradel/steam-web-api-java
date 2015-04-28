@@ -54,6 +54,8 @@ public enum SteamWebApiVersion {
 			return VERSION_ONE;
 		case GET_SCHEMA_FOR_GAME:
 			return VERSION_TWO;
+		case GET_PLAYER_BANS:
+			return VERSION_ONE;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");
