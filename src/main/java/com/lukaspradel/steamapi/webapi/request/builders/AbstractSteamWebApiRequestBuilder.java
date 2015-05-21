@@ -62,6 +62,38 @@ public abstract class AbstractSteamWebApiRequestBuilder extends
 		addParameter(name, paramValue.toString());
 	}
 
+	/**
+	 * Adds Array-parameter as comma-separated array-strings. For example, an
+	 * array parameter by the name of "param" with the values "val1, val2" would
+	 * be written as "param[0]=val1,param[1]=val2".
+	 *
+	 * @param name
+	 *            Name of the Array-parameter
+	 * @param valueList
+	 *            List of the comma-separated strings
+	 */
+	protected void addArrayParameter(String name, List<String> valueList) {
+
+		int i = 0;
+
+		for (String value : valueList) {
+
+			StringBuilder paramName = new StringBuilder();
+			StringBuilder paramValue = new StringBuilder();
+
+			paramName.append(name);
+			paramName.append("[");
+			paramName.append(i);
+			paramName.append("]");
+
+			paramValue.append(value);
+
+			addParameter(paramName.toString(), paramValue.toString());
+
+			i++;
+		}
+	}
+
 	@Override
 	public Map<String, String> getParameters() {
 		return Collections.unmodifiableMap(parameters);

@@ -155,6 +155,16 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>generate-getglobalstatsforgame</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getglobalstatsforgame</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getglobalstatsforgame</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>generate-getplayersummaries</id>
                         <goals>
                             <goal>generate</goal>

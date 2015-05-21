@@ -23,6 +23,8 @@ import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.GetFriendLis
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest.GetGlobalStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
@@ -126,6 +128,65 @@ public class SteamWebApiRequestFactoryTest {
 				parameters
 						.get(GetGlobalAchievementPercentagesForAppRequestBuilder.REQUEST_PARAM_GAME_ID),
 				String.valueOf(gameId));
+	}
+
+	@Test
+	public void testCreateGetGlobalStatsForGameRequest() {
+
+		int gameId = 400;
+		int count = 1;
+
+		List<String> names = new ArrayList<String>();
+		names.add("global.map.emp_isle");
+
+		GetGlobalStatsForGameRequest request = SteamWebApiRequestFactory
+				.createGetGlobalStatsForGameRequest(gameId, count, names);
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),
+				SteamWebApiInterface.I_STEAM_USER_STATS);
+		assertEquals(request.getInterfaceMethod(),
+				SteamWebApiInterfaceMethod.GET_GLOBAL_STATS_FOR_GAME);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String, String> parameters = request.getParameters();
+		assertNotNull(parameters);
+		assertEquals(
+				parameters
+						.get(GetGlobalStatsForGameRequestBuilder.REQUEST_PARAM_GAME_ID),
+				String.valueOf(gameId));
+		assertEquals(
+				parameters
+						.get(GetGlobalStatsForGameRequestBuilder.REQUEST_PARAM_COUNT),
+				String.valueOf(count));
+		assertEquals(parameters.get("name[0]"),
+				String.valueOf("global.map.emp_isle"));
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testCreateGetGlobalStatsForGameRequestMissingNames() {
+
+		int gameId = 400;
+		int count = 0;
+
+		List<String> names = new ArrayList<String>();
+
+		SteamWebApiRequestFactory.createGetGlobalStatsForGameRequest(gameId,
+				count, names);
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testCreateGetGlobalStatsForGameRequestMismatchCountNames() {
+
+		int gameId = 400;
+		int count = 2;
+
+		List<String> names = new ArrayList<String>();
+		names.add("val1");
+
+		SteamWebApiRequestFactory.createGetGlobalStatsForGameRequest(gameId,
+				count, names);
 	}
 
 	@Test(expectedExceptions = IllegalArgumentException.class)

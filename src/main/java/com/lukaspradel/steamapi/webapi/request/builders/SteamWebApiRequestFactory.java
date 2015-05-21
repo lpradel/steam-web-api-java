@@ -7,6 +7,8 @@ import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.GetFriendLis
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest.GetGlobalStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
@@ -52,6 +54,13 @@ public abstract class SteamWebApiRequestFactory {
 			int gameId) {
 
 		return new GetGlobalAchievementPercentagesForAppRequestBuilder(gameId)
+				.buildRequest();
+	}
+
+	public static GetGlobalStatsForGameRequest createGetGlobalStatsForGameRequest(
+			int gameId, int count, List<String> names) {
+
+		return new GetGlobalStatsForGameRequestBuilder(gameId, count, names)
 				.buildRequest();
 	}
 

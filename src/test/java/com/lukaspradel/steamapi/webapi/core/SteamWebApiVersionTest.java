@@ -3,6 +3,9 @@ package com.lukaspradel.steamapi.webapi.core;
 import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -62,6 +65,11 @@ public class SteamWebApiVersionTest extends BaseTest {
 
 		assertEquals(
 				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_GLOBAL_STATS_FOR_GAME),
+				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
 						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_NEWS_FOR_APP),
 				SteamWebApiVersion.VERSION_TWO);
 
@@ -104,5 +112,21 @@ public class SteamWebApiVersionTest extends BaseTest {
 				SteamWebApiVersion
 						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_PLAYER_BANS),
 				SteamWebApiVersion.VERSION_ONE);
+	}
+
+	@Test(dependsOnMethods = { "testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnumValue" })
+	public void testGetCurrentVersionForWebApiInterfaceMethodNoMissingValue() {
+
+		SteamWebApiInterfaceMethod[] valuesArray = SteamWebApiInterfaceMethod
+				.values();
+		List<SteamWebApiInterfaceMethod> values = Arrays.asList(valuesArray);
+
+		for (SteamWebApiInterfaceMethod value : values) {
+
+			SteamWebApiVersion.getCurrentVersionForWebApiInterfaceMethod(value);
+		}
+
+		// An exception will be raised in the default case if any of the enum
+		// values are not implemented in the switch statement!
 	}
 }

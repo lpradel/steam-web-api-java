@@ -3,6 +3,9 @@ package com.lukaspradel.steamapi.webapi.core;
 import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -17,14 +20,14 @@ public class SteamWebApiInterfaceTest extends BaseTest {
 	@Mock
 	private SteamWebApiInterfaceMethod additionalSteamWebApiInterfaceMethod;
 
-	@Test(expectedExceptions = IllegalArgumentException.class, dependsOnMethods = { "testGetInterfaceMethodAdditionalUnknownEnumValue" })
-	public void testGetInterfaceMethodError() {
+	@Test(expectedExceptions = IllegalArgumentException.class, dependsOnMethods = { "testGetInterfaceForMethodAdditionalUnknownEnumValue" })
+	public void testGetInterfaceForMethodError() {
 
 		SteamWebApiInterface.getInterfaceForMethod(null);
 	}
 
 	@Test(expectedExceptions = IllegalArgumentException.class)
-	public void testGetInterfaceMethodAdditionalUnknownEnumValue() {
+	public void testGetInterfaceForMethodAdditionalUnknownEnumValue() {
 
 		SteamWebApiInterfaceMethod[] values = SteamWebApiInterfaceMethod
 				.values();
@@ -47,8 +50,8 @@ public class SteamWebApiInterfaceTest extends BaseTest {
 				.getInterfaceForMethod(additionalSteamWebApiInterfaceMethod);
 	}
 
-	@Test(dependsOnMethods = { "testGetInterfaceMethodAdditionalUnknownEnumValue" })
-	public void testGetInterfaceMethod() {
+	@Test(dependsOnMethods = { "testGetInterfaceForMethodAdditionalUnknownEnumValue" })
+	public void testGetInterfaceForMethod() {
 
 		assertEquals(
 				SteamWebApiInterface
@@ -58,6 +61,11 @@ public class SteamWebApiInterfaceTest extends BaseTest {
 		assertEquals(
 				SteamWebApiInterface
 						.getInterfaceForMethod(SteamWebApiInterfaceMethod.GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP),
+				SteamWebApiInterface.I_STEAM_USER_STATS);
+
+		assertEquals(
+				SteamWebApiInterface
+						.getInterfaceForMethod(SteamWebApiInterfaceMethod.GET_GLOBAL_STATS_FOR_GAME),
 				SteamWebApiInterface.I_STEAM_USER_STATS);
 
 		assertEquals(
@@ -104,5 +112,21 @@ public class SteamWebApiInterfaceTest extends BaseTest {
 				SteamWebApiInterface
 						.getInterfaceForMethod(SteamWebApiInterfaceMethod.GET_PLAYER_BANS),
 				SteamWebApiInterface.I_STEAM_USER);
+	}
+
+	@Test(dependsOnMethods = { "testGetInterfaceForMethodAdditionalUnknownEnumValue" })
+	public void testGetInterfaceForMethodNoMissingValue() {
+
+		SteamWebApiInterfaceMethod[] valuesArray = SteamWebApiInterfaceMethod
+				.values();
+		List<SteamWebApiInterfaceMethod> values = Arrays.asList(valuesArray);
+
+		for (SteamWebApiInterfaceMethod value : values) {
+
+			SteamWebApiInterface.getInterfaceForMethod(value);
+		}
+
+		// An exception will be raised in the default case if any of the enum
+		// values are not implemented in the switch statement!
 	}
 }

@@ -2,6 +2,7 @@ package com.lukaspradel.steamapi.webapi.client;
 
 import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
@@ -9,6 +10,7 @@ import static org.testng.Assert.fail;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.mockito.Mock;
 import org.powermock.reflect.Whitebox;
@@ -20,6 +22,7 @@ import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
+import com.lukaspradel.steamapi.data.json.getglobalstatsforgame.GetGlobalStatsForGame;
 import com.lukaspradel.steamapi.data.json.getplayerbans.GetPlayerBans;
 import com.lukaspradel.steamapi.data.json.getschemaforgame.GetSchemaForGame;
 import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsPlayingSharedGame;
@@ -31,6 +34,7 @@ import com.lukaspradel.steamapi.data.json.recentlyplayedgames.GetRecentlyPlayedG
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
@@ -194,6 +198,48 @@ public class SteamWebApiClientTest extends BaseTest {
 						.getName(), "no_one_cared_who_i_was");
 		assertEquals(getGlobalAchievementPercentagesForApp
 				.getAchievementpercentages().getAchievements().size(), 316);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Test
+	public void testProcessGetGlobalStatsForGameRequest()
+			throws SteamApiException, IOException {
+
+		int gameId = 400;
+		int count = 1;
+
+		List<String> names = new ArrayList<String>();
+		names.add("global.map.emp_isle");
+
+		GetGlobalStatsForGameRequest getGlobalStatsForGameRequest = SteamWebApiRequestFactory
+				.createGetGlobalStatsForGameRequest(gameId, count, names);
+
+		String mockAnswer = readResourceAsString("GetGlobalStatsForGame.json");
+
+		when(requestHandlerMock.getWebApiResponse(getGlobalStatsForGameRequest))
+				.thenReturn(mockAnswer);
+
+		GetGlobalStatsForGame getGlobalStatsForGame = client
+				.<GetGlobalStatsForGame> processRequest(getGlobalStatsForGameRequest);
+
+		assertNotNull(getGlobalStatsForGame);
+		assertTrue(getGlobalStatsForGame.getAdditionalProperties().isEmpty());
+		assertNotNull(getGlobalStatsForGame.getResponse());
+		assertEquals(getGlobalStatsForGame.getResponse().getResult(),
+				Integer.valueOf(count));
+		assertNotNull(getGlobalStatsForGame.getResponse().getGlobalstats());
+
+		assertFalse(getGlobalStatsForGame.getResponse().getGlobalstats()
+				.getAdditionalProperties().isEmpty());
+		Map<String, Object> additionalProps = getGlobalStatsForGame
+				.getResponse().getGlobalstats().getAdditionalProperties();
+
+		assertNotNull(additionalProps.get("global.map.emp_isle"));
+
+		Map<String, Object> achievementAdditionalProps = (Map<String, Object>) additionalProps
+				.get("global.map.emp_isle");
+		assertNotNull(achievementAdditionalProps.get("total"));
+		assertEquals(achievementAdditionalProps.get("total"), "11023654915");
 	}
 
 	@Test
