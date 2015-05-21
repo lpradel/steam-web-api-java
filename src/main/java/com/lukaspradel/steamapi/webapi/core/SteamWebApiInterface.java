@@ -41,6 +41,8 @@ public enum SteamWebApiInterface {
 			return I_STEAM_USER;
 		case GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP:
 			return I_STEAM_USER_STATS;
+		case GET_GLOBAL_STATS_FOR_GAME:
+			return I_STEAM_USER_STATS;
 		case GET_NEWS_FOR_APP:
 			return I_STEAM_NEWS;
 		case GET_OWNED_GAMES:

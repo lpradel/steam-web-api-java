@@ -38,6 +38,8 @@ public enum SteamWebApiVersion {
 			return VERSION_ONE;
 		case GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP:
 			return VERSION_TWO;
+		case GET_GLOBAL_STATS_FOR_GAME:
+			return VERSION_ONE;
 		case GET_NEWS_FOR_APP:
 			return VERSION_TWO;
 		case GET_OWNED_GAMES:

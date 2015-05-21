@@ -3,6 +3,7 @@ package com.lukaspradel.steamapi.webapi.core;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
+import com.lukaspradel.steamapi.data.json.getglobalstatsforgame.GetGlobalStatsForGame;
 import com.lukaspradel.steamapi.data.json.getplayerbans.GetPlayerBans;
 import com.lukaspradel.steamapi.data.json.getschemaforgame.GetSchemaForGame;
 import com.lukaspradel.steamapi.data.json.isplayingsharedgame.IsPlayingSharedGame;
@@ -26,7 +27,8 @@ public enum SteamWebApiInterfaceMethod {
 
 	GET_NEWS_FOR_APP("GetNewsForApp", GetNewsForApp.class), GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP(
 			"GetGlobalAchievementPercentagesForApp",
-			GetGlobalAchievementPercentagesForApp.class), GET_PLAYER_SUMMARIES(
+			GetGlobalAchievementPercentagesForApp.class), GET_GLOBAL_STATS_FOR_GAME(
+			"GetGlobalStatsForGame", GetGlobalStatsForGame.class), GET_PLAYER_SUMMARIES(
 			"GetPlayerSummaries", GetPlayerSummaries.class), GET_FRIEND_LIST(
 			"GetFriendList", GetFriendList.class), GET_PLAYER_ACHIEVEMENTS(
 			"GetPlayerAchievements", GetPlayerAchievements.class), GET_USER_STATS_FOR_GAME(

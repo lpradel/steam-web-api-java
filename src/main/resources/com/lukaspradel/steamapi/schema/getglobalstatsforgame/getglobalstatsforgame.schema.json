@@ -1,0 +1,21 @@
+{
+    "type":"object",
+    "required":false,
+    "javaType":"com.lukaspradel.steamapi.data.json.getglobalstatsforgame.GetGlobalStatsForGame",
+    "properties":{
+        "response":{
+            "type":"object",
+            "required":false,
+            "properties":{
+                "globalstats":{
+                    "type":"object",
+                    "required":false
+                },
+                "result":{
+                    "type":"integer",
+                    "required":false
+                }
+            }
+        }
+    }
+}
