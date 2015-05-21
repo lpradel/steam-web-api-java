@@ -2,6 +2,8 @@ package com.lukaspradel.steamapi.core.exception;
 
 public class SteamApiException extends Exception {
 
+	private static final long serialVersionUID = 6414882632273395318L;
+
 	public enum Cause {
 		HTTP_ERROR, FORBIDDEN, INTERNAL_ERROR, MAPPING
 	}
