@@ -5,7 +5,7 @@ Steam Web API for Java
 [![Coverage Status](https://coveralls.io/repos/lpradel/steam-web-api-java/badge.svg?branch=master)](https://coveralls.io/r/lpradel/steam-web-api-java?branch=master)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.lukaspradel/steam-web-api/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.lukaspradel/steam-web-api)
 
-This library provides access to the data available from Valve's Steam API for Java applications. The available systems/interfaces are documented in the [Valve Developer Community Wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API). In the future, the remaining services will be added.
+This library provides access to the data available from Valve's Steam API for Java applications. The available systems/interfaces are documented in the [Valve Developer Community Wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
 The resulting data is mapped to POJOs with canonical accessors which can be consumed to evaluate the result data. The only requirement to use this library is a [Steam Web API Key](http://steamcommunity.com/dev/apikey). Once provided, it takes 3 lines of Java code to consume a Steam webservice with this library (see **Usage** below).
 
@@ -21,7 +21,7 @@ Include the following dependency in your POM:
 <dependency>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 </dependency>
 ```
 
@@ -136,6 +136,7 @@ The result data is in the `GetNewsForApp` POJO. You can access it using the acce
 
 ## History
 
+- Version 1.1: Minor bugfix release. Fixed #1 and updated dependencies.
 - Version 1.0: Initial release. Includes all functionality documented in the [Valve Developer Community Wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
 ## Credits
