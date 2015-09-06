@@ -51,7 +51,7 @@ Furthermore, you need to ensure that the .jar is present at runtime. This depend
 
 ### Manual
 
-You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.0/steam-web-api-1.0.jar) or [Maven Central](http://search.maven.org/remotecontent?filepath=com/lukaspradel/steam-web-api/1.0/steam-web-api-1.0.jar).
+You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.1/steam-web-api-1.1.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.1/steam-web-api-1.1.jar).
 
 ### Dependencies
 
