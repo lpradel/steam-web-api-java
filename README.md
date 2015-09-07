@@ -11,7 +11,7 @@ The resulting data is mapped to POJOs with canonical accessors which can be cons
 
 ## Installation
 
-The installation process of this library depends on your buid system and dependency management. The necessary steps for the most common approaches are listed below.
+The installation process of this library depends on your build system and dependency management. The necessary steps for the most common approaches are listed below.
 
 ### Maven
 
