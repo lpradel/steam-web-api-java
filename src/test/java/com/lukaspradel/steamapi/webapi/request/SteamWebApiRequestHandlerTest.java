@@ -6,20 +6,27 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
+import org.apache.http.NameValuePair;
 import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.message.BasicNameValuePair;
 import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
 import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.BaseTest;
@@ -53,7 +60,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	private HttpEntity httpEntityMock;
 
 	@Test
-	public void testGetRequestUrl() {
+	public void testGetRequestPath() {
 
 		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
 		when(requestMock.getApiInterface()).thenReturn(
@@ -63,54 +70,51 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		when(requestMock.getVersion()).thenReturn(
 				SteamWebApiVersion.VERSION_TWO);
 
-		String actual = requestHandlerHttps.getRequestUrl("https://",
-				requestMock, "format=json");
-		assertEquals(actual,
-				"https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?format=json");
+		String actual = requestHandlerHttps.getRequestPath(requestMock);
+		assertEquals(actual, "/ISteamNews/GetNewsForApp/v0002");
 	}
 
 	@Test
-	public void testGetParametersUrl() {
+	public void testGetRequestParameters() {
 
 		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("format", "json");
 		parameters.put("test-parameter", "test-value");
+		parameters.put("input_json", "{\"steamid\":\"76561198039505218\"}");
 
-		String actual = requestHandlerHttps.getParametersUrl(parameters);
-		assertTrue(actual.contains("test-parameter=test-value"));
-		assertTrue(actual.contains("format=json"));
-		assertTrue(actual.contains("key=12345"));
-		assertTrue(actual.contains("&"));
+		List<NameValuePair> actual = requestHandlerHttps
+				.getRequestParameters(parameters);
+		assertEquals(actual.size(), 4);
+		assertTrue(actual.contains(new BasicNameValuePair("key", "12345")));
+		assertTrue(actual.contains(new BasicNameValuePair("format", "json")));
+		assertTrue(actual.contains(new BasicNameValuePair("test-parameter",
+				"test-value")));
+		assertTrue(actual.contains(new BasicNameValuePair("input_json",
+				"{\"steamid\":\"76561198039505218\"}")));
 	}
 
 	@Test
-	public void testGetRequestUrlByRequest() {
+	public void testGetRequestUri() throws SteamApiException {
 
-		Map<String, String> parameters = new HashMap<String, String>();
-		parameters.put("format", "json");
-		parameters.put("test-parameter", "test-value");
+		String scheme = "https";
+		String host = "api.steampowered.com";
+		String path = "/IPlayerService/GetOwnedGames/v0001";
+		List<NameValuePair> parameters = new ArrayList<NameValuePair>();
+		parameters.add(new BasicNameValuePair("key", "12345"));
+		parameters.add(new BasicNameValuePair("format", "json"));
+		parameters.add(new BasicNameValuePair("input_json",
+				"{\"steamid\":\"76561198039505218\"}"));
 
-		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
-		when(requestMock.getApiInterface()).thenReturn(
-				SteamWebApiInterface.I_STEAM_NEWS);
-		when(requestMock.getInterfaceMethod()).thenReturn(
-				SteamWebApiInterfaceMethod.GET_NEWS_FOR_APP);
-		when(requestMock.getVersion()).thenReturn(
-				SteamWebApiVersion.VERSION_TWO);
-		when(requestMock.getParameters()).thenReturn(parameters);
-
-		when(requestHandlerHttpsSpy.getParametersUrl(parameters)).thenReturn(
-				"test-parameter=test-value&format=json&key=12345");
-		Mockito.doReturn(
-				"https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?test-parameter=test-value&format=json&key=12345")
-				.when(requestHandlerHttpsSpy)
-				.getRequestUrl("https://", requestMock,
-						"test-parameter=test-value&format=json&key=12345");
-
-		String actual = requestHandlerHttpsSpy.getRequestUrl(requestMock);
+		URI actual = requestHandlerHttpsSpy.getRequestUri(scheme, host, path,
+				parameters);
+		assertEquals(actual.getScheme(), "https");
+		assertEquals(actual.getHost(), "api.steampowered.com");
+		assertEquals(actual.getPath(), "/IPlayerService/GetOwnedGames/v0001");
+		assertEquals(actual.getQuery(),
+				"key=12345&format=json&input_json={\"steamid\":\"76561198039505218\"}");
 		assertEquals(
-				actual,
-				"https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?test-parameter=test-value&format=json&key=12345");
+				actual.toString(),
+				"https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001?key=12345&format=json&input_json=%7B%22steamid%22%3A%2276561198039505218%22%7D");
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)
@@ -124,12 +128,17 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
-		requestHandlerHttpsSpy.getWebApiResponse("requestUrl");
+		URI uriMock = PowerMockito.mock(URI.class);
+
+		requestHandlerHttpsSpy.getWebApiResponse(uriMock);
+
+		fail("An exception should be thrown in getWebApiResponse!");
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)
 	public void testGetWebApiResponseErrorCode()
-			throws ClientProtocolException, IOException, SteamApiException {
+			throws ClientProtocolException, IOException, SteamApiException,
+			URISyntaxException {
 
 		when(statusLineMock.getStatusCode()).thenReturn(
 				HttpStatus.SC_INTERNAL_SERVER_ERROR);
@@ -138,7 +147,11 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
-		requestHandlerHttpsSpy.getWebApiResponse("requestUrl");
+		URI uriMock = PowerMockito.mock(URI.class);
+
+		requestHandlerHttpsSpy.getWebApiResponse(uriMock);
+
+		fail("An exception should be thrown in getWebApiResponse!");
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)
@@ -149,12 +162,24 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 				new IOException("intended-io-exception"));
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
-		requestHandlerHttpsSpy.getWebApiResponse("requestUrl");
+		URI uriMock = PowerMockito.mock(URI.class);
+
+		requestHandlerHttpsSpy.getWebApiResponse(uriMock);
+
+		fail("An exception should be thrown in getWebApiResponse!");
 	}
 
 	@Test
 	public void testGetWebApiResponse() throws ClientProtocolException,
 			IOException, SteamApiException {
+
+		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
+		when(requestMock.getApiInterface()).thenReturn(
+				SteamWebApiInterface.I_STEAM_NEWS);
+		when(requestMock.getInterfaceMethod()).thenReturn(
+				SteamWebApiInterfaceMethod.GET_NEWS_FOR_APP);
+		when(requestMock.getVersion()).thenReturn(
+				SteamWebApiVersion.VERSION_TWO);
 
 		when(statusLineMock.getStatusCode()).thenReturn(HttpStatus.SC_OK);
 		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);

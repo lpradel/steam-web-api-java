@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTest extends PowerMockTestCase {
 
 	@BeforeMethod(alwaysRun = true)
-	public void injectDoubles() {
+	public void initMocks() {
 		MockitoAnnotations.initMocks(this);
 	}
 

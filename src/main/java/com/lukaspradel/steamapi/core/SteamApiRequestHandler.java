@@ -8,9 +8,9 @@ package com.lukaspradel.steamapi.core;
  */
 public abstract class SteamApiRequestHandler {
 
-	private static final String PROTOCOL_HTTPS = "https://";
+	private static final String PROTOCOL_HTTPS = "https";
 
-	private static final String PROTOCOL_HTTP = "http://";
+	private static final String PROTOCOL_HTTP = "http";
 
 	private boolean useHttps;
 
