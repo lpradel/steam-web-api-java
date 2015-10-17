@@ -21,7 +21,7 @@ Include the following dependency in your POM:
 <dependency>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 </dependency>
 ```
 
@@ -51,7 +51,7 @@ Furthermore, you need to ensure that the .jar is present at runtime. This depend
 
 ### Manual
 
-You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.1/steam-web-api-1.1.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.1/steam-web-api-1.1.jar).
+You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.2/steam-web-api-1.2.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.2/steam-web-api-1.2.jar).
 
 ### Dependencies
 
@@ -83,7 +83,7 @@ public class SteamWebApiDemo {
     
         SteamWebApiClient client = new SteamWebApiClient.SteamWebApiClientBuilder("Your-Web-API-Key").build();
         GetNewsForAppRequest request = SteamWebApiRequestFactory.createGetNewsForAppRequest(570); // appId of Dota 2
-        GetNewsForApp getNewsForApp = client.<GetNewsForApp> processRequest(getNewsForAppRequest);
+        GetNewsForApp getNewsForApp = client.<GetNewsForApp> processRequest(request);
     }
 
 }
@@ -121,7 +121,7 @@ GetNewsForAppRequest request = new GetNewsForAppRequestBuilder(570).count(10).ma
 
 Finally, invoke the `processRequest` method of `SteamWebApiClient`:
 ```java
-GetNewsForApp getNewsForApp = client.<GetNewsForApp> processRequest(getNewsForAppRequest);
+GetNewsForApp getNewsForApp = client.<GetNewsForApp> processRequest(request);
 ```
 
 The result data is in the `GetNewsForApp` POJO. You can access it using the accessors of the POJO in question.
@@ -136,6 +136,7 @@ The result data is in the `GetNewsForApp` POJO. You can access it using the acce
 
 ## History
 
+- Version 1.2: Bugfix Release. Fixed #3, updated dependencies and fixed non-compiling code in docs.
 - Version 1.1: Minor bugfix release. Fixed #1 and updated dependencies.
 - Version 1.0: Initial release. Includes all functionality documented in the [Valve Developer Community Wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
