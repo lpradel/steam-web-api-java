@@ -58,7 +58,7 @@ You can download the artifact manually from [Sonatype Nexus](https://oss.sonatyp
 The library itself has the following dependencies:
 - Apache Commons Lang 2.6
 - Apache Commons IO 2.4
-- Apache Http Client 4.4
+- Apache Http Client 4.5
 - Jackson 2
 - Slf4j (use an appropriate Logger implementation)
 
