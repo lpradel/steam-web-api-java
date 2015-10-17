@@ -25,6 +25,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.message.BasicNameValuePair;
+import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
 import org.testng.annotations.Test;
@@ -58,6 +59,36 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	@Mock
 	private HttpEntity httpEntityMock;
+
+	@Test
+	public void testGetRequestUrl() throws SteamApiException {
+
+		URI uriMock = PowerMockito.mock(URI.class);
+		Map<String, String> parameters = new HashMap<String, String>();
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+
+		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
+		when(requestMock.getApiInterface()).thenReturn(
+				SteamWebApiInterface.I_STEAM_NEWS);
+		when(requestMock.getInterfaceMethod()).thenReturn(
+				SteamWebApiInterfaceMethod.GET_NEWS_FOR_APP);
+		when(requestMock.getVersion()).thenReturn(
+				SteamWebApiVersion.VERSION_TWO);
+		when(requestMock.getParameters()).thenReturn(parameters);
+		when(requestHandlerHttpsSpy.getRequestParameters(parameters))
+				.thenReturn(params);
+		when(
+				requestHandlerHttpsSpy.getRequestUri(any(String.class),
+						any(String.class), any(String.class),
+						Matchers.anyListOf(NameValuePair.class))).thenReturn(
+				uriMock);
+
+		URI actual = requestHandlerHttpsSpy.getRequestUrl(requestMock);
+		verify(requestHandlerHttpsSpy).getRequestUri("https",
+				"api.steampowered.com", "/ISteamNews/GetNewsForApp/v0002",
+				params);
+		assertEquals(actual, uriMock);
+	}
 
 	@Test
 	public void testGetRequestPath() {
