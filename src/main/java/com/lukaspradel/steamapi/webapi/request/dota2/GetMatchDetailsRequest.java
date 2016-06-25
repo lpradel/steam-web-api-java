@@ -15,21 +15,21 @@ import com.lukaspradel.steamapi.webapi.request.builders.AbstractSteamWebApiReque
  * @author Pazus
  *
  */
-public class GetMatchDetails extends SteamWebApiRequest{
-    public GetMatchDetails (SteamWebApiRequestBuilder builder) {super(builder);}
+public class GetMatchDetailsRequest extends SteamWebApiRequest{
+    public GetMatchDetailsRequest(SteamWebApiRequestBuilder builder) {super(builder);}
 
     /**
      * Builder object to create instances of {@link SteamWebApiRequest} for
-     * request type {@link GetMatchDetails}.
+     * request type {@link GetMatchDetailsRequest}.
      *
      * @author Pazus
      *
      */
-    public class GetMatchDetailsBuilder extends AbstractSteamWebApiRequestBuilder {
+    public static class GetMatchDetailsRequestBuilder extends AbstractSteamWebApiRequestBuilder {
         private final String matchId;
         private final String REQUEST_PARAM_MATCH_ID = "match_id";
 
-        public GetMatchDetailsBuilder(String matchId) {
+        public GetMatchDetailsRequestBuilder(String matchId) {
             this.matchId = matchId;
         }
 
@@ -49,10 +49,10 @@ public class GetMatchDetails extends SteamWebApiRequest{
         }
 
         @Override
-        public SteamWebApiRequest buildRequest() {
+        public GetMatchDetailsRequest buildRequest() {
             addParameter(REQUEST_PARAM_MATCH_ID,matchId);
 
-            return new GetMatchDetails(this);
+            return new GetMatchDetailsRequest(this);
         }
     }
 

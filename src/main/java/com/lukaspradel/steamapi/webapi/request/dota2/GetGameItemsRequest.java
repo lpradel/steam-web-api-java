@@ -15,17 +15,17 @@ import com.lukaspradel.steamapi.webapi.request.builders.AbstractSteamWebApiReque
  * @author Pazus
  *
  */
-public class GetGameItems extends SteamWebApiRequest {
-    public GetGameItems (SteamWebApiRequestBuilder builder) {super(builder);}
+public class GetGameItemsRequest extends SteamWebApiRequest {
+    public GetGameItemsRequest(SteamWebApiRequestBuilder builder) {super(builder);}
 
     /**
      * Builder object to create instances of {@link SteamWebApiRequest} for
-     * request type {@link GetGameItems}.
+     * request type {@link GetGameItemsRequest}.
      *
      * @author Pazus
      *
      */
-    public class GetGameItemsBuilder extends AbstractSteamWebApiRequestBuilder {
+    public static class GetGameItemsRequestBuilder extends AbstractSteamWebApiRequestBuilder {
         private String language;
 
         private final String REQUEST_PARAM_LANGUAGE = "language";
@@ -46,11 +46,11 @@ public class GetGameItems extends SteamWebApiRequest {
         }
 
         @Override
-        public SteamWebApiRequest buildRequest() {
+        public GetGameItemsRequest buildRequest() {
             if (language != null) {
                 addParameter(REQUEST_PARAM_LANGUAGE, language);
             }
-            return new GetGameItems(this);
+            return new GetGameItemsRequest(this);
         }
     }
 }

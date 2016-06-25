@@ -15,17 +15,17 @@ import com.lukaspradel.steamapi.webapi.request.builders.AbstractSteamWebApiReque
  * @author Pazus
  *
  */
-public class GetTeamInfoByTeamID extends SteamWebApiRequest{
-    public GetTeamInfoByTeamID(SteamWebApiRequestBuilder builder) {super(builder);}
+public class GetTeamInfoByTeamIDRequest extends SteamWebApiRequest{
+    public GetTeamInfoByTeamIDRequest(SteamWebApiRequestBuilder builder) {super(builder);}
 
     /**
      * Builder object to create instances of {@link SteamWebApiRequest} for
-     * request type {@link GetTeamInfoByTeamID}.
+     * request type {@link GetTeamInfoByTeamIDRequest}.
      *
      * @author Pazus
      *
      */
-    public class GetTeamInfoByTeamIDBuilder extends AbstractSteamWebApiRequestBuilder {
+    public static class GetTeamInfoByTeamIDRequestBuilder extends AbstractSteamWebApiRequestBuilder {
 
         private Long startAtTeamId;
 
@@ -35,12 +35,12 @@ public class GetTeamInfoByTeamID extends SteamWebApiRequest{
 
         private final String REQUEST_PARAM_TEAMS_REQUESTED = "teams_requested";
 
-        public GetTeamInfoByTeamIDBuilder startAtTeamId(Long startAtTeamId) {
+        public GetTeamInfoByTeamIDRequestBuilder startAtTeamId(Long startAtTeamId) {
             this.startAtTeamId = startAtTeamId;
             return this;
         }
 
-        public GetTeamInfoByTeamIDBuilder teamsRequested(Integer teamsRequested) {
+        public GetTeamInfoByTeamIDRequestBuilder teamsRequested(Integer teamsRequested) {
             this.teamsRequested = teamsRequested;
             return this;
         }
@@ -61,7 +61,7 @@ public class GetTeamInfoByTeamID extends SteamWebApiRequest{
         }
 
         @Override
-        public SteamWebApiRequest buildRequest() {
+        public GetTeamInfoByTeamIDRequest buildRequest() {
 
             if (startAtTeamId != null) {
                 addParameter(REQUEST_PARAM_START_AT_TEAM_ID,startAtTeamId);
@@ -71,7 +71,7 @@ public class GetTeamInfoByTeamID extends SteamWebApiRequest{
                 addParameter(REQUEST_PARAM_TEAMS_REQUESTED,teamsRequested);
             }
 
-            return new GetTeamInfoByTeamID(this);
+            return new GetTeamInfoByTeamIDRequest(this);
         }
     }
 }

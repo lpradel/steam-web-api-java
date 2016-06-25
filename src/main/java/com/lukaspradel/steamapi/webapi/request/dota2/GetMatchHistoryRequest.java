@@ -19,11 +19,11 @@ import java.util.List;
  * @author Pazus
  *
  */
-public class GetMatchHistory extends SteamWebApiRequest{
-    public GetMatchHistory(SteamWebApiRequestBuilder builder) {super(builder);}
+public class GetMatchHistoryRequest extends SteamWebApiRequest{
+    public GetMatchHistoryRequest(SteamWebApiRequestBuilder builder) {super(builder);}
 
     /**
-     * Game mode filter for request type {@link GetMatchHistory}.
+     * Game mode filter for request type {@link GetMatchHistoryRequest}.
      *
      * @author Pazus
      *
@@ -51,7 +51,7 @@ public class GetMatchHistory extends SteamWebApiRequest{
 
 
     /**
-     * Game skill filter for request type {@link GetMatchHistory}.
+     * Game skill filter for request type {@link GetMatchHistoryRequest}.
      *
      * @author Pazus
      *
@@ -72,12 +72,12 @@ public class GetMatchHistory extends SteamWebApiRequest{
 
     /**
      * Builder object to create instances of {@link SteamWebApiRequest} for
-     * request type {@link GetMatchDetails}.
+     * request type {@link GetMatchDetailsRequest}.
      *
      * @author Pazus
      *
      */
-    public class GetMatchHistoryBuilder extends AbstractSteamWebApiRequestBuilder {
+    public static class GetMatchHistoryRequestBuilder extends AbstractSteamWebApiRequestBuilder {
         private List<String> heroIds =  new ArrayList<>();
         private GameMode gameMode = null;
         private Skill skill = null;
@@ -90,57 +90,57 @@ public class GetMatchHistory extends SteamWebApiRequest{
         private Integer matchesRequested;
         private String tournamentGamesOnly;
 
-        public GetMatchHistoryBuilder appIdsFilter(List<String> heroIds) {
+        public GetMatchHistoryRequestBuilder appIdsFilter(List<String> heroIds) {
             this.heroIds.addAll(heroIds);
             return this;
         }
 
-        public GetMatchHistoryBuilder gameMode(GameMode gameMode) {
+        public GetMatchHistoryRequestBuilder gameMode(GameMode gameMode) {
             this.gameMode = gameMode;
             return this;
         }
 
-        public GetMatchHistoryBuilder skill(Skill skill) {
+        public GetMatchHistoryRequestBuilder skill(Skill skill) {
             this.skill = skill;
             return this;
         }
 
-        public GetMatchHistoryBuilder dateMin(Date dateMin) {
+        public GetMatchHistoryRequestBuilder dateMin(Date dateMin) {
             this.dateMin = dateMin.getTime() / 1000L;
             return this;
         }
 
-        public GetMatchHistoryBuilder dateMax(Date dateMax) {
+        public GetMatchHistoryRequestBuilder dateMax(Date dateMax) {
             this.dateMax = dateMax.getTime() / 1000L;
             return this;
         }
 
-        public GetMatchHistoryBuilder minPlayers(Integer minPlayers) {
+        public GetMatchHistoryRequestBuilder minPlayers(Integer minPlayers) {
             this.minPlayers = minPlayers;
             return this;
         }
 
-        public GetMatchHistoryBuilder accountId(String accountId) {
+        public GetMatchHistoryRequestBuilder accountId(String accountId) {
             this.accountId = accountId;
             return this;
         }
 
-        public GetMatchHistoryBuilder leagueId(String leagueId) {
+        public GetMatchHistoryRequestBuilder leagueId(String leagueId) {
             this.leagueId = leagueId;
             return this;
         }
 
-        public GetMatchHistoryBuilder startAtMatchId(String startAtMatchId) {
+        public GetMatchHistoryRequestBuilder startAtMatchId(String startAtMatchId) {
             this.startAtMatchId = startAtMatchId;
             return this;
         }
 
-        public GetMatchHistoryBuilder matchesRequested(Integer matchesRequested) {
+        public GetMatchHistoryRequestBuilder matchesRequested(Integer matchesRequested) {
             this.matchesRequested = matchesRequested;
             return this;
         }
 
-        public GetMatchHistoryBuilder tournamentGamesOnly(boolean tournamentGamesOnly) {
+        public GetMatchHistoryRequestBuilder tournamentGamesOnly(boolean tournamentGamesOnly) {
             if (tournamentGamesOnly) {
                 this.tournamentGamesOnly = "1";
             } else
@@ -176,7 +176,7 @@ public class GetMatchHistory extends SteamWebApiRequest{
         }
 
         @Override
-        public SteamWebApiRequest buildRequest() {
+        public GetMatchHistoryRequest buildRequest() {
             if (!heroIds.isEmpty()) {
                 addListParameter(REQUEST_PARAM_HERO_ID,heroIds);
             }
@@ -221,7 +221,7 @@ public class GetMatchHistory extends SteamWebApiRequest{
                 addParameter(REQUEST_PARAM_TOURNAMENT_GAMES_ONLY,tournamentGamesOnly);
             }
 
-            return new GetMatchHistory(this);
+            return new GetMatchHistoryRequest(this);
         }
     }
 }

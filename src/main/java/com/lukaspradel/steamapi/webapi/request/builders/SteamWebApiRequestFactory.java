@@ -28,6 +28,15 @@ import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUse
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.*;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest.GetGameItemsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest.GetHeroesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest.GetLeagueListingRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLiveLeagueGamesRequest.GetLiveLeagueGamesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchDetailsRequest.GetMatchDetailsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryBySequenceNumRequest.GetMatchHistoryBySequenceNumRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryRequest.GetMatchHistoryRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest.GetTeamInfoByTeamIDRequestBuilder;
 
 /**
  * Convenience class to create instances of {@link SteamWebApiRequest}.
@@ -155,5 +164,37 @@ public abstract class SteamWebApiRequestFactory {
 			List<String> steamIds) {
 
 		return new GetPlayerBansRequestBuilder(steamIds).buildRequest();
+	}
+
+	public static GetGameItemsRequest createGetGameItemsRequest() {
+		return new GetGameItemsRequestBuilder().buildRequest();
+	}
+
+	public static GetHeroesRequest createGetHeroesRequest() {
+		return new GetHeroesRequestBuilder().buildRequest();
+	}
+
+	public static GetLeagueListingRequest createGetLeagueListingRequest() {
+		return new GetLeagueListingRequestBuilder().buildRequest();
+	}
+
+	public static GetLiveLeagueGamesRequest createGetLiveLeagueGamesRequest() {
+		return new GetLiveLeagueGamesRequestBuilder().buildRequest();
+	}
+
+	public static GetMatchDetailsRequest createGetMatchDetailsRequest(String matchId) {
+		return new GetMatchDetailsRequestBuilder(matchId).buildRequest();
+	}
+
+	public static GetMatchHistoryBySequenceNumRequest createGetMatchHistoryBySequenceNumRequest() {
+		return new GetMatchHistoryBySequenceNumRequestBuilder().buildRequest();
+	}
+
+	public static GetMatchHistoryRequest createGetMatchHistoryRequest() {
+		return new GetMatchHistoryRequestBuilder().buildRequest();
+	}
+
+	public static GetTeamInfoByTeamIDRequest createGetTeamInfoByTeamIDRequest() {
+		return new GetTeamInfoByTeamIDRequestBuilder().buildRequest();
 	}
 }

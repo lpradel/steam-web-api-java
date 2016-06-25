@@ -7,7 +7,7 @@ import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.builders.AbstractSteamWebApiRequestBuilder;
 
 /**
- * Steam Web API Request Live League Games
+ * Steam Web API Request League Listing
  *
  * @see <a href=
  *      "https://wiki.teamfortress.com/wiki/WebAPI/GetLeagueListing"
@@ -15,17 +15,32 @@ import com.lukaspradel.steamapi.webapi.request.builders.AbstractSteamWebApiReque
  * @author Pazus
  *
  */
-public class GetLiveLeagueGames extends SteamWebApiRequest{
-    public GetLiveLeagueGames(SteamWebApiRequestBuilder builder) {super(builder);}
+public class GetLeagueListingRequest extends SteamWebApiRequest{
+    public GetLeagueListingRequest(SteamWebApiRequestBuilder builder) {super(builder);}
 
     /**
      * Builder object to create instances of {@link SteamWebApiRequest} for
-     * request type {@link GetLiveLeagueGames}.
+     * request type {@link GetLeagueListingRequest}.
      *
      * @author Pazus
      *
      */
-    public class GetLiveLeagueGamesBuilder extends AbstractSteamWebApiRequestBuilder {
+    public static class GetLeagueListingRequestBuilder extends AbstractSteamWebApiRequestBuilder {
+
+        /**
+         * ISO639-1 language code
+         * @see <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes</a>
+         *
+         * @author Pazus
+         */
+        private String language;
+        private final String REQUEST_PARAM_LANGUAGE = "language";
+
+        public GetLeagueListingRequestBuilder language(String language) {
+            this.language = language;
+            return this;
+        }
+
         @Override
         protected SteamWebApiVersion getVersion() {
             return SteamWebApiVersion.VERSION_ONE;
@@ -38,12 +53,17 @@ public class GetLiveLeagueGames extends SteamWebApiRequest{
 
         @Override
         protected SteamWebApiInterfaceMethod getInterfaceMethod() {
-            return SteamWebApiInterfaceMethod.GET_LIVE_LEAGUE_GAMES;
+            return SteamWebApiInterfaceMethod.GET_LEAGUE_LISTING;
         }
 
         @Override
-        public SteamWebApiRequest buildRequest() {
-            return new GetLeagueListing(this);
+        public GetLeagueListingRequest buildRequest() {
+
+            if (language != null) {
+                addParameter(REQUEST_PARAM_LANGUAGE,language);
+            }
+
+            return new GetLeagueListingRequest(this);
         }
     }
 }
