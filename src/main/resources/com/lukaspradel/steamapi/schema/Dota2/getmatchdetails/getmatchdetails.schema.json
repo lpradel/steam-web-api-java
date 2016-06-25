@@ -1,0 +1,171 @@
+{
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.matchdetails.GetMatchDetails",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "properties": {
+        "players": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "account_id": {
+                "type": "integer"
+              },
+              "player_slot": {
+                "type": "integer"
+              },
+              "hero_id": {
+                "type": "integer"
+              },
+              "item_0": {
+                "type": "integer"
+              },
+              "item_1": {
+                "type": "integer"
+              },
+              "item_2": {
+                "type": "integer"
+              },
+              "item_3": {
+                "type": "integer"
+              },
+              "item_4": {
+                "type": "integer"
+              },
+              "item_5": {
+                "type": "integer"
+              },
+              "kills": {
+                "type": "integer"
+              },
+              "deaths": {
+                "type": "integer"
+              },
+              "assists": {
+                "type": "integer"
+              },
+              "leaver_status": {
+                "type": "integer"
+              },
+              "last_hits": {
+                "type": "integer"
+              },
+              "denies": {
+                "type": "integer"
+              },
+              "gold_per_min": {
+                "type": "integer"
+              },
+              "xp_per_min": {
+                "type": "integer"
+              },
+              "level": {
+                "type": "integer"
+              },
+              "gold": {
+                "type": "integer"
+              },
+              "gold_spent": {
+                "type": "integer"
+              },
+              "hero_damage": {
+                "type": "integer"
+              },
+              "tower_damage": {
+                "type": "integer"
+              },
+              "hero_healing": {
+                "type": "integer"
+              },
+              "ability_upgrades": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "ability": {
+                      "type": "integer"
+                    },
+                    "time": {
+                      "type": "integer"
+                    },
+                    "level": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "radiant_win": {
+          "type": "boolean"
+        },
+        "duration": {
+          "type": "integer"
+        },
+        "pre_game_duration": {
+          "type": "integer"
+        },
+        "start_time": {
+          "type": "integer"
+        },
+        "match_id": {
+          "type": "integer"
+        },
+        "match_seq_num": {
+          "type": "integer"
+        },
+        "tower_status_radiant": {
+          "type": "integer"
+        },
+        "tower_status_dire": {
+          "type": "integer"
+        },
+        "barracks_status_radiant": {
+          "type": "integer"
+        },
+        "barracks_status_dire": {
+          "type": "integer"
+        },
+        "cluster": {
+          "type": "integer"
+        },
+        "first_blood_time": {
+          "type": "integer"
+        },
+        "lobby_type": {
+          "type": "integer"
+        },
+        "human_players": {
+          "type": "integer"
+        },
+        "leagueid": {
+          "type": "integer"
+        },
+        "positive_votes": {
+          "type": "integer"
+        },
+        "negative_votes": {
+          "type": "integer"
+        },
+        "game_mode": {
+          "type": "integer"
+        },
+        "flags": {
+          "type": "integer"
+        },
+        "engine": {
+          "type": "integer"
+        },
+        "radiant_score": {
+          "type": "integer"
+        },
+        "dire_score": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
