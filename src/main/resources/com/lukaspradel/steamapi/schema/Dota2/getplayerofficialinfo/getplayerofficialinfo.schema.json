@@ -1,0 +1,26 @@
+{
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.playerofficialinfo.GetPlayerOfficialInfo",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "TeamName": {
+          "type": "string"
+        },
+        "TeamTag": {
+          "type": "string"
+        },
+        "Sponsor": {
+          "type": "string"
+        },
+        "FantasyRole": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

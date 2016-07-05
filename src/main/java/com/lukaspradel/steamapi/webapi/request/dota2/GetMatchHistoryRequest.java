@@ -90,7 +90,7 @@ public class GetMatchHistoryRequest extends SteamWebApiRequest{
         private Integer matchesRequested;
         private String tournamentGamesOnly;
 
-        public GetMatchHistoryRequestBuilder appIdsFilter(List<String> heroIds) {
+        public GetMatchHistoryRequestBuilder heroIdsFilter(List<String> heroIds) {
             this.heroIds.addAll(heroIds);
             return this;
         }

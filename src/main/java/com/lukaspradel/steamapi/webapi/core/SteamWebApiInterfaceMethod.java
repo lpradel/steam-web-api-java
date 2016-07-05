@@ -2,6 +2,8 @@ package com.lukaspradel.steamapi.webapi.core;
 
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
+import com.lukaspradel.steamapi.data.json.dota2.fantasyplayerstats.GetFantasyPlayerStats;
+import com.lukaspradel.steamapi.data.json.dota2.playerofficialinfo.GetPlayerOfficialInfo;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
 import com.lukaspradel.steamapi.data.json.getglobalstatsforgame.GetGlobalStatsForGame;
 import com.lukaspradel.steamapi.data.json.getplayerbans.GetPlayerBans;
@@ -20,6 +22,7 @@ import com.lukaspradel.steamapi.data.json.dota2.liveleaguegames.GetLiveLeagueGam
 import com.lukaspradel.steamapi.data.json.dota2.matchhistorybysequencenum.GetMatchHistoryBySequenceNum;
 import com.lukaspradel.steamapi.data.json.dota2.teaminfobyteamid.GetTeamInfoByTeamID;
 import com.lukaspradel.steamapi.data.json.dota2.gameitems.GetGameItems;
+import com.lukaspradel.steamapi.data.json.dota2.proplayerlist.GetProPlayerList;
 
 /**
  * Currently supported Steam Web API Interface Methods as listed on Valve's Dev
@@ -53,7 +56,10 @@ public enum SteamWebApiInterfaceMethod {
 			"GetLiveLeagueGames",GetLiveLeagueGames.class), GET_MATCH_HISTORY_BY_SEQUENCE_NUM(
 			"GetMatchHistoryBySequenceNum",GetMatchHistoryBySequenceNum.class), GET_TEAM_INFO_BY_TEAM_ID(
 			"GetTeamInfoByTeamID",GetTeamInfoByTeamID.class), GET_GAME_ITEMS(
-			"GetGameItems",GetGameItems.class)
+			"GetGameItems",GetGameItems.class), GET_PRO_PLAYER_LIST(
+			"GetProPlayerList",GetProPlayerList.class), GET_PLAYER_OFFICIAL_INFO(
+			"GetPlayerOfficialInfo",GetPlayerOfficialInfo.class), GET_FANTASY_PLAYER_STATS(
+			"GetFantasyPlayerStats",GetFantasyPlayerStats.class)
 	;
 
 	private final String interfaceMethod;

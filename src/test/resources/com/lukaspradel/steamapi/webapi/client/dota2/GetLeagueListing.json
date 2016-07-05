@@ -1,0 +1,111 @@
+{
+  "result": {
+    "leagues": [
+      {
+        "name": "#DOTA_Item_Dota_2_Just_For_Fun",
+        "leagueid": 1212,
+        "description": "#DOTA_Item_Desc_Dota_2_Just_For_Fun",
+        "tournament_url": "https://binarybeast.com/xDOTA21404228/",
+        "itemdef": 10541
+      },
+      {
+        "name": "#DOTA_Item_joinDOTA_League_Season_3",
+        "leagueid": 1640,
+        "description": "#DOTA_Item_Desc_joinDOTA_League_Season_3",
+        "tournament_url": "http://www.joindota.com/en/leagues/",
+        "itemdef": 10742
+      },
+      {
+        "name": "#DOTA_Item_Killing_Spree_North_America",
+        "leagueid": 25,
+        "description": "#DOTA_Item_Desc_Killing_Spree_North_America",
+        "tournament_url": "http://neodota.com/?page_id=1389",
+        "itemdef": 15014
+      },
+      {
+        "name": "#DOTA_Item_WildCardsWest",
+        "leagueid": 2,
+        "description": "#DOTA_Item_Desc_Wild_Cards_West",
+        "tournament_url": "http://www.dota2.com/tournaments/international/",
+        "itemdef": 15015
+      },
+      {
+        "name": "#DOTA_Item_WildCardsEast",
+        "leagueid": 3,
+        "description": "#DOTA_Item_Desc_Wild_Cards_East",
+        "tournament_url": "http://www.dota2.com/tournaments/international/",
+        "itemdef": 15016
+      },
+      {
+        "name": "#DOTA_Item_League_TheDefense",
+        "leagueid": 4,
+        "description": "#DOTA_Item_Desc_League_TheDefense",
+        "tournament_url": "http://www.the-defense.com/en/start",
+        "itemdef": 15018
+      },
+      {
+        "name": "#DOTA_Item_League_ItsGosuMontlyMadnessAsia",
+        "leagueid": 5,
+        "description": "#DOTA_Item_Desc_Its_Gosu_Monthly_Madness_Asia",
+        "tournament_url": "http://www.itsgosu.com/game/dota2/articles/it-s-gosu-announces-monthly-madness-asia-edition_563",
+        "itemdef": 15042
+      },
+      {
+        "name": "#DOTA_Item_League_StarLadderS2",
+        "leagueid": 6,
+        "description": "#DOTA_Item_Desc_League_StarLadderS2",
+        "tournament_url": "http://dota2.starladder.tv/news/1182",
+        "itemdef": 15047
+      },
+      {
+        "name": "#DOTA_Item_League_BeyondTheSummit",
+        "leagueid": 7,
+        "description": "#DOTA_Item_Desc_League_BeyondTheSummit",
+        "tournament_url": "http://www.dotacommentaries.com/index.php/bts-wt/",
+        "itemdef": 15049
+      },
+      {
+        "name": "#DOTA_Item_League_Prodota2WL",
+        "leagueid": 8,
+        "description": "#DOTA_Item_Desc_League_Prodota2WL",
+        "tournament_url": "http://www.prodota2.com/",
+        "itemdef": 15051
+      },
+      {
+        "name": "#DOTA_Item_League_MachinimaECAL_America",
+        "leagueid": 9,
+        "description": "#DOTA_Item_Desc_League_MachinimaECAL_America",
+        "tournament_url": "http://www.ecal.tv/playoffs",
+        "itemdef": 15053
+      },
+      {
+        "name": "#DOTA_Item_League_TheInternal",
+        "leagueid": 65000,
+        "description": "#DOTA_Item_Desc_League_TheInternal",
+        "tournament_url": "http://www.dota2.com/tournaments/international/",
+        "itemdef": 15055
+      },
+      {
+        "name": "#DOTA_Item_Nexon_Starter_League",
+        "leagueid": 65007,
+        "description": "#DOTA_Item_Desc_Nexon_Starter_League",
+        "tournament_url": "http://dota2.nexon.com",
+        "itemdef": 15061
+      },
+      {
+        "name": "#DOTA_Item_League_RazerMiniMadness",
+        "leagueid": 10,
+        "description": "#DOTA_Item_Desc_League_RazerMiniMadness",
+        "tournament_url": "http://www.itsgosu.com/game/dota2/articles/it-s-gosu-presents-razer-mini-madness_621",
+        "itemdef": 15063
+      },
+      {
+        "name": "#DOTA_Item_League_AbsoluteArenaKOH",
+        "leagueid": 11,
+        "description": "#DOTA_Item_Desc_League_AbsoluteArenaKOH",
+        "tournament_url": "http://www.absolutelegends.net/news/2069/AbsoluteArena-King-of-the-Hill-Schedule-Update",
+        "itemdef": 15065
+      }
+    ]
+  }
+}

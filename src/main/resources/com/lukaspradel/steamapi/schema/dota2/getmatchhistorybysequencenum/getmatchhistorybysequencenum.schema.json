@@ -2,150 +2,200 @@
   "javaType":"com.lukaspradel.steamapi.data.json.dota2.matchhistorybysequencenum.GetMatchHistoryBySequenceNum",
   "type": "object",
   "properties": {
-    "status": {
-      "type": "integer"
-    },
-    "matches": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "players": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "player_slot": {
-                  "type": "integer"
-                },
-                "hero_id": {
-                  "type": "integer"
-                },
-                "item_0": {
-                  "type": "integer"
-                },
-                "item_1": {
-                  "type": "integer"
-                },
-                "item_2": {
-                  "type": "integer"
-                },
-                "item_3": {
-                  "type": "integer"
-                },
-                "item_4": {
-                  "type": "integer"
-                },
-                "item_5": {
-                  "type": "integer"
-                },
-                "kills": {
-                  "type": "integer"
-                },
-                "deaths": {
-                  "type": "integer"
-                },
-                "assists": {
-                  "type": "integer"
-                },
-                "gold": {
-                  "type": "integer"
-                },
-                "last_hits": {
-                  "type": "integer"
-                },
-                "denies": {
-                  "type": "integer"
-                },
-                "gold_per_min": {
-                  "type": "integer"
-                },
-                "xp_per_min": {
-                  "type": "integer"
-                },
-                "gold_spent": {
-                  "type": "integer"
-                },
-                "hero_damage": {
-                  "type": "integer"
-                },
-                "tower_damage": {
-                  "type": "integer"
-                },
-                "hero_healing": {
-                  "type": "integer"
-                },
-                "level": {
-                  "type": "integer"
+    "result": {
+      "type": "object",
+      "required": false,
+      "properties": {
+        "status": {
+          "type": "integer",
+          "required": false
+        },
+        "matches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "players": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "player_slot": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "hero_id": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_0": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_1": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_2": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_3": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_4": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_5": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "kills": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "deaths": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "assists": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "gold": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "last_hits": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "denies": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "gold_per_min": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "xp_per_min": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "gold_spent": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "hero_damage": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "tower_damage": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "hero_healing": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "level": {
+                      "type": "integer",
+                      "required": false
+                    }
+                  }
                 }
+              },
+              "radiant_win": {
+                "type": "boolean",
+                "required": false
+              },
+              "duration": {
+                "type": "integer",
+                "required": false
+              },
+              "pre_game_duration": {
+                "type": "integer",
+                "required": false
+              },
+              "start_time": {
+                "type": "integer",
+                "required": false
+              },
+              "match_id": {
+                "type": "string",
+                "required": false
+              },
+              "match_seq_num": {
+                "type": "integer",
+                "required": false
+              },
+              "tower_status_radiant": {
+                "type": "integer",
+                "required": false
+              },
+              "tower_status_dire": {
+                "type": "integer",
+                "required": false
+              },
+              "barracks_status_radiant": {
+                "type": "integer",
+                "required": false
+              },
+              "barracks_status_dire": {
+                "type": "integer",
+                "required": false
+              },
+              "cluster": {
+                "type": "integer",
+                "required": false
+              },
+              "first_blood_time": {
+                "type": "integer",
+                "required": false
+              },
+              "lobby_type": {
+                "type": "integer",
+                "required": false
+              },
+              "human_players": {
+                "type": "integer",
+                "required": false
+              },
+              "leagueid": {
+                "type": "integer",
+                "required": false
+              },
+              "positive_votes": {
+                "type": "integer",
+                "required": false
+              },
+              "negative_votes": {
+                "type": "integer",
+                "required": false
+              },
+              "game_mode": {
+                "type": "integer",
+                "required": false
+              },
+              "flags": {
+                "type": "integer",
+                "required": false
+              },
+              "engine": {
+                "type": "integer",
+                "required": false
+              },
+              "radiant_score": {
+                "type": "integer",
+                "required": false
+              },
+              "dire_score": {
+                "type": "integer",
+                "required": false
               }
             }
-          },
-          "radiant_win": {
-            "type": "boolean"
-          },
-          "duration": {
-            "type": "integer"
-          },
-          "pre_game_duration": {
-            "type": "integer"
-          },
-          "start_time": {
-            "type": "integer"
-          },
-          "match_id": {
-            "type": "integer"
-          },
-          "match_seq_num": {
-            "type": "integer"
-          },
-          "tower_status_radiant": {
-            "type": "integer"
-          },
-          "tower_status_dire": {
-            "type": "integer"
-          },
-          "barracks_status_radiant": {
-            "type": "integer"
-          },
-          "barracks_status_dire": {
-            "type": "integer"
-          },
-          "cluster": {
-            "type": "integer"
-          },
-          "first_blood_time": {
-            "type": "integer"
-          },
-          "lobby_type": {
-            "type": "integer"
-          },
-          "human_players": {
-            "type": "integer"
-          },
-          "leagueid": {
-            "type": "integer"
-          },
-          "positive_votes": {
-            "type": "integer"
-          },
-          "negative_votes": {
-            "type": "integer"
-          },
-          "game_mode": {
-            "type": "integer"
-          },
-          "flags": {
-            "type": "integer"
-          },
-          "engine": {
-            "type": "integer"
-          },
-          "radiant_score": {
-            "type": "integer"
-          },
-          "dire_score": {
-            "type": "integer"
           }
         }
       }

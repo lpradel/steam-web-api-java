@@ -112,6 +112,45 @@ public class SteamWebApiVersionTest extends BaseTest {
 				SteamWebApiVersion
 						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_PLAYER_BANS),
 				SteamWebApiVersion.VERSION_ONE);
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_GAME_ITEMS),
+				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_HEROES),
+				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_LEAGUE_LISTING),
+				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_LIVE_LEAGUE_GAMES),
+				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_MATCH_DETAILS),
+				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_MATCH_HISTORY),
+				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_MATCH_HISTORY_BY_SEQUENCE_NUM),
+				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_TEAM_INFO_BY_TEAM_ID),
+				SteamWebApiVersion.VERSION_ONE);
 	}
 
 	@Test(dependsOnMethods = { "testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnumValue" })

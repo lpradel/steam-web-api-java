@@ -334,6 +334,37 @@
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/dota2/getgameitems</sourceDirectory>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>generate-getproplayerlist</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.dota2.getproplayerlist</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/dota2/getproplayerlist</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-getplayerofficialinfo</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.dota2.getplayerofficialinfo</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/dota2/getplayerofficialinfo</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-getfantasyplayerstats</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.dota2.getfantasyplayerstats</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/dota2/getfantasyplayerstats</sourceDirectory>
+                        </configuration>
+                    </execution>
+
                 </executions>
             </plugin>
         </plugins>

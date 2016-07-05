@@ -12,6 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.lukaspradel.steamapi.data.json.dota2.fantasyplayerstats.GetFantasyPlayerStats;
+import com.lukaspradel.steamapi.data.json.dota2.gameitems.GetGameItems;
+import com.lukaspradel.steamapi.data.json.dota2.heroes.GetHeroes;
+import com.lukaspradel.steamapi.data.json.dota2.leaguelisting.GetLeagueListing;
+import com.lukaspradel.steamapi.data.json.dota2.liveleaguegames.GetLiveLeagueGames;
+import com.lukaspradel.steamapi.data.json.dota2.matchdetails.GetMatchDetails;
+import com.lukaspradel.steamapi.data.json.dota2.matchhistory.GetMatchHistory;
+import com.lukaspradel.steamapi.data.json.dota2.matchhistorybysequencenum.GetMatchHistoryBySequenceNum;
+import com.lukaspradel.steamapi.data.json.dota2.playerofficialinfo.GetPlayerOfficialInfo;
+import com.lukaspradel.steamapi.data.json.dota2.proplayerlist.GetProPlayerList;
+import com.lukaspradel.steamapi.data.json.dota2.teaminfobyteamid.GetTeamInfoByTeamID;
+import com.lukaspradel.steamapi.webapi.request.dota2.*;
 import org.mockito.Mock;
 import org.powermock.reflect.Whitebox;
 import org.testng.annotations.BeforeMethod;
@@ -560,4 +572,214 @@ public class SteamWebApiClientTest extends BaseTest {
 				Integer.valueOf(0));
 		assertEquals(getPlayerBans.getPlayers().get(0).getEconomyBan(), "none");
 	}
+
+	@Test
+	public void testProcessFantasyPlayerStatsRequest() throws SteamApiException,
+			IOException {
+		GetFantasyPlayerStatsRequest request = SteamWebApiRequestFactory.createGetFantasyPlayerStatsRequest("2");
+
+		String mockAnswer = readResourceAsString("dota2/GetFantasyPlayerStats.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetFantasyPlayerStats getFantasyPlayerStats = client.<GetFantasyPlayerStats> processRequest(request);
+
+		assertNotNull(getFantasyPlayerStats);
+		assertTrue(getFantasyPlayerStats.getAdditionalProperties().isEmpty());
+		assertNotNull(getFantasyPlayerStats.getResult());
+		assertTrue(getFantasyPlayerStats.getResult().getAdditionalProperties().isEmpty());
+		assertFalse(getFantasyPlayerStats.getResult().getStatsList().isEmpty());
+
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageDeaths());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageAssists());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageGPM());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageHealing());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageKills());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageLastHits());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageDenies());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageLevel());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageRoshanKills());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageStuns());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageTowerKills());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getAverageXPPM());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getMatches());
+		assertNotNull(getFantasyPlayerStats.getResult().getStatsList().get(1).getPlayerAccountID());
+	}
+
+	@Test
+	public void testProcessGameItemsRequest() throws SteamApiException,
+			IOException {
+		GetGameItemsRequest request = SteamWebApiRequestFactory.createGetGameItemsRequest();
+
+		String mockAnswer = readResourceAsString("dota2/GetGameItems.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetGameItems getGameItems = client.<GetGameItems> processRequest(request);
+
+		assertNotNull(getGameItems);
+		assertNotNull(getGameItems.getResult());
+		assertTrue(getGameItems.getAdditionalProperties().isEmpty());
+
+		assertNotNull(getGameItems.getResult().getStatus());
+		assertFalse(getGameItems.getResult().getItems().isEmpty());
+
+		assertNotNull(getGameItems.getResult().getItems().get(0).getId());
+		assertNotNull(getGameItems.getResult().getItems().get(0).getCost());
+		assertNotNull(getGameItems.getResult().getItems().get(0).getName());
+		assertNotNull(getGameItems.getResult().getItems().get(0).getRecipe());
+		assertNotNull(getGameItems.getResult().getItems().get(0).getSideShop());
+	}
+
+	@Test
+	public void testProcessGetHeroesRequest()  throws SteamApiException,
+			IOException{
+		//GetHeroesRequest request = SteamWebApiRequestFactory.createGetHeroesRequest();
+		GetHeroesRequest request = new GetHeroesRequest.GetHeroesRequestBuilder().language("en").buildRequest();
+
+
+		String mockAnswer = readResourceAsString("dota2/GetHeroes.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetHeroes getHeroes = client.<GetHeroes> processRequest(request);
+
+		assertNotNull(getHeroes);
+		assertTrue(getHeroes.getAdditionalProperties().isEmpty());
+		assertNotNull(getHeroes.getResult());
+
+		assertNotNull(getHeroes.getResult().getStatus());
+		assertEquals(getHeroes.getResult().getStatus(), Integer.valueOf(200));
+		assertEquals(getHeroes.getResult().getCount(),Integer.valueOf(111));
+		assertEquals(getHeroes.getResult().getHeroes().size(),111);
+		assertNotNull(getHeroes.getResult().getHeroes().get(0).getId());
+		assertNotNull(getHeroes.getResult().getHeroes().get(0).getName());
+
+	}
+
+	@Test
+	public void testProcessGetLeagueListing () throws SteamApiException,
+			IOException{
+		GetLeagueListingRequest request = SteamWebApiRequestFactory.createGetLeagueListingRequest();
+
+		String mockAnswer = readResourceAsString("dota2/GetLeagueListing.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetLeagueListing getLeagueListing = client.<GetLeagueListing> processRequest(request);
+
+		assertNotNull(getLeagueListing);
+		assertTrue(getLeagueListing.getAdditionalProperties().isEmpty());
+		assertNotNull(getLeagueListing.getResult());
+
+		assertFalse(getLeagueListing.getResult().getLeagues().isEmpty());
+		assertNotNull(getLeagueListing.getResult().getLeagues().get(0).getDescription());
+		assertNotNull(getLeagueListing.getResult().getLeagues().get(0).getItemdef());
+		assertNotNull(getLeagueListing.getResult().getLeagues().get(0).getLeagueid());
+		assertNotNull(getLeagueListing.getResult().getLeagues().get(0).getTournamentUrl());
+		assertNotNull(getLeagueListing.getResult().getLeagues().get(0).getName());
+	}
+
+	@Test
+	public void testProcessGetLiveLeagueGames () throws SteamApiException,
+			IOException {
+		GetLiveLeagueGamesRequest request = SteamWebApiRequestFactory.createGetLiveLeagueGamesRequest();
+
+		String mockAnswer = readResourceAsString("dota2/GetLiveLeagueGames.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetLiveLeagueGames getLiveLeagueGames = client.<GetLiveLeagueGames> processRequest(request);
+
+		assertNotNull(getLiveLeagueGames);
+		assertTrue(getLiveLeagueGames.getAdditionalProperties().isEmpty());
+		assertNotNull(getLiveLeagueGames.getResult());
+		assertEquals(getLiveLeagueGames.getResult().getStatus(),Integer.valueOf(200));
+		assertFalse(getLiveLeagueGames.getResult().getGames().isEmpty());
+		assertNotNull(getLiveLeagueGames.getResult().getGames().get(0).getLobbyId());
+		assertNotNull(getLiveLeagueGames.getResult().getGames().get(0).getMatchId());
+	}
+
+	@Test
+	public void testProcessGetMatchDetails() throws SteamApiException,
+			IOException {
+		GetMatchDetailsRequest request = SteamWebApiRequestFactory.createGetMatchDetailsRequest("2455787494");
+
+		String mockAnswer = readResourceAsString("dota2/GetMatchDetails.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetMatchDetails getMatchDetails = client.<GetMatchDetails> processRequest(request);
+
+		assertNotNull(getMatchDetails);
+		assertTrue(getMatchDetails.getAdditionalProperties().isEmpty());
+		assertNotNull(getMatchDetails.getResult());
+	}
+
+	@Test
+	public void testProcessGetMatchHistory() throws SteamApiException, IOException {
+		GetMatchHistoryRequest request = SteamWebApiRequestFactory.createGetMatchHistoryRequest("123", GetMatchHistoryRequest.GameMode.ALL_PICK);
+
+		String mockAnswer = readResourceAsString("dota2/GetMatchHistory.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetMatchHistory getMatchHistory = client.<GetMatchHistory> processRequest(request);
+	}
+
+	@Test
+	public void testProcessGetMatchHistoryBySequenceNum() throws SteamApiException, IOException {
+		GetMatchHistoryBySequenceNumRequest request = SteamWebApiRequestFactory.createGetMatchHistoryBySequenceNumRequest();
+
+		String mockAnswer = readResourceAsString("dota2/GetMatchHistoryBySequenceNum.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetMatchHistoryBySequenceNum getMatchHistoryBySequenceNum = client.<GetMatchHistoryBySequenceNum> processRequest(request);
+	}
+
+	@Test
+	public void testProcessGetPlayerOfficialInfoRequest() throws SteamApiException, IOException {
+		GetPlayerOfficialInfoRequest request = SteamWebApiRequestFactory.createGetPlayerOfficialInfoRequest("3916428");
+
+		String mockAnswer = readResourceAsString("dota2/GetPlayerOfficialInfo.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetPlayerOfficialInfo getPlayerOfficialInfo = client.<GetPlayerOfficialInfo> processRequest(request);
+	}
+
+	@Test
+	public void testProcessGetProPlayerListRequest() throws SteamApiException, IOException {
+		GetProPlayerListRequest request = SteamWebApiRequestFactory.createGetProPlayerListRequest();
+
+		String mockAnswer = readResourceAsString("dota2/GetProPlayerList.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetProPlayerList getProPlayerList = client.<GetProPlayerList> processRequest(request);
+	}
+
+	@Test
+	public void testProcessGetTeamInfoByTeamIDRequest() throws SteamApiException, IOException {
+		GetTeamInfoByTeamIDRequest request = SteamWebApiRequestFactory.createGetTeamInfoByTeamIDRequest(983699L);
+
+		String mockAnswer = readResourceAsString("dota2/GetTeamInfoByTeamID.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		GetTeamInfoByTeamID getTeamInfoByTeamID = client.<GetTeamInfoByTeamID> processRequest(request);
+	}
+
 }

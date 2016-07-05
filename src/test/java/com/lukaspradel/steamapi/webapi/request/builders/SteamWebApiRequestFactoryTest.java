@@ -3,6 +3,7 @@ package com.lukaspradel.steamapi.webapi.request.builders;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,6 +11,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import com.lukaspradel.steamapi.data.json.dota2.gameitems.GetGameItems;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -616,5 +621,46 @@ public class SteamWebApiRequestFactoryTest {
 				parameters
 						.get(GetPlayerBansRequestBuilder.REQUEST_PARAM_STEAM_IDS),
 				String.valueOf("123,456,789"));
+	}
+
+	@Test
+	public void testGetGameItemsRequest() {
+		GetGameItemsRequest request = SteamWebApiRequestFactory.createGetGameItemsRequest();
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_ECON_DOTA2);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_GAME_ITEMS);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String,String> parameters = request.getParameters();
+		assertEquals(parameters.size(), 1);
+	}
+
+	@Test
+	public void testGetHeroesRequest() {
+		GetHeroesRequest request = SteamWebApiRequestFactory.createGetHeroesRequest();
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_ECON_DOTA2);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_HEROES);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String,String> parameters = request.getParameters();
+		assertEquals(parameters.size(), 2);
+	}
+
+	@Test
+	public void testGetLeagueListingRequest() {
+		GetLeagueListingRequest request = SteamWebApiRequestFactory.createGetLeagueListingRequest();
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_DOTA2_MATCH);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_LEAGUE_LISTING);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+
 	}
 }

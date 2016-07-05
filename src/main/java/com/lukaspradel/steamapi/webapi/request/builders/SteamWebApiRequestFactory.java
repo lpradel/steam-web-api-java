@@ -37,6 +37,9 @@ import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchDetailsRequest.GetM
 import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryBySequenceNumRequest.GetMatchHistoryBySequenceNumRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryRequest.GetMatchHistoryRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest.GetTeamInfoByTeamIDRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest.GetFantasyPlayerStatsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetPlayerOfficialInfoRequest.GetPlayerOfficialInfoRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetProPlayerListRequest.GetProPlayerListRequestBuilder;
 
 /**
  * Convenience class to create instances of {@link SteamWebApiRequest}.
@@ -171,7 +174,7 @@ public abstract class SteamWebApiRequestFactory {
 	}
 
 	public static GetHeroesRequest createGetHeroesRequest() {
-		return new GetHeroesRequestBuilder().buildRequest();
+		return new GetHeroesRequestBuilder().language("en").buildRequest();
 	}
 
 	public static GetLeagueListingRequest createGetLeagueListingRequest() {
@@ -190,11 +193,29 @@ public abstract class SteamWebApiRequestFactory {
 		return new GetMatchHistoryBySequenceNumRequestBuilder().buildRequest();
 	}
 
-	public static GetMatchHistoryRequest createGetMatchHistoryRequest() {
-		return new GetMatchHistoryRequestBuilder().buildRequest();
+	public static GetMatchHistoryRequest createGetMatchHistoryRequest(String accountId, GetMatchHistoryRequest.GameMode gameMode) {
+		return new GetMatchHistoryRequestBuilder()
+				.gameMode(gameMode)
+				.accountId(accountId)
+				.buildRequest();
 	}
 
-	public static GetTeamInfoByTeamIDRequest createGetTeamInfoByTeamIDRequest() {
-		return new GetTeamInfoByTeamIDRequestBuilder().buildRequest();
+	public static GetTeamInfoByTeamIDRequest createGetTeamInfoByTeamIDRequest(Long teamId) {
+		return new GetTeamInfoByTeamIDRequestBuilder()
+				.startAtTeamId(teamId)
+				.teamsRequested(1)
+				.buildRequest();
+	}
+
+	public static GetFantasyPlayerStatsRequest createGetFantasyPlayerStatsRequest(String fantasyLeagueId) {
+		return new GetFantasyPlayerStatsRequestBuilder(fantasyLeagueId).buildRequest();
+	}
+
+	public static GetPlayerOfficialInfoRequest createGetPlayerOfficialInfoRequest(String accountId) {
+		return new GetPlayerOfficialInfoRequestBuilder(accountId).buildRequest();
+	}
+
+	public static GetProPlayerListRequest createGetProPlayerListRequest() {
+		return new GetProPlayerListRequestBuilder().buildRequest();
 	}
 }

@@ -1,0 +1,88 @@
+{
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.fantasyplayerstats.GetFantasyPlayerStats",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "required": false,
+      "properties": {
+        "StatsList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "PlayerAccountID": {
+                "type": "string",
+                "required": false
+              },
+              "PlayerName": {
+                "type": "string",
+                "required": false
+              },
+              "Role": {
+                "type": "integer",
+                "required": false
+              },
+              "Score": {
+                "type": "number",
+                "required": false
+              },
+              "Matches": {
+                "type": "integer",
+                "required": false
+              },
+              "AverageLevel": {
+                "type": "number",
+                "required": false
+              },
+              "AverageKills": {
+                "type": "number",
+                "required": false
+              },
+              "AverageDeaths": {
+                "type": "number",
+                "required": false
+              },
+              "AverageAssists": {
+                "type": "number",
+                "required": false
+              },
+              "AverageLastHits": {
+                "type": "number",
+                "required": false
+              },
+              "AverageDenies": {
+                "type": "number",
+                "required": false
+              },
+              "AverageGPM": {
+                "type": "number",
+                "required": false
+              },
+              "AverageXPPM": {
+                "type": "number",
+                "required": false
+              },
+              "AverageStuns": {
+                "type": "number",
+                "required": false
+              },
+              "AverageHealing": {
+                "type": "number",
+                "required": false
+              },
+              "AverageTowerKills": {
+                "type": "number",
+                "required": false
+              },
+              "AverageRoshanKills": {
+                "type": "number",
+                "required": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

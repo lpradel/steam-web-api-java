@@ -74,6 +74,12 @@ public enum SteamWebApiVersion {
 			return VERSION_ONE;
 		case GET_GAME_ITEMS:
 			return VERSION_ONE;
+		case GET_PRO_PLAYER_LIST:
+			return VERSION_ONE;
+		case GET_PLAYER_OFFICIAL_INFO:
+			return VERSION_ONE;
+		case GET_FANTASY_PLAYER_STATS:
+			return VERSION_ONE;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");
