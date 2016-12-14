@@ -31,9 +31,9 @@ public class GetTeamInfoByTeamIDRequest extends SteamWebApiRequest{
 
         private Integer teamsRequested;
 
-        private final String REQUEST_PARAM_START_AT_TEAM_ID = "start_at_team_id ";
+        public final String REQUEST_PARAM_START_AT_TEAM_ID = "start_at_team_id ";
 
-        private final String REQUEST_PARAM_TEAMS_REQUESTED = "teams_requested";
+        public final String REQUEST_PARAM_TEAMS_REQUESTED = "teams_requested";
 
         public GetTeamInfoByTeamIDRequestBuilder startAtTeamId(Long startAtTeamId) {
             this.startAtTeamId = startAtTeamId;

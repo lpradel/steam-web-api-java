@@ -29,9 +29,9 @@ public class GetMatchHistoryBySequenceNumRequest extends SteamWebApiRequest {
         private Long startAtMatchSeqNum;
         private Integer matchesRequested;
 
-        private final String REQUEST_PARAM_START_AT_MATCH_SEQ_NUM = "start_at_match_seq_num";
+        public final String REQUEST_PARAM_START_AT_MATCH_SEQ_NUM = "start_at_match_seq_num";
 
-        private final String REQUEST_PARAM_MATCHES_REQUESTED = "matches_requested";
+        public final String REQUEST_PARAM_MATCHES_REQUESTED = "matches_requested";
 
         public GetMatchHistoryBySequenceNumRequestBuilder startAtMatchSeqNum(Long startAtMatchSeqNum) {
             this.startAtMatchSeqNum = startAtMatchSeqNum;

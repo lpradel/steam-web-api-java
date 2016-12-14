@@ -28,7 +28,7 @@ public class GetGameItemsRequest extends SteamWebApiRequest {
     public static class GetGameItemsRequestBuilder extends AbstractSteamWebApiRequestBuilder {
         private String language;
 
-        private final String REQUEST_PARAM_LANGUAGE = "language";
+        public final String REQUEST_PARAM_LANGUAGE = "language";
 
         @Override
         protected SteamWebApiVersion getVersion() {

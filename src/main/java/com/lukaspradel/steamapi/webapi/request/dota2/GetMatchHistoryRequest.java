@@ -148,17 +148,17 @@ public class GetMatchHistoryRequest extends SteamWebApiRequest{
             return this;
         }
 
-        private final String REQUEST_PARAM_HERO_ID = "hero_id";
-        private final String REQUEST_PARAM_GAME_MODE = "game_mode";
-        private final String REQUEST_PARAM_SKILL = "skill";
-        private final String REQUEST_PARAM_DATE_MIN = "date_min";
-        private final String REQUEST_PARAM_DATE_MAX = "date_max";
-        private final String REQUEST_PARAM_MIN_PLAYERS = "min_players";
-        private final String REQUEST_PARAM_ACCOUNT_ID = "account_id";
-        private final String REQUEST_PARAM_LEAGUE_ID = "league_id";
-        private final String REQUEST_PARAM_START_AT_MATCH_ID = "start_at_match_id";
-        private final String REQUEST_PARAM_MATCHES_REQUESTED = "matches_requested";
-        private final String REQUEST_PARAM_TOURNAMENT_GAMES_ONLY = "tournament_games_only";
+        public final String REQUEST_PARAM_HERO_ID = "hero_id";
+        public final String REQUEST_PARAM_GAME_MODE = "game_mode";
+        public final String REQUEST_PARAM_SKILL = "skill";
+        public final String REQUEST_PARAM_DATE_MIN = "date_min";
+        public final String REQUEST_PARAM_DATE_MAX = "date_max";
+        public final String REQUEST_PARAM_MIN_PLAYERS = "min_players";
+        public final String REQUEST_PARAM_ACCOUNT_ID = "account_id";
+        public final String REQUEST_PARAM_LEAGUE_ID = "league_id";
+        public final String REQUEST_PARAM_START_AT_MATCH_ID = "start_at_match_id";
+        public final String REQUEST_PARAM_MATCHES_REQUESTED = "matches_requested";
+        public final String REQUEST_PARAM_TOURNAMENT_GAMES_ONLY = "tournament_games_only";
 
         @Override
         protected SteamWebApiInterface getInterface() {

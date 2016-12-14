@@ -35,12 +35,12 @@ public class GetFantasyPlayerStatsRequest extends SteamWebApiRequest {
         private Integer seriesID;
         private String playerAccountID;
 
-        private final String REQUEST_PARAM_FANTASY_LEAGUE_ID = "FantasyLeagueID";
-        private final String REQUEST_PARAM_START_TIME = "StartTime";
-        private final String REQUEST_PARAM_END_TIME = "EndTime";
-        private final String REQUEST_PARAM_MATCH_ID = "matchid";
-        private final String REQUEST_PARAM_SERIES_ID = "SeriesID";
-        private final String REQUEST_PARAM_PLAYER_ACCOUNT_ID = "PlayerAccountID";
+        public final String REQUEST_PARAM_FANTASY_LEAGUE_ID = "FantasyLeagueID";
+        public final String REQUEST_PARAM_START_TIME = "StartTime";
+        public final String REQUEST_PARAM_END_TIME = "EndTime";
+        public final String REQUEST_PARAM_MATCH_ID = "matchid";
+        public final String REQUEST_PARAM_SERIES_ID = "SeriesID";
+        public final String REQUEST_PARAM_PLAYER_ACCOUNT_ID = "PlayerAccountID";
 
 
         public GetFantasyPlayerStatsRequestBuilder(String fantasyLeagueID) {

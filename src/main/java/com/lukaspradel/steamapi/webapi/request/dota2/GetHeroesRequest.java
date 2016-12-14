@@ -41,9 +41,9 @@ public class GetHeroesRequest extends SteamWebApiRequest {
         private String language;
         private Boolean itemizedonly;
 
-        private static final String REQUEST_PARAM_LANGUAGE = "language";
+        public static final String REQUEST_PARAM_LANGUAGE = "language";
 
-        private static final String REQUEST_PARAM_ITEMIZEDONLY = "itemizedonly";
+        public static final String REQUEST_PARAM_ITEMIZEDONLY = "itemizedonly";
 
         public GetHeroesRequestBuilder language(String language) {
 

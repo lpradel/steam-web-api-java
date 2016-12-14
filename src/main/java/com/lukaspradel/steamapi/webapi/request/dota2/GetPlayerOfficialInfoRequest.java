@@ -29,7 +29,7 @@ public class GetPlayerOfficialInfoRequest extends SteamWebApiRequest {
 
         private final String accountId;
 
-        private final String REQUEST_PARAM_ACCOUNT_ID = "accountid";
+        public final String REQUEST_PARAM_ACCOUNT_ID = "accountid";
 
         public GetPlayerOfficialInfoRequestBuilder(String accountId) {
             this.accountId = accountId;
