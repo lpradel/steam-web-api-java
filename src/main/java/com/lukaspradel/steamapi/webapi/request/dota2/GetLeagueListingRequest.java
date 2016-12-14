@@ -34,7 +34,7 @@ public class GetLeagueListingRequest extends SteamWebApiRequest{
          * @author Pazus
          */
         private String language;
-        public final String REQUEST_PARAM_LANGUAGE = "language";
+        public static final String REQUEST_PARAM_LANGUAGE = "language";
 
         public GetLeagueListingRequestBuilder language(String language) {
             this.language = language;

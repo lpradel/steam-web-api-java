@@ -27,7 +27,7 @@ public class GetMatchDetailsRequest extends SteamWebApiRequest{
      */
     public static class GetMatchDetailsRequestBuilder extends AbstractSteamWebApiRequestBuilder {
         private final String matchId;
-        public final String REQUEST_PARAM_MATCH_ID = "match_id";
+        public static final String REQUEST_PARAM_MATCH_ID = "match_id";
 
         public GetMatchDetailsRequestBuilder(String matchId) {
             this.matchId = matchId;
