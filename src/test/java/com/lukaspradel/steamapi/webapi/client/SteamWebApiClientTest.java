@@ -160,7 +160,7 @@ public class SteamWebApiClientTest extends BaseTest {
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)
-	public void testProcessIncorrectResponce() throws SteamApiException {
+	public void testProcessIncorrectResponse() throws SteamApiException {
         GetNewsForAppRequest getNewsForAppRequest = SteamWebApiRequestFactory
                 .createGetNewsForAppRequest(0);
 
