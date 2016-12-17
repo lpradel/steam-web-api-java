@@ -1,5 +1,7 @@
 package com.lukaspradel.steamapi.webapi.request.builders;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
@@ -178,7 +180,7 @@ public abstract class SteamWebApiRequestFactory {
 	}
 
 	public static GetLeagueListingRequest createGetLeagueListingRequest() {
-		return new GetLeagueListingRequestBuilder().buildRequest();
+		return new GetLeagueListingRequestBuilder().language("en").buildRequest();
 	}
 
 	public static GetLiveLeagueGamesRequest createGetLiveLeagueGamesRequest() {
@@ -189,8 +191,11 @@ public abstract class SteamWebApiRequestFactory {
 		return new GetMatchDetailsRequestBuilder(matchId).buildRequest();
 	}
 
-	public static GetMatchHistoryBySequenceNumRequest createGetMatchHistoryBySequenceNumRequest() {
-		return new GetMatchHistoryBySequenceNumRequestBuilder().buildRequest();
+	public static GetMatchHistoryBySequenceNumRequest createGetMatchHistoryBySequenceNumRequest(Long startAtMatchSeqMum,Integer matchesRequested ) {
+		return new GetMatchHistoryBySequenceNumRequestBuilder()
+				.startAtMatchSeqNum(startAtMatchSeqMum)
+				.matchesRequested(matchesRequested)
+				.buildRequest();
 	}
 
 	public static GetMatchHistoryRequest createGetMatchHistoryRequest(String accountId, GetMatchHistoryRequest.GameMode gameMode) {
@@ -210,6 +215,30 @@ public abstract class SteamWebApiRequestFactory {
 	public static GetFantasyPlayerStatsRequest createGetFantasyPlayerStatsRequest(String fantasyLeagueId) {
 		return new GetFantasyPlayerStatsRequestBuilder(fantasyLeagueId).buildRequest();
 	}
+
+	public static GetFantasyPlayerStatsRequest createGetFantasyPlayerStatsRequest(String fantasyLeagueId, Date startTime, Date endTime, String playerAccountID) {
+		return new GetFantasyPlayerStatsRequestBuilder(fantasyLeagueId)
+				.startTime(startTime)
+				.endTime(endTime)
+				.playerAccountID(playerAccountID)
+				.buildRequest();
+	}
+
+	public static GetFantasyPlayerStatsRequest createGetFantasyPlayerStatsRequest(String fantasyLeagueId, Integer seriesId, String playerAccountID) {
+		return new GetFantasyPlayerStatsRequestBuilder(fantasyLeagueId)
+				.seriesID(seriesId)
+				.playerAccountID(playerAccountID)
+				.buildRequest();
+	}
+
+
+	public static GetFantasyPlayerStatsRequest createGetFantasyPlayerStatsRequest(String fantasyLeagueId, String matchId, String playerAccountID) {
+		return new GetFantasyPlayerStatsRequestBuilder(fantasyLeagueId)
+				.matchId(matchId)
+				.playerAccountID(playerAccountID)
+				.buildRequest();
+	}
+
 
 	public static GetPlayerOfficialInfoRequest createGetPlayerOfficialInfoRequest(String accountId) {
 		return new GetPlayerOfficialInfoRequestBuilder(accountId).buildRequest();

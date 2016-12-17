@@ -736,7 +736,7 @@ public class SteamWebApiClientTest extends BaseTest {
 
 	@Test
 	public void testProcessGetMatchHistoryBySequenceNum() throws SteamApiException, IOException {
-		GetMatchHistoryBySequenceNumRequest request = SteamWebApiRequestFactory.createGetMatchHistoryBySequenceNumRequest();
+		GetMatchHistoryBySequenceNumRequest request = SteamWebApiRequestFactory.createGetMatchHistoryBySequenceNumRequest(new Long(100), 20);
 
 		String mockAnswer = readResourceAsString("dota2/GetMatchHistoryBySequenceNum.json");
 
