@@ -159,6 +159,18 @@ public class SteamWebApiClientTest extends BaseTest {
 		}
 	}
 
+	@Test(expectedExceptions = SteamApiException.class)
+	public void testProcessIncorrectResponce() throws SteamApiException {
+        GetNewsForAppRequest getNewsForAppRequest = SteamWebApiRequestFactory
+                .createGetNewsForAppRequest(0);
+
+        String mockAnswer = "incorrect answer";
+		when(requestHandlerMock.getWebApiResponse(getNewsForAppRequest)).thenReturn(mockAnswer);
+
+        GetNewsForApp getNewsForApp = client.<GetNewsForApp> processRequest(getNewsForAppRequest);
+		fail("An exception of type SteamApiException should have been thrown here!");
+	}
+
 	@Test
 	public void testProcessGetNewsForAppRequest() throws SteamApiException,
 			IOException {

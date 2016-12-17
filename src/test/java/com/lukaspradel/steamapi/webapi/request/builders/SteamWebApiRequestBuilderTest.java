@@ -4,6 +4,8 @@ import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest.GetHeroesRequestBuilder;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -61,5 +63,21 @@ public class SteamWebApiRequestBuilderTest {
         assertEquals(parameters.get(GetMatchHistoryRequestBuilder.REQUEST_PARAM_SKILL),"2");
         assertEquals(parameters.get(GetMatchHistoryRequestBuilder.REQUEST_PARAM_TOURNAMENT_GAMES_ONLY),"1");
 
+    }
+
+    @Test
+    public void testGetHeroesBuilder() {
+        GetHeroesRequest request = new GetHeroesRequestBuilder().language("en").itemizedonly(true).buildRequest();
+
+        assertNotNull(request);
+
+        assertEquals(request.getApiInterface(), SteamWebApiInterface.I_ECON_DOTA2);
+        assertEquals(request.getInterfaceMethod(), SteamWebApiInterfaceMethod.GET_HEROES);
+        assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+        Map<String, String> parameters = request.getParameters();
+        assertEquals(parameters.size(),3);
+        assertEquals(parameters.get(GetHeroesRequestBuilder.REQUEST_PARAM_LANGUAGE),"en");
+        assertEquals(parameters.get(GetHeroesRequestBuilder.REQUEST_PARAM_ITEMIZEDONLY),"true");
     }
 }
