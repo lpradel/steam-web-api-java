@@ -105,16 +105,6 @@ public class GetMatchHistoryRequest extends SteamWebApiRequest{
             return this;
         }
 
-        public GetMatchHistoryRequestBuilder dateMin(Date dateMin) {
-            this.dateMin = dateMin.getTime() / 1000L;
-            return this;
-        }
-
-        public GetMatchHistoryRequestBuilder dateMax(Date dateMax) {
-            this.dateMax = dateMax.getTime() / 1000L;
-            return this;
-        }
-
         public GetMatchHistoryRequestBuilder minPlayers(Integer minPlayers) {
             this.minPlayers = minPlayers;
             return this;
@@ -151,8 +141,6 @@ public class GetMatchHistoryRequest extends SteamWebApiRequest{
         public static final String REQUEST_PARAM_HERO_ID = "hero_id";
         public static final String REQUEST_PARAM_GAME_MODE = "game_mode";
         public static final String REQUEST_PARAM_SKILL = "skill";
-        public static final String REQUEST_PARAM_DATE_MIN = "date_min";
-        public static final String REQUEST_PARAM_DATE_MAX = "date_max";
         public static final String REQUEST_PARAM_MIN_PLAYERS = "min_players";
         public static final String REQUEST_PARAM_ACCOUNT_ID = "account_id";
         public static final String REQUEST_PARAM_LEAGUE_ID = "league_id";
@@ -187,14 +175,6 @@ public class GetMatchHistoryRequest extends SteamWebApiRequest{
 
             if(skill != null) {
                 addParameter(REQUEST_PARAM_SKILL,skill.toString());
-            }
-
-            if (dateMin != null) {
-                addParameter(REQUEST_PARAM_DATE_MIN,dateMin);
-            }
-
-            if (dateMax != null) {
-                addParameter(REQUEST_PARAM_DATE_MAX,dateMax);
             }
 
             if (minPlayers != null) {

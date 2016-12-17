@@ -33,8 +33,6 @@ public class SteamWebApiRequestBuilderTest {
 
         GetMatchHistoryRequest request = new GetMatchHistoryRequestBuilder()
                 .accountId("123")
-                .dateMin(startDate.getTime())
-                .dateMax(endDate.getTime())
                 .gameMode(GetMatchHistoryRequest.GameMode.ALL_PICK)
                 .heroIdsFilter(heroIdsFilter)
                 .leagueId("5")
@@ -53,8 +51,6 @@ public class SteamWebApiRequestBuilderTest {
         Map<String, String> parameters = request.getParameters();
 
         assertEquals(parameters.get(GetMatchHistoryRequestBuilder.REQUEST_PARAM_ACCOUNT_ID),"123");
-        assertEquals(parameters.get(GetMatchHistoryRequestBuilder.REQUEST_PARAM_DATE_MIN),String.valueOf(startDate.getTimeInMillis()/1000L));
-        assertEquals(parameters.get(GetMatchHistoryRequestBuilder.REQUEST_PARAM_DATE_MAX),String.valueOf(endDate.getTimeInMillis()/1000L));
         assertEquals(parameters.get(GetMatchHistoryRequestBuilder.REQUEST_PARAM_GAME_MODE),"1");
         assertEquals(parameters.get(GetMatchHistoryRequestBuilder.REQUEST_PARAM_HERO_ID),"1,2");
         assertEquals(parameters.get(GetMatchHistoryRequestBuilder.REQUEST_PARAM_LEAGUE_ID),"5");
