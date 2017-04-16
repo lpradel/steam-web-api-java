@@ -1,0 +1,463 @@
+{
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.liveleaguegames.GetLiveLeagueGames",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "required": false,
+      "properties": {
+        "games": {
+          "type": "array",
+          "required": false,
+          "items": {
+            "type": "object",
+            "properties": {
+              "players": {
+                "type": "array",
+                "required": false,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "account_id": {
+                      "type": "string",
+                      "required": false
+                    },
+                    "name": {
+                      "type": "string",
+                      "required": false
+                    },
+                    "hero_id": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "team": {
+                      "type": "integer",
+                      "required": false
+                    }
+                  }
+                }
+              },
+              "radiant_team": {
+                "type": "object",
+                "required": false,
+                "properties": {
+                  "team_name": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "team_id": {
+                    "type": "integer",
+                    "required": false
+                  },
+                  "team_logo": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "complete": {
+                    "type": "boolean",
+                    "required": false
+                  }
+                }
+              },
+              "dire_team": {
+                "type": "object",
+                "required": false,
+                "properties": {
+                  "team_name": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "team_id": {
+                    "type": "integer",
+                    "required": false
+                  },
+                  "team_logo": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "complete": {
+                    "type": "boolean",
+                    "required": false
+                  }
+                }
+              },
+              "lobby_id": {
+                "type": "string",
+                "required": false
+              },
+              "match_id": {
+                "type": "string",
+                "required": false
+              },
+              "spectators": {
+                "type": "integer",
+                "required": false
+              },
+              "series_id": {
+                "type": "integer",
+                "required": false
+              },
+              "game_number": {
+                "type": "integer",
+                "required": false
+              },
+              "league_id": {
+                "type": "integer",
+                "required": false
+              },
+              "stream_delay_s": {
+                "type": "integer",
+                "required": false
+              },
+              "radiant_series_wins": {
+                "type": "integer",
+                "required": false
+              },
+              "dire_series_wins": {
+                "type": "integer",
+                "required": false
+              },
+              "series_type": {
+                "type": "integer",
+                "required": false
+              },
+              "league_series_id": {
+                "type": "integer",
+                "required": false
+              },
+              "league_game_id": {
+                "type": "integer",
+                "required": false
+              },
+              "stage_name": {
+                "type": "string",
+                "required": false
+              },
+              "league_tier": {
+                "type": "integer",
+                "required": false
+              },
+              "scoreboard": {
+                "type": "object",
+                "required": false,
+                "properties": {
+                  "duration": {
+                    "type": "number",
+                    "required": false
+                  },
+                  "roshan_respawn_timer": {
+                    "type": "integer",
+                    "required": false
+                  },
+                  "radiant": {
+                    "type": "object",
+                    "required": false,
+                    "properties": {
+                      "score": {
+                        "type": "integer",
+                        "required": false
+                      },
+                      "tower_state": {
+                        "type": "integer",
+                        "required": false
+                      },
+                      "barracks_state": {
+                        "type": "integer",
+                        "required": false
+                      },
+                      "picks": {
+                        "type": "array",
+                        "required": false,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "hero_id": {
+                              "type": "integer",
+                              "required": false
+                            }
+                          }
+                        }
+                      },
+                      "bans": {
+                        "type": "array",
+                        "required": false,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "hero_id": {
+                              "type": "integer",
+                              "required": false
+                            }
+                          }
+                        }
+                      },
+                      "players": {
+                        "type": "array",
+                        "required": false,
+                        "items": {
+                          "type": "object",
+                          "required": false,
+                          "properties": {
+                            "player_slot": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "account_id": {
+                              "type": "string",
+                              "required": false
+                            },
+                            "hero_id": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "kills": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "death": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "assists": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "last_hits": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "denies": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "gold": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "level": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "gold_per_min": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "xp_per_min": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "ultimate_state": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "ultimate_cooldown": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item0": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item1": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item2": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item3": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item4": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item5": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "respawn_timer": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "position_x": {
+                              "type": "number",
+                              "required": false
+                            },
+                            "position_y": {
+                              "type": "number",
+                              "required": false
+                            },
+                            "net_worth": {
+                              "type": "integer",
+                              "required": false
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "dire": {
+                    "type": "object",
+                    "required": false,
+                    "properties": {
+                      "score": {
+                        "type": "integer",
+                        "required": false
+                      },
+                      "tower_state": {
+                        "type": "integer",
+                        "required": false
+                      },
+                      "barracks_state": {
+                        "type": "integer",
+                        "required": false
+                      },
+                      "picks": {
+                        "type": "array",
+                        "required": false,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "hero_id": {
+                              "type": "integer",
+                              "required": false
+                            }
+                          }
+                        }
+                      },
+                      "bans": {
+                        "type": "array",
+                        "required": false,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "hero_id": {
+                              "type": "integer",
+                              "required": false
+                            }
+                          }
+                        }
+                      },
+                      "players": {
+                        "type": "array",
+                        "required": false,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "player_slot": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "account_id": {
+                              "type": "string",
+                              "required": false
+                            },
+                            "hero_id": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "kills": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "death": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "assists": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "last_hits": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "denies": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "gold": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "level": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "gold_per_min": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "xp_per_min": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "ultimate_state": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "ultimate_cooldown": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item0": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item1": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item2": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item3": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item4": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "item5": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "respawn_timer": {
+                              "type": "integer",
+                              "required": false
+                            },
+                            "position_x": {
+                              "type": "number",
+                              "required": false
+                            },
+                            "position_y": {
+                              "type": "number",
+                              "required": false
+                            },
+                            "net_worth": {
+                              "type": "integer",
+                              "required": false
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "status": {
+          "type": "integer",
+          "required": false
+        }
+      }
+    }
+  }
+}

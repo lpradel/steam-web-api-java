@@ -1,0 +1,82 @@
+{
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.matchhistory.GetMatchHistory",
+  "type": "object",
+  "required":false,
+  "properties": {
+    "result": {
+      "type": "object",
+      "required": false,
+      "properties": {
+        "status": {
+          "type": "integer",
+          "required": false
+        },
+        "num_results": {
+          "type": "integer",
+          "required": false
+        },
+        "total_results": {
+          "type": "integer",
+          "required": false
+        },
+        "results_remaining": {
+          "type": "integer",
+          "required": false
+        },
+        "matches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "match_id": {
+                "type": "string",
+                "required": false
+              },
+              "match_seq_num": {
+                "type": "string",
+                "required": false
+              },
+              "start_time": {
+                "type": "integer",
+                "required": false
+              },
+              "lobby_type": {
+                "type": "integer",
+                "required": false
+              },
+              "radiant_team_id": {
+                "type": "integer",
+                "required": false
+              },
+              "dire_team_id": {
+                "type": "integer",
+                "required": false
+              },
+              "players": {
+                "type": "array",
+                "required": false,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "account_id": {
+                      "type": "string",
+                      "required": false
+                    },
+                    "player_slot": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "hero_id": {
+                      "type": "integer",
+                      "required": false
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

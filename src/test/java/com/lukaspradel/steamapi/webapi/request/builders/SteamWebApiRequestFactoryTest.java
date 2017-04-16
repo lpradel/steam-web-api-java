@@ -3,13 +3,12 @@ package com.lukaspradel.steamapi.webapi.request.builders;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+import com.lukaspradel.steamapi.webapi.request.dota2.*;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -43,6 +42,12 @@ import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestServiceParameter;
+
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest.GetHeroesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest.GetLeagueListingRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest.GetFantasyPlayerStatsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryBySequenceNumRequest.GetMatchHistoryBySequenceNumRequestBuilder;
+
 
 public class SteamWebApiRequestFactoryTest {
 
@@ -616,5 +621,160 @@ public class SteamWebApiRequestFactoryTest {
 				parameters
 						.get(GetPlayerBansRequestBuilder.REQUEST_PARAM_STEAM_IDS),
 				String.valueOf("123,456,789"));
+	}
+
+	@Test
+	public void testGetGameItemsRequest() {
+		GetGameItemsRequest request = SteamWebApiRequestFactory.createGetGameItemsRequest();
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_ECON_DOTA2);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_GAME_ITEMS);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String,String> parameters = request.getParameters();
+		assertEquals(parameters.size(), 1);
+	}
+
+	@Test
+	public void testGetHeroesRequest() {
+		GetHeroesRequest request = SteamWebApiRequestFactory.createGetHeroesRequest();
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_ECON_DOTA2);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_HEROES);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String,String> parameters = request.getParameters();
+		assertEquals(parameters.size(), 2);
+        assertEquals(parameters.get(GetHeroesRequestBuilder.REQUEST_PARAM_LANGUAGE),"en");
+	}
+
+	@Test
+	public void testGetLeagueListingRequest() {
+        GetLeagueListingRequest request = SteamWebApiRequestFactory.createGetLeagueListingRequest();
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_DOTA2_MATCH);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_LEAGUE_LISTING);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+        Map<String,String> parameters = request.getParameters();
+        assertEquals(parameters.size(), 2);
+        assertEquals(parameters.get(GetLeagueListingRequestBuilder.REQUEST_PARAM_LANGUAGE),"en");
+
+    }
+
+    @Test
+	public void testGetMatchHistoryBySequenceNumRequest() {
+		GetMatchHistoryBySequenceNumRequest request = SteamWebApiRequestFactory.createGetMatchHistoryBySequenceNumRequest(new Long(100),20);
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_DOTA2_MATCH);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_MATCH_HISTORY_BY_SEQUENCE_NUM);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String,String> parameters = request.getParameters();
+		assertEquals(parameters.size(), 3);
+		assertEquals(parameters.get(GetMatchHistoryBySequenceNumRequest.GetMatchHistoryBySequenceNumRequestBuilder.REQUEST_PARAM_START_AT_MATCH_SEQ_NUM),"100");
+        assertEquals(parameters.get(GetMatchHistoryBySequenceNumRequestBuilder.REQUEST_PARAM_MATCHES_REQUESTED),"20");
+
+	}
+
+	@Test
+	public void testGetFantasyPlayerStatsRequestRequest() {
+        final String leagueId = "2";
+        final GregorianCalendar startDate = new GregorianCalendar(2016,12,01);
+        final GregorianCalendar endDate = new GregorianCalendar(2016,12,31);
+        final String playerAccountId = "123123";
+        final Integer seriesId = 10;
+        final String matchId = "123";
+
+        GetFantasyPlayerStatsRequest request;
+
+        Map<String, String> parameters;
+
+	    // Simply by league
+		request = SteamWebApiRequestFactory.createGetFantasyPlayerStatsRequest(leagueId);
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_DOTA2_FANTASY);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_FANTASY_PLAYER_STATS);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+        parameters = request.getParameters();
+        assertNotNull(parameters);
+        assertEquals(parameters.size(), 2);
+        assertEquals(
+                parameters
+                        .get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_FANTASY_LEAGUE_ID),
+                "2");
+
+		// By player and period
+
+        request = SteamWebApiRequestFactory.createGetFantasyPlayerStatsRequest(leagueId, startDate.getTime(), endDate.getTime(), playerAccountId);
+
+        assertNotNull(request);
+
+        assertEquals(request.getApiInterface(),SteamWebApiInterface.I_DOTA2_FANTASY);
+        assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_FANTASY_PLAYER_STATS);
+        assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+        parameters = request.getParameters();
+        assertNotNull(parameters);
+        assertEquals(parameters.size(), 5);
+        assertEquals(
+                parameters
+                        .get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_FANTASY_LEAGUE_ID),
+                "2");
+        assertEquals(parameters.get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_START_TIME),String.valueOf(startDate.getTimeInMillis()/1000L));
+		assertEquals(parameters.get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_END_TIME),String.valueOf(endDate.getTimeInMillis()/1000L));
+        assertEquals(parameters.get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_PLAYER_ACCOUNT_ID),"123123");
+
+        // By player and series
+
+        request = SteamWebApiRequestFactory.createGetFantasyPlayerStatsRequest(leagueId,seriesId,playerAccountId);
+
+        assertNotNull(request);
+
+        assertEquals(request.getApiInterface(),SteamWebApiInterface.I_DOTA2_FANTASY);
+        assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_FANTASY_PLAYER_STATS);
+        assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+        parameters = request.getParameters();
+        assertNotNull(parameters);
+        assertEquals(parameters.size(), 4);
+        assertEquals(
+                parameters
+                        .get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_FANTASY_LEAGUE_ID),
+                "2");
+        assertEquals(parameters.get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_SERIES_ID),seriesId.toString());
+        assertEquals(parameters.get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_PLAYER_ACCOUNT_ID),"123123");
+
+        // By player and match
+
+        request = SteamWebApiRequestFactory.createGetFantasyPlayerStatsRequest(leagueId,matchId,playerAccountId);
+
+        assertNotNull(request);
+
+        assertEquals(request.getApiInterface(),SteamWebApiInterface.I_DOTA2_FANTASY);
+        assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_FANTASY_PLAYER_STATS);
+        assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+        parameters = request.getParameters();
+        assertNotNull(parameters);
+        assertEquals(parameters.size(), 4);
+        assertEquals(
+                parameters
+                        .get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_FANTASY_LEAGUE_ID),
+                "2");
+        assertEquals(parameters.get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_MATCH_ID), matchId);
+        assertEquals(parameters.get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_PLAYER_ACCOUNT_ID),"123123");
+
 	}
 }

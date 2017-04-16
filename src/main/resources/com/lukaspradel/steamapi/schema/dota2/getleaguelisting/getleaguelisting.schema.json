@@ -1,0 +1,42 @@
+{
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.leaguelisting.GetLeagueListing",
+  "type": "object",
+  "required": false,
+  "properties": {
+    "result": {
+      "type": "object",
+      "required": false,
+      "properties": {
+        "leagues": {
+          "type": "array",
+          "required": false,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "required": false
+              },
+              "leagueid": {
+                "type": "integer",
+                "required": false
+              },
+              "description": {
+                "type": "string",
+                "required": false
+              },
+              "tournament_url": {
+                "type": "string",
+                "required": false
+              },
+              "itemdef": {
+                "type": "integer",
+                "required": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

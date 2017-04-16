@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.heroes.GetHeroes",
+  "required": false,
+  "properties": {
+    "result": {
+      "type": "object",
+      "required": false,
+      "properties": {
+        "heroes": {
+          "type": "array",
+          "required": false,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "required": false
+              },
+              "id": {
+                "type": "integer",
+                "required": false
+              },
+              "localized_name": {
+                "type": "string",
+                "required": false
+              }
+            },
+            "required": false
+          }
+        },
+        "status": {
+          "type": "integer",
+          "required": false
+        },
+        "count": {
+          "type": "integer",
+          "required": false
+        }
+      }
+    }
+  }
+}

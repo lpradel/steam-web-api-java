@@ -1,0 +1,204 @@
+{
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.matchhistorybysequencenum.GetMatchHistoryBySequenceNum",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "required": false,
+      "properties": {
+        "status": {
+          "type": "integer",
+          "required": false
+        },
+        "matches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "players": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "player_slot": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "hero_id": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_0": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_1": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_2": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_3": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_4": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "item_5": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "kills": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "deaths": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "assists": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "gold": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "last_hits": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "denies": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "gold_per_min": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "xp_per_min": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "gold_spent": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "hero_damage": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "tower_damage": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "hero_healing": {
+                      "type": "integer",
+                      "required": false
+                    },
+                    "level": {
+                      "type": "integer",
+                      "required": false
+                    }
+                  }
+                }
+              },
+              "radiant_win": {
+                "type": "boolean",
+                "required": false
+              },
+              "duration": {
+                "type": "integer",
+                "required": false
+              },
+              "pre_game_duration": {
+                "type": "integer",
+                "required": false
+              },
+              "start_time": {
+                "type": "integer",
+                "required": false
+              },
+              "match_id": {
+                "type": "string",
+                "required": false
+              },
+              "match_seq_num": {
+                "type": "integer",
+                "required": false
+              },
+              "tower_status_radiant": {
+                "type": "integer",
+                "required": false
+              },
+              "tower_status_dire": {
+                "type": "integer",
+                "required": false
+              },
+              "barracks_status_radiant": {
+                "type": "integer",
+                "required": false
+              },
+              "barracks_status_dire": {
+                "type": "integer",
+                "required": false
+              },
+              "cluster": {
+                "type": "integer",
+                "required": false
+              },
+              "first_blood_time": {
+                "type": "integer",
+                "required": false
+              },
+              "lobby_type": {
+                "type": "integer",
+                "required": false
+              },
+              "human_players": {
+                "type": "integer",
+                "required": false
+              },
+              "leagueid": {
+                "type": "integer",
+                "required": false
+              },
+              "positive_votes": {
+                "type": "integer",
+                "required": false
+              },
+              "negative_votes": {
+                "type": "integer",
+                "required": false
+              },
+              "game_mode": {
+                "type": "integer",
+                "required": false
+              },
+              "flags": {
+                "type": "integer",
+                "required": false
+              },
+              "engine": {
+                "type": "integer",
+                "required": false
+              },
+              "radiant_score": {
+                "type": "integer",
+                "required": false
+              },
+              "dire_score": {
+                "type": "integer",
+                "required": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

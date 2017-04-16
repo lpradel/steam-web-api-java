@@ -1,0 +1,86 @@
+{
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.teaminfobyteamid.GetTeamInfoByTeamID",
+  "type": "object",
+  "required":false,
+  "properties": {
+    "result": {
+      "type": "object",
+      "required": false,
+      "properties": {
+        "status": {
+          "type": "integer",
+          "required": false
+        },
+        "teams": {
+          "type": "array",
+          "required": false,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "required": false
+              },
+              "tag": {
+                "type": "string",
+                "required": false
+              },
+              "time_created": {
+                "type": "integer",
+                "required": false
+              },
+              "calibration_games_remaining": {
+                "type": "integer",
+                "required": false
+              },
+              "logo": {
+                "type": "string",
+                "required": false
+              },
+              "logo_sponsor": {
+                "type": "string",
+                "required": false
+              },
+              "country_code": {
+                "type": "string",
+                "required": false
+              },
+              "url": {
+                "type": "string",
+                "required": false
+              },
+              "games_played": {
+                "type": "integer",
+                "required": false
+              },
+              "player_0_account_id": {
+                "type": "string",
+                "required": false
+              },
+              "player_1_account_id": {
+                "type": "string",
+                "required": false
+              },
+              "player_2_account_id": {
+                "type": "string",
+                "required": false
+              },
+              "player_3_account_id": {
+                "type": "string",
+                "required": false
+              },
+              "player_4_account_id": {
+                "type": "string",
+                "required": false
+              },
+              "admin_account_id": {
+                "type": "string",
+                "required": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

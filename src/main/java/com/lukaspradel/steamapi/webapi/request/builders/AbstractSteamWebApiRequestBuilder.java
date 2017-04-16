@@ -41,6 +41,11 @@ public abstract class AbstractSteamWebApiRequestBuilder extends
 		parameters.put(name, String.valueOf(value));
 	}
 
+	protected void addParameter(String name, Long value) {
+
+		parameters.put(name, value.toString());
+	}
+
 	/**
 	 * Adds List-parameter as comma-separated strings
 	 *

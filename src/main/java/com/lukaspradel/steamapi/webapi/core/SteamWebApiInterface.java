@@ -12,7 +12,9 @@ package com.lukaspradel.steamapi.webapi.core;
 public enum SteamWebApiInterface {
 
 	I_STEAM_NEWS("ISteamNews"), I_PLAYER_SERVICE("IPlayerService"), I_STEAM_USER(
-			"ISteamUser"), I_STEAM_USER_STATS("ISteamUserStats");
+			"ISteamUser"), I_STEAM_USER_STATS("ISteamUserStats"), I_ECON_DOTA2(
+			"IEconDOTA2_570"), I_DOTA2_MATCH("IDOTA2Match_570"), I_DOTA2_FANTASY(
+			"IDOTA2Fantasy_570");
 
 	private final String apiInterface;
 
@@ -61,6 +63,28 @@ public enum SteamWebApiInterface {
 			return I_STEAM_USER_STATS;
 		case GET_PLAYER_BANS:
 			return I_STEAM_USER;
+		case GET_HEROES:
+			return I_ECON_DOTA2;
+		case GET_MATCH_HISTORY:
+			return I_DOTA2_MATCH;
+		case GET_MATCH_DETAILS:
+			return I_DOTA2_MATCH;
+		case GET_LEAGUE_LISTING:
+			return I_DOTA2_MATCH;
+		case GET_LIVE_LEAGUE_GAMES:
+			return I_DOTA2_MATCH;
+		case GET_MATCH_HISTORY_BY_SEQUENCE_NUM:
+			return I_DOTA2_MATCH;
+		case GET_TEAM_INFO_BY_TEAM_ID:
+			return I_DOTA2_MATCH;
+		case GET_GAME_ITEMS:
+			return I_ECON_DOTA2;
+		case GET_PRO_PLAYER_LIST:
+			return I_DOTA2_FANTASY;
+		case GET_PLAYER_OFFICIAL_INFO:
+			return I_DOTA2_FANTASY;
+		case GET_FANTASY_PLAYER_STATS:
+			return I_DOTA2_FANTASY;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");

@@ -1,0 +1,49 @@
+{
+  "javaType":"com.lukaspradel.steamapi.data.json.dota2.gameitems.GetGameItems",
+  "type": "object",
+  "required":false,
+  "properties": {
+    "result": {
+      "type": "object",
+      "required":false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "required":false
+              },
+              "name": {
+                "type": "string",
+                "required":false
+              },
+              "cost": {
+                "type": "integer",
+                "required":false
+              },
+              "secret_shop": {
+                "type": "integer",
+                "required":false
+              },
+              "side_shop": {
+                "type": "integer",
+                "required":false
+              },
+              "recipe": {
+                "type": "integer",
+                "required":false
+              }
+            }
+          }
+        },
+        "status": {
+          "type": "integer",
+          "required":false
+        }
+      }
+    }
+  }
+}
