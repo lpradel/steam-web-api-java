@@ -7,7 +7,6 @@ import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.builders.AbstractSteamWebApiRequestBuilder;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -81,8 +80,6 @@ public class GetMatchHistoryRequest extends SteamWebApiRequest{
         private List<String> heroIds =  new ArrayList<>();
         private GameMode gameMode = null;
         private Skill skill = null;
-        private Long dateMin;
-        private Long dateMax;
         private Integer minPlayers;
         private String accountId;
         private String leagueId;

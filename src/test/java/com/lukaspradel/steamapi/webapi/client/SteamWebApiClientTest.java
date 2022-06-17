@@ -60,6 +60,7 @@ import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
 
+@SuppressWarnings("unused")
 public class SteamWebApiClientTest extends BaseTest {
 
 	private static final String KEY_MOCK = "12345";

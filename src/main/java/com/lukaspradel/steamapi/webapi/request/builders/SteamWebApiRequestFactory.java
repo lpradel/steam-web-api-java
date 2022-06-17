@@ -1,7 +1,6 @@
 package com.lukaspradel.steamapi.webapi.request.builders;
 
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;

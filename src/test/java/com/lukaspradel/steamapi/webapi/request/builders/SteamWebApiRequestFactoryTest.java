@@ -3,7 +3,6 @@ package com.lukaspradel.steamapi.webapi.request.builders;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
-import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.*;
