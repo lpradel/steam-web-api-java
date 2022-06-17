@@ -26,6 +26,7 @@
         <jsonschema2pojo-maven-plugin.version>0.4.18</jsonschema2pojo-maven-plugin.version>
 
         <!-- Dependencies versions -->
+        <javax.annotation.version>1.3.2</javax.annotation.version>
         <commons-lang.version>2.6</commons-lang.version>
         <commons-io.version>2.4</commons-io.version>
         <slf4j.version>1.7.13</slf4j.version>
@@ -439,6 +440,12 @@
     </profiles>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>${javax.annotation.version}</version>
+        </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
