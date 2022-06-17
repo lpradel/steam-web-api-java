@@ -670,7 +670,7 @@ public class SteamWebApiRequestFactoryTest {
 
     @Test
 	public void testGetMatchHistoryBySequenceNumRequest() {
-		GetMatchHistoryBySequenceNumRequest request = SteamWebApiRequestFactory.createGetMatchHistoryBySequenceNumRequest(new Long(100),20);
+		GetMatchHistoryBySequenceNumRequest request = SteamWebApiRequestFactory.createGetMatchHistoryBySequenceNumRequest(Long.valueOf(100),20);
 
 		assertNotNull(request);
 
