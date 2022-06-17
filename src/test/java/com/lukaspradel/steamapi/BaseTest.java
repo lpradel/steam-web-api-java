@@ -1,6 +1,7 @@
 package com.lukaspradel.steamapi;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 import org.apache.commons.io.IOUtils;
 import org.mockito.MockitoAnnotations;
@@ -16,6 +17,6 @@ public class BaseTest extends PowerMockTestCase {
 
 	protected String readResourceAsString(String fileName) throws IOException {
 
-		return IOUtils.toString(this.getClass().getResourceAsStream(fileName));
+		return IOUtils.toString(this.getClass().getResourceAsStream(fileName), Charset.defaultCharset());
 	}
 }
