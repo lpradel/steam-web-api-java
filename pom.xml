@@ -36,7 +36,7 @@
 
         <!-- Test dependencies versions -->
         <testng.version>6.9.10</testng.version>
-        <mockito.version>2.0.90-beta</mockito.version>
+        <mockito.version>2.0.105-beta</mockito.version>
         <powermock.version>2.0.9</powermock.version>
     </properties>
 

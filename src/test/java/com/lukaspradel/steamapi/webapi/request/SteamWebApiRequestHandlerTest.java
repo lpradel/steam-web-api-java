@@ -80,7 +80,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		when(
 				requestHandlerHttpsSpy.getRequestUri(any(String.class),
 						any(String.class), any(String.class),
-						ArgumentMatchers.anyListOf(NameValuePair.class))).thenReturn(
+						ArgumentMatchers.anyList())).thenReturn(
 				uriMock);
 
 		URI actual = requestHandlerHttpsSpy.getRequestUrl(requestMock);
