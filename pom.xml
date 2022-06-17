@@ -36,8 +36,8 @@
 
         <!-- Test dependencies versions -->
         <testng.version>6.9.10</testng.version>
-        <mockito.version>1.10.19</mockito.version>
-        <powermock.version>1.6.4</powermock.version>
+        <mockito.version>2.0.90-beta</mockito.version>
+        <powermock.version>2.0.9</powermock.version>
     </properties>
 
     <licenses>
@@ -479,7 +479,7 @@
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
+            <artifactId>mockito-core</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
@@ -491,7 +491,7 @@
         </dependency>
         <dependency>
             <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito</artifactId>
+            <artifactId>powermock-api-mockito2</artifactId>
             <version>${powermock.version}</version>
             <scope>test</scope>
         </dependency>
