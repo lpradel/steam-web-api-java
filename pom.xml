@@ -13,16 +13,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Plugin versions -->
-        <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
-        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
-        <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
-        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
-        <maven-source-plugin.version>2.4</maven-source-plugin.version>
-        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.6</nexus-staging-maven-plugin.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
         <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
-        <coveralls-maven-plugin.version>4.1.0</coveralls-maven-plugin.version>
+        <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <jsonschema2pojo-maven-plugin.version>1.1.2</jsonschema2pojo-maven-plugin.version>
 
         <!-- Dependencies versions -->
