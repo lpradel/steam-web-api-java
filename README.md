@@ -143,6 +143,8 @@ The result data is in the `GetNewsForApp` POJO. You can access it using the acce
 ## Credits
 
 - [Lukas Pradel](https://github.com/lpradel)
+- [Pazus](https://github.com/Pazus)
+- [41zu](https://github.com/41zu)
 
 ## License
 
