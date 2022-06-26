@@ -56,10 +56,9 @@ You can download the artifact manually from [Sonatype Nexus](https://oss.sonatyp
 ### Dependencies
 
 The library itself has the following dependencies:
-- Apache Commons Lang 2.6
-- Apache Commons IO 2.4
-- Apache Http Client 4.5
-- Jackson 2
+- Apache Commons IO 2.11.0
+- Apache Http Client 4.5.13
+- Jackson 2.13.3
 - Slf4j (use an appropriate Logger implementation)
 
 You will have to ensure their presence if you installed manually or using ANT. Maven will take care of this for you.
@@ -136,6 +135,7 @@ The result data is in the `GetNewsForApp` POJO. You can access it using the acce
 
 ## History
 
+- Version 1.3: Upgraded dependencies and pump Java version to 11
 - Version 1.2: Bugfix Release. Fixed #3, updated dependencies and fixed non-compiling code in docs.
 - Version 1.1: Minor bugfix release. Fixed #1 and updated dependencies.
 - Version 1.0: Initial release. Includes all functionality documented in the [Valve Developer Community Wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API).

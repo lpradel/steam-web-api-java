@@ -1,6 +1,6 @@
 package com.lukaspradel.steamapi.webapi.request;
 
-import static org.mockito.Matchers.any;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -25,7 +25,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.message.BasicNameValuePair;
-import org.mockito.Matchers;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
 import org.testng.annotations.Test;
@@ -80,7 +80,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		when(
 				requestHandlerHttpsSpy.getRequestUri(any(String.class),
 						any(String.class), any(String.class),
-						Matchers.anyListOf(NameValuePair.class))).thenReturn(
+						ArgumentMatchers.anyList())).thenReturn(
 				uriMock);
 
 		URI actual = requestHandlerHttpsSpy.getRequestUrl(requestMock);

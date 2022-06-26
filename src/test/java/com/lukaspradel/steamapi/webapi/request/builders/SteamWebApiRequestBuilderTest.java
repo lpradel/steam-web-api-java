@@ -3,16 +3,12 @@ package com.lukaspradel.steamapi.webapi.request.builders;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
-import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest.GetHeroesRequestBuilder;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertNull;
-import static org.testng.Assert.assertTrue;
 
 import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryRequest.GetMatchHistoryRequestBuilder;
@@ -27,8 +23,6 @@ import java.util.*;
 public class SteamWebApiRequestBuilderTest {
     @Test
     public void testGetMatchHistoryRequestBuilder() {
-        final GregorianCalendar startDate = new GregorianCalendar(2016,12,01);
-        final GregorianCalendar endDate = new GregorianCalendar(2016,12,31);
         final List<String> heroIdsFilter = Arrays.asList("1","2");
 
         GetMatchHistoryRequest request = new GetMatchHistoryRequestBuilder()
