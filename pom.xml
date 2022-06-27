@@ -21,7 +21,7 @@
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
-        <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <jsonschema2pojo-maven-plugin.version>1.1.2</jsonschema2pojo-maven-plugin.version>
 
@@ -32,6 +32,7 @@
         <jackson.version>2.13.3</jackson.version>
         <httpclient.version>4.5.13</httpclient.version>
         <cobertura.version>2.1.1</cobertura.version>
+        <jaxb-api.version>2.3.1</jaxb-api.version>
 
         <!-- Test dependencies versions -->
         <testng.version>6.9.10</testng.version>
@@ -104,7 +105,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version>
+                <version>${jacoco-maven-plugin.version}</version>
                 <configuration>
                     <excludes>
                         <exclude>com/lukaspradel/steamapi/data/json/**/*.class</exclude>
@@ -127,7 +128,7 @@
                     <dependency>
                         <groupId>javax.xml.bind</groupId>
                         <artifactId>jaxb-api</artifactId>
-                        <version>2.3.1</version>
+                        <version>${jaxb-api.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
