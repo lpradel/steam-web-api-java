@@ -1,7 +1,7 @@
 Steam Web API for Java
 ==================
 
-![Build Status](https://github.com/lpradel/steam-web-api-java/actions/workflows/build/badge.svg)
+[![build](https://github.com/lpradel/steam-web-api-java/actions/workflows/build-maven.yml/badge.svg)](https://github.com/lpradel/steam-web-api-java/actions/workflows/build-maven.yml)
 [![Coverage Status](https://coveralls.io/repos/lpradel/steam-web-api-java/badge.svg?branch=master)](https://coveralls.io/r/lpradel/steam-web-api-java?branch=master)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.lukaspradel/steam-web-api/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.lukaspradel/steam-web-api)
 
