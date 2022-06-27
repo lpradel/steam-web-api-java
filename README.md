@@ -21,7 +21,7 @@ Include the following dependency in your POM:
 <dependency>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.2</version>
+    <version>1.3</version>
 </dependency>
 ```
 
@@ -135,7 +135,7 @@ The result data is in the `GetNewsForApp` POJO. You can access it using the acce
 
 ## History
 
-- Version 1.3: Upgraded dependencies and pump Java version to 11
+- Version 1.3: Upgraded dependencies and bump Java version to 11
 - Version 1.2: Bugfix Release. Fixed #3, updated dependencies and fixed non-compiling code in docs.
 - Version 1.1: Minor bugfix release. Fixed #1 and updated dependencies.
 - Version 1.0: Initial release. Includes all functionality documented in the [Valve Developer Community Wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API).
