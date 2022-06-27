@@ -22,4 +22,4 @@ jobs:
     - name: 📦 Build with Maven
       run: mvn -B package --file pom.xml
     - name: 🚀 Coveralls Coverage Report Submission
-      run: mvn coveralls:report --define repoToken=${{ secrets.COVERALL_REPO_TOKEN }}
+      run: mvn test jacoco:report coveralls:report -DrepoToken=${{ secrets.COVERALLS_TOKEN }}
