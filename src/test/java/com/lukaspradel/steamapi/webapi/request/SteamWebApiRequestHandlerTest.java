@@ -17,15 +17,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.hc.client5.http.ClientProtocolException;
-import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.core5.http.ClassicHttpResponse;
 import org.apache.hc.core5.http.HttpEntity;
-import org.apache.hc.core5.http.HttpResponse;
 import org.apache.hc.core5.http.HttpStatus;
 import org.apache.hc.core5.http.NameValuePair;
+import org.apache.hc.core5.http.ParseException;
 import org.apache.hc.core5.http.message.BasicNameValuePair;
-import org.apache.hc.core5.http.message.StatusLine;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
@@ -50,7 +49,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	private SteamWebApiRequest requestMock;
 
 	@Mock
-	private HttpClient httpClientMock;
+	private CloseableHttpClient httpClientMock;
 
 	@Mock
 	private ClassicHttpResponse httpResponseMock;
@@ -152,9 +151,6 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 		when(httpResponseMock.getCode()).thenReturn(
 				HttpStatus.SC_UNAUTHORIZED);
-		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
-		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
-				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
 		URI uriMock = PowerMockito.mock(URI.class);
@@ -171,9 +167,6 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 		when(httpResponseMock.getCode()).thenReturn(
 				HttpStatus.SC_INTERNAL_SERVER_ERROR);
-		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
-		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
-				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
 		URI uriMock = PowerMockito.mock(URI.class);
@@ -200,7 +193,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	@Test
 	public void testGetWebApiResponse() throws ClientProtocolException,
-			IOException, SteamApiException {
+			IOException, SteamApiException, ParseException {
 
 		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
 		when(requestMock.getApiInterface()).thenReturn(
@@ -211,10 +204,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 				SteamWebApiVersion.VERSION_TWO);
 
 		when(httpResponseMock.getCode()).thenReturn(HttpStatus.SC_OK);
-		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
 		when(httpResponseMock.getEntity()).thenReturn(httpEntityMock);
-		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
-				httpResponseMock);
 
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
