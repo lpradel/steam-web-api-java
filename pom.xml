@@ -26,7 +26,6 @@
         <jsonschema2pojo-maven-plugin.version>1.1.2</jsonschema2pojo-maven-plugin.version>
 
         <!-- Dependencies versions -->
-        <javax.annotation.version>1.3.2</javax.annotation.version>
         <commons-io.version>2.11.0</commons-io.version>
         <slf4j.version>1.7.36</slf4j.version>
         <jackson.version>2.13.3</jackson.version>
@@ -140,6 +139,7 @@
                     <sourceType>jsonschema</sourceType>
                     <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
                     <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+                    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
                     <annotationStyle>jackson2</annotationStyle>
                     <generateBuilders>true</generateBuilders>
                     <initializeCollections>true</initializeCollections>
@@ -450,12 +450,6 @@
     </profiles>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>${javax.annotation.version}</version>
-        </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
