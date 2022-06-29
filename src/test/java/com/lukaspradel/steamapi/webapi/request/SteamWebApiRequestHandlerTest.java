@@ -53,10 +53,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	private HttpClient httpClientMock;
 
 	@Mock
-	private HttpResponse httpResponseMock;
-
-	@Mock
-	private StatusLine statusLineMock;
+	private ClassicHttpResponse httpResponseMock;
 
 	@Mock
 	private HttpEntity httpEntityMock;
@@ -153,7 +150,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	public void testGetWebApiResponseUnauthorized()
 			throws ClientProtocolException, IOException, SteamApiException {
 
-		when(statusLineMock.getStatusCode()).thenReturn(
+		when(httpResponseMock.getCode()).thenReturn(
 				HttpStatus.SC_UNAUTHORIZED);
 		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
 		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
@@ -172,7 +169,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 			throws ClientProtocolException, IOException, SteamApiException,
 			URISyntaxException {
 
-		when(statusLineMock.getStatusCode()).thenReturn(
+		when(httpResponseMock.getCode()).thenReturn(
 				HttpStatus.SC_INTERNAL_SERVER_ERROR);
 		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
 		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
@@ -213,7 +210,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		when(requestMock.getVersion()).thenReturn(
 				SteamWebApiVersion.VERSION_TWO);
 
-		when(statusLineMock.getStatusCode()).thenReturn(HttpStatus.SC_OK);
+		when(httpResponseMock.getCode()).thenReturn(HttpStatus.SC_OK);
 		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
 		when(httpResponseMock.getEntity()).thenReturn(httpEntityMock);
 		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
