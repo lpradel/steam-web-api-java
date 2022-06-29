@@ -81,8 +81,8 @@
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -97,9 +97,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <configuration>
-                    <argLine>${argLine} --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED</argLine>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
