@@ -1,6 +1,6 @@
 package com.lukaspradel.steamapi.core.exception;
 
-public class SteamApiException extends Exception {
+public class SteamApiException extends RuntimeException {
 
 	private static final long serialVersionUID = 6414882632273395318L;
 
