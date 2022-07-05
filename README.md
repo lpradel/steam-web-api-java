@@ -135,6 +135,7 @@ The result data is in the `GetNewsForApp` POJO. You can access it using the acce
 
 ## History
 
+- Version 1.4: Upgrade to httpclient5 and change Java version to 8 for broader compatibility
 - Version 1.3: Upgraded dependencies and bump Java version to 11
 - Version 1.2: Bugfix Release. Fixed #3, updated dependencies and fixed non-compiling code in docs.
 - Version 1.1: Minor bugfix release. Fixed #1 and updated dependencies.
