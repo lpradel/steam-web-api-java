@@ -1,6 +1,7 @@
 package com.lukaspradel.steamapi.webapi.request;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -16,15 +17,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.NameValuePair;
-import org.apache.http.StatusLine;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.message.BasicNameValuePair;
+import org.apache.hc.client5.http.ClientProtocolException;
+import org.apache.hc.client5.http.classic.HttpClient;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.core5.http.NameValuePair;
+import org.apache.hc.core5.http.ParseException;
+import org.apache.hc.core5.http.message.BasicNameValuePair;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
@@ -52,10 +53,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	private HttpClient httpClientMock;
 
 	@Mock
-	private HttpResponse httpResponseMock;
-
-	@Mock
-	private StatusLine statusLineMock;
+	private ClassicHttpResponse httpResponseMock;
 
 	@Mock
 	private HttpEntity httpEntityMock;
@@ -152,10 +150,9 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	public void testGetWebApiResponseUnauthorized()
 			throws ClientProtocolException, IOException, SteamApiException {
 
-		when(statusLineMock.getStatusCode()).thenReturn(
+		when(httpResponseMock.getCode()).thenReturn(
 				HttpStatus.SC_UNAUTHORIZED);
-		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
-		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
+		when(httpClientMock.execute(isNull(), any(HttpUriRequest.class))).thenReturn(
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
@@ -171,10 +168,9 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 			throws ClientProtocolException, IOException, SteamApiException,
 			URISyntaxException {
 
-		when(statusLineMock.getStatusCode()).thenReturn(
+		when(httpResponseMock.getCode()).thenReturn(
 				HttpStatus.SC_INTERNAL_SERVER_ERROR);
-		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
-		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
+		when(httpClientMock.execute(isNull(), any(HttpUriRequest.class))).thenReturn(
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
@@ -189,7 +185,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	public void testGetWebApiResponseIOException()
 			throws ClientProtocolException, IOException, SteamApiException {
 
-		when(httpClientMock.execute(any(HttpUriRequest.class))).thenThrow(
+		when(httpClientMock.execute(isNull(), any(HttpUriRequest.class))).thenThrow(
 				new IOException("intended-io-exception"));
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
@@ -202,7 +198,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	@Test
 	public void testGetWebApiResponse() throws ClientProtocolException,
-			IOException, SteamApiException {
+			IOException, SteamApiException, ParseException {
 
 		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
 		when(requestMock.getApiInterface()).thenReturn(
@@ -212,10 +208,9 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		when(requestMock.getVersion()).thenReturn(
 				SteamWebApiVersion.VERSION_TWO);
 
-		when(statusLineMock.getStatusCode()).thenReturn(HttpStatus.SC_OK);
-		when(httpResponseMock.getStatusLine()).thenReturn(statusLineMock);
+		when(httpResponseMock.getCode()).thenReturn(HttpStatus.SC_OK);
 		when(httpResponseMock.getEntity()).thenReturn(httpEntityMock);
-		when(httpClientMock.execute(any(HttpUriRequest.class))).thenReturn(
+		when(httpClientMock.execute(isNull(), any(HttpUriRequest.class))).thenReturn(
 				httpResponseMock);
 
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);

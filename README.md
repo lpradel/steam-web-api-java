@@ -57,7 +57,7 @@ You can download the artifact manually from [Sonatype Nexus](https://oss.sonatyp
 
 The library itself has the following dependencies:
 - Apache Commons IO 2.11.0
-- Apache Http Client 4.5.13
+- Apache Http Client 5.1.3
 - Jackson 2.13.3
 - Slf4j (use an appropriate Logger implementation)
 
@@ -135,6 +135,7 @@ The result data is in the `GetNewsForApp` POJO. You can access it using the acce
 
 ## History
 
+- Version 1.4: Upgrade to httpclient5 and change Java version to 8 for broader compatibility and Android support
 - Version 1.3: Upgraded dependencies and bump Java version to 11
 - Version 1.2: Bugfix Release. Fixed #3, updated dependencies and fixed non-compiling code in docs.
 - Version 1.1: Minor bugfix release. Fixed #1 and updated dependencies.
