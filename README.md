@@ -73,8 +73,10 @@ In this section you will find a minimal code example to get started in a few min
 package com.lukaspradel.steamapi.webapi.demo;
 
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.webapi.client.SteamWebApiClient;
-import com.lukaspradel.steamapi.webapi.client.SteamWebApiClient.SteamWebApiClientBuilder;
+import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
 
 public class SteamWebApiDemo {
 
