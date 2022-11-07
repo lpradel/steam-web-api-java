@@ -27,20 +27,15 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		super(useHttps, key);
 	}
 
-	public String getWebApiResponse(SteamWebApiRequest request)
-			throws SteamApiException {
-
-		URI requestUrl = getRequestUrl(request);
-		return getWebApiResponse(requestUrl);
+	public String getWebApiResponse(SteamWebApiRequest request) throws SteamApiException {
+		return getWebApiResponse(getRequestUrl(request));
 	}
 
 	URI getRequestUrl(SteamWebApiRequest request) throws SteamApiException {
-
 		String scheme = getProtocol();
 		String host = request.getBaseUrl();
 		String path = getRequestPath(request);
-		List<NameValuePair> parameters = getRequestParameters(request
-				.getParameters());
+		List<NameValuePair> parameters = getRequestParameters(request.getParameters());
 
 		URI requestUrl = getRequestUri(scheme, host, path, parameters);
 
@@ -48,7 +43,6 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 	}
 
 	String getRequestPath(SteamWebApiRequest request) {
-
 		StringBuilder requestPath = new StringBuilder();
 
 		requestPath.append("/");
@@ -72,22 +66,21 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		return nvps;
 	}
 
-	URI getRequestUri(String scheme, String host, String path,
-			List<NameValuePair> parameters) throws SteamApiException {
-
+	URI getRequestUri(String scheme, String host, String path, List<NameValuePair> parameters) throws SteamApiException {
 		try {
-			URI requestUri = new URIBuilder().setScheme(scheme).setHost(host)
-					.setPath(path).setParameters(parameters).build();
-			return requestUri;
+			return new URIBuilder()
+					.setScheme(scheme)
+					.setHost(host)
+					.setPath(path)
+					.setParameters(parameters)
+					.build();
 		} catch (URISyntaxException e) {
 			throw new SteamApiException(
-					"Failed to process the Web API request due to the following error: "
-							+ e.getMessage(), e);
+					"Failed to process the Web API request due to the following error: " + e.getMessage(), e);
 		}
 	}
 
 	String getWebApiResponse(URI requestUrl) throws SteamApiException {
-
 		HttpClient client = getHttpClient();
 		HttpGet getRequest = new HttpGet(requestUrl);
 
@@ -99,28 +92,23 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 			if (!statusCode.toString().startsWith("20")) {
 				if (statusCode.equals(HttpStatus.SC_UNAUTHORIZED)) {
 					throw new SteamApiException(
-							SteamApiException.Cause.FORBIDDEN, statusCode,
-							response.getReasonPhrase());
+							SteamApiException.Cause.FORBIDDEN, statusCode, response.getReasonPhrase());
 				}
-				throw new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
-						statusCode, response.getReasonPhrase());
+				throw new SteamApiException(
+						SteamApiException.Cause.HTTP_ERROR, statusCode, response.getReasonPhrase());
 			}
 			return getHttpResponseAsString(response);
 		} catch (IOException | ParseException e) {
 			throw new SteamApiException(
-					"The Web API request failed due to the following error: "
-							+ e.getMessage(), e);
+					"The Web API request failed due to the following error: " + e.getMessage(), e);
 		}
 	}
 
 	HttpClient getHttpClient() {
-
 		return HttpClientBuilder.create().build();
 	}
 
-	String getHttpResponseAsString(ClassicHttpResponse response)
-			throws ParseException, IOException {
-
+	String getHttpResponseAsString(ClassicHttpResponse response) throws ParseException, IOException {
 		return EntityUtils.toString(response.getEntity());
 	}
 }

@@ -1,9 +1,12 @@
 package com.lukaspradel.steamapi;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-import org.apache.commons.io.IOUtils;
 import org.mockito.MockitoAnnotations;
 import org.powermock.modules.testng.PowerMockTestCase;
 import org.testng.annotations.BeforeMethod;
@@ -16,7 +19,11 @@ public class BaseTest extends PowerMockTestCase {
 	}
 
 	protected String readResourceAsString(String fileName) throws IOException {
-
-		return IOUtils.toString(this.getClass().getResourceAsStream(fileName), Charset.defaultCharset());
+		try {
+			Path filePath = Paths.get(this.getClass().getResource(fileName).toURI());
+			return new String(Files.readAllBytes(filePath), Charset.defaultCharset());
+		} catch (URISyntaxException e) {
+			throw new IOException(e);
+		}
 	}
 }
