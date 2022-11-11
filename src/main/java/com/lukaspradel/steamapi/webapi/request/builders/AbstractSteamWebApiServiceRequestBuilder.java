@@ -32,7 +32,7 @@ public abstract class AbstractSteamWebApiServiceRequestBuilder extends
 	 * Converts the service parameter POJO to a JSON string and adds the JSON
 	 * string as a normal GET parameter.
 	 *
-	 * @param serviceParameter
+	 * @param serviceParameter parameter which should be mapped
 	 */
 	protected void addServiceParameter(
 			SteamWebApiServiceParameter serviceParameter) {
