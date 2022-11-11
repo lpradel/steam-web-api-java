@@ -7,8 +7,8 @@ import com.lukaspradel.steamapi.webapi.request.builders.AbstractSteamWebApiServi
  * end with "Service" (e.g. "IPlayerService") require a specific service
  * parameter in the form of a single JSON blob for certain parameters. If the
  * service parameter is used, ALL request parameters must be included in the
- * JSON blob. Exceptions are "key" parameter and the "format" parameter. <br/>
- * <br/>
+ * JSON blob. Exceptions are "key" parameter and the "format" parameter.
+ * <p>
  * Heirs of this class must be Jackson-annotated POJOs that are converted to
  * JSON by {@link AbstractSteamWebApiServiceRequestBuilder}.
  *

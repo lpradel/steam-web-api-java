@@ -86,7 +86,7 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 
 		// this try-with-resources statement closes the connection
 		// no need to close the client (ref https://hc.apache.org/httpcomponents-client-4.5.x/quickstart.html)
-		try (ClassicHttpResponse response = client.execute(null, getRequest)) {
+		try (ClassicHttpResponse response = client.executeOpen(null, getRequest, null)) {
 			Integer statusCode = response.getCode();
 
 			if (!statusCode.toString().startsWith("20")) {

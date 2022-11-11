@@ -152,7 +152,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 		when(httpResponseMock.getCode()).thenReturn(
 				HttpStatus.SC_UNAUTHORIZED);
-		when(httpClientMock.execute(isNull(), any(HttpUriRequest.class))).thenReturn(
+		when(httpClientMock.executeOpen(isNull(), any(HttpUriRequest.class), isNull())).thenReturn(
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
@@ -170,7 +170,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 		when(httpResponseMock.getCode()).thenReturn(
 				HttpStatus.SC_INTERNAL_SERVER_ERROR);
-		when(httpClientMock.execute(isNull(), any(HttpUriRequest.class))).thenReturn(
+		when(httpClientMock.executeOpen(isNull(), any(HttpUriRequest.class), isNull())).thenReturn(
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
@@ -185,7 +185,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	public void testGetWebApiResponseIOException()
 			throws ClientProtocolException, IOException, SteamApiException {
 
-		when(httpClientMock.execute(isNull(), any(HttpUriRequest.class))).thenThrow(
+		when(httpClientMock.executeOpen(isNull(), any(HttpUriRequest.class), isNull())).thenThrow(
 				new IOException("intended-io-exception"));
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
@@ -210,7 +210,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 		when(httpResponseMock.getCode()).thenReturn(HttpStatus.SC_OK);
 		when(httpResponseMock.getEntity()).thenReturn(httpEntityMock);
-		when(httpClientMock.execute(isNull(), any(HttpUriRequest.class))).thenReturn(
+		when(httpClientMock.executeOpen(isNull(), any(HttpUriRequest.class), isNull())).thenReturn(
 				httpResponseMock);
 
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
