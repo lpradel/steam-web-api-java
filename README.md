@@ -134,6 +134,43 @@ The result data is in the `GetNewsForApp` POJO. You can access it using the acce
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :)
 
+## Releasing
+
+Use the following Maven `settings.xml` with valid GPG key / Sonatype user:
+
+```xml
+<settings>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+                <gpg.keyname>###</gpg.keyname>
+                <gpg.passphrase>###</gpg.passphrase>
+            </properties>
+        </profile>
+    </profiles>
+
+    <servers>
+        <server>
+            <id>sonatype-nexus-snapshots</id>
+            <username>###</username>
+            <password>###</password>
+        </server>
+        <server>
+            <id>sonatype-nexus-staging</id>
+            <username>###</username>
+            <password>###</password>
+        </server>
+    </servers>
+</settings>
+```
+
+Release to Sonatype Nexus with the following command:
+
+```shell
+mvn clean deploy -P release
+```
+
 ## History
 
 - Version 1.4.1: Update httpclient5, Jackson and Slf4j (fix CVE). Remove commons-io dependency.
