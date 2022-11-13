@@ -21,7 +21,7 @@ Include the following dependency in your POM:
 <dependency>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.4</version>
+    <version>1.4.1</version>
 </dependency>
 ```
 
@@ -56,9 +56,9 @@ You can download the artifact manually from [Sonatype Nexus](https://oss.sonatyp
 ### Dependencies
 
 The library itself has the following dependencies:
-- Apache Http Client 5.2
-- Jackson 2.14.0
-- Slf4j 2.0 (use an appropriate Logger implementation)
+- Apache Http Client
+- Jackson
+- Slf4j (use an appropriate Logger implementation)
 
 You will have to ensure their presence if you installed manually or using ANT. Maven will take care of this for you.
 
@@ -136,7 +136,7 @@ The result data is in the `GetNewsForApp` POJO. You can access it using the acce
 
 ## History
 
-- Version TBD: Update httpclient5, Jackson and Slf4j. Remove commons-io dependency.
+- Version 1.4.1: Update httpclient5, Jackson and Slf4j (fix CVE). Remove commons-io dependency.
 - Version 1.4: Upgrade to httpclient5 and change Java version to 8 for broader compatibility and Android support
 - Version 1.3: Upgraded dependencies and bump Java version to 11
 - Version 1.2: Bugfix Release. Fixed #3, updated dependencies and fixed non-compiling code in docs.
