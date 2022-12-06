@@ -1,56 +1,22 @@
 package com.lukaspradel.steamapi.webapi.core;
 
-import static org.mockito.Mockito.when;
-import static org.testng.Assert.assertEquals;
+import com.lukaspradel.steamapi.BaseTest;
+import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.mockito.Mock;
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.reflect.Whitebox;
-import org.testng.annotations.Test;
+import static org.testng.Assert.assertEquals;
 
-import com.lukaspradel.steamapi.BaseTest;
-
-@PrepareForTest(SteamWebApiInterfaceMethod.class)
 public class SteamWebApiVersionTest extends BaseTest {
 
-	@Mock
-	private SteamWebApiInterfaceMethod additionalSteamWebApiInterfaceMethod;
-
-	@Test(expectedExceptions = IllegalArgumentException.class, dependsOnMethods = { "testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnumValue" })
+	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testGetCurrentVersionForWebApiInterfaceMethodError() {
 
 		SteamWebApiVersion.getCurrentVersionForWebApiInterfaceMethod(null);
 	}
 
-	@Test(expectedExceptions = IllegalArgumentException.class)
-	public void testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnumValue() {
-
-		SteamWebApiInterfaceMethod[] values = SteamWebApiInterfaceMethod
-				.values();
-		SteamWebApiInterfaceMethod[] valuesAndAdditional = new SteamWebApiInterfaceMethod[values.length + 1];
-		System.arraycopy(values, 0, valuesAndAdditional, 0, values.length);
-
-		// create additional, unknown SteamWebApiInterfaceMethod
-		PowerMockito.mockStatic(SteamWebApiInterfaceMethod.class);
-
-		Whitebox.setInternalState(additionalSteamWebApiInterfaceMethod, "name",
-				"ADDITIONAL_STEAMWEBAPIINTERFACEMETHOD");
-		Whitebox.setInternalState(additionalSteamWebApiInterfaceMethod,
-				"ordinal", values.length);
-		valuesAndAdditional[values.length] = additionalSteamWebApiInterfaceMethod;
-
-		when(SteamWebApiInterfaceMethod.values()).thenReturn(
-				valuesAndAdditional);
-
-		SteamWebApiVersion
-				.getCurrentVersionForWebApiInterfaceMethod(additionalSteamWebApiInterfaceMethod);
-	}
-
-	@Test(dependsOnMethods = { "testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnumValue" })
+	@Test
 	public void testGetCurrentVersionForWebApiInterfaceMethod() {
 
 		assertEquals(
@@ -153,7 +119,7 @@ public class SteamWebApiVersionTest extends BaseTest {
 				SteamWebApiVersion.VERSION_ONE);
 	}
 
-	@Test(dependsOnMethods = { "testGetCurrentVersionForWebApiInterfaceMethodAdditionalUnknownEnumValue" })
+	@Test
 	public void testGetCurrentVersionForWebApiInterfaceMethodNoMissingValue() {
 
 		SteamWebApiInterfaceMethod[] valuesArray = SteamWebApiInterfaceMethod
