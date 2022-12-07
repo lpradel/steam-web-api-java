@@ -1,17 +1,9 @@
 package com.lukaspradel.steamapi.webapi.client;
 
-import static org.mockito.Mockito.when;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.fail;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+import com.lukaspradel.steamapi.BaseTest;
+import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
+import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.dota2.fantasyplayerstats.GetFantasyPlayerStats;
 import com.lukaspradel.steamapi.data.json.dota2.gameitems.GetGameItems;
 import com.lukaspradel.steamapi.data.json.dota2.heroes.GetHeroes;
@@ -23,16 +15,6 @@ import com.lukaspradel.steamapi.data.json.dota2.matchhistorybysequencenum.GetMat
 import com.lukaspradel.steamapi.data.json.dota2.playerofficialinfo.GetPlayerOfficialInfo;
 import com.lukaspradel.steamapi.data.json.dota2.proplayerlist.GetProPlayerList;
 import com.lukaspradel.steamapi.data.json.dota2.teaminfobyteamid.GetTeamInfoByTeamID;
-import com.lukaspradel.steamapi.webapi.request.dota2.*;
-import org.mockito.Mock;
-import org.powermock.reflect.Whitebox;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import com.lukaspradel.steamapi.BaseTest;
-import com.lukaspradel.steamapi.core.exception.SteamApiException;
-import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
-import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;
 import com.lukaspradel.steamapi.data.json.friendslist.GetFriendList;
 import com.lukaspradel.steamapi.data.json.getglobalstatsforgame.GetGlobalStatsForGame;
 import com.lukaspradel.steamapi.data.json.getplayerbans.GetPlayerBans;
@@ -43,42 +25,38 @@ import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievemen
 import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
 import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
 import com.lukaspradel.steamapi.data.json.recentlyplayedgames.GetRecentlyPlayedGames;
-import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
+import com.lukaspradel.steamapi.webapi.request.*;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
-import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
-import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest;
-import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
-import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
-import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
-import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest;
-import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
-import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
-import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest;
-import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
-import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
-import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
-import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
+import com.lukaspradel.steamapi.webapi.request.dota2.*;
+import org.mockito.Mock;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static org.mockito.Mockito.*;
+import static org.testng.Assert.*;
 
 @SuppressWarnings("unused")
 public class SteamWebApiClientTest extends BaseTest {
 
 	private static final String KEY_MOCK = "12345";
 
-	private SteamWebApiClient client = new SteamWebApiClient.SteamWebApiClientBuilder(
-			KEY_MOCK).build();
-
 	@Mock
 	private SteamWebApiRequest requestMock;
 
 	@Mock
-	private SteamWebApiRequestHandler requestHandlerMock = new SteamWebApiRequestHandler(
-			true, KEY_MOCK);
+	private SteamWebApiRequestHandler requestHandlerMock;
+
+	private SteamWebApiClient client;
 
 	@BeforeMethod
 	public void init() {
-
-		Whitebox.setInternalState(client, "requestHandler", requestHandlerMock);
+		client = spy(new SteamWebApiClient(requestHandlerMock));
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)

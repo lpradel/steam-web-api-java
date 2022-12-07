@@ -19,17 +19,14 @@ public class SteamWebApiClient {
 
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 
-	private final String key;
-
-	private final boolean useHttps;
-
 	private final SteamWebApiRequestHandler requestHandler;
 
-	private SteamWebApiClient(SteamWebApiClientBuilder builder) {
+	SteamWebApiClient(SteamWebApiClientBuilder builder) {
+		this(new SteamWebApiRequestHandler(builder.useHttps, builder.key));
+	}
 
-		this.key = builder.key;
-		this.useHttps = builder.useHttps;
-		this.requestHandler = new SteamWebApiRequestHandler(useHttps, key);
+	SteamWebApiClient(SteamWebApiRequestHandler requestHandler) {
+		this.requestHandler = requestHandler;
 	}
 
 	@SuppressWarnings({ "unchecked" })
@@ -45,14 +42,6 @@ public class SteamWebApiClient {
 			throw new SteamApiException(SteamApiException.Cause.MAPPING, e);
 		}
 		return result;
-	}
-
-	public String getKey() {
-		return key;
-	}
-
-	public boolean isUseHttps() {
-		return useHttps;
 	}
 
 	/**

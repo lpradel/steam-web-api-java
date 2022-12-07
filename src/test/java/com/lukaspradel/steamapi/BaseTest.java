@@ -1,5 +1,8 @@
 package com.lukaspradel.steamapi;
 
+import org.mockito.MockitoAnnotations;
+import org.testng.annotations.BeforeMethod;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
@@ -7,11 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import org.mockito.MockitoAnnotations;
-import org.powermock.modules.testng.PowerMockTestCase;
-import org.testng.annotations.BeforeMethod;
-
-public class BaseTest extends PowerMockTestCase {
+public class BaseTest {
 
 	@BeforeMethod(alwaysRun = true)
 	public void initMocks() {

@@ -1,45 +1,36 @@
 package com.lukaspradel.steamapi.webapi.request;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.fail;
-
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.hc.client5.http.ClientProtocolException;
-import org.apache.hc.client5.http.classic.HttpClient;
-import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
-import org.apache.hc.core5.http.ClassicHttpResponse;
-import org.apache.hc.core5.http.HttpEntity;
-import org.apache.hc.core5.http.HttpStatus;
-import org.apache.hc.core5.http.NameValuePair;
-import org.apache.hc.core5.http.ParseException;
-import org.apache.hc.core5.http.message.BasicNameValuePair;
-import org.mockito.ArgumentMatchers;
-import org.mockito.Mock;
-import org.powermock.api.mockito.PowerMockito;
-import org.testng.annotations.Test;
-
 import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
+import org.apache.hc.client5.http.ClientProtocolException;
+import org.apache.hc.client5.http.classic.HttpClient;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.core5.http.*;
+import org.apache.hc.core5.http.message.BasicNameValuePair;
+import org.mockito.ArgumentMatchers;
+import org.mockito.Mock;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.*;
+import static org.testng.Assert.*;
 
 public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	private String key = "12345";
+
+	private URI uri = URI.create("http://localhost:80");
 
 	private SteamWebApiRequestHandler requestHandlerHttps = new SteamWebApiRequestHandler(
 			true, key);
@@ -61,7 +52,6 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	@Test
 	public void testGetRequestUrl() throws SteamApiException {
 
-		URI uriMock = PowerMockito.mock(URI.class);
 		Map<String, String> parameters = new HashMap<String, String>();
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 
@@ -79,13 +69,13 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 				requestHandlerHttpsSpy.getRequestUri(any(String.class),
 						any(String.class), any(String.class),
 						ArgumentMatchers.anyList())).thenReturn(
-				uriMock);
+				uri);
 
 		URI actual = requestHandlerHttpsSpy.getRequestUrl(requestMock);
 		verify(requestHandlerHttpsSpy).getRequestUri("https",
 				"api.steampowered.com", "/ISteamNews/GetNewsForApp/v0002",
 				params);
-		assertEquals(actual, uriMock);
+		assertEquals(actual, uri);
 	}
 
 	@Test
@@ -156,17 +146,14 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
-		URI uriMock = PowerMockito.mock(URI.class);
-
-		requestHandlerHttpsSpy.getWebApiResponse(uriMock);
+		requestHandlerHttpsSpy.getWebApiResponse(uri);
 
 		fail("An exception should be thrown in getWebApiResponse!");
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)
 	public void testGetWebApiResponseErrorCode()
-			throws ClientProtocolException, IOException, SteamApiException,
-			URISyntaxException {
+			throws IOException, SteamApiException{
 
 		when(httpResponseMock.getCode()).thenReturn(
 				HttpStatus.SC_INTERNAL_SERVER_ERROR);
@@ -174,24 +161,20 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
-		URI uriMock = PowerMockito.mock(URI.class);
-
-		requestHandlerHttpsSpy.getWebApiResponse(uriMock);
+		requestHandlerHttpsSpy.getWebApiResponse(uri);
 
 		fail("An exception should be thrown in getWebApiResponse!");
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)
 	public void testGetWebApiResponseIOException()
-			throws ClientProtocolException, IOException, SteamApiException {
+			throws IOException, SteamApiException {
 
 		when(httpClientMock.executeOpen(isNull(), any(HttpUriRequest.class), isNull())).thenThrow(
 				new IOException("intended-io-exception"));
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
-		URI uriMock = PowerMockito.mock(URI.class);
-
-		requestHandlerHttpsSpy.getWebApiResponse(uriMock);
+		requestHandlerHttpsSpy.getWebApiResponse(uri);
 
 		fail("An exception should be thrown in getWebApiResponse!");
 	}
