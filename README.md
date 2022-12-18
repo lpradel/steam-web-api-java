@@ -173,6 +173,7 @@ mvn clean deploy -P release
 
 ## History
 
+- Version 1.4.2: Update dependencies
 - Version 1.4.1: Update httpclient5, Jackson and Slf4j (fix CVE). Remove commons-io dependency.
 - Version 1.4: Upgrade to httpclient5 and change Java version to 8 for broader compatibility and Android support
 - Version 1.3: Upgraded dependencies and bump Java version to 11

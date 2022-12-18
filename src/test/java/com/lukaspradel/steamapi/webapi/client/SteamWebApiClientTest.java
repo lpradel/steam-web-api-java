@@ -41,10 +41,7 @@ import java.util.Map;
 import static org.mockito.Mockito.*;
 import static org.testng.Assert.*;
 
-@SuppressWarnings("unused")
 public class SteamWebApiClientTest extends BaseTest {
-
-	private static final String KEY_MOCK = "12345";
 
 	@Mock
 	private SteamWebApiRequest requestMock;
@@ -146,7 +143,7 @@ public class SteamWebApiClientTest extends BaseTest {
         String mockAnswer = "incorrect answer";
 		when(requestHandlerMock.getWebApiResponse(getNewsForAppRequest)).thenReturn(mockAnswer);
 
-        GetNewsForApp getNewsForApp = client.<GetNewsForApp> processRequest(getNewsForAppRequest);
+        client.<GetNewsForApp> processRequest(getNewsForAppRequest);
 		fail("An exception of type SteamApiException should have been thrown here!");
 	}
 
@@ -203,7 +200,6 @@ public class SteamWebApiClientTest extends BaseTest {
 				.getAchievementpercentages().getAchievements().size(), 316);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Test
 	public void testProcessGetGlobalStatsForGameRequest()
 			throws SteamApiException, IOException {
@@ -239,7 +235,7 @@ public class SteamWebApiClientTest extends BaseTest {
 
 		assertNotNull(additionalProps.get("global.map.emp_isle"));
 
-		Map<String, Object> achievementAdditionalProps = (Map<String, Object>) additionalProps
+		Map<?,?> achievementAdditionalProps = (Map<?,?>) additionalProps
 				.get("global.map.emp_isle");
 		assertNotNull(achievementAdditionalProps.get("total"));
 		assertEquals(achievementAdditionalProps.get("total"), "11023654915");
@@ -722,7 +718,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		when(requestHandlerMock.getWebApiResponse(request))
 				.thenReturn(mockAnswer);
 
-		GetMatchHistory getMatchHistory = client.<GetMatchHistory> processRequest(request);
+		client.<GetMatchHistory> processRequest(request);
 	}
 
 	@Test
@@ -734,7 +730,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		when(requestHandlerMock.getWebApiResponse(request))
 				.thenReturn(mockAnswer);
 
-		GetMatchHistoryBySequenceNum getMatchHistoryBySequenceNum = client.<GetMatchHistoryBySequenceNum> processRequest(request);
+		client.<GetMatchHistoryBySequenceNum> processRequest(request);
 	}
 
 	@Test
@@ -746,7 +742,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		when(requestHandlerMock.getWebApiResponse(request))
 				.thenReturn(mockAnswer);
 
-		GetPlayerOfficialInfo getPlayerOfficialInfo = client.<GetPlayerOfficialInfo> processRequest(request);
+		client.<GetPlayerOfficialInfo> processRequest(request);
 	}
 
 	@Test
@@ -758,7 +754,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		when(requestHandlerMock.getWebApiResponse(request))
 				.thenReturn(mockAnswer);
 
-		GetProPlayerList getProPlayerList = client.<GetProPlayerList> processRequest(request);
+		client.<GetProPlayerList> processRequest(request);
 	}
 
 	@Test
@@ -770,7 +766,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		when(requestHandlerMock.getWebApiResponse(request))
 				.thenReturn(mockAnswer);
 
-		GetTeamInfoByTeamID getTeamInfoByTeamID = client.<GetTeamInfoByTeamID> processRequest(request);
+		client.<GetTeamInfoByTeamID> processRequest(request);
 	}
 
 }

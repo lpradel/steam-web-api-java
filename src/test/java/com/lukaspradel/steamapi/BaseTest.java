@@ -1,6 +1,7 @@
 package com.lukaspradel.steamapi;
 
 import org.mockito.MockitoAnnotations;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.IOException;
@@ -12,9 +13,17 @@ import java.nio.file.Paths;
 
 public class BaseTest {
 
+	private AutoCloseable mocks = null;
+
 	@BeforeMethod(alwaysRun = true)
 	public void initMocks() {
-		MockitoAnnotations.initMocks(this);
+		mocks = MockitoAnnotations.openMocks(this);
+	}
+
+	@AfterMethod(alwaysRun = true)
+	public void closeMocks() throws Exception {
+		if (mocks != null)
+			mocks.close();
 	}
 
 	protected String readResourceAsString(String fileName) throws IOException {
