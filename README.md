@@ -126,6 +126,26 @@ GetNewsForApp getNewsForApp = client.<GetNewsForApp> processRequest(request);
 
 The result data is in the `GetNewsForApp` POJO. You can access it using the accessors of the POJO in question.
 
+## FAQ
+
+**Q: `GetOwnedGames` request returns `null` values for game name, only `appId` is present in output?**
+
+**A:** Make sure to set the designated request option `include_appinfo` in your request with the builder method
+`includeAppInfo` like so:
+```java
+  GetOwnedGamesRequest req = new GetOwnedGamesRequest.GetOwnedGamesRequestBuilder( "steamId" ).includeAppInfo(true).buildRequest();
+```
+
+Or use the other factory method
+```java
+SteamWebApiRequestFactory.createGetOwnedGamesRequest(String steamId, boolean includeAppInfo, boolean includePlayedFreeGames, List<Integer> appIdsFilter)
+```
+which accepts `includeAppInfo`.
+
+See [Steam API documentation](https://developer.valvesoftware.com/wiki/Steam_Web_API#Arguments_7) for `GetOwnedGames`
+and [this StackOverflow question](https://stackoverflow.com/a/73028555/1055743) for detailed answer.
+
+
 ## Contributing
 
 1. Fork it!
