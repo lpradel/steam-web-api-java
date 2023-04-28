@@ -5,7 +5,7 @@
         "stats": [
             {
                 "name": "Scout.accum.iBuildingsDestroyed",
-                "value": 123
+                "value": 4294967260
             },
             {
                 "name": "Scout.accum.iDamageDealt",

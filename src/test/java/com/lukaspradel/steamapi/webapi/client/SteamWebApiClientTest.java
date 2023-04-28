@@ -166,7 +166,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertTrue(getNewsForApp.getAdditionalProperties().isEmpty());
 		assertNotNull(getNewsForApp.getAppnews());
 		assertEquals(getNewsForApp.getAppnews().getAppid(),
-				Integer.valueOf(440));
+				Long.valueOf(440));
 		assertEquals(getNewsForApp.getAppnews().getNewsitems().size(), 3);
 	}
 
@@ -225,7 +225,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertTrue(getGlobalStatsForGame.getAdditionalProperties().isEmpty());
 		assertNotNull(getGlobalStatsForGame.getResponse());
 		assertEquals(getGlobalStatsForGame.getResponse().getResult(),
-				Integer.valueOf(count));
+				Long.valueOf(count));
 		assertNotNull(getGlobalStatsForGame.getResponse().getGlobalstats());
 
 		assertFalse(getGlobalStatsForGame.getResponse().getGlobalstats()
@@ -295,7 +295,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getFriendList.getFriendslist().getFriends().get(5)
 				.getRelationship(), Relationship.FRIEND.toString());
 		assertEquals(getFriendList.getFriendslist().getFriends().get(5)
-				.getFriendSince(), Integer.valueOf(1251433222));
+				.getFriendSince(), Long.valueOf(1251433222));
 	}
 
 	@Test
@@ -328,7 +328,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getPlayerAchievements.getPlayerstats().getAchievements()
 				.get(1).getApiname(), "TF_PLAY_GAME_EVERYMAP");
 		assertEquals(getPlayerAchievements.getPlayerstats().getAchievements()
-				.get(1).getAchieved(), Integer.valueOf(1));
+				.get(1).getAchieved(), Long.valueOf(1));
 	}
 
 	@Test
@@ -360,7 +360,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getUserStatsForGame.getPlayerstats().getStats().get(2)
 				.getName(), "Scout.accum.iDominations");
 		assertEquals(getUserStatsForGame.getPlayerstats().getStats().get(2)
-				.getValue(), Integer.valueOf(68));
+				.getValue(), Long.valueOf(68));
 
 		assertNotNull(getUserStatsForGame.getPlayerstats().getAchievements());
 		assertEquals(getUserStatsForGame.getPlayerstats().getAchievements()
@@ -368,7 +368,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getUserStatsForGame.getPlayerstats().getAchievements()
 				.get(1).getName(), "TF_PLAY_GAME_EVERYMAP");
 		assertEquals(getUserStatsForGame.getPlayerstats().getAchievements()
-				.get(1).getAchieved(), Integer.valueOf(1));
+				.get(1).getAchieved(), Long.valueOf(1));
 	}
 
 	@Test
@@ -390,16 +390,16 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertTrue(getOwnedGames.getAdditionalProperties().isEmpty());
 		assertNotNull(getOwnedGames.getResponse());
 		assertEquals(getOwnedGames.getResponse().getGameCount(),
-				Integer.valueOf(487));
+				Long.valueOf(487));
 		assertNotNull(getOwnedGames.getResponse().getGames());
 		assertEquals(getOwnedGames.getResponse().getGames().size(), 487);
 
 		assertEquals(getOwnedGames.getResponse().getGames().get(0).getAppid(),
-				Integer.valueOf(10));
+				Long.valueOf(10));
 		assertEquals(getOwnedGames.getResponse().getGames().get(0).getName(),
 				"Counter-Strike");
 		assertEquals(getOwnedGames.getResponse().getGames().get(0)
-				.getPlaytimeForever(), Integer.valueOf(32));
+				.getPlaytimeForever(), Long.valueOf(32));
 		assertEquals(getOwnedGames.getResponse().getGames().get(0)
 				.getImgIconUrl(), "6b0312cda02f5f777efa2f3318c307ff9acafbb5");
 		assertEquals(getOwnedGames.getResponse().getGames().get(0)
@@ -429,18 +429,18 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertTrue(getRecentlyPlayedGames.getAdditionalProperties().isEmpty());
 		assertNotNull(getRecentlyPlayedGames.getResponse());
 		assertEquals(getRecentlyPlayedGames.getResponse().getTotalCount(),
-				Integer.valueOf(6));
+				Long.valueOf(6));
 		assertNotNull(getRecentlyPlayedGames.getResponse().getGames());
 		assertEquals(getRecentlyPlayedGames.getResponse().getGames().size(), 3);
 
 		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
-				.getAppid(), Integer.valueOf(271590));
+				.getAppid(), Long.valueOf(271590));
 		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
 				.getName(), "Grand Theft Auto V");
 		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
-				.getPlaytime2weeks(), Integer.valueOf(190));
+				.getPlaytime2weeks(), Long.valueOf(190));
 		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
-				.getPlaytimeForever(), Integer.valueOf(190));
+				.getPlaytimeForever(), Long.valueOf(190));
 		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
 				.getImgIconUrl(), "1e72f87eb927fa1485e68aefaff23c7fd7178251");
 		assertEquals(getRecentlyPlayedGames.getResponse().getGames().get(0)
@@ -501,11 +501,11 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
 				.getAchievements().get(0).getName(), "hot_wheels");
 		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
-				.getAchievements().get(0).getDefaultvalue(), Integer.valueOf(0));
+				.getAchievements().get(0).getDefaultvalue(), Long.valueOf(0));
 		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
 				.getAchievements().get(0).getDisplayName(), "Coming in Hot");
 		assertEquals(getSchemaForGame.getGame().getAvailableGameStats()
-				.getAchievements().get(0).getHidden(), Integer.valueOf(0));
+				.getAchievements().get(0).getHidden(), Long.valueOf(0));
 		assertEquals(
 				getSchemaForGame.getGame().getAvailableGameStats()
 						.getAchievements().get(0).getDescription(),
@@ -554,9 +554,9 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getPlayerBans.getPlayers().get(0).getVACBanned(),
 				Boolean.FALSE);
 		assertEquals(getPlayerBans.getPlayers().get(0).getNumberOfVACBans(),
-				Integer.valueOf(0));
+				Long.valueOf(0));
 		assertEquals(getPlayerBans.getPlayers().get(0).getDaysSinceLastBan(),
-				Integer.valueOf(0));
+				Long.valueOf(0));
 		assertEquals(getPlayerBans.getPlayers().get(0).getEconomyBan(), "none");
 	}
 
@@ -639,8 +639,8 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertNotNull(getHeroes.getResult());
 
 		assertNotNull(getHeroes.getResult().getStatus());
-		assertEquals(getHeroes.getResult().getStatus(), Integer.valueOf(200));
-		assertEquals(getHeroes.getResult().getCount(),Integer.valueOf(111));
+		assertEquals(getHeroes.getResult().getStatus(), Long.valueOf(200));
+		assertEquals(getHeroes.getResult().getCount(),Long.valueOf(111));
 		assertEquals(getHeroes.getResult().getHeroes().size(),111);
 		assertNotNull(getHeroes.getResult().getHeroes().get(0).getId());
 		assertNotNull(getHeroes.getResult().getHeroes().get(0).getName());
@@ -686,7 +686,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertNotNull(getLiveLeagueGames);
 		assertTrue(getLiveLeagueGames.getAdditionalProperties().isEmpty());
 		assertNotNull(getLiveLeagueGames.getResult());
-		assertEquals(getLiveLeagueGames.getResult().getStatus(),Integer.valueOf(200));
+		assertEquals(getLiveLeagueGames.getResult().getStatus(),Long.valueOf(200));
 		assertFalse(getLiveLeagueGames.getResult().getGames().isEmpty());
 		assertNotNull(getLiveLeagueGames.getResult().getGames().get(0).getLobbyId());
 		assertNotNull(getLiveLeagueGames.getResult().getGames().get(0).getMatchId());

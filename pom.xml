@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.4.3-SNAPSHOT</version>
+    <version>1.5.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Steam Web API</name>
     <description>A library to provide access to the data available from Valve's Steam API</description>
@@ -168,6 +168,7 @@
                     <annotationStyle>jackson2</annotationStyle>
                     <generateBuilders>true</generateBuilders>
                     <initializeCollections>true</initializeCollections>
+                    <useLongIntegers>true</useLongIntegers>
                 </configuration>
                 <executions>
                     <execution>
