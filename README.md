@@ -21,7 +21,7 @@ Include the following dependency in your POM:
 <dependency>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.4.2</version>
+    <version>1.5.0</version>
 </dependency>
 ```
 
@@ -51,7 +51,7 @@ Furthermore, you need to ensure that the .jar is present at runtime. This depend
 
 ### Manual
 
-You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.4.2/steam-web-api-1.4.2.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.4.2/steam-web-api-1.4.2.jar).
+You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.5.0/steam-web-api-1.5.0.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.5.0/steam-web-api-1.5.0.jar).
 
 ### Dependencies
 
@@ -193,6 +193,7 @@ mvn clean deploy -P release
 
 ## History
 
+- Version 1.5.0: Breaking change in this library: use Long return values over Integer to fix [#20](https://github.com/lpradel/steam-web-api-java/issues/20) and avoid possible integer overflows
 - Version 1.4.2: Update dependencies
 - Version 1.4.1: Update httpclient5, Jackson and Slf4j (fix CVE). Remove commons-io dependency.
 - Version 1.4: Upgrade to httpclient5 and change Java version to 8 for broader compatibility and Android support
