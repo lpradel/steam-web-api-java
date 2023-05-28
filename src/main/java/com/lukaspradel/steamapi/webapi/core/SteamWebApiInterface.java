@@ -14,7 +14,7 @@ public enum SteamWebApiInterface {
 	I_STEAM_NEWS("ISteamNews"), I_PLAYER_SERVICE("IPlayerService"), I_STEAM_USER(
 			"ISteamUser"), I_STEAM_USER_STATS("ISteamUserStats"), I_ECON_DOTA2(
 			"IEconDOTA2_570"), I_DOTA2_MATCH("IDOTA2Match_570"), I_DOTA2_FANTASY(
-			"IDOTA2Fantasy_570");
+			"IDOTA2Fantasy_570"), I_STEAM_APPS("ISteamApps");
 
 	private final String apiInterface;
 
@@ -85,6 +85,8 @@ public enum SteamWebApiInterface {
 			return I_DOTA2_FANTASY;
 		case GET_FANTASY_PLAYER_STATS:
 			return I_DOTA2_FANTASY;
+		case GET_APP_LIST:
+			return I_STEAM_APPS;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");

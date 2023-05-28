@@ -1,0 +1,28 @@
+{
+    "type":"object",
+    "required":false,
+    "javaType":"com.lukaspradel.steamapi.data.json.applist.GetAppList",
+    "properties":{
+        "applist": {
+            "type":"object",
+            "required":false,
+            "properties": {
+                "apps": {
+                    "type": "array",
+                    "required": false,
+                    "items": {
+                        "type": "object",
+                        "properties":  {
+                            "appid": {
+                                "type": "number"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

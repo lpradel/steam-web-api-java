@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.5.1-SNAPSHOT</version>
+    <version>FEATURE-GetAppList-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Steam Web API</name>
     <description>A library to provide access to the data available from Valve's Steam API</description>
@@ -401,7 +401,16 @@
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/dota2/getfantasyplayerstats</sourceDirectory>
                         </configuration>
                     </execution>
-
+                    <execution>
+                        <id>generate-getapplist</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getapplist</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getapplist</sourceDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

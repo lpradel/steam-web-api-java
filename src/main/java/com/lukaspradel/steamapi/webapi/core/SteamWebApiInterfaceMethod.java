@@ -23,6 +23,8 @@ import com.lukaspradel.steamapi.data.json.dota2.matchhistorybysequencenum.GetMat
 import com.lukaspradel.steamapi.data.json.dota2.teaminfobyteamid.GetTeamInfoByTeamID;
 import com.lukaspradel.steamapi.data.json.dota2.gameitems.GetGameItems;
 import com.lukaspradel.steamapi.data.json.dota2.proplayerlist.GetProPlayerList;
+import com.lukaspradel.steamapi.data.json.applist.GetAppList;
+
 
 /**
  * Currently supported Steam Web API Interface Methods as listed on Valve's Dev
@@ -59,7 +61,8 @@ public enum SteamWebApiInterfaceMethod {
 			"GetGameItems",GetGameItems.class), GET_PRO_PLAYER_LIST(
 			"GetProPlayerList",GetProPlayerList.class), GET_PLAYER_OFFICIAL_INFO(
 			"GetPlayerOfficialInfo",GetPlayerOfficialInfo.class), GET_FANTASY_PLAYER_STATS(
-			"GetFantasyPlayerStats",GetFantasyPlayerStats.class)
+			"GetFantasyPlayerStats",GetFantasyPlayerStats.class), GET_APP_LIST(
+			"GetAppList", GetAppList.class)
 	;
 
 	private final String interfaceMethod;
