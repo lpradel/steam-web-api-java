@@ -25,10 +25,34 @@ import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievemen
 import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
 import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
 import com.lukaspradel.steamapi.data.json.recentlyplayedgames.GetRecentlyPlayedGames;
-import com.lukaspradel.steamapi.webapi.request.*;
+import com.lukaspradel.steamapi.webapi.request.GetAppListRequest;
+import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
+import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest;
+import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
+import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
+import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
+import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
+import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
-import com.lukaspradel.steamapi.webapi.request.dota2.*;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLiveLeagueGamesRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchDetailsRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryBySequenceNumRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetPlayerOfficialInfoRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetProPlayerListRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest;
 import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -38,8 +62,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static org.mockito.Mockito.*;
-import static org.testng.Assert.*;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.when;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 
 public class SteamWebApiClientTest extends BaseTest {
 
@@ -769,4 +798,15 @@ public class SteamWebApiClientTest extends BaseTest {
 		client.<GetTeamInfoByTeamID> processRequest(request);
 	}
 
+	@Test
+	public void testProcessGetAppList() throws SteamApiException, IOException {
+		GetAppListRequest request = SteamWebApiRequestFactory.createGetAppListRequest();
+
+		String mockAnswer = readResourceAsString("GetAppList.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		client.processRequest(request);
+	}
 }

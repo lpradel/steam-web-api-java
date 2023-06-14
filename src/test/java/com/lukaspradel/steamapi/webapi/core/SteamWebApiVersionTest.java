@@ -117,6 +117,11 @@ public class SteamWebApiVersionTest extends BaseTest {
 				SteamWebApiVersion
 						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_TEAM_INFO_BY_TEAM_ID),
 				SteamWebApiVersion.VERSION_ONE);
+
+		assertEquals(
+				SteamWebApiVersion
+						.getCurrentVersionForWebApiInterfaceMethod(SteamWebApiInterfaceMethod.GET_APP_LIST),
+				SteamWebApiVersion.VERSION_TWO);
 	}
 
 	@Test
