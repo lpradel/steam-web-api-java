@@ -1,6 +1,7 @@
 package com.lukaspradel.steamapi.webapi.request;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.util.stream.Collectors.joining;
 
 import java.io.IOException;
 import java.net.URI;
@@ -10,7 +11,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.lukaspradel.steamapi.core.SteamApiRequestHandler;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
@@ -38,23 +39,21 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 	}
 
 	String getRequestPath(SteamWebApiRequest request) {
-		StringBuilder requestPath = new StringBuilder();
-
-		requestPath.append("/");
-		requestPath.append(request.getApiInterface().toString());
-		requestPath.append("/");
-		requestPath.append(request.getInterfaceMethod().toString());
-		requestPath.append("/");
-		requestPath.append(request.getVersion().toString());
-
-		return requestPath.toString();
+		// creates "/ApiInterface/InterfaceMethod/Version"
+		return Stream.of(
+				request.getApiInterface(),
+				request.getInterfaceMethod(),
+				request.getVersion()
+		)
+		.map(Object::toString)
+		.collect(joining("/", "/", ""));
 	}
 
 	String getRequestQuery(Map<String, String> parameters) {
 		parameters.put("key", getKey());
 		return parameters.entrySet().stream()
 				.map(e -> e.getKey() + '=' + URLEncoder.encode(e.getValue(), UTF_8))
-				.collect(Collectors.joining("&"));
+				.collect(joining("&"));
 	}
 
 	URI getRequestUri(String scheme, String host, String path, String query) throws SteamApiException {
