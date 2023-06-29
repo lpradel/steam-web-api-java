@@ -1,32 +1,38 @@
 package com.lukaspradel.steamapi.webapi.request;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.argThat;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.fail;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandler;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import org.mockito.ArgumentMatcher;
+import org.mockito.Mock;
+import org.testng.annotations.Test;
+
 import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
-import org.apache.hc.client5.http.ClientProtocolException;
-import org.apache.hc.client5.http.classic.HttpClient;
-import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
-import org.apache.hc.core5.http.*;
-import org.apache.hc.core5.http.message.BasicNameValuePair;
-import org.mockito.ArgumentMatchers;
-import org.mockito.Mock;
-import org.testng.annotations.Test;
-
-import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Mockito.*;
-import static org.testng.Assert.*;
 
 public class SteamWebApiRequestHandlerTest extends BaseTest {
+
+	private static final int OK = 200;
+	private static final int UNAUTHORIZED = 401;
+	private static final int INTERNAL_SERVER_ERROR = 500;
 
 	private String key = "12345";
 
@@ -44,16 +50,17 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	private HttpClient httpClientMock;
 
 	@Mock
-	private ClassicHttpResponse httpResponseMock;
+	private HttpResponse<String> httpResponseMock;
 
 	@Mock
-	private HttpEntity httpEntityMock;
+	private BodyHandler<String> bodyHandlerMock;
+
+	private ArgumentMatcher<BodyHandler<String>> bodyHandlerMatcher = arg -> arg != null ? true : false;
 
 	@Test
 	public void testGetRequestUrl() throws SteamApiException {
 
 		Map<String, String> parameters = new HashMap<String, String>();
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
 
 		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
 		when(requestMock.getApiInterface()).thenReturn(
@@ -63,19 +70,32 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		when(requestMock.getVersion()).thenReturn(
 				SteamWebApiVersion.VERSION_TWO);
 		when(requestMock.getParameters()).thenReturn(parameters);
-		when(requestHandlerHttpsSpy.getRequestParameters(parameters))
-				.thenReturn(params);
+		when(requestHandlerHttpsSpy.getRequestQuery(parameters))
+				.thenReturn("");
 		when(
 				requestHandlerHttpsSpy.getRequestUri(any(String.class),
 						any(String.class), any(String.class),
-						ArgumentMatchers.anyList())).thenReturn(
+						any(String.class))).thenReturn(
 				uri);
 
 		URI actual = requestHandlerHttpsSpy.getRequestUrl(requestMock);
 		verify(requestHandlerHttpsSpy).getRequestUri("https",
 				"api.steampowered.com", "/ISteamNews/GetNewsForApp/v0002",
-				params);
+				"");
 		assertEquals(actual, uri);
+	}
+
+	@Test
+	public void testGetRequestQuery() {
+		var parameters = new LinkedHashMap<String, String>();
+		parameters.put("key", null); // prepopulate the key, it gets set in the getRequestQuery method
+		parameters.put("test-parameter", "test-value");
+		parameters.put("format", "json");
+		parameters.put("input_json", "{\"steamid\":\"76561198039505218\"}");
+
+		String query = requestHandlerHttps.getRequestQuery(parameters);
+
+		assertEquals(query, "key=12345&test-parameter=test-value&format=json&input_json=%7B%22steamid%22%3A%2276561198039505218%22%7D");
 	}
 
 	@Test
@@ -94,38 +114,18 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	}
 
 	@Test
-	public void testGetRequestParameters() {
-
-		Map<String, String> parameters = new HashMap<String, String>();
-		parameters.put("format", "json");
-		parameters.put("test-parameter", "test-value");
-		parameters.put("input_json", "{\"steamid\":\"76561198039505218\"}");
-
-		List<NameValuePair> actual = requestHandlerHttps
-				.getRequestParameters(parameters);
-		assertEquals(actual.size(), 4);
-		assertTrue(actual.contains(new BasicNameValuePair("key", "12345")));
-		assertTrue(actual.contains(new BasicNameValuePair("format", "json")));
-		assertTrue(actual.contains(new BasicNameValuePair("test-parameter",
-				"test-value")));
-		assertTrue(actual.contains(new BasicNameValuePair("input_json",
-				"{\"steamid\":\"76561198039505218\"}")));
-	}
-
-	@Test
 	public void testGetRequestUri() throws SteamApiException {
-
 		String scheme = "https";
 		String host = "api.steampowered.com";
 		String path = "/IPlayerService/GetOwnedGames/v0001";
-		List<NameValuePair> parameters = new ArrayList<NameValuePair>();
-		parameters.add(new BasicNameValuePair("key", "12345"));
-		parameters.add(new BasicNameValuePair("format", "json"));
-		parameters.add(new BasicNameValuePair("input_json",
-				"{\"steamid\":\"76561198039505218\"}"));
+		var parameters = new LinkedHashMap<String, String>();
+		parameters.put("key", "12345");
+		parameters.put("format", "json");
+		parameters.put("input_json", "{\"steamid\":\"76561198039505218\"}");
 
-		URI actual = requestHandlerHttpsSpy.getRequestUri(scheme, host, path,
-				parameters);
+		String query = requestHandlerHttpsSpy.getRequestQuery(parameters);
+		URI actual = requestHandlerHttpsSpy.getRequestUri(scheme, host, path, query);
+
 		assertEquals(actual.getScheme(), "https");
 		assertEquals(actual.getHost(), "api.steampowered.com");
 		assertEquals(actual.getPath(), "/IPlayerService/GetOwnedGames/v0001");
@@ -138,11 +138,10 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	@Test(expectedExceptions = SteamApiException.class)
 	public void testGetWebApiResponseUnauthorized()
-			throws ClientProtocolException, IOException, SteamApiException {
+			throws IOException, SteamApiException, InterruptedException {
 
-		when(httpResponseMock.getCode()).thenReturn(
-				HttpStatus.SC_UNAUTHORIZED);
-		when(httpClientMock.executeOpen(isNull(), any(HttpUriRequest.class), isNull())).thenReturn(
+		when(httpResponseMock.statusCode()).thenReturn(UNAUTHORIZED);
+		when(httpClientMock.send(any(HttpRequest.class), argThat(bodyHandlerMatcher))).thenReturn(
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
@@ -153,11 +152,10 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	@Test(expectedExceptions = SteamApiException.class)
 	public void testGetWebApiResponseErrorCode()
-			throws IOException, SteamApiException{
+			throws IOException, SteamApiException, InterruptedException{
 
-		when(httpResponseMock.getCode()).thenReturn(
-				HttpStatus.SC_INTERNAL_SERVER_ERROR);
-		when(httpClientMock.executeOpen(isNull(), any(HttpUriRequest.class), isNull())).thenReturn(
+		when(httpResponseMock.statusCode()).thenReturn(INTERNAL_SERVER_ERROR);
+		when(httpClientMock.send(any(HttpRequest.class), argThat(bodyHandlerMatcher))).thenReturn(
 				httpResponseMock);
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
@@ -168,9 +166,9 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	@Test(expectedExceptions = SteamApiException.class)
 	public void testGetWebApiResponseIOException()
-			throws IOException, SteamApiException {
+			throws IOException, SteamApiException, InterruptedException {
 
-		when(httpClientMock.executeOpen(isNull(), any(HttpUriRequest.class), isNull())).thenThrow(
+		when(httpClientMock.send(any(HttpRequest.class), argThat(bodyHandlerMatcher))).thenThrow(
 				new IOException("intended-io-exception"));
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
@@ -180,8 +178,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	}
 
 	@Test
-	public void testGetWebApiResponse() throws ClientProtocolException,
-			IOException, SteamApiException, ParseException {
+	public void testGetWebApiResponse() throws IOException, SteamApiException, InterruptedException {
 
 		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
 		when(requestMock.getApiInterface()).thenReturn(
@@ -191,15 +188,14 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		when(requestMock.getVersion()).thenReturn(
 				SteamWebApiVersion.VERSION_TWO);
 
-		when(httpResponseMock.getCode()).thenReturn(HttpStatus.SC_OK);
-		when(httpResponseMock.getEntity()).thenReturn(httpEntityMock);
-		when(httpClientMock.executeOpen(isNull(), any(HttpUriRequest.class), isNull())).thenReturn(
+		when(httpResponseMock.statusCode()).thenReturn(OK);
+		when(httpClientMock.send(any(HttpRequest.class), argThat(bodyHandlerMatcher))).thenReturn(
 				httpResponseMock);
 
 		when(requestHandlerHttpsSpy.getHttpClient()).thenReturn(httpClientMock);
 
 		requestHandlerHttpsSpy.getWebApiResponse(requestMock);
-		verify(requestHandlerHttpsSpy)
-				.getHttpResponseAsString(httpResponseMock);
+
+		verify(httpResponseMock).body();
 	}
 }

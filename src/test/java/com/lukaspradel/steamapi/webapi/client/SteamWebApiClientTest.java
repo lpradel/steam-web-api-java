@@ -110,7 +110,7 @@ public class SteamWebApiClientTest extends BaseTest {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
 				new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
-						Integer.valueOf(404), "message"));
+						Integer.valueOf(404)));
 
 		client.processRequest(requestMock);
 	}
@@ -120,7 +120,7 @@ public class SteamWebApiClientTest extends BaseTest {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
 				new SteamApiException(SteamApiException.Cause.FORBIDDEN,
-						Integer.valueOf(403), "message"));
+						Integer.valueOf(403)));
 
 		client.processRequest(requestMock);
 	}
@@ -130,7 +130,7 @@ public class SteamWebApiClientTest extends BaseTest {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
 				new SteamApiException(SteamApiException.Cause.INTERNAL_ERROR,
-						Integer.valueOf(500), "message"));
+						Integer.valueOf(500)));
 
 		client.processRequest(requestMock);
 	}
@@ -141,7 +141,7 @@ public class SteamWebApiClientTest extends BaseTest {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
 				new SteamApiException(SteamApiException.Cause.MAPPING, Integer
-						.valueOf(0), "message"));
+						.valueOf(0)));
 
 		client.processRequest(requestMock);
 	}
@@ -151,7 +151,7 @@ public class SteamWebApiClientTest extends BaseTest {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
 				new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
-						Integer.valueOf(404), "message"));
+						Integer.valueOf(404)));
 
 		try {
 			client.processRequest(requestMock);
@@ -160,7 +160,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		} catch (SteamApiException e) {
 			assertEquals(
 					e.getMessage(),
-					"The Web API request failed with the following HTTP error: message (status code: 404).");
+					"The Web API request failed (status code: 404).");
 		}
 	}
 
