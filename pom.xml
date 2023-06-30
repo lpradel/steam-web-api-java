@@ -12,6 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version.prop>11</java.version.prop>
+        <maven.version.prop>3.6.0</maven.version.prop>
 
         <!-- Plugin versions -->
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
@@ -30,7 +31,6 @@
         <!-- Dependencies versions -->
         <slf4j.version>2.0.7</slf4j.version>
         <jackson.version>2.15.2</jackson.version>
-        <cobertura.version>2.1.1</cobertura.version>
         <jaxb-api.version>2.3.3</jaxb-api.version>
 
         <!-- Test dependencies versions -->
@@ -96,11 +96,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <!-- for Java 9+ (replace "-@-" with two hyphen, because it is not allowed in comments)
-                <configuration>
-                    <argLine>${argLine} -@-add-opens java.base/java.lang=ALL-UNNAMED -@-add-opens java.base/java.util=ALL-UNNAMED</argLine>
-                </configuration>
-                 -->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -118,7 +113,7 @@
                                     <version>${java.version.prop}</version>
                                 </requireJavaVersion>
                                 <requireMavenVersion>
-                                    <version>3.6.0</version>
+                                    <version>${maven.version.prop}</version>
                                 </requireMavenVersion>
                             </rules>
                         </configuration>
