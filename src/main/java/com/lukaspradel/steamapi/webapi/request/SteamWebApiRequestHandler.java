@@ -61,9 +61,8 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		parameters.put("key", getKey());
 		return parameters.entrySet().stream()
 				.map(e -> {
-					// if the value of the parameter is null, we replace it with an empty String
-					String value = e.getValue() == null ? "" : e.getValue();
-					return e.getKey() + '=' + URLEncoder.encode(value, UTF_8);
+					String v = e.getValue(); // if the value of the parameter is null, we replace it with an empty String
+					return e.getKey() + '=' + URLEncoder.encode(v == null ? "" : v, UTF_8);
 				})
 				.collect(joining("&"));
 	}
