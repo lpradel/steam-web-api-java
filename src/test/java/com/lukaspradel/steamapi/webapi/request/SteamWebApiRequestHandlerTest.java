@@ -24,6 +24,7 @@ import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
@@ -86,7 +87,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	}
 
 	@Test
-	public void testGetRequestQuery() {
+	public void testGetRequestQuery() throws SteamApiException {
 		var parameters = new LinkedHashMap<String, String>();
 		parameters.put("key", null); // prepopulate the key, it gets set in the getRequestQuery method
 		parameters.put("test-parameter", "test-value");
@@ -96,6 +97,25 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		String query = requestHandlerHttps.getRequestQuery(parameters);
 
 		assertEquals(query, "key=12345&test-parameter=test-value&format=json&input_json=%7B%22steamid%22%3A%2276561198039505218%22%7D");
+	}
+
+	@Test(expectedExceptions = SteamApiKeyException.class)
+	public void testGetRequestQueryApiKeyIsNull() throws SteamApiException {
+		var reqHandler = new SteamWebApiRequestHandler(true, null);
+		reqHandler.getRequestQuery(null);
+	}
+
+	@Test(expectedExceptions = SteamApiException.class)
+	public void testGetRequestQueryParameterKeyIsNull() throws SteamApiException {
+		var params = new HashMap<String, String>();
+		params.put(null, "test-value");
+
+		try {
+			requestHandlerHttps.getRequestQuery(params);
+		} catch (SteamApiException e) {
+			assertEquals(e.getMessage(), "The key of the parameter with the value 'test-value' is null");
+			throw e;
+		}
 	}
 
 	@Test
@@ -123,8 +143,8 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		parameters.put("format", "json");
 		parameters.put("input_json", "{\"steamid\":\"76561198039505218\"}");
 
-		String query = requestHandlerHttpsSpy.getRequestQuery(parameters);
-		URI actual = requestHandlerHttpsSpy.getRequestUri(scheme, host, path, query);
+		String query = requestHandlerHttps.getRequestQuery(parameters);
+		URI actual = requestHandlerHttps.getRequestUri(scheme, host, path, query);
 
 		assertEquals(actual.getScheme(), "https");
 		assertEquals(actual.getHost(), "api.steampowered.com");

@@ -15,6 +15,7 @@ import java.util.stream.Stream;
 
 import com.lukaspradel.steamapi.core.SteamApiRequestHandler;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
 
 public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 
@@ -49,10 +50,21 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		.collect(joining("/", "/", ""));
 	}
 
-	String getRequestQuery(Map<String, String> parameters) {
+	String getRequestQuery(Map<String, String> parameters) throws SteamApiException {
+		if (getKey() == null)
+			throw new SteamApiKeyException("Steam API key is not present or null");
+
+		for (var e : parameters.entrySet())
+			if (e.getKey() == null)
+				throw new SteamApiException("The key of the parameter with the value '" + e.getValue() + "' is null");
+
 		parameters.put("key", getKey());
 		return parameters.entrySet().stream()
-				.map(e -> e.getKey() + '=' + URLEncoder.encode(e.getValue(), UTF_8))
+				.map(e -> {
+					// if the value of the parameter is null, we replace it with an empty String
+					String value = e.getValue() == null ? "" : e.getValue();
+					return e.getKey() + '=' + URLEncoder.encode(value, UTF_8);
+				})
 				.collect(joining("&"));
 	}
 
