@@ -19,7 +19,6 @@ import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
 
 public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 
-	private static final int OK           = 200;
 	private static final int UNAUTHORIZED = 401;
 
 	public SteamWebApiRequestHandler(boolean useHttps, String key) {
@@ -93,7 +92,7 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 			var response = client.send(getRequest, BodyHandlers.ofString());
 			int statusCode = response.statusCode();
 
-			if (statusCode == OK)
+			if (Integer.toString(statusCode).startsWith("20"))
 				return response.body();
 
 			if (statusCode == UNAUTHORIZED)
