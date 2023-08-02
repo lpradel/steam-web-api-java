@@ -193,6 +193,7 @@ mvn clean deploy -P release
 
 ## History
 
+- Version 1.6.0: Add support for `GetAppList` requests from `GetAppList` interface
 - Version 1.5.0: Breaking change in this library: use Long return values over Integer to fix [#20](https://github.com/lpradel/steam-web-api-java/issues/20) and avoid possible integer overflows
 - Version 1.4.2: Update dependencies
 - Version 1.4.1: Update httpclient5, Jackson and Slf4j (fix CVE). Remove commons-io dependency.
@@ -207,6 +208,7 @@ mvn clean deploy -P release
 - [Lukas Pradel](https://github.com/lpradel)
 - [Pazus](https://github.com/Pazus)
 - [41zu](https://github.com/41zu)
+- [Joey Bleau](https://github.com/josephbleau)
 
 ## License
 
