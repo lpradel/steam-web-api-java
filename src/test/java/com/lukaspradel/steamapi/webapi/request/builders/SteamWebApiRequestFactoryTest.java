@@ -1,21 +1,12 @@
 package com.lukaspradel.steamapi.webapi.request.builders;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertNull;
-
-import java.io.IOException;
-import java.util.*;
-
-import com.lukaspradel.steamapi.webapi.request.dota2.*;
-import org.testng.annotations.Test;
-
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
+import com.lukaspradel.steamapi.webapi.request.GetAppListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.GetFriendListRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
@@ -41,11 +32,27 @@ import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestServiceParameter;
-
-import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest.GetHeroesRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest.GetLeagueListingRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest.GetFantasyPlayerStatsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest.GetHeroesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest.GetLeagueListingRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryBySequenceNumRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryBySequenceNumRequest.GetMatchHistoryBySequenceNumRequestBuilder;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Map;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
 
 
 public class SteamWebApiRequestFactoryTest {
@@ -774,6 +781,19 @@ public class SteamWebApiRequestFactoryTest {
                 "2");
         assertEquals(parameters.get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_MATCH_ID), matchId);
         assertEquals(parameters.get(GetFantasyPlayerStatsRequestBuilder.REQUEST_PARAM_PLAYER_ACCOUNT_ID),"123123");
+	}
 
+	@Test
+	public void testGetAppListRequest() {
+		GetAppListRequest request = SteamWebApiRequestFactory.createGetAppListRequest();
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_STEAM_APPS);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.GET_APP_LIST);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_TWO);
+
+		Map<String,String> parameters = request.getParameters();
+		assertEquals(parameters.size(), 1);
 	}
 }

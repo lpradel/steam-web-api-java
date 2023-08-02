@@ -1,8 +1,6 @@
 package com.lukaspradel.steamapi.webapi.request.builders;
 
-import java.util.Date;
-import java.util.List;
-
+import com.lukaspradel.steamapi.webapi.request.GetAppListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.GetFriendListRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
@@ -29,18 +27,31 @@ import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUse
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
-import com.lukaspradel.steamapi.webapi.request.dota2.*;
-import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest.GetGameItemsRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest.GetHeroesRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest.GetLeagueListingRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.dota2.GetLiveLeagueGamesRequest.GetLiveLeagueGamesRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchDetailsRequest.GetMatchDetailsRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryBySequenceNumRequest.GetMatchHistoryBySequenceNumRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryRequest.GetMatchHistoryRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest.GetTeamInfoByTeamIDRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest.GetFantasyPlayerStatsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest.GetGameItemsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetHeroesRequest.GetHeroesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLeagueListingRequest.GetLeagueListingRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLiveLeagueGamesRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetLiveLeagueGamesRequest.GetLiveLeagueGamesRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchDetailsRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchDetailsRequest.GetMatchDetailsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryBySequenceNumRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryBySequenceNumRequest.GetMatchHistoryBySequenceNumRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetMatchHistoryRequest.GetMatchHistoryRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetPlayerOfficialInfoRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetPlayerOfficialInfoRequest.GetPlayerOfficialInfoRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetProPlayerListRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetProPlayerListRequest.GetProPlayerListRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest;
+import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest.GetTeamInfoByTeamIDRequestBuilder;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * Convenience class to create instances of {@link SteamWebApiRequest}.
@@ -230,7 +241,6 @@ public abstract class SteamWebApiRequestFactory {
 				.buildRequest();
 	}
 
-
 	public static GetFantasyPlayerStatsRequest createGetFantasyPlayerStatsRequest(String fantasyLeagueId, String matchId, String playerAccountID) {
 		return new GetFantasyPlayerStatsRequestBuilder(fantasyLeagueId)
 				.matchId(matchId)
@@ -238,12 +248,15 @@ public abstract class SteamWebApiRequestFactory {
 				.buildRequest();
 	}
 
-
 	public static GetPlayerOfficialInfoRequest createGetPlayerOfficialInfoRequest(String accountId) {
 		return new GetPlayerOfficialInfoRequestBuilder(accountId).buildRequest();
 	}
 
 	public static GetProPlayerListRequest createGetProPlayerListRequest() {
 		return new GetProPlayerListRequestBuilder().buildRequest();
+	}
+
+	public static GetAppListRequest createGetAppListRequest() {
+		return new GetAppListRequest.GetAppListRequestBuilder().buildRequest();
 	}
 }

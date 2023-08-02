@@ -80,6 +80,8 @@ public enum SteamWebApiVersion {
 			return VERSION_ONE;
 		case GET_FANTASY_PLAYER_STATS:
 			return VERSION_ONE;
+		case GET_APP_LIST:
+			return VERSION_TWO;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");
