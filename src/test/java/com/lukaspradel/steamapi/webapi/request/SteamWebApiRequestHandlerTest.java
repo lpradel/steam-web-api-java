@@ -1,12 +1,14 @@
 package com.lukaspradel.steamapi.webapi.request;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.argThat;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
+import com.lukaspradel.steamapi.BaseTest;
+import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
+import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
+import org.mockito.ArgumentMatcher;
+import org.mockito.Mock;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.net.URI;
@@ -18,16 +20,13 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.mockito.ArgumentMatcher;
-import org.mockito.Mock;
-import org.testng.annotations.Test;
-
-import com.lukaspradel.steamapi.BaseTest;
-import com.lukaspradel.steamapi.core.exception.SteamApiException;
-import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
-import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
-import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
-import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.argThat;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.fail;
 
 public class SteamWebApiRequestHandlerTest extends BaseTest {
 
@@ -52,9 +51,6 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	@Mock
 	private HttpResponse<String> httpResponseMock;
-
-	@Mock
-	private BodyHandler<String> bodyHandlerMock;
 
 	private ArgumentMatcher<BodyHandler<String>> bodyHandlerMatcher = arg -> arg != null ? true : false;
 
@@ -154,6 +150,20 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		assertEquals(
 				actual.toString(),
 				"https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001?key=12345&format=json&input_json=%7B%22steamid%22%3A%2276561198039505218%22%7D");
+	}
+
+	@Test(expectedExceptions = SteamApiException.class)
+	public void testGetRequestUriWithInvalidUri() throws SteamApiException {
+		String scheme = "";
+		String host = "api.steampowered.com";
+		String path = "/IPlayerService/GetOwnedGames/v0001";
+		var parameters = new LinkedHashMap<String, String>();
+		parameters.put("key", "12345");
+		parameters.put("format", "json");
+		parameters.put("input_json", "{\"steamid\":\"76561198039505218\"}");
+
+		String query = requestHandlerHttps.getRequestQuery(parameters);
+		requestHandlerHttps.getRequestUri(scheme, host, path, query);
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)

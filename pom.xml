@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.6.1-SNAPSHOT</version>
+    <version>1.7.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Steam Web API</name>
     <description>A library to provide access to the data available from Valve's Steam API</description>
@@ -11,8 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version.prop>11</java.version.prop>
-        <maven.version.prop>3.6.0</maven.version.prop>
+        <java.version>11</java.version>
+        <maven.version>3.6.0</maven.version>
 
         <!-- Plugin versions -->
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
@@ -79,8 +79,8 @@
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <source>${java.version.prop}</source>
-                    <target>${java.version.prop}</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -109,10 +109,10 @@
                         <configuration>
                             <rules>
                                 <requireJavaVersion>
-                                    <version>${java.version.prop}</version>
+                                    <version>${java.version}</version>
                                 </requireJavaVersion>
                                 <requireMavenVersion>
-                                    <version>${maven.version.prop}</version>
+                                    <version>${maven.version}</version>
                                 </requireMavenVersion>
                             </rules>
                         </configuration>

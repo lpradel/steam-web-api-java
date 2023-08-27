@@ -1,7 +1,8 @@
 package com.lukaspradel.steamapi.webapi.request;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.util.stream.Collectors.joining;
+import com.lukaspradel.steamapi.core.SteamApiRequestHandler;
+import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
 
 import java.io.IOException;
 import java.net.URI;
@@ -13,9 +14,8 @@ import java.net.http.HttpResponse.BodyHandlers;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import com.lukaspradel.steamapi.core.SteamApiRequestHandler;
-import com.lukaspradel.steamapi.core.exception.SteamApiException;
-import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.util.stream.Collectors.joining;
 
 public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 
@@ -50,12 +50,15 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 	}
 
 	String getRequestQuery(Map<String, String> parameters) throws SteamApiException {
-		if (getKey() == null)
+		if (getKey() == null) {
 			throw new SteamApiKeyException("Steam API key is not present or null");
+		}
 
-		for (var e : parameters.entrySet())
-			if (e.getKey() == null)
+		for (var e : parameters.entrySet()) {
+			if (e.getKey() == null) {
 				throw new SteamApiException("The key of the parameter with the value '" + e.getValue() + "' is null");
+			}
+		}
 
 		parameters.put("key", getKey());
 		return parameters.entrySet().stream()
@@ -92,13 +95,13 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 			var response = client.send(getRequest, BodyHandlers.ofString());
 			int statusCode = response.statusCode();
 
-			if (Integer.toString(statusCode).startsWith("20"))
+			if (Integer.toString(statusCode).startsWith("20")) {
 				return response.body();
-
-			if (statusCode == UNAUTHORIZED)
+			} else if (statusCode == UNAUTHORIZED) {
 				throw new SteamApiException(SteamApiException.Cause.FORBIDDEN, statusCode);
-
-			throw new SteamApiException(SteamApiException.Cause.HTTP_ERROR, statusCode);
+			} else {
+				throw new SteamApiException(SteamApiException.Cause.HTTP_ERROR, statusCode);
+			}
 		} catch (IOException | InterruptedException e) {
 			throw new SteamApiException(
 					"The Web API request failed due to the following error: " + e.getMessage(), e);
