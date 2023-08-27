@@ -33,19 +33,17 @@ public class SteamApiException extends Exception {
 		}
 	}
 
-	public SteamApiException(Cause cause, Integer statusCode, String message) {
+	public SteamApiException(Cause cause, Integer statusCode) {
 
 		switch (cause) {
 		case HTTP_ERROR:
-			this.message = "The Web API request failed with the following HTTP error: "
-					+ message + " (status code: " + statusCode + ").";
+			this.message = "The Web API request failed (status code: " + statusCode + ").";
 			break;
 		case FORBIDDEN:
 			this.message = "The Web API request failed for security reasons. The supplied Web API key was rejected by Steam. Ensure that the supplied Web API key is valid.";
 			break;
 		case INTERNAL_ERROR:
-			this.message = "The Web API request failed with the following internal error: "
-					+ message + " (status code: " + statusCode + ").";
+			this.message = "The Web API request failed with an internal error (status code: " + statusCode + ").";
 			break;
 		default:
 			this.message = "The Web API request failed due to an unexpected error.";

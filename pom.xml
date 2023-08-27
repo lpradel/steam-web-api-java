@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.6.1-SNAPSHOT</version>
+    <version>1.7.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Steam Web API</name>
     <description>A library to provide access to the data available from Valve's Steam API</description>
@@ -11,32 +11,30 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version.prop>1.8</java.version.prop>
+        <java.version>11</java.version>
+        <maven.version>3.6.0</maven.version>
 
         <!-- Plugin versions -->
-        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
-        <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
-        <maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version>
-        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <maven-enforcer-plugin.version>3.3.0</maven-enforcer-plugin.version>
+        <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
+        <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
-        <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
-        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
-        <jsonschema2pojo-maven-plugin.version>1.1.2</jsonschema2pojo-maven-plugin.version>
+        <jsonschema2pojo-maven-plugin.version>1.2.1</jsonschema2pojo-maven-plugin.version>
 
         <!-- Dependencies versions -->
-        <slf4j.version>2.0.6</slf4j.version>
-        <jackson.version>2.14.1</jackson.version>
-        <httpclient.version>5.2.1</httpclient.version>
-        <cobertura.version>2.1.1</cobertura.version>
-        <jaxb-api.version>2.3.1</jaxb-api.version>
+        <slf4j.version>2.0.7</slf4j.version>
+        <jackson.version>2.15.2</jackson.version>
+        <jaxb-api.version>2.3.3</jaxb-api.version>
 
         <!-- Test dependencies versions -->
-        <testng.version>7.7.0</testng.version>
-        <mockito.version>4.10.0</mockito.version>
+        <testng.version>7.8.0</testng.version>
+        <mockito.version>5.4.0</mockito.version>
     </properties>
 
     <licenses>
@@ -81,8 +79,8 @@
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <source>${java.version.prop}</source>
-                    <target>${java.version.prop}</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -97,11 +95,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <!-- for Java 9+ (replace "-@-" with two hyphen, because it is not allowed in comments)
-                <configuration>
-                    <argLine>${argLine} -@-add-opens java.base/java.lang=ALL-UNNAMED -@-add-opens java.base/java.util=ALL-UNNAMED</argLine>
-                </configuration>
-                 -->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -116,10 +109,10 @@
                         <configuration>
                             <rules>
                                 <requireJavaVersion>
-                                    <version>${java.version.prop}</version>
+                                    <version>${java.version}</version>
                                 </requireJavaVersion>
                                 <requireMavenVersion>
-                                    <version>3.6.0</version>
+                                    <version>${maven.version}</version>
                                 </requireMavenVersion>
                             </rules>
                         </configuration>
@@ -150,8 +143,8 @@
                 <version>${coveralls-maven-plugin.version}</version>
                 <dependencies>
                     <dependency>
-                        <groupId>javax.xml.bind</groupId>
-                        <artifactId>jaxb-api</artifactId>
+                        <groupId>jakarta.xml.bind</groupId>
+                        <artifactId>jakarta.xml.bind-api</artifactId>
                         <version>${jaxb-api.version}</version>
                     </dependency>
                 </dependencies>
@@ -491,14 +484,15 @@
             <version>${slf4j.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents.client5</groupId>
-            <artifactId>httpclient5</artifactId>
-            <version>${httpclient.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>

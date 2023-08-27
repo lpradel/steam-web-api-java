@@ -1,27 +1,25 @@
 package com.lukaspradel.steamapi.webapi.request;
 
+import com.lukaspradel.steamapi.core.SteamApiRequestHandler;
+import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
+import java.net.URLEncoder;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse.BodyHandlers;
 import java.util.Map;
+import java.util.stream.Stream;
 
-import org.apache.hc.client5.http.classic.HttpClient;
-import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
-import org.apache.hc.core5.http.ClassicHttpResponse;
-import org.apache.hc.core5.http.HttpStatus;
-import org.apache.hc.core5.http.NameValuePair;
-import org.apache.hc.core5.http.ParseException;
-import org.apache.hc.core5.http.io.entity.EntityUtils;
-import org.apache.hc.core5.http.message.BasicNameValuePair;
-import org.apache.hc.core5.net.URIBuilder;
-
-import com.lukaspradel.steamapi.core.SteamApiRequestHandler;
-import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.util.stream.Collectors.joining;
 
 public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
+
+	private static final int UNAUTHORIZED = 401;
 
 	public SteamWebApiRequestHandler(boolean useHttps, String key) {
 		super(useHttps, key);
@@ -35,45 +33,54 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		String scheme = getProtocol();
 		String host = request.getBaseUrl();
 		String path = getRequestPath(request);
-		List<NameValuePair> parameters = getRequestParameters(request.getParameters());
+		String query = getRequestQuery(request.getParameters());
 
-		URI requestUrl = getRequestUri(scheme, host, path, parameters);
-
-		return requestUrl;
+		return getRequestUri(scheme, host, path, query);
 	}
 
 	String getRequestPath(SteamWebApiRequest request) {
-		StringBuilder requestPath = new StringBuilder();
-
-		requestPath.append("/");
-		requestPath.append(request.getApiInterface().toString());
-		requestPath.append("/");
-		requestPath.append(request.getInterfaceMethod().toString());
-		requestPath.append("/");
-		requestPath.append(request.getVersion().toString());
-
-		return requestPath.toString();
+		// creates "/ApiInterface/InterfaceMethod/Version"
+		return Stream.of(
+				request.getApiInterface(),
+				request.getInterfaceMethod(),
+				request.getVersion()
+		)
+		.map(Object::toString)
+		.collect(joining("/", "/", ""));
 	}
 
-	List<NameValuePair> getRequestParameters(Map<String, String> parametersMap) {
+	String getRequestQuery(Map<String, String> parameters) throws SteamApiException {
+		if (getKey() == null) {
+			throw new SteamApiKeyException("Steam API key is not present or null");
+		}
 
-		List<NameValuePair> nvps = new ArrayList<>();
+		for (var e : parameters.entrySet()) {
+			if (e.getKey() == null) {
+				throw new SteamApiException("The key of the parameter with the value '" + e.getValue() + "' is null");
+			}
+		}
 
-		nvps.add(new BasicNameValuePair("key", getKey()));
-
-		parametersMap.entrySet().forEach(param -> nvps.add(new BasicNameValuePair(param.getKey(), param.getValue())));
-
-		return nvps;
+		parameters.put("key", getKey());
+		return parameters.entrySet().stream()
+				.map(e -> {
+					String v = e.getValue(); // if the value of the parameter is null, we replace it with an empty String
+					return e.getKey() + '=' + URLEncoder.encode(v == null ? "" : v, UTF_8);
+				})
+				.collect(joining("&"));
 	}
 
-	URI getRequestUri(String scheme, String host, String path, List<NameValuePair> parameters) throws SteamApiException {
+	URI getRequestUri(String scheme, String host, String path, String query) throws SteamApiException {
+		var uri = new StringBuilder();
+
+		uri.append(scheme);
+		uri.append("://");
+		uri.append(host);
+		uri.append(path);
+		uri.append("?");
+		uri.append(query);
+
 		try {
-			return new URIBuilder()
-					.setScheme(scheme)
-					.setHost(host)
-					.setPath(path)
-					.setParameters(parameters)
-					.build();
+			return new URI(uri.toString());
 		} catch (URISyntaxException e) {
 			throw new SteamApiException(
 					"Failed to process the Web API request due to the following error: " + e.getMessage(), e);
@@ -82,33 +89,26 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 
 	String getWebApiResponse(URI requestUrl) throws SteamApiException {
 		HttpClient client = getHttpClient();
-		HttpGet getRequest = new HttpGet(requestUrl);
+		HttpRequest getRequest = HttpRequest.newBuilder(requestUrl).build();
 
-		// this try-with-resources statement closes the connection
-		// no need to close the client (ref https://hc.apache.org/httpcomponents-client-4.5.x/quickstart.html)
-		try (ClassicHttpResponse response = client.executeOpen(null, getRequest, null)) {
-			Integer statusCode = response.getCode();
+		try {
+			var response = client.send(getRequest, BodyHandlers.ofString());
+			int statusCode = response.statusCode();
 
-			if (!statusCode.toString().startsWith("20")) {
-				if (statusCode.equals(HttpStatus.SC_UNAUTHORIZED)) {
-					throw new SteamApiException(
-							SteamApiException.Cause.FORBIDDEN, statusCode, response.getReasonPhrase());
-				}
-				throw new SteamApiException(
-						SteamApiException.Cause.HTTP_ERROR, statusCode, response.getReasonPhrase());
+			if (Integer.toString(statusCode).startsWith("20")) {
+				return response.body();
+			} else if (statusCode == UNAUTHORIZED) {
+				throw new SteamApiException(SteamApiException.Cause.FORBIDDEN, statusCode);
+			} else {
+				throw new SteamApiException(SteamApiException.Cause.HTTP_ERROR, statusCode);
 			}
-			return getHttpResponseAsString(response);
-		} catch (IOException | ParseException e) {
+		} catch (IOException | InterruptedException e) {
 			throw new SteamApiException(
 					"The Web API request failed due to the following error: " + e.getMessage(), e);
 		}
 	}
 
 	HttpClient getHttpClient() {
-		return HttpClientBuilder.create().build();
-	}
-
-	String getHttpResponseAsString(ClassicHttpResponse response) throws ParseException, IOException {
-		return EntityUtils.toString(response.getEntity());
+		return HttpClient.newHttpClient();
 	}
 }

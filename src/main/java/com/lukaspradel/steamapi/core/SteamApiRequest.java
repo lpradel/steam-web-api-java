@@ -1,6 +1,6 @@
 package com.lukaspradel.steamapi.core;
 
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -28,6 +28,6 @@ public abstract class SteamApiRequest {
 	}
 
 	public Map<String, String> getParameters() {
-		return Collections.unmodifiableMap(parameters);
+		return new HashMap<>(parameters);
 	}
 }
