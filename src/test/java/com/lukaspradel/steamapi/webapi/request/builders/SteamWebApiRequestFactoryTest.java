@@ -32,6 +32,7 @@ import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestServiceParameter;
+import com.lukaspradel.steamapi.webapi.request.ResolveVanityUrlRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest.GetFantasyPlayerStatsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest;
@@ -795,5 +796,38 @@ public class SteamWebApiRequestFactoryTest {
 
 		Map<String,String> parameters = request.getParameters();
 		assertEquals(parameters.size(), 1);
+	}
+
+	@Test
+	public void testResolveVanityUrlRequest() {
+		ResolveVanityUrlRequest request = SteamWebApiRequestFactory.createResolveVanityUrlRequest("", null);
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_STEAM_USER);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.RESOLVE_VANITY_URL);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String,String> parameters = request.getParameters();
+		assertEquals(parameters.size(), 2);
+	}
+
+	@Test
+	public void testResolveVanityUrlRequestWithUrlType() {
+		ResolveVanityUrlRequest request = SteamWebApiRequestFactory.createResolveVanityUrlRequest("", 1);
+
+		assertNotNull(request);
+
+		assertEquals(request.getApiInterface(),SteamWebApiInterface.I_STEAM_USER);
+		assertEquals(request.getInterfaceMethod(),SteamWebApiInterfaceMethod.RESOLVE_VANITY_URL);
+		assertEquals(request.getVersion(), SteamWebApiVersion.VERSION_ONE);
+
+		Map<String,String> parameters = request.getParameters();
+		assertEquals(parameters.size(), 3);
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testResolveVanityUrlRequestWithNullVanityUrl() {
+		SteamWebApiRequestFactory.createResolveVanityUrlRequest(null, null);
 	}
 }

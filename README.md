@@ -192,6 +192,7 @@ mvn clean deploy -P release
 
 ## History
 
+- Version 1.8.0: Add support for `ResolveVanityURL` requests
 - Version 1.7.0: Replace the internally used HTTP Client from Apache httpclient5 to java.net.http (needs Java 11)
 - Version 1.6.0: Add support for `GetAppList` requests from `GetAppList` interface
 - Version 1.5.0: Breaking change in this library: use Long return values over Integer to fix [#20](https://github.com/lpradel/steam-web-api-java/issues/20) and avoid possible integer overflows

@@ -82,6 +82,8 @@ public enum SteamWebApiVersion {
 			return VERSION_ONE;
 		case GET_APP_LIST:
 			return VERSION_TWO;
+		case RESOLVE_VANITY_URL:
+			return VERSION_ONE;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");

@@ -1,0 +1,25 @@
+{
+    "type":"object",
+    "required":false,
+    "javaType":"com.lukaspradel.steamapi.data.json.resolvevanityurl.ResolveVanityURL",
+    "properties":{
+        "response": {
+            "type":"object",
+            "required":false,
+            "properties": {
+                "steamid":{
+                    "type":"string",
+                    "required":false
+                },
+                "success": {
+                    "type":"integer",
+                    "required":false
+                },
+                "message": {
+                    "type":"string",
+                    "required":false
+                }
+            }
+        }
+    }
+}

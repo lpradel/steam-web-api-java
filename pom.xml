@@ -15,26 +15,26 @@
         <maven.version>3.6.0</maven.version>
 
         <!-- Plugin versions -->
-        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
-        <maven-enforcer-plugin.version>3.3.0</maven-enforcer-plugin.version>
-        <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
+        <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
+        <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
         <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <jsonschema2pojo-maven-plugin.version>1.2.1</jsonschema2pojo-maven-plugin.version>
 
         <!-- Dependencies versions -->
-        <slf4j.version>2.0.7</slf4j.version>
-        <jackson.version>2.15.2</jackson.version>
+        <slf4j.version>2.0.11</slf4j.version>
+        <jackson.version>2.16.1</jackson.version>
         <jaxb-api.version>2.3.3</jaxb-api.version>
 
         <!-- Test dependencies versions -->
-        <testng.version>7.8.0</testng.version>
-        <mockito.version>5.4.0</mockito.version>
+        <testng.version>7.9.0</testng.version>
+        <mockito.version>5.8.0</mockito.version>
     </properties>
 
     <licenses>
@@ -402,6 +402,16 @@
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getapplist</targetPackage>
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getapplist</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-resolvevanityurl</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.resolvevanityurl</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/resolvevanityurl</sourceDirectory>
                         </configuration>
                     </execution>
                 </executions>

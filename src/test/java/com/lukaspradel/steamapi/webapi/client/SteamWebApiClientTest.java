@@ -25,6 +25,8 @@ import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievemen
 import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
 import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
 import com.lukaspradel.steamapi.data.json.recentlyplayedgames.GetRecentlyPlayedGames;
+import com.lukaspradel.steamapi.data.json.resolvevanityurl.ResolveVanityURL;
+import com.lukaspradel.steamapi.data.json.resolvevanityurl.Response;
 import com.lukaspradel.steamapi.webapi.request.GetAppListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
@@ -39,6 +41,7 @@ import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
+import com.lukaspradel.steamapi.webapi.request.ResolveVanityUrlRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
@@ -808,5 +811,43 @@ public class SteamWebApiClientTest extends BaseTest {
 				.thenReturn(mockAnswer);
 
 		client.processRequest(request);
+	}
+
+	@Test
+	public void testProcessResolveVanityUrlMatch() throws IOException, SteamApiException {
+		ResolveVanityUrlRequest request = SteamWebApiRequestFactory.createResolveVanityUrlRequest("", null);
+
+		String mockAnswer = readResourceAsString("ResolveVanityURLMatch.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		ResolveVanityURL result = client.<ResolveVanityURL>processRequest(request);
+		assertNotNull(result);
+
+		Response response = result.getResponse();
+		assertNotNull(response);
+		assertEquals(response.getSteamid(), "123456789");
+		assertEquals(response.getSuccess(), 1);
+		assertEquals(response.getMessage(), null);
+	}
+
+	@Test
+	public void testProcessResolveVanityUrlNoMatch() throws IOException, SteamApiException {
+		ResolveVanityUrlRequest request = SteamWebApiRequestFactory.createResolveVanityUrlRequest("", null);
+
+		String mockAnswer = readResourceAsString("ResolveVanityURLNoMatch.json");
+
+		when(requestHandlerMock.getWebApiResponse(request))
+				.thenReturn(mockAnswer);
+
+		ResolveVanityURL result = client.<ResolveVanityURL>processRequest(request);
+		assertNotNull(result);
+
+		Response response = result.getResponse();
+		assertNotNull(response);
+		assertEquals(response.getSteamid(), null);
+		assertEquals(response.getSuccess(), 42);
+		assertEquals(response.getMessage(), "No match");
 	}
 }

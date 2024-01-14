@@ -26,6 +26,8 @@ import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.ResolveVanityUrlRequest;
+import com.lukaspradel.steamapi.webapi.request.ResolveVanityUrlRequest.ResolveVanityUrlRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest.GetFantasyPlayerStatsRequestBuilder;
@@ -258,5 +260,15 @@ public abstract class SteamWebApiRequestFactory {
 
 	public static GetAppListRequest createGetAppListRequest() {
 		return new GetAppListRequest.GetAppListRequestBuilder().buildRequest();
+	}
+
+	/**
+	 * @param vanityUrl The vanity URL to get a SteamID for (Can simply be the Steam user name) (NOT NULL)
+	 * @param urlType The type of vanity URL<br>1 (default): Individual profile<br>2: Group<br>3: Official game group
+	 */
+	public static ResolveVanityUrlRequest createResolveVanityUrlRequest(String vanityUrl, Integer urlType) {
+		return new ResolveVanityUrlRequestBuilder(vanityUrl)
+				.urlType(urlType)
+				.buildRequest();
 	}
 }
