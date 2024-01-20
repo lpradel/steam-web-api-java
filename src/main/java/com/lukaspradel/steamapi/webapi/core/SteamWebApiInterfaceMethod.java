@@ -14,6 +14,7 @@ import com.lukaspradel.steamapi.data.json.playerachievements.GetPlayerAchievemen
 import com.lukaspradel.steamapi.data.json.playerstats.GetUserStatsForGame;
 import com.lukaspradel.steamapi.data.json.playersummaries.GetPlayerSummaries;
 import com.lukaspradel.steamapi.data.json.recentlyplayedgames.GetRecentlyPlayedGames;
+import com.lukaspradel.steamapi.data.json.resolvevanityurl.ResolveVanityURL;
 import com.lukaspradel.steamapi.data.json.dota2.heroes.GetHeroes;
 import com.lukaspradel.steamapi.data.json.dota2.matchdetails.GetMatchDetails;
 import com.lukaspradel.steamapi.data.json.dota2.matchhistory.GetMatchHistory;
@@ -62,7 +63,8 @@ public enum SteamWebApiInterfaceMethod {
 			"GetProPlayerList",GetProPlayerList.class), GET_PLAYER_OFFICIAL_INFO(
 			"GetPlayerOfficialInfo",GetPlayerOfficialInfo.class), GET_FANTASY_PLAYER_STATS(
 			"GetFantasyPlayerStats",GetFantasyPlayerStats.class), GET_APP_LIST(
-			"GetAppList", GetAppList.class)
+			"GetAppList", GetAppList.class), RESOLVE_VANITY_URL(
+			"ResolveVanityURL", ResolveVanityURL.class)
 	;
 
 	private final String interfaceMethod;

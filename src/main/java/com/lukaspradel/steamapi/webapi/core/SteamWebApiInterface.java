@@ -87,6 +87,8 @@ public enum SteamWebApiInterface {
 			return I_DOTA2_FANTASY;
 		case GET_APP_LIST:
 			return I_STEAM_APPS;
+		case RESOLVE_VANITY_URL:
+			return I_STEAM_USER;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");

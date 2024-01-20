@@ -83,6 +83,11 @@ public class SteamWebApiInterfaceTest extends BaseTest {
 				SteamWebApiInterface
 						.getInterfaceForMethod(SteamWebApiInterfaceMethod.GET_APP_LIST),
 				SteamWebApiInterface.I_STEAM_APPS);
+
+		assertEquals(
+				SteamWebApiInterface
+						.getInterfaceForMethod(SteamWebApiInterfaceMethod.RESOLVE_VANITY_URL),
+				SteamWebApiInterface.I_STEAM_USER);
 	}
 
 	@Test

@@ -29,7 +29,7 @@ public class BaseTest {
 	protected String readResourceAsString(String fileName) throws IOException {
 		try {
 			Path filePath = Paths.get(this.getClass().getResource(fileName).toURI());
-			return new String(Files.readAllBytes(filePath), Charset.defaultCharset());
+			return Files.readString(filePath, Charset.defaultCharset());
 		} catch (URISyntaxException e) {
 			throw new IOException(e);
 		}
