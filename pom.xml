@@ -35,7 +35,7 @@
 
         <!-- Test dependencies versions -->
         <testng.version>7.9.0</testng.version>
-        <mockito.version>5.8.0</mockito.version>
+        <mockito.version>5.9.0</mockito.version>
     </properties>
 
     <licenses>
