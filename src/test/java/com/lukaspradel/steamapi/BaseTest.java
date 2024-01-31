@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -29,7 +29,7 @@ public class BaseTest {
 	protected String readResourceAsString(String fileName) throws IOException {
 		try {
 			Path filePath = Paths.get(this.getClass().getResource(fileName).toURI());
-			return Files.readString(filePath, Charset.defaultCharset());
+			return Files.readString(filePath, StandardCharsets.UTF_8);
 		} catch (URISyntaxException e) {
 			throw new IOException(e);
 		}
