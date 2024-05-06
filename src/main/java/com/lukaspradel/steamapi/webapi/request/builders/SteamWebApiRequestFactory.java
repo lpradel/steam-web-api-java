@@ -265,6 +265,7 @@ public abstract class SteamWebApiRequestFactory {
 	/**
 	 * @param vanityUrl The vanity URL to get a SteamID for (Can simply be the Steam user name) (NOT NULL)
 	 * @param urlType The type of vanity URL<br>1 (default): Individual profile<br>2: Group<br>3: Official game group
+	 * @return The request
 	 */
 	public static ResolveVanityUrlRequest createResolveVanityUrlRequest(String vanityUrl, Integer urlType) {
 		return new ResolveVanityUrlRequestBuilder(vanityUrl)
