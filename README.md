@@ -57,7 +57,6 @@ You can download the artifact manually from [Sonatype Nexus](https://oss.sonatyp
 
 The library itself has the following dependencies:
 - Jackson
-- Slf4j (use an appropriate Logger implementation)
 
 You will have to ensure their presence if you installed manually or using ANT. Maven will take care of this for you.
 
