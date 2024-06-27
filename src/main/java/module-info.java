@@ -1,4 +1,4 @@
-module steam.web.api {
+module com.lukaspradel.steamapi {
 	requires java.net.http;
 	requires com.fasterxml.jackson.annotation;
 	requires com.fasterxml.jackson.databind;
