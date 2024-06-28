@@ -21,7 +21,7 @@ Include the following dependency in your POM:
 <dependency>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
 </dependency>
 ```
 
@@ -51,13 +51,12 @@ Furthermore, you need to ensure that the .jar is present at runtime. This depend
 
 ### Manual
 
-You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.8.0/steam-web-api-1.8.0.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.8.0/steam-web-api-1.8.0.jar).
+You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.9.0/steam-web-api-1.9.0.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.9.0/steam-web-api-1.9.0.jar).
 
 ### Dependencies
 
 The library itself has the following dependencies:
 - Jackson
-- Slf4j (use an appropriate Logger implementation)
 
 You will have to ensure their presence if you installed manually or using ANT. Maven will take care of this for you.
 
@@ -192,6 +191,7 @@ mvn clean deploy -P release
 
 ## History
 
+- Version 1.9.0: Modularize project
 - Version 1.8.0: Add support for `ResolveVanityURL` requests
 - Version 1.7.0: Replace the internally used HTTP Client from Apache httpclient5 to java.net.http (needs Java 11)
 - Version 1.6.0: Add support for `GetAppList` requests from `GetAppList` interface

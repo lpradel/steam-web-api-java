@@ -13,6 +13,7 @@ public class ResolveVanityUrlRequest extends SteamWebApiRequest {
 	/**
 	 * Steam Web API Request ResolveVanityURL
 	 *
+	 * @param builder The request builder
 	 * @see <a href=
 	 *      "https://partner.steamgames.com/doc/webapi/ISteamUser#ResolveVanityURL"
 	 *      >https://partner.steamgames.com/doc/webapi/ISteamUser#ResolveVanityURL</a>
@@ -46,6 +47,7 @@ public class ResolveVanityUrlRequest extends SteamWebApiRequest {
 
 		/**
 		 * @param urlType The type of vanity URL<br>1 (default): Individual profile<br>2: Group<br>3: Official game group
+		 * @return The request builder
 		 */
 		public ResolveVanityUrlRequestBuilder urlType(Integer urlType) {
 
