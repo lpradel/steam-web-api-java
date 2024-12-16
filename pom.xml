@@ -34,7 +34,7 @@
 
         <!-- Test dependencies versions -->
         <testng.version>7.10.2</testng.version>
-        <mockito.version>5.12.0</mockito.version>
+        <mockito.version>5.14.2</mockito.version>
     </properties>
 
     <licenses>
