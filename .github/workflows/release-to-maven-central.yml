@@ -27,6 +27,13 @@ jobs:
       - name: Set projects Maven version to GitHub Action GUI set version
         run: mvn versions:set "-DnewVersion=${{ github.event.inputs.releaseversion }}"
 
+      - name: Push Tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          custom_tag: ${{ github.event.inputs.releaseversion }}
+
       - name: Publish package
         run: mvn --batch-mode clean deploy -P release -DskipTests=true
         env:
