@@ -66,6 +66,3 @@ jobs:
               </dependency>
             </dependencies>
             ```
-            
-            ### Things that changed in this release
-            ${{ steps.changelog.outputs.changelog }}
