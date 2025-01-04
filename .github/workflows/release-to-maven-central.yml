@@ -49,6 +49,11 @@ jobs:
           tag_name: ${{ github.event.inputs.releaseversion }}
           name: ${{ github.event.inputs.releaseversion }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            ${{ github.ref_name }}.zip
+            ${{ github.ref_name }}.tar.gz
+          generate_release_notes: true
+          append_body: true
           body: |
             Grab the new version from Maven central https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/${{ github.event.inputs.releaseversion }}/ by using it in your deps
             
