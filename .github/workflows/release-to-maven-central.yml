@@ -51,7 +51,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             ${{ github.ref_name }}.zip
-            ${{ github.ref_name }}.tar.gz
+            ${{ github.event.inputs.releaseversion }}.zip
           generate_release_notes: true
           append_body: true
           body: |
