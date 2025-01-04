@@ -39,3 +39,28 @@ jobs:
         uses: metcalfc/changelog-generator@v4.3.1
         with:
           myToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          prerelease: false
+          tag_name: ${{ github.event.inputs.releaseversion }}
+          name: ${{ github.event.inputs.releaseversion }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Grab the new version from Maven central https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/${{ github.event.inputs.releaseversion }}/ by using it in your deps
+            
+            ```
+            <dependencies>
+              <dependency>
+                  <groupId>com.lukaspradel</groupId>
+                  <artifactId>steam-web-api</artifactId>
+                  <version>${{ github.event.inputs.releaseversion }}</version>
+              </dependency>
+            </dependencies>
+            ```
+            
+            ### Things that changed in this release
+            ${{ steps.changelog.outputs.changelog }}
