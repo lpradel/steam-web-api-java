@@ -33,6 +33,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           custom_tag: ${{ github.event.inputs.releaseversion }}
+          tag_prefix: ""
 
       - name: Publish package
         run: mvn --batch-mode clean deploy -P release -DskipTests=true
@@ -56,9 +57,6 @@ jobs:
           tag_name: ${{ github.event.inputs.releaseversion }}
           name: ${{ github.event.inputs.releaseversion }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: |
-            ${{ github.ref_name }}.zip
-            ${{ github.event.inputs.releaseversion }}.zip
           generate_release_notes: true
           append_body: true
           body: |
