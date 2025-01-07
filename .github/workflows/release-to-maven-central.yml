@@ -35,6 +35,7 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Create GitHub Release
+        if: ${{ ! endsWith(github.event.inputs.releaseversion, '-SNAPSHOT') }}
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
@@ -46,7 +47,7 @@ jobs:
           generate_release_notes: true
           append_body: true
           body: |
-            Grab the new version from Maven central https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/${{ github.event.inputs.releaseversion }}/ by using it in your deps
+            Grab the new version from Maven central https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/${{ github.event.inputs.releaseversion }}/ by using it in your dependencies like so:
             
             ```
             <dependencies>
