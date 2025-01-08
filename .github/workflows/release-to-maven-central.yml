@@ -46,7 +46,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             target/steam-web-api-${{ github.event.inputs.releaseversion }}.jar
+            target/steam-web-api-${{ github.event.inputs.releaseversion }}.jar.asc
             target/steam-web-api-${{ github.event.inputs.releaseversion }}-sources.jar
+            target/steam-web-api-${{ github.event.inputs.releaseversion }}-sources.jar.asc
+            target/steam-web-api-${{ github.event.inputs.releaseversion }}-javadoc.jar
+            target/steam-web-api-${{ github.event.inputs.releaseversion }}-javadoc.jar.asc
           generate_release_notes: true
           append_body: true
           body: |
