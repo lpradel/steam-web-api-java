@@ -45,7 +45,7 @@ jobs:
           name: ${{ github.event.inputs.releaseversion }}
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
-            **/target/**/**.jar
+            target/*.jar
           generate_release_notes: true
           append_body: true
           body: |
