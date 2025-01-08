@@ -35,11 +35,11 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Create GitHub Release
-        #if: ${{ ! endsWith(github.event.inputs.releaseversion, '-SNAPSHOT') }}
+        if: ${{ ! endsWith(github.event.inputs.releaseversion, '-SNAPSHOT') }}
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          draft: true
+          draft: false
           prerelease: false
           tag_name: ${{ github.event.inputs.releaseversion }}
           name: ${{ github.event.inputs.releaseversion }}
