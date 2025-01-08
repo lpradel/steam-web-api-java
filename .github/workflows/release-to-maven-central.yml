@@ -51,6 +51,7 @@ jobs:
             target/steam-web-api-${{ github.event.inputs.releaseversion }}-sources.jar.asc
             target/steam-web-api-${{ github.event.inputs.releaseversion }}-javadoc.jar
             target/steam-web-api-${{ github.event.inputs.releaseversion }}-javadoc.jar.asc
+          preserve_order: true
           generate_release_notes: true
           append_body: true
           body: |
