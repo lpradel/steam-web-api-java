@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: 📦 Build with Maven
-      run: mvn -B package --no-transfer-progress --file pom.xml
+      run: mvn clean -B package jacoco:report --no-transfer-progress --file pom.xml
     - name: 🚀 Coveralls Coverage Report Submission
       uses: coverallsapp/github-action@v2
       if: github.event_name != 'pull_request'
