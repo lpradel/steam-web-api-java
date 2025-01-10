@@ -22,5 +22,7 @@ jobs:
     - name: 📦 Build with Maven
       run: mvn -B package --no-transfer-progress --file pom.xml
     - name: 🚀 Coveralls Coverage Report Submission
-      run: mvn test jacoco:report coveralls:report --no-transfer-progress -DrepoToken=${{ secrets.COVERALLS_TOKEN }}
+      uses: coverallsapp/github-action@v2
       if: github.event_name != 'pull_request'
+      with:
+        github-token: ${{ secrets.COVERALLS_TOKEN }}
