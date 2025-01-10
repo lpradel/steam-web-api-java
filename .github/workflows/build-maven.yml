@@ -24,4 +24,4 @@ jobs:
     - name: 🚀 Coveralls Coverage Report Submission
       uses: coverallsapp/github-action@v2
       with:
-        github-token: ${{ secrets.COVERALLS_TOKEN }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
