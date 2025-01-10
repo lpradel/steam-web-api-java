@@ -23,6 +23,5 @@ jobs:
       run: mvn clean -B package jacoco:report --no-transfer-progress --file pom.xml
     - name: 🚀 Coveralls Coverage Report Submission
       uses: coverallsapp/github-action@v2
-      if: github.event_name != 'pull_request'
       with:
         github-token: ${{ secrets.COVERALLS_TOKEN }}
