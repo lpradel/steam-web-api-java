@@ -30,7 +30,7 @@
 
         <!-- Dependencies versions -->
         <jackson.version>2.18.2</jackson.version>
-        <jaxb-api.version>2.3.3</jaxb-api.version>
+        <jaxb-api.version>4.0.2</jaxb-api.version>
 
         <!-- Test dependencies versions -->
         <testng.version>7.10.2</testng.version>
