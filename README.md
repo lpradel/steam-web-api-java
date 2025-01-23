@@ -170,12 +170,12 @@ Use the following Maven `settings.xml` with valid GPG key / Sonatype user:
 
     <servers>
         <server>
-            <id>sonatype-nexus-snapshots</id>
+            <id>oss-sonatype-nexus</id>
             <username>###</username>
             <password>###</password>
         </server>
         <server>
-            <id>sonatype-nexus-staging</id>
+            <id>oss-sonatype-nexus</id>
             <username>###</username>
             <password>###</password>
         </server>
