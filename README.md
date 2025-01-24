@@ -21,7 +21,7 @@ Include the following dependency in your POM:
 <dependency>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.9.0</version>
+    <version>1.9.1</version>
 </dependency>
 ```
 
@@ -51,7 +51,7 @@ Furthermore, you need to ensure that the .jar is present at runtime. This depend
 
 ### Manual
 
-You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.9.0/steam-web-api-1.9.0.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.9.0/steam-web-api-1.9.0.jar).
+You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.9.1/steam-web-api-1.9.1.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.9.1/steam-web-api-1.9.1.jar).
 
 ### Dependencies
 
@@ -191,6 +191,7 @@ mvn clean deploy -P release
 
 ## History
 
+- Version 1.9.1: Bump all dependencies
 - Version 1.9.0: Modularize project
 - Version 1.8.0: Add support for `ResolveVanityURL` requests
 - Version 1.7.0: Replace the internally used HTTP Client from Apache httpclient5 to java.net.http (needs Java 11)
