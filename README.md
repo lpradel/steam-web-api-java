@@ -7,7 +7,7 @@ Steam Web API for Java
 
 This library provides access to the data available from Valve's Steam API for Java applications. The available systems/interfaces are documented in the [Valve Developer Community Wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
-The resulting data is mapped to POJOs with canonical accessors which can be consumed to evaluate the result data. The only requirement to use this library is a [Steam Web API Key](http://steamcommunity.com/dev/apikey). Once provided, it takes 3 lines of Java code to consume a Steam webservice with this library (see **Usage** below).
+The resulting data is mapped to POJOs with canonical accessors which can be consumed to evaluate the result data. The only requirement to use this library is a [Steam Web API Key](http://steamcommunity.com/dev/apikey). Once provided, it takes 3 lines of Java code to consume a Steam webservice with this library (see [Usage](#usage) below).
 
 ## Installation
 
@@ -15,7 +15,7 @@ The installation process of this library depends on your build system and depend
 
 ### Maven
 
-Include the following dependency in your POM:
+Include the following dependency in your `pom.xml`:
 
 ```xml
 <dependency>
@@ -23,6 +23,16 @@ Include the following dependency in your POM:
     <artifactId>steam-web-api</artifactId>
     <version>1.9.1</version>
 </dependency>
+```
+
+### Gradle
+
+Include the dependency in your `build.gradle` like so:
+
+```
+dependencies {
+    implementation 'com.lukaspradel:steam-web-api:1.9.1'
+}
 ```
 
 ### Ant
