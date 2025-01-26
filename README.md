@@ -164,6 +164,19 @@ and [this StackOverflow question](https://stackoverflow.com/a/73028555/1055743) 
 
 ## Releasing
 
+### Automated Github action release
+
+Run a new [release-to-maven-central](https://github.com/lpradel/steam-web-api-java/actions/workflows/release-to-maven-central.yml)
+Github workflow and enter the desired release version.
+
+If the release version contains the `-SNAPSHOT` qualifier,
+then only a snapshot release will be uploaded to Sonatype nexus. Otherwise a full release with the given
+version will be uploaded and staged and a
+corresponding [Github release](https://github.com/lpradel/steam-web-api-java/releases)
+with the same release version and auto-generated release notes will be created.
+
+### Manual release
+
 Use the following Maven `settings.xml` with valid GPG key / Sonatype user:
 
 ```xml
