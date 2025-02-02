@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: echo "🚀 Maven Central staging with version ${{ github.event.inputs.releaseversion }}"
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v3
