@@ -1,0 +1,158 @@
+{
+    "type": "object",
+    "javaType": "com.lukaspradel.steamapi.data.json.tf2.getplayeritems.GetPlayerItems",
+    "properties": {
+        "result": {
+            "type": "object",
+            "required": true,
+            "properties": {
+                "status": {
+                    "type": "number",
+                    "required": true
+                },
+                "num_backpack_slots": {
+                    "type": "number",
+                    "required": true
+                },
+                "items": {
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "number",
+                                "required": true
+                            },
+                            "original_id": {
+                                "type": "number",
+                                "required": true
+                            },
+                            "defindex": {
+                                "type": "number",
+                                "required": true
+                            },
+                            "level": {
+                                "type": "number",
+                                "required": true
+                            },
+                            "quality": {
+                                "type": "number",
+                                "required": true
+                            },
+                            "inventory": {
+                                "type": "number",
+                                "required": true
+                            },
+                            "quantity": {
+                                "type": "number",
+                                "required": true
+                            },
+                            "origin": {
+                                "type": "number",
+                                "required": true
+                            },
+                            "flag_cannot_trade": {
+                                "type": "boolean"
+                            },
+                            "attributes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "defindex": {
+                                            "type": "number",
+                                            "required": true
+                                        },
+                                        "value": {
+                                            "required": true
+                                        },
+                                        "float_value": {
+                                            "type": "number"
+                                        },
+                                        "account_info": {
+                                            "type": "object",
+                                            "properties": {
+                                                "steamid": {
+                                                    "type": "number",
+                                                    "required": true
+                                                },
+                                                "personaname": {
+                                                    "type": "string",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "is_output": {
+                                            "type": "boolean"
+                                        },
+                                        "quantity": {
+                                            "type": "number"
+                                        },
+                                        "quality": {
+                                            "type": "number"
+                                        },
+                                        "match_all_attribs": {
+                                            "type": "boolean"
+                                        },
+                                        "attributes": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "defindex": {
+                                                        "type": "number",
+                                                        "required": true
+                                                    },
+                                                    "value": {
+                                                        "type": "number",
+                                                        "required": true
+                                                    },
+                                                    "float_value": {
+                                                        "type": "number",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "itemdef": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            },
+                            "style": {
+                                "type": "number"
+                            },
+                            "equipped": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "class": {
+                                            "type": "number",
+                                            "required": true
+                                        },
+                                        "slot": {
+                                            "type": "number",
+                                            "required": true
+                                        }
+                                    }
+                                }
+                            },
+                            "flag_cannot_craft": {
+                                "type": "boolean"
+                            },
+                            "custom_name": {
+                                "type": "string"
+                            },
+                            "custom_desc": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

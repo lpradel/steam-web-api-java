@@ -11,10 +11,15 @@ package com.lukaspradel.steamapi.webapi.core;
  */
 public enum SteamWebApiInterface {
 
-	I_STEAM_NEWS("ISteamNews"), I_PLAYER_SERVICE("IPlayerService"), I_STEAM_USER(
-			"ISteamUser"), I_STEAM_USER_STATS("ISteamUserStats"), I_ECON_DOTA2(
-			"IEconDOTA2_570"), I_DOTA2_MATCH("IDOTA2Match_570"), I_DOTA2_FANTASY(
-			"IDOTA2Fantasy_570"), I_STEAM_APPS("ISteamApps");
+	I_STEAM_NEWS("ISteamNews"),
+	I_PLAYER_SERVICE("IPlayerService"),
+	I_STEAM_USER("ISteamUser"),
+	I_STEAM_USER_STATS("ISteamUserStats"),
+	I_ECON_DOTA2("IEconDOTA2_570"),
+	I_DOTA2_MATCH("IDOTA2Match_570"),
+	I_DOTA2_FANTASY("IDOTA2Fantasy_570"),
+	I_ECON_TF2("IEconItems_440"),
+	I_STEAM_APPS("ISteamApps");
 
 	private final String apiInterface;
 
@@ -89,6 +94,8 @@ public enum SteamWebApiInterface {
 			return I_STEAM_APPS;
 		case RESOLVE_VANITY_URL:
 			return I_STEAM_USER;
+		case GET_PLAYER_ITEMS:
+			return I_ECON_TF2;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");
