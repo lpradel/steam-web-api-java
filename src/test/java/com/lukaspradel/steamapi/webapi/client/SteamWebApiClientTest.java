@@ -878,7 +878,8 @@ public class SteamWebApiClientTest extends BaseTest {
 		var valveQualityItems = getPlayerItems.getResult().getItems()
 												.stream()
 												.filter(item -> item.getQuality().equals(8D))
-												.toList();
+												.collect(Collectors.toList());
+
 		// He has 6 'Valve' quality items at the time of fetching his items
 		assertEquals(valveQualityItems.size(), 6);
 
