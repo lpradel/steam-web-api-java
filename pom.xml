@@ -399,6 +399,16 @@
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/resolvevanityurl</sourceDirectory>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>generate-getplayeritems</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.tf2.getplayeritems</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/tf2/getplayeritems</sourceDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

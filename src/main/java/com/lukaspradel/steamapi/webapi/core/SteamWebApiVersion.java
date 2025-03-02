@@ -9,7 +9,8 @@ package com.lukaspradel.steamapi.webapi.core;
  */
 public enum SteamWebApiVersion {
 
-	VERSION_ONE("v0001"), VERSION_TWO("v0002");
+	VERSION_ONE("v0001"),
+	VERSION_TWO("v0002");
 
 	private final String version;
 
@@ -83,6 +84,8 @@ public enum SteamWebApiVersion {
 		case GET_APP_LIST:
 			return VERSION_TWO;
 		case RESOLVE_VANITY_URL:
+			return VERSION_ONE;
+		case GET_PLAYER_ITEMS:
 			return VERSION_ONE;
 		default:
 			throw new IllegalArgumentException(

@@ -51,6 +51,8 @@ import com.lukaspradel.steamapi.webapi.request.dota2.GetProPlayerListRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetProPlayerListRequest.GetProPlayerListRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest.GetTeamInfoByTeamIDRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetPlayerItemsRequest;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetPlayerItemsRequest.GetPlayerItemsRequestBuilder;
 
 import java.util.Date;
 import java.util.List;
@@ -271,5 +273,9 @@ public abstract class SteamWebApiRequestFactory {
 		return new ResolveVanityUrlRequestBuilder(vanityUrl)
 				.urlType(urlType)
 				.buildRequest();
+	}
+
+	public static GetPlayerItemsRequest createGetPlayerItemsRequest(String steamId) {
+		return new GetPlayerItemsRequestBuilder(steamId).buildRequest();
 	}
 }
