@@ -28,7 +28,7 @@
         <jsonschema2pojo-maven-plugin.version>1.2.2</jsonschema2pojo-maven-plugin.version>
 
         <!-- Dependencies versions -->
-        <jackson.version>2.18.2</jackson.version>
+        <jackson.version>2.18.3</jackson.version>
 
         <!-- Test dependencies versions -->
         <testng.version>7.10.2</testng.version>
