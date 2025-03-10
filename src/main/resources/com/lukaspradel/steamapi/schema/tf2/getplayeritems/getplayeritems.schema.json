@@ -7,11 +7,11 @@
             "required": true,
             "properties": {
                 "status": {
-                    "type": "number",
+                    "type": "integer",
                     "required": true
                 },
                 "num_backpack_slots": {
-                    "type": "number",
+                    "type": "integer",
                     "required": true
                 },
                 "items": {
@@ -21,35 +21,35 @@
                         "type": "object",
                         "properties": {
                             "id": {
-                                "type": "number",
+                                "type": "integer",
                                 "required": true
                             },
                             "original_id": {
-                                "type": "number",
+                                "type": "integer",
                                 "required": true
                             },
                             "defindex": {
-                                "type": "number",
+                                "type": "integer",
                                 "required": true
                             },
                             "level": {
-                                "type": "number",
+                                "type": "integer",
                                 "required": true
                             },
                             "quality": {
-                                "type": "number",
+                                "type": "integer",
                                 "required": true
                             },
                             "inventory": {
-                                "type": "number",
+                                "type": "integer",
                                 "required": true
                             },
                             "quantity": {
-                                "type": "number",
+                                "type": "integer",
                                 "required": true
                             },
                             "origin": {
-                                "type": "number",
+                                "type": "integer",
                                 "required": true
                             },
                             "flag_cannot_trade": {
@@ -61,7 +61,7 @@
                                     "type": "object",
                                     "properties": {
                                         "defindex": {
-                                            "type": "number",
+                                            "type": "integer",
                                             "required": true
                                         },
                                         "value": {
@@ -74,7 +74,7 @@
                                             "type": "object",
                                             "properties": {
                                                 "steamid": {
-                                                    "type": "number",
+                                                    "type": "integer",
                                                     "required": true
                                                 },
                                                 "personaname": {
@@ -87,10 +87,10 @@
                                             "type": "boolean"
                                         },
                                         "quantity": {
-                                            "type": "number"
+                                            "type": "integer"
                                         },
                                         "quality": {
-                                            "type": "number"
+                                            "type": "integer"
                                         },
                                         "match_all_attribs": {
                                             "type": "boolean"
@@ -101,11 +101,11 @@
                                                 "type": "object",
                                                 "properties": {
                                                     "defindex": {
-                                                        "type": "number",
+                                                        "type": "integer",
                                                         "required": true
                                                     },
                                                     "value": {
-                                                        "type": "number",
+                                                        "type": "integer",
                                                         "required": true
                                                     },
                                                     "float_value": {
@@ -116,13 +116,13 @@
                                             }
                                         },
                                         "itemdef": {
-                                            "type": "number"
+                                            "type": "integer"
                                         }
                                     }
                                 }
                             },
                             "style": {
-                                "type": "number"
+                                "type": "integer"
                             },
                             "equipped": {
                                 "type": "array",
@@ -130,11 +130,11 @@
                                     "type": "object",
                                     "properties": {
                                         "class": {
-                                            "type": "number",
+                                            "type": "integer",
                                             "required": true
                                         },
                                         "slot": {
-                                            "type": "number",
+                                            "type": "integer",
                                             "required": true
                                         }
                                     }

@@ -878,7 +878,8 @@ public class SteamWebApiClientTest extends BaseTest {
 		// Get Robin Walker's 'Valve' quality items
 		var valveQualityItems = getPlayerItems.getResult().getItems()
 												.stream()
-												.filter(item -> item.getQuality().equals(8D))
+												.filter(item -> item.getQuality().equals(Long.valueOf(8)))
+
 												.collect(Collectors.toList());
 
 		// He has 6 'Valve' quality items at the time of fetching his items
@@ -886,7 +887,8 @@ public class SteamWebApiClientTest extends BaseTest {
 
 		// Find 'Valve Rocket Launcher'
 		var valveRocketLauncher = valveQualityItems.stream()
-												   .filter(item -> item.getId().equals(162307172D))
+												   .filter(item -> item.getId().equals(Long.valueOf(162307172)))
+
 												   .findFirst();
 		assertTrue(valveRocketLauncher.isPresent());
 	}
