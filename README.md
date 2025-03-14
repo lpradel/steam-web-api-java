@@ -234,6 +234,7 @@ mvn clean deploy -P release
 - [Pazus](https://github.com/Pazus)
 - [41zu](https://github.com/41zu)
 - [Joey Bleau](https://github.com/josephbleau)
+- [Mihajlo Nesic](https://github.com/MihajloNesic)
 
 ## License
 

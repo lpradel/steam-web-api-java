@@ -30,9 +30,11 @@ module com.lukaspradel.steamapi {
 	exports com.lukaspradel.steamapi.data.json.playersummaries;
 	exports com.lukaspradel.steamapi.data.json.recentlyplayedgames;
 	exports com.lukaspradel.steamapi.data.json.resolvevanityurl;
+	exports com.lukaspradel.steamapi.data.json.tf2.getplayeritems;
 	exports com.lukaspradel.steamapi.webapi.client;
 	exports com.lukaspradel.steamapi.webapi.core;
 	exports com.lukaspradel.steamapi.webapi.request;
 	exports com.lukaspradel.steamapi.webapi.request.builders;
 	exports com.lukaspradel.steamapi.webapi.request.dota2;
+	exports com.lukaspradel.steamapi.webapi.request.tf2;
 }

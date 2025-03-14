@@ -25,6 +25,7 @@ import com.lukaspradel.steamapi.data.json.dota2.teaminfobyteamid.GetTeamInfoByTe
 import com.lukaspradel.steamapi.data.json.dota2.gameitems.GetGameItems;
 import com.lukaspradel.steamapi.data.json.dota2.proplayerlist.GetProPlayerList;
 import com.lukaspradel.steamapi.data.json.applist.GetAppList;
+import com.lukaspradel.steamapi.data.json.tf2.getplayeritems.GetPlayerItems;
 
 
 /**
@@ -39,33 +40,32 @@ import com.lukaspradel.steamapi.data.json.applist.GetAppList;
  */
 public enum SteamWebApiInterfaceMethod {
 
-	GET_NEWS_FOR_APP("GetNewsForApp", GetNewsForApp.class), GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP(
-			"GetGlobalAchievementPercentagesForApp",
-			GetGlobalAchievementPercentagesForApp.class), GET_GLOBAL_STATS_FOR_GAME(
-			"GetGlobalStatsForGame", GetGlobalStatsForGame.class), GET_PLAYER_SUMMARIES(
-			"GetPlayerSummaries", GetPlayerSummaries.class), GET_FRIEND_LIST(
-			"GetFriendList", GetFriendList.class), GET_PLAYER_ACHIEVEMENTS(
-			"GetPlayerAchievements", GetPlayerAchievements.class), GET_USER_STATS_FOR_GAME(
-			"GetUserStatsForGame", GetUserStatsForGame.class), GET_OWNED_GAMES(
-			"GetOwnedGames", GetOwnedGames.class), GET_RECENTLY_PLAYED_GAMES(
-			"GetRecentlyPlayedGames", GetRecentlyPlayedGames.class), IS_PLAYING_SHARED_GAME(
-			"IsPlayingSharedGame", IsPlayingSharedGame.class), GET_SCHEMA_FOR_GAME(
-			"GetSchemaForGame", GetSchemaForGame.class), GET_PLAYER_BANS(
-			"GetPlayerBans", GetPlayerBans.class), GET_HEROES(
-			"GetHeroes",GetHeroes.class), GET_MATCH_DETAILS(
-			"GetMatchDetails",GetMatchDetails.class), GET_MATCH_HISTORY(
-			"GetMatchHistory",GetMatchHistory.class), GET_LEAGUE_LISTING(
-			"GetLeagueListing",GetLeagueListing.class), GET_LIVE_LEAGUE_GAMES(
-			"GetLiveLeagueGames",GetLiveLeagueGames.class), GET_MATCH_HISTORY_BY_SEQUENCE_NUM(
-			"GetMatchHistoryBySequenceNum",GetMatchHistoryBySequenceNum.class), GET_TEAM_INFO_BY_TEAM_ID(
-			"GetTeamInfoByTeamID",GetTeamInfoByTeamID.class), GET_GAME_ITEMS(
-			"GetGameItems",GetGameItems.class), GET_PRO_PLAYER_LIST(
-			"GetProPlayerList",GetProPlayerList.class), GET_PLAYER_OFFICIAL_INFO(
-			"GetPlayerOfficialInfo",GetPlayerOfficialInfo.class), GET_FANTASY_PLAYER_STATS(
-			"GetFantasyPlayerStats",GetFantasyPlayerStats.class), GET_APP_LIST(
-			"GetAppList", GetAppList.class), RESOLVE_VANITY_URL(
-			"ResolveVanityURL", ResolveVanityURL.class)
-	;
+	GET_NEWS_FOR_APP("GetNewsForApp", GetNewsForApp.class),
+	GET_GLOBAL_ACHIEVEMENT_PERCENTAGES_FOR_APP("GetGlobalAchievementPercentagesForApp", GetGlobalAchievementPercentagesForApp.class),
+	GET_GLOBAL_STATS_FOR_GAME("GetGlobalStatsForGame", GetGlobalStatsForGame.class),
+	GET_PLAYER_SUMMARIES("GetPlayerSummaries", GetPlayerSummaries.class),
+	GET_FRIEND_LIST("GetFriendList", GetFriendList.class),
+	GET_PLAYER_ACHIEVEMENTS("GetPlayerAchievements", GetPlayerAchievements.class),
+	GET_USER_STATS_FOR_GAME("GetUserStatsForGame", GetUserStatsForGame.class),
+	GET_OWNED_GAMES("GetOwnedGames", GetOwnedGames.class),
+	GET_RECENTLY_PLAYED_GAMES("GetRecentlyPlayedGames", GetRecentlyPlayedGames.class),
+	IS_PLAYING_SHARED_GAME("IsPlayingSharedGame", IsPlayingSharedGame.class),
+	GET_SCHEMA_FOR_GAME("GetSchemaForGame", GetSchemaForGame.class),
+	GET_PLAYER_BANS("GetPlayerBans", GetPlayerBans.class),
+	GET_HEROES("GetHeroes", GetHeroes.class),
+	GET_MATCH_DETAILS("GetMatchDetails", GetMatchDetails.class),
+	GET_MATCH_HISTORY("GetMatchHistory", GetMatchHistory.class),
+	GET_LEAGUE_LISTING("GetLeagueListing", GetLeagueListing.class),
+	GET_LIVE_LEAGUE_GAMES("GetLiveLeagueGames", GetLiveLeagueGames.class),
+	GET_MATCH_HISTORY_BY_SEQUENCE_NUM("GetMatchHistoryBySequenceNum", GetMatchHistoryBySequenceNum.class),
+	GET_TEAM_INFO_BY_TEAM_ID("GetTeamInfoByTeamID", GetTeamInfoByTeamID.class),
+	GET_GAME_ITEMS("GetGameItems", GetGameItems.class),
+	GET_PRO_PLAYER_LIST("GetProPlayerList", GetProPlayerList.class),
+	GET_PLAYER_OFFICIAL_INFO("GetPlayerOfficialInfo", GetPlayerOfficialInfo.class),
+	GET_FANTASY_PLAYER_STATS("GetFantasyPlayerStats", GetFantasyPlayerStats.class),
+	GET_APP_LIST("GetAppList", GetAppList.class),
+	RESOLVE_VANITY_URL("ResolveVanityURL", ResolveVanityURL.class),
+	GET_PLAYER_ITEMS("GetPlayerItems", GetPlayerItems.class);
 
 	private final String interfaceMethod;
 
