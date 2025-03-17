@@ -31,7 +31,7 @@
         <jackson.version>2.18.2</jackson.version>
 
         <!-- Test dependencies versions -->
-        <testng.version>7.10.2</testng.version>
+        <testng.version>7.11.0</testng.version>
         <mockito.version>5.15.2</mockito.version>
     </properties>
 
