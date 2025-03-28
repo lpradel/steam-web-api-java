@@ -409,6 +409,16 @@
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/tf2/getplayeritems</sourceDirectory>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>generate-getschemaitems</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.tf2.getschemaitems</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/tf2/getschemaitems</sourceDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
