@@ -28,6 +28,7 @@ import com.lukaspradel.steamapi.data.json.applist.GetAppList;
 import com.lukaspradel.steamapi.data.json.tf2.getplayeritems.GetPlayerItems;
 import com.lukaspradel.steamapi.data.json.tf2.getschemaitems.GetSchemaItems;
 import com.lukaspradel.steamapi.data.json.tf2.getschemaoverview.GetSchemaOverview;
+import com.lukaspradel.steamapi.data.json.ugcfiledetails.GetUGCFileDetails;
 
 
 /**
@@ -69,7 +70,8 @@ public enum SteamWebApiInterfaceMethod {
 	RESOLVE_VANITY_URL("ResolveVanityURL", ResolveVanityURL.class),
 	GET_PLAYER_ITEMS("GetPlayerItems", GetPlayerItems.class),
 	GET_SCHEMA_ITEMS("GetSchemaItems", GetSchemaItems.class),
-	GET_SCHEMA_OVERVIEW("GetSchemaOverview", GetSchemaOverview.class);
+	GET_SCHEMA_OVERVIEW("GetSchemaOverview", GetSchemaOverview.class),
+	GET_UGC_FILE_DETAILS("GetUGCFileDetails", GetUGCFileDetails.class);
 
 	private final String interfaceMethod;
 

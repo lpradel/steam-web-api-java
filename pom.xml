@@ -429,6 +429,16 @@
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/tf2/getschemaoverview</sourceDirectory>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>generate-getugcfiledetails</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.getugcfiledetails</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getugcfiledetails</sourceDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

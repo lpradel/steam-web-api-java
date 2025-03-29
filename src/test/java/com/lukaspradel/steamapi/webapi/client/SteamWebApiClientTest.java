@@ -30,23 +30,9 @@ import com.lukaspradel.steamapi.data.json.resolvevanityurl.Response;
 import com.lukaspradel.steamapi.data.json.tf2.getplayeritems.GetPlayerItems;
 import com.lukaspradel.steamapi.data.json.tf2.getschemaitems.GetSchemaItems;
 import com.lukaspradel.steamapi.data.json.tf2.getschemaoverview.GetSchemaOverview;
-import com.lukaspradel.steamapi.webapi.request.GetAppListRequest;
-import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
+import com.lukaspradel.steamapi.data.json.ugcfiledetails.GetUGCFileDetails;
+import com.lukaspradel.steamapi.webapi.request.*;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
-import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
-import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest;
-import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
-import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
-import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
-import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest;
-import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
-import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
-import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest;
-import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
-import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
-import com.lukaspradel.steamapi.webapi.request.ResolveVanityUrlRequest;
-import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
-import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
 import com.lukaspradel.steamapi.webapi.request.builders.SteamWebApiRequestFactory;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest;
@@ -77,6 +63,7 @@ import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
@@ -935,5 +922,23 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertNotNull(getSchemaOverview);
 		assertNotNull(getSchemaOverview.getResult());
 		assertEquals(getSchemaOverview.getResult().getStatus(), 1L);
+	}
+
+	@Test
+	public void testProcessGetUGCFileDetailsRequest() throws SteamApiException, IOException {
+
+		GetUGCFileDetailsRequest getUGCFileDetailsRequest = SteamWebApiRequestFactory.createGetUGCFileDetailsRequest(100L, 440, null);
+
+		String mockAnswer = readResourceAsString("GetUGCFileDetails.json");
+
+		when(requestHandlerMock.getWebApiResponse(getUGCFileDetailsRequest))
+				.thenReturn(mockAnswer);
+
+		GetUGCFileDetails getUGCFileDetails = client.processRequest(getUGCFileDetailsRequest);
+
+		assertNotNull(getUGCFileDetails);
+		assertNull(getUGCFileDetails.getStatus());
+		assertNotNull(getUGCFileDetails.getData());
+		assertNotNull(getUGCFileDetails.getData().getUrl());
 	}
 }

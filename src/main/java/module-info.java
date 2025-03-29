@@ -33,6 +33,7 @@ module com.lukaspradel.steamapi {
 	exports com.lukaspradel.steamapi.data.json.tf2.getplayeritems;
 	exports com.lukaspradel.steamapi.data.json.tf2.getschemaitems;
 	exports com.lukaspradel.steamapi.data.json.tf2.getschemaoverview;
+	exports com.lukaspradel.steamapi.data.json.ugcfiledetails;
 	exports com.lukaspradel.steamapi.webapi.client;
 	exports com.lukaspradel.steamapi.webapi.core;
 	exports com.lukaspradel.steamapi.webapi.request;
