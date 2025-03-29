@@ -1,0 +1,170 @@
+{
+    "result": {
+        "status": 1,
+        "items_game_url": "http://media.steampowered.com/apps/440/scripts/items/items_game.9dbd65502a54d05c6dae18656408bbeae51b24b4.txt",
+        "items": [
+            {
+                "name": "TF_WEAPON_BAT",
+                "defindex": 0,
+                "item_class": "tf_weapon_bat",
+                "item_type_name": "Bat",
+                "item_name": "Bat",
+                "proper_name": false,
+                "item_slot": "melee",
+                "model_player": "models/weapons/c_models/c_bat.mdl",
+                "item_quality": 0,
+                "image_inventory": "backpack/weapons/c_models/c_bat",
+                "min_ilevel": 1,
+                "max_ilevel": 1,
+                "image_url": "http://media.steampowered.com/apps/440/icons/c_bat.50e76c8094493ae96cf10d8df676a93cd13516fc.png",
+                "image_url_large": "http://media.steampowered.com/apps/440/icons/c_bat_large.d036be2350e477ddb30576b41b83a6667c02b08b.png",
+                "craft_class": "weapon",
+                "craft_material_type": "weapon",
+                "capabilities": {
+                    "nameable": true,
+                    "can_gift_wrap": true,
+                    "can_craft_mark": true,
+                    "can_be_restored": true,
+                    "strange_parts": true,
+                    "can_card_upgrade": true,
+                    "can_strangify": true,
+                    "can_killstreakify": true,
+                    "can_consume": true
+                },
+                "used_by_classes": [
+                    "Scout"
+                ]
+            },
+            {
+                "name": "TF_WEAPON_BOTTLE",
+                "defindex": 1,
+                "item_class": "tf_weapon_bottle",
+                "item_type_name": "Bottle",
+                "item_name": "Bottle",
+                "proper_name": false,
+                "item_slot": "melee",
+                "model_player": "models/weapons/c_models/c_bottle/c_bottle.mdl",
+                "item_quality": 0,
+                "image_inventory": "backpack/weapons/w_models/w_bottle",
+                "min_ilevel": 1,
+                "max_ilevel": 1,
+                "image_url": "http://media.steampowered.com/apps/440/icons/w_bottle.c3a6b7a98ccf6cd5cec84e377a8dcbed8394cdb2.png",
+                "image_url_large": "http://media.steampowered.com/apps/440/icons/w_bottle_large.44f57cd6e9e8c9782b3510870eb3066d19f81428.png",
+                "craft_class": "weapon",
+                "craft_material_type": "weapon",
+                "capabilities": {
+                    "nameable": true,
+                    "can_gift_wrap": true,
+                    "can_craft_mark": true,
+                    "can_be_restored": true,
+                    "strange_parts": true,
+                    "can_card_upgrade": true,
+                    "can_strangify": true,
+                    "can_killstreakify": true,
+                    "can_consume": true
+                },
+                "used_by_classes": [
+                    "Demoman"
+                ]
+            },
+            {
+                "name": "TF_WEAPON_FIREAXE",
+                "defindex": 2,
+                "item_class": "tf_weapon_fireaxe",
+                "item_type_name": "Fire Axe",
+                "item_name": "Fire Axe",
+                "proper_name": false,
+                "item_slot": "melee",
+                "model_player": "models/weapons/c_models/c_fireaxe_pyro/c_fireaxe_pyro.mdl",
+                "item_quality": 0,
+                "image_inventory": "backpack/weapons/c_models/c_fireaxe_pyro/c_fireaxe_pyro",
+                "min_ilevel": 1,
+                "max_ilevel": 1,
+                "image_url": "http://media.steampowered.com/apps/440/icons/c_fireaxe_pyro.f43835423ab6a5bc277329ec57c84a2d28e4a790.png",
+                "image_url_large": "http://media.steampowered.com/apps/440/icons/c_fireaxe_pyro_large.be78801ed8df7dcd14eb89e0def2724080120519.png",
+                "craft_class": "weapon",
+                "craft_material_type": "weapon",
+                "capabilities": {
+                    "nameable": true,
+                    "can_gift_wrap": true,
+                    "can_craft_mark": true,
+                    "can_be_restored": true,
+                    "strange_parts": true,
+                    "can_card_upgrade": true,
+                    "can_strangify": true,
+                    "can_killstreakify": true,
+                    "can_consume": true
+                },
+                "used_by_classes": [
+                    "Pyro"
+                ]
+            },
+            {
+                "name": "TF_WEAPON_CLUB",
+                "defindex": 3,
+                "item_class": "tf_weapon_club",
+                "item_type_name": "Kukri",
+                "item_name": "Kukri",
+                "proper_name": false,
+                "item_slot": "melee",
+                "model_player": "models/weapons/c_models/c_machete/c_machete.mdl",
+                "item_quality": 0,
+                "image_inventory": "backpack/weapons/w_models/w_machete",
+                "min_ilevel": 1,
+                "max_ilevel": 1,
+                "image_url": "http://media.steampowered.com/apps/440/icons/w_machete.8dd45ef4de71c685bd57a034205399adf15249c4.png",
+                "image_url_large": "http://media.steampowered.com/apps/440/icons/w_machete_large.ab9015480c5b4cdfa2a86577758df4eb0c6f560d.png",
+                "craft_class": "weapon",
+                "craft_material_type": "weapon",
+                "capabilities": {
+                    "nameable": true,
+                    "can_gift_wrap": true,
+                    "can_craft_mark": true,
+                    "can_be_restored": true,
+                    "strange_parts": true,
+                    "can_card_upgrade": true,
+                    "can_strangify": true,
+                    "can_killstreakify": true,
+                    "can_consume": true
+                },
+                "used_by_classes": [
+                    "Sniper"
+                ]
+            },
+            {
+                "name": "TF_WEAPON_KNIFE",
+                "defindex": 4,
+                "item_class": "tf_weapon_knife",
+                "item_type_name": "Knife",
+                "item_name": "Knife",
+                "item_description": "Attack an enemy from behind to Backstab them for a one hit kill.",
+                "proper_name": false,
+                "item_slot": "melee",
+                "model_player": "models/weapons/c_models/c_knife/c_knife.mdl",
+                "item_quality": 0,
+                "image_inventory": "backpack/weapons/w_models/w_knife",
+                "min_ilevel": 1,
+                "max_ilevel": 1,
+                "image_url": "http://media.steampowered.com/apps/440/icons/w_knife.035a611b3f12c162ebc8857beb120fd07382c1d4.png",
+                "image_url_large": "http://media.steampowered.com/apps/440/icons/w_knife_large.22ba9afe5d2266d3d9af0f7dcf99d67d588cb895.png",
+                "craft_class": "weapon",
+                "craft_material_type": "weapon",
+                "capabilities": {
+                    "nameable": true,
+                    "can_gift_wrap": true,
+                    "can_craft_mark": true,
+                    "can_be_restored": true,
+                    "strange_parts": true,
+                    "can_card_upgrade": true,
+                    "can_strangify": true,
+                    "can_killstreakify": true,
+                    "can_consume": true
+                },
+                "used_by_classes": [
+                    "Spy"
+                ]
+            }
+        ],
+        "next": 5
+    }
+}

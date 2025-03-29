@@ -53,6 +53,9 @@ import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest.GetTeamInfoByTeamIDRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.tf2.GetPlayerItemsRequest;
 import com.lukaspradel.steamapi.webapi.request.tf2.GetPlayerItemsRequest.GetPlayerItemsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaItemsRequest;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaItemsRequest.GetSchemaItemsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaOverviewRequest;
 
 import java.util.Date;
 import java.util.List;
@@ -277,5 +280,18 @@ public abstract class SteamWebApiRequestFactory {
 
 	public static GetPlayerItemsRequest createGetPlayerItemsRequest(String steamId) {
 		return new GetPlayerItemsRequestBuilder(steamId).buildRequest();
+	}
+
+	public static GetSchemaItemsRequest createGetSchemaItemsRequest(String language, Integer start) {
+		return new GetSchemaItemsRequestBuilder()
+				.language(language)
+				.start(start)
+				.buildRequest();
+	}
+
+	public static GetSchemaOverviewRequest createGetSchemaOverviewRequest(String language) {
+		return new GetSchemaOverviewRequest.GetSchemaOverviewRequestBuilder()
+				.language(language)
+				.buildRequest();
 	}
 }
