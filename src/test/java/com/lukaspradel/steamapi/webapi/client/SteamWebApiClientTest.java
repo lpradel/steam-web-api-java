@@ -29,6 +29,7 @@ import com.lukaspradel.steamapi.data.json.resolvevanityurl.ResolveVanityURL;
 import com.lukaspradel.steamapi.data.json.resolvevanityurl.Response;
 import com.lukaspradel.steamapi.data.json.tf2.getplayeritems.GetPlayerItems;
 import com.lukaspradel.steamapi.data.json.tf2.getschemaitems.GetSchemaItems;
+import com.lukaspradel.steamapi.data.json.tf2.getschemaoverview.GetSchemaOverview;
 import com.lukaspradel.steamapi.webapi.request.GetAppListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
@@ -60,6 +61,7 @@ import com.lukaspradel.steamapi.webapi.request.dota2.GetProPlayerListRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest;
 import com.lukaspradel.steamapi.webapi.request.tf2.GetPlayerItemsRequest;
 import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaItemsRequest;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaOverviewRequest;
 import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -914,5 +916,24 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertEquals(getSchemaItems.getResult().getStatus(), 1);
 		assertEquals(getSchemaItems.getResult().getItems().size(), 5);
 		assertNotNull(getSchemaItems.getResult().getNext());
+	}
+
+	@Test
+	public void testProcessGetSchemaOverviewRequest() throws SteamApiException, IOException {
+
+		String language = "en_US";
+
+		GetSchemaOverviewRequest getSchemaOverviewRequest = SteamWebApiRequestFactory.createGetSchemaOverviewRequest(language);
+
+		String mockAnswer = readResourceAsString("tf2/GetSchemaOverview.json");
+
+		when(requestHandlerMock.getWebApiResponse(getSchemaOverviewRequest))
+				.thenReturn(mockAnswer);
+
+		GetSchemaOverview getSchemaOverview = client.processRequest(getSchemaOverviewRequest);
+
+		assertNotNull(getSchemaOverview);
+		assertNotNull(getSchemaOverview.getResult());
+		assertEquals(getSchemaOverview.getResult().getStatus(), 1L);
 	}
 }

@@ -55,6 +55,7 @@ import com.lukaspradel.steamapi.webapi.request.tf2.GetPlayerItemsRequest;
 import com.lukaspradel.steamapi.webapi.request.tf2.GetPlayerItemsRequest.GetPlayerItemsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaItemsRequest;
 import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaItemsRequest.GetSchemaItemsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaOverviewRequest;
 
 import java.util.Date;
 import java.util.List;
@@ -285,6 +286,12 @@ public abstract class SteamWebApiRequestFactory {
 		return new GetSchemaItemsRequestBuilder()
 				.language(language)
 				.start(start)
+				.buildRequest();
+	}
+
+	public static GetSchemaOverviewRequest createGetSchemaOverviewRequest(String language) {
+		return new GetSchemaOverviewRequest.GetSchemaOverviewRequestBuilder()
+				.language(language)
 				.buildRequest();
 	}
 }

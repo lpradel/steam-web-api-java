@@ -98,6 +98,8 @@ public enum SteamWebApiInterface {
 			return I_ECON_TF2;
 		case GET_SCHEMA_ITEMS:
 			return I_ECON_TF2;
+		case GET_SCHEMA_OVERVIEW:
+			return I_ECON_TF2;
 		default:
 			throw new IllegalArgumentException(
 					"Unsupported Web API Interface method!");

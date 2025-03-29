@@ -27,6 +27,7 @@ import com.lukaspradel.steamapi.data.json.dota2.proplayerlist.GetProPlayerList;
 import com.lukaspradel.steamapi.data.json.applist.GetAppList;
 import com.lukaspradel.steamapi.data.json.tf2.getplayeritems.GetPlayerItems;
 import com.lukaspradel.steamapi.data.json.tf2.getschemaitems.GetSchemaItems;
+import com.lukaspradel.steamapi.data.json.tf2.getschemaoverview.GetSchemaOverview;
 
 
 /**
@@ -67,7 +68,8 @@ public enum SteamWebApiInterfaceMethod {
 	GET_APP_LIST("GetAppList", GetAppList.class),
 	RESOLVE_VANITY_URL("ResolveVanityURL", ResolveVanityURL.class),
 	GET_PLAYER_ITEMS("GetPlayerItems", GetPlayerItems.class),
-	GET_SCHEMA_ITEMS("GetSchemaItems", GetSchemaItems.class);
+	GET_SCHEMA_ITEMS("GetSchemaItems", GetSchemaItems.class),
+	GET_SCHEMA_OVERVIEW("GetSchemaOverview", GetSchemaOverview.class);
 
 	private final String interfaceMethod;
 
@@ -80,7 +82,7 @@ public enum SteamWebApiInterfaceMethod {
 		this.responseType = responseType;
 	}
 
-	public Class<?> getReponseType() {
+	public Class<?> getResponseType() {
 		return responseType;
 	}
 
