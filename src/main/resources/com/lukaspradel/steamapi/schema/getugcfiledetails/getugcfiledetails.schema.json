@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "javaType": "com.lukaspradel.steamapi.data.json.ugcfiledetails.GetUGCFileDetails",
+    "properties": {
+        "status": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                }
+            }
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "filename": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

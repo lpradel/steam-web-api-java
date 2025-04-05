@@ -48,7 +48,7 @@ public class SteamWebApiRequest extends SteamApiRequest {
 
 	public Class<?> getResponseType() {
 
-		return interfaceMethod.getReponseType();
+		return interfaceMethod.getResponseType();
 	}
 
 	/**

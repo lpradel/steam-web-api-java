@@ -1,0 +1,307 @@
+{
+    "type": "object",
+    "javaType": "com.lukaspradel.steamapi.data.json.tf2.getschemaitems.GetSchemaItems",
+    "properties": {
+        "result": {
+            "type": "object",
+            "required": true,
+            "properties": {
+                "status": {
+                    "type": "integer",
+                    "required": true
+                },
+                "items_game_url": {
+                    "type": "string",
+                    "required": true
+                },
+                "items": {
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "defindex": {
+                                "type": "integer",
+                                "required": true
+                            },
+                            "item_class": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "item_type_name": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "item_name": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "proper_name": {
+                                "type": "boolean",
+                                "required": true
+                            },
+                            "item_slot": {
+                                "type": "string",
+                                "required": true,
+                                "enum": [
+                                    "primary",
+                                    "secondary",
+                                    "melee",
+                                    "head",
+                                    "misc",
+                                    "pda",
+                                    "pda2",
+                                    "building",
+                                    "grenade",
+                                    "action",
+                                    "taunt",
+                                    "utility"
+                                ]
+                            },
+                            "model_player": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "item_quality": {
+                                "type": "integer",
+                                "required": true
+                            },
+                            "image_inventory": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "min_ilevel": {
+                                "type": "integer",
+                                "required": true
+                            },
+                            "max_ilevel": {
+                                "type": "integer",
+                                "required": true
+                            },
+                            "image_url": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "image_url_large": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "craft_class": {
+                                "type": "string",
+                                "enum": [
+                                    "",
+                                    "weapon",
+                                    "hat",
+                                    "craft_bar",
+                                    "haunted_hat",
+                                    "tool",
+                                    "supply_crate",
+                                    "craft_token"
+                                ]
+                            },
+                            "craft_material_type": {
+                                "type": "string"
+                            },
+                            "capabilities": {
+                                "type": "object",
+                                "properties": {
+                                    "nameable": {
+                                        "type": "boolean"
+                                    },
+                                    "can_gift_wrap": {
+                                        "type": "boolean"
+                                    },
+                                    "can_craft_mark": {
+                                        "type": "boolean"
+                                    },
+                                    "can_be_restored": {
+                                        "type": "boolean"
+                                    },
+                                    "strange_parts": {
+                                        "type": "boolean"
+                                    },
+                                    "can_card_upgrade": {
+                                        "type": "boolean"
+                                    },
+                                    "can_strangify": {
+                                        "type": "boolean"
+                                    },
+                                    "can_killstreakify": {
+                                        "type": "boolean"
+                                    },
+                                    "can_consume": {
+                                        "type": "boolean"
+                                    },
+                                    "can_collect": {
+                                        "type": "boolean"
+                                    },
+                                    "paintable": {
+                                        "type": "boolean"
+                                    },
+                                    "can_craft_if_purchased": {
+                                        "type": "boolean"
+                                    },
+                                    "can_craft_count": {
+                                        "type": "boolean"
+                                    },
+                                    "can_unusualify": {
+                                        "type": "boolean"
+                                    },
+                                    "usable_gc": {
+                                        "type": "boolean"
+                                    },
+                                    "usable": {
+                                        "type": "boolean"
+                                    },
+                                    "can_customize_texture": {
+                                        "type": "boolean"
+                                    },
+                                    "usable_out_of_game": {
+                                        "type": "boolean"
+                                    },
+                                    "can_spell_page": {
+                                        "type": "boolean"
+                                    },
+                                    "duck_upgradable": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "used_by_classes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Scout",
+                                        "Soldier",
+                                        "Pyro",
+                                        "Demoman",
+                                        "Heavy",
+                                        "Engineer",
+                                        "Sniper",
+                                        "Medic",
+                                        "Spy"
+                                    ]
+                                }
+                            },
+                            "item_description": {
+                                "type": "string"
+                            },
+                            "styles": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "required": true
+                                        },
+                                        "additional_hidden_bodygroups": {
+                                            "type": "object",
+                                            "properties": {
+                                                "hat": {
+                                                    "type": "number"
+                                                },
+                                                "headphones": {
+                                                    "type": "number"
+                                                },
+                                                "head": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "attributes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "class": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            },
+                            "drop_type": {
+                                "type": "string",
+                                "enum": [
+                                    "drop",
+                                    "none"
+                                ]
+                            },
+                            "item_set": {
+                                "type": "string"
+                            },
+                            "holiday_restriction": {
+                                "type": "string",
+                                "enum": [
+                                    "halloween_or_fullmoon",
+                                    "halloween",
+                                    "christmas",
+                                    "birthday"
+                                ]
+                            },
+                            "per_class_loadout_slots": {
+                                "type": "object",
+                                "properties": {
+                                    "Scout": {
+                                        "type": "string"
+                                    },
+                                    "Soldier": {
+                                        "type": "string"
+                                    },
+                                    "Pyro": {
+                                        "type": "string"
+                                    },
+                                    "Demoman": {
+                                        "type": "string"
+                                    },
+                                    "Heavy": {
+                                        "type": "string"
+                                    },
+                                    "Engineer": {
+                                        "type": "string"
+                                    },
+                                    "Medic": {
+                                        "type": "string"
+                                    },
+                                    "Sniper": {
+                                        "type": "string"
+                                    },
+                                    "Spy": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "tool": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "next": {
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        }
+    }
+}

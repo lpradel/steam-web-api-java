@@ -1,0 +1,424 @@
+{
+    "type": "object",
+    "javaType": "com.lukaspradel.steamapi.data.json.tf2.getschemaoverview.GetSchemaOverview",
+    "properties": {
+        "result": {
+            "type": "object",
+            "required": true,
+            "properties": {
+                "status": {
+                    "type": "integer",
+                    "required": true
+                },
+                "items_game_url": {
+                    "type": "string",
+                    "required": true
+                },
+                "qualities": {
+                    "type": "object",
+                    "required": true,
+                    "properties": {
+                        "Normal": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "rarity1": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "rarity2": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "vintage": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "rarity3": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "rarity4": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "Unique": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "community": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "developer": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "selfmade": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "customized": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "strange": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "completed": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "haunted": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "collectors": {
+                            "type": "integer",
+                            "required": true
+                        },
+                        "paintkitweapon": {
+                            "type": "integer",
+                            "required": true
+                        }
+                    }
+                },
+                "qualityNames": {
+                    "type": "object",
+                    "properties": {
+                        "Normal": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "rarity1": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "rarity2": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "vintage": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "rarity3": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "rarity4": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "Unique": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "community": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "developer": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "selfmade": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "customized": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "strange": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "completed": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "haunted": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "collectors": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "paintkitweapon": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    "required": [
+                        "Normal",
+                        "rarity1",
+                        "rarity2",
+                        "vintage",
+                        "rarity3",
+                        "rarity4",
+                        "Unique",
+                        "community",
+                        "developer",
+                        "selfmade",
+                        "customized",
+                        "strange",
+                        "completed",
+                        "haunted",
+                        "collectors",
+                        "paintkitweapon"
+                    ]
+                },
+                "originNames": {
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "origin": {
+                                "type": "integer",
+                                "required": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "required": true
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "defindex": {
+                                "type": "integer",
+                                "required": true
+                            },
+                            "attribute_class": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "description_string": {
+                                "type": "string"
+                            },
+                            "description_format": {
+                                "type": "string",
+                                "enum": [
+                                    "value_is_percentage",
+                                    "value_is_inverted_percentage",
+                                    "value_is_additive",
+                                    "value_is_additive_percentage",
+                                    "value_is_date",
+                                    "value_is_particle_index",
+                                    "value_is_account_id",
+                                    "value_is_or",
+                                    "value_is_item_def",
+                                    "value_is_from_lookup_table",
+                                    "visuals_mvm_boss",
+                                    "value_is_killstreakeffect_index",
+                                    "value_is_killstreak_idleeffect_index"
+                                ]
+                            },
+                            "effect_type": {
+                                "type": "string",
+                                "required": true,
+                                "enum": [
+                                    "positive",
+                                    "negative",
+                                    "neutral",
+                                    "unusual",
+                                    "strange",
+                                    "value_is_from_lookup_table"
+                                ]
+                            },
+                            "hidden": {
+                                "type": "boolean",
+                                "required": true
+                            },
+                            "stored_as_integer": {
+                                "type": "boolean",
+                                "required": true
+                            }
+                        }
+                    }
+                },
+                "item_sets": {
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "item_set": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "items": {
+                                "type": "array",
+                                "required": true,
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "store_bundle": {
+                                "type": "string"
+                            },
+                            "attributes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "required": true
+                                        },
+                                        "class": {
+                                            "type": "string",
+                                            "required": true
+                                        },
+                                        "value": {
+                                            "type": "number",
+                                            "required": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "attribute_controlled_attached_particles": {
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "system": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "id": {
+                                "type": "number",
+                                "required": true
+                            },
+                            "attach_to_rootbone": {
+                                "type": "boolean",
+                                "required": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "attachment": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "item_levels": {
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "levels": {
+                                "type": "array",
+                                "required": true,
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "level": {
+                                            "type": "integer",
+                                            "required": true
+                                        },
+                                        "required_score": {
+                                            "type": "integer",
+                                            "required": true
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "required": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "kill_eater_score_types": {
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "type": {
+                                "type": "integer",
+                                "required": true
+                            },
+                            "type_name": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "level_data": {
+                                "type": "string",
+                                "required": true
+                            }
+                        }
+                    }
+                },
+                "string_lookups": {
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "table_name": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "strings": {
+                                "type": "array",
+                                "required": true,
+                                "items": {
+                                    "type": "object",
+                                    "required": true,
+                                    "properties": {
+                                        "index": {
+                                            "type": "integer",
+                                            "required": true
+                                        },
+                                        "string": {
+                                            "type": "string",
+                                            "required": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
