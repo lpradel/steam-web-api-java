@@ -1,34 +1,20 @@
 package com.lukaspradel.steamapi.webapi.request.builders;
 
-import com.lukaspradel.steamapi.webapi.request.GetAppListRequest;
-import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest;
+import com.lukaspradel.steamapi.webapi.request.*;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.GetFriendListRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.GetFriendListRequest.Relationship;
-import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalAchievementPercentagesForAppRequest.GetGlobalAchievementPercentagesForAppRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetGlobalStatsForGameRequest.GetGlobalStatsForGameRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest;
 import com.lukaspradel.steamapi.webapi.request.GetNewsForAppRequest.GetNewsForAppRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetOwnedGamesRequest.GetOwnedGamesRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerAchievementsRequest.GetPlayerAchievementsRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerBansRequest.GetPlayerBansRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetPlayerSummariesRequest.GetPlayerSummariesRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest;
 import com.lukaspradel.steamapi.webapi.request.GetRecentlyPlayedGamesRequest.GetRecentlyPlayedGamesRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetSchemaForGameRequest.GetSchemaForGameRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest;
 import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUserStatsForGameRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.ResolveVanityUrlRequest;
 import com.lukaspradel.steamapi.webapi.request.ResolveVanityUrlRequest.ResolveVanityUrlRequestBuilder;
-import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetFantasyPlayerStatsRequest.GetFantasyPlayerStatsRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetGameItemsRequest;
@@ -53,6 +39,9 @@ import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest;
 import com.lukaspradel.steamapi.webapi.request.dota2.GetTeamInfoByTeamIDRequest.GetTeamInfoByTeamIDRequestBuilder;
 import com.lukaspradel.steamapi.webapi.request.tf2.GetPlayerItemsRequest;
 import com.lukaspradel.steamapi.webapi.request.tf2.GetPlayerItemsRequest.GetPlayerItemsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaItemsRequest;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaItemsRequest.GetSchemaItemsRequestBuilder;
+import com.lukaspradel.steamapi.webapi.request.tf2.GetSchemaOverviewRequest;
 
 import java.util.Date;
 import java.util.List;
@@ -277,5 +266,24 @@ public abstract class SteamWebApiRequestFactory {
 
 	public static GetPlayerItemsRequest createGetPlayerItemsRequest(String steamId) {
 		return new GetPlayerItemsRequestBuilder(steamId).buildRequest();
+	}
+
+	public static GetSchemaItemsRequest createGetSchemaItemsRequest(String language, Integer start) {
+		return new GetSchemaItemsRequestBuilder()
+				.language(language)
+				.start(start)
+				.buildRequest();
+	}
+
+	public static GetSchemaOverviewRequest createGetSchemaOverviewRequest(String language) {
+		return new GetSchemaOverviewRequest.GetSchemaOverviewRequestBuilder()
+				.language(language)
+				.buildRequest();
+	}
+
+	public static GetUGCFileDetailsRequest createGetUGCFileDetailsRequest(Long ugcId, Integer appId, String steamId) {
+		return new GetUGCFileDetailsRequest.GetUGCFileDetailsRequestBuilder(ugcId, appId)
+				.steamId(steamId)
+				.buildRequest();
 	}
 }
