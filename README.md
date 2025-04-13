@@ -21,7 +21,7 @@ Include the following dependency in your `pom.xml`:
 <dependency>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.10.0</version>
+    <version>1.11.0</version>
 </dependency>
 ```
 
@@ -31,7 +31,7 @@ Include the dependency in your `build.gradle` like so:
 
 ```
 dependencies {
-    implementation 'com.lukaspradel:steam-web-api:1.10.0'
+    implementation 'com.lukaspradel:steam-web-api:1.11.0'
 }
 ```
 
@@ -57,11 +57,11 @@ If your build system is ANT you will need to include the .jar in your classpath.
 [...]
 ```
 
-Furthermore, you need to ensure that the .jar is present at runtime. This depends on your specific build and will vary for .jar artifacts, web applications and so forth. 
+Furthermore, you need to ensure that the .jar is present at runtime. This depends on your specific build and will vary for .jar artifacts, web applications and so forth.
 
 ### Manual
 
-You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.10.0/steam-web-api-1.10.0.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.10.0/steam-web-api-1.10.0.jar).
+You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.11.0/steam-web-api-1.11.0.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.11.0/steam-web-api-1.11.0.jar).
 
 ### Dependencies
 
@@ -214,6 +214,7 @@ mvn clean deploy -P release
 
 ## History
 
+- Version 1.11.0: Added support for GetSchemaItems, GetSchemaOverview and GetUGCFileDetails APIs
 - Version 1.10.0: Added support for GetPlayerItems (TF2) API
 - Version 1.9.1: Bump all dependencies
 - Version 1.9.0: Modularize project
