@@ -177,7 +177,7 @@ with the same release version and auto-generated release notes will be created.
 
 ### Manual release
 
-Use the following Maven `settings.xml` with valid GPG key / Sonatype user:
+Use the following Maven `settings.xml` with valid GPG key / Sonatype user token:
 
 ```xml
 <settings>
@@ -193,12 +193,7 @@ Use the following Maven `settings.xml` with valid GPG key / Sonatype user:
 
     <servers>
         <server>
-            <id>oss-sonatype-nexus</id>
-            <username>###</username>
-            <password>###</password>
-        </server>
-        <server>
-            <id>oss-sonatype-nexus</id>
+            <id>central</id>
             <username>###</username>
             <password>###</password>
         </server>
