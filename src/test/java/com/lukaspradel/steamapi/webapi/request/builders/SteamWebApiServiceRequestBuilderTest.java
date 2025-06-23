@@ -1,6 +1,6 @@
 package com.lukaspradel.steamapi.webapi.request.builders;
 
-import com.lukaspradel.steamapi.BaseTest;
+import com.lukaspradel.steamapi.webapi.core.BaseTest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiServiceParameter;
 import org.testng.annotations.Test;

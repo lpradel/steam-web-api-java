@@ -7,7 +7,7 @@ import java.util.Collections;
 
 import org.testng.annotations.Test;
 
-import com.lukaspradel.steamapi.BaseTest;
+import com.lukaspradel.steamapi.webapi.core.BaseTest;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
