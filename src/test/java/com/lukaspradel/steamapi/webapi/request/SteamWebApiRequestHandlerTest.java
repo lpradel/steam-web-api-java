@@ -1,6 +1,6 @@
 package com.lukaspradel.steamapi.webapi.request;
 
-import com.lukaspradel.steamapi.BaseTest;
+import com.lukaspradel.steamapi.webapi.core.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;

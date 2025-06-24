@@ -1,6 +1,5 @@
 package com.lukaspradel.steamapi.webapi.core;
 
-import com.lukaspradel.steamapi.BaseTest;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
