@@ -8,15 +8,7 @@ public class SteamApiException extends Exception {
 		HTTP_ERROR, FORBIDDEN, INTERNAL_ERROR, MAPPING
 	}
 
-	private String message;
-
-	public SteamApiException(String message) {
-		super(message);
-	}
-
-	public SteamApiException(String message, Throwable cause) {
-		super(message, cause);
-	}
+	private final String message;
 
 	public SteamApiException(Cause cause, Throwable exceptionCause) {
 
