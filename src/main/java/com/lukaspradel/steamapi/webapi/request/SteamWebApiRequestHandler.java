@@ -2,7 +2,6 @@ package com.lukaspradel.steamapi.webapi.request;
 
 import com.lukaspradel.steamapi.core.SteamApiRequestHandler;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
-import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
 
 import java.io.IOException;
 import java.net.URI;
@@ -14,6 +13,7 @@ import java.net.http.HttpResponse.BodyHandlers;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static com.lukaspradel.steamapi.core.exception.SteamApiException.Cause.INTERNAL_ERROR;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.stream.Collectors.joining;
 
@@ -29,7 +29,7 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		return getWebApiResponse(getRequestUrl(request));
 	}
 
-	URI getRequestUrl(SteamWebApiRequest request) throws SteamApiException {
+	URI getRequestUrl(SteamWebApiRequest request) {
 		String scheme = getProtocol();
 		String host = request.getBaseUrl();
 		String path = getRequestPath(request);
@@ -49,14 +49,14 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		.collect(joining("/", "/", ""));
 	}
 
-	String getRequestQuery(Map<String, String> parameters) throws SteamApiException {
+	String getRequestQuery(Map<String, String> parameters) {
 		if (getKey() == null) {
-			throw new SteamApiKeyException("Steam API key is not present or null");
+			throw new IllegalArgumentException("Steam API key is not present or null");
 		}
 
 		for (var e : parameters.entrySet()) {
 			if (e.getKey() == null) {
-				throw new SteamApiException("The key of the parameter with the value '" + e.getValue() + "' is null");
+				throw new IllegalArgumentException("The key of the parameter with the value '" + e.getValue() + "' is null");
 			}
 		}
 
@@ -69,7 +69,7 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 				.collect(joining("&"));
 	}
 
-	URI getRequestUri(String scheme, String host, String path, String query) throws SteamApiException {
+	URI getRequestUri(String scheme, String host, String path, String query) {
 		var uri = new StringBuilder();
 
 		uri.append(scheme);
@@ -82,8 +82,8 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		try {
 			return new URI(uri.toString());
 		} catch (URISyntaxException e) {
-			throw new SteamApiException(
-					"Failed to process the Web API request due to the following error: " + e.getMessage(), e);
+			throw new IllegalArgumentException(
+					"Failed to construct a valid request URI due to the following error: " + e.getMessage(), e);
 		}
 	}
 
@@ -103,8 +103,7 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 				throw new SteamApiException(SteamApiException.Cause.HTTP_ERROR, statusCode);
 			}
 		} catch (IOException | InterruptedException e) {
-			throw new SteamApiException(
-					"The Web API request failed due to the following error: " + e.getMessage(), e);
+			throw new SteamApiException(INTERNAL_ERROR, e);
 		}
 	}
 
