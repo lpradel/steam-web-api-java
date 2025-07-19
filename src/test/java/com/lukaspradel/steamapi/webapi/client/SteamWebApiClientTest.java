@@ -106,7 +106,7 @@ public class SteamWebApiClientTest extends BaseTest {
 	public void testProcessExceptionHttpError() throws SteamApiException {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
-				new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
+				new SteamApiException(SteamApiException.Cause.NOT_FOUND,
 						Integer.valueOf(404)));
 
 		client.processRequest(requestMock);
@@ -147,7 +147,7 @@ public class SteamWebApiClientTest extends BaseTest {
 	public void testProcessExceptionMessage() throws SteamApiException {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
-				new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
+				new SteamApiException(SteamApiException.Cause.BAD_REQUEST,
 						Integer.valueOf(404)));
 
 		try {
@@ -157,7 +157,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		} catch (SteamApiException e) {
 			assertEquals(
 					e.getMessage(),
-					"The Web API request failed (status code: 404).");
+					"The Web API request failed. Wrong data format was provided.");
 		}
 	}
 

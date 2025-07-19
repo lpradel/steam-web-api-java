@@ -13,13 +13,12 @@ import java.net.http.HttpResponse.BodyHandlers;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static com.lukaspradel.steamapi.core.exception.SteamApiException.Cause.INTERNAL_ERROR;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.stream.Collectors.joining;
 
 public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 
-	private static final int UNAUTHORIZED = 401;
+
 
 	public SteamWebApiRequestHandler(boolean useHttps, String key) {
 		super(useHttps, key);
@@ -95,15 +94,14 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 			var response = client.send(getRequest, BodyHandlers.ofString());
 			int statusCode = response.statusCode();
 
-			if (Integer.toString(statusCode).startsWith("20")) {
+			if (HttpStatus.Is2xxStatus(statusCode)) {
 				return response.body();
-			} else if (statusCode == UNAUTHORIZED) {
-				throw new SteamApiException(SteamApiException.Cause.FORBIDDEN, statusCode);
-			} else {
-				throw new SteamApiException(SteamApiException.Cause.HTTP_ERROR, statusCode);
+			} else{
+				SteamApiException.Cause cause = SteamApiException.getCauseByStatusCode(statusCode);
+				throw new SteamApiException(cause, statusCode);
 			}
 		} catch (IOException | InterruptedException e) {
-			throw new SteamApiException(INTERNAL_ERROR, e);
+			throw new SteamApiException(SteamApiException.Cause.INTERNAL_ERROR, e);
 		}
 	}
 
@@ -111,3 +109,4 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		return HttpClient.newHttpClient();
 	}
 }
+
