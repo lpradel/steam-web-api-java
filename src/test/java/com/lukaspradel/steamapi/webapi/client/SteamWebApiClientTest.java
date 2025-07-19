@@ -1,6 +1,6 @@
 package com.lukaspradel.steamapi.webapi.client;
 
-import com.lukaspradel.steamapi.BaseTest;
+import com.lukaspradel.steamapi.webapi.core.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.achievementpercentages.GetGlobalAchievementPercentagesForApp;
 import com.lukaspradel.steamapi.data.json.appnews.GetNewsForApp;

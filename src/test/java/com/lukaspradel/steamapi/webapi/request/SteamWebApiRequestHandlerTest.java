@@ -1,8 +1,7 @@
 package com.lukaspradel.steamapi.webapi.request;
 
-import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
-import com.lukaspradel.steamapi.core.exception.SteamApiKeyException;
+import com.lukaspradel.steamapi.webapi.core.BaseTest;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
@@ -19,6 +18,7 @@ import java.net.http.HttpResponse.BodyHandler;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.argThat;
@@ -34,14 +34,14 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	private static final int UNAUTHORIZED = 401;
 	private static final int INTERNAL_SERVER_ERROR = 500;
 
-	private String key = "12345";
+	private final String key = "12345";
 
-	private URI uri = URI.create("http://localhost:80");
+	private final URI uri = URI.create("http://localhost:80");
 
-	private SteamWebApiRequestHandler requestHandlerHttps = new SteamWebApiRequestHandler(
+	private final SteamWebApiRequestHandler requestHandlerHttps = new SteamWebApiRequestHandler(
 			true, key);
 
-	private SteamWebApiRequestHandler requestHandlerHttpsSpy = spy(requestHandlerHttps);
+	private final SteamWebApiRequestHandler requestHandlerHttpsSpy = spy(requestHandlerHttps);
 
 	@Mock
 	private SteamWebApiRequest requestMock;
@@ -52,10 +52,10 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	@Mock
 	private HttpResponse<String> httpResponseMock;
 
-	private ArgumentMatcher<BodyHandler<String>> bodyHandlerMatcher = arg -> arg != null ? true : false;
+	private final ArgumentMatcher<BodyHandler<String>> bodyHandlerMatcher = Objects::nonNull;
 
 	@Test
-	public void testGetRequestUrl() throws SteamApiException {
+	public void testGetRequestUrl() {
 
 		Map<String, String> parameters = new HashMap<String, String>();
 
@@ -83,7 +83,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	}
 
 	@Test
-	public void testGetRequestQuery() throws SteamApiException {
+	public void testGetRequestQuery() {
 		var parameters = new LinkedHashMap<String, String>();
 		parameters.put("key", null); // prepopulate the key, it gets set in the getRequestQuery method
 		parameters.put("test-parameter", "test-value");
@@ -95,20 +95,20 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 		assertEquals(query, "key=12345&test-parameter=test-value&format=json&input_json=%7B%22steamid%22%3A%2276561198039505218%22%7D");
 	}
 
-	@Test(expectedExceptions = SteamApiKeyException.class)
+	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testGetRequestQueryApiKeyIsNull() throws SteamApiException {
 		var reqHandler = new SteamWebApiRequestHandler(true, null);
 		reqHandler.getRequestQuery(null);
 	}
 
-	@Test(expectedExceptions = SteamApiException.class)
-	public void testGetRequestQueryParameterKeyIsNull() throws SteamApiException {
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testGetRequestQueryParameterKeyIsNull() {
 		var params = new HashMap<String, String>();
 		params.put(null, "test-value");
 
 		try {
 			requestHandlerHttps.getRequestQuery(params);
-		} catch (SteamApiException e) {
+		} catch (IllegalArgumentException e) {
 			assertEquals(e.getMessage(), "The key of the parameter with the value 'test-value' is null");
 			throw e;
 		}
@@ -130,7 +130,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	}
 
 	@Test
-	public void testGetRequestUri() throws SteamApiException {
+	public void testGetRequestUri() {
 		String scheme = "https";
 		String host = "api.steampowered.com";
 		String path = "/IPlayerService/GetOwnedGames/v0001";
@@ -152,8 +152,8 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 				"https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001?key=12345&format=json&input_json=%7B%22steamid%22%3A%2276561198039505218%22%7D");
 	}
 
-	@Test(expectedExceptions = SteamApiException.class)
-	public void testGetRequestUriWithInvalidUri() throws SteamApiException {
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testGetRequestUriWithInvalidUri() {
 		String scheme = "";
 		String host = "api.steampowered.com";
 		String path = "/IPlayerService/GetOwnedGames/v0001";
