@@ -38,8 +38,8 @@ public class SteamWebApiClient {
 
 		try {
 			result = (T) MAPPER.readValue(response, request.getResponseType());
-		} catch (IOException e) {
-			throw new SteamApiException(SteamApiException.Cause.MAPPING, e);
+		} catch (IOException exception) {
+			throw new SteamApiException(exception);
 		}
 		return result;
 	}

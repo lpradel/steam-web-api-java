@@ -97,11 +97,10 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 			if (HttpStatus.Is2xxStatus(statusCode)) {
 				return response.body();
 			} else{
-				SteamApiException.Cause cause = SteamApiException.getCauseByStatusCode(statusCode);
-				throw new SteamApiException(cause, statusCode);
+				throw new SteamApiException(statusCode);
 			}
-		} catch (IOException | InterruptedException e) {
-			throw new SteamApiException(SteamApiException.Cause.INTERNAL_ERROR, e);
+		} catch (IOException | InterruptedException exception) {
+			throw new SteamApiException(exception);
 		}
 	}
 
