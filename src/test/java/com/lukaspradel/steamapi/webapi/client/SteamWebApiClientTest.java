@@ -83,62 +83,19 @@ public class SteamWebApiClientTest extends BaseTest {
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)
-	public void testProcessExceptionMapping() throws SteamApiException {
-
-		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
-				new SteamApiException(SteamApiException.Cause.MAPPING,
-						new Throwable()));
-
-		client.processRequest(requestMock);
-	}
-
-	@Test(expectedExceptions = SteamApiException.class)
 	public void testProcessExceptionUnexpectedError() throws SteamApiException {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
-				new SteamApiException(SteamApiException.Cause.INTERNAL_ERROR,
-						new Throwable()));
+				new SteamApiException(new Throwable()));
 
 		client.processRequest(requestMock);
 	}
 
 	@Test(expectedExceptions = SteamApiException.class)
-	public void testProcessExceptionHttpError() throws SteamApiException {
+	public void testProcessExceptionStatusCode() throws SteamApiException {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
-				new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
-						Integer.valueOf(404)));
-
-		client.processRequest(requestMock);
-	}
-
-	@Test(expectedExceptions = SteamApiException.class)
-	public void testProcessExceptionForbiddenError() throws SteamApiException {
-
-		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
-				new SteamApiException(SteamApiException.Cause.FORBIDDEN,
-						Integer.valueOf(403)));
-
-		client.processRequest(requestMock);
-	}
-
-	@Test(expectedExceptions = SteamApiException.class)
-	public void testProcessExceptionInternalError() throws SteamApiException {
-
-		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
-				new SteamApiException(SteamApiException.Cause.INTERNAL_ERROR,
-						Integer.valueOf(500)));
-
-		client.processRequest(requestMock);
-	}
-
-	@Test(expectedExceptions = SteamApiException.class)
-	public void testProcessExceptionUnexpectedStatusError()
-			throws SteamApiException {
-
-		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
-				new SteamApiException(SteamApiException.Cause.MAPPING, Integer
-						.valueOf(0)));
+				new SteamApiException(Integer.valueOf(404)));
 
 		client.processRequest(requestMock);
 	}
@@ -147,8 +104,7 @@ public class SteamWebApiClientTest extends BaseTest {
 	public void testProcessExceptionMessage() throws SteamApiException {
 
 		when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
-				new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
-						Integer.valueOf(404)));
+				new SteamApiException(Integer.valueOf(403)));
 
 		try {
 			client.processRequest(requestMock);
@@ -157,7 +113,7 @@ public class SteamWebApiClientTest extends BaseTest {
 		} catch (SteamApiException e) {
 			assertEquals(
 					e.getMessage(),
-					"The Web API request failed (status code: 404).");
+					"The Web API request failed for security reasons. The supplied Web API key was rejected by Steam. Ensure that the supplied Web API key is valid.");
 		}
 	}
 
