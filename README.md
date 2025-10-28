@@ -3,7 +3,7 @@ Steam Web API for Java
 
 [![build](https://github.com/lpradel/steam-web-api-java/actions/workflows/build-maven.yml/badge.svg)](https://github.com/lpradel/steam-web-api-java/actions/workflows/build-maven.yml)
 [![Coverage Status](https://coveralls.io/repos/lpradel/steam-web-api-java/badge.svg?branch=master)](https://coveralls.io/r/lpradel/steam-web-api-java?branch=master)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.lukaspradel/steam-web-api/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.lukaspradel/steam-web-api)
+[![Maven Central](https://img.shields.io/maven-central/v/com.lukaspradel/steam-web-api)](https://mvnrepository.com/artifact/com.lukaspradel/steam-web-api)
 
 This library provides access to the data available from Valve's Steam API for Java applications. The available systems/interfaces are documented in the [Valve Developer Community Wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
