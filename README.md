@@ -21,7 +21,7 @@ Include the following dependency in your `pom.xml`:
 <dependency>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.12.0</version>
+    <version>1.12.1</version>
 </dependency>
 ```
 
@@ -31,7 +31,7 @@ Include the dependency in your `build.gradle` like so:
 
 ```
 dependencies {
-    implementation 'com.lukaspradel:steam-web-api:1.12.0'
+    implementation 'com.lukaspradel:steam-web-api:1.12.1'
 }
 ```
 
@@ -61,7 +61,7 @@ Furthermore, you need to ensure that the .jar is present at runtime. This depend
 
 ### Manual
 
-You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.12.0/steam-web-api-1.12.0.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.12.0/steam-web-api-1.12.0.jar).
+You can download the artifact manually from [Sonatype Nexus](https://oss.sonatype.org/service/local/repositories/releases/content/com/lukaspradel/steam-web-api/1.12.1/steam-web-api-1.12.1.jar) or [Maven Central](https://repo1.maven.org/maven2/com/lukaspradel/steam-web-api/1.12.1/steam-web-api-1.12.1.jar).
 
 ### Dependencies
 
@@ -209,6 +209,7 @@ mvn clean deploy -P release
 
 ## History
 
+- Version 1.12.1: Bump all dependencies
 - Version 1.12.0: Fixed local IDE build issue with TestNG and exposed HTTP status code in `SteamApiException`
 - Version 1.11.0: Added support for GetSchemaItems, GetSchemaOverview and GetUGCFileDetails APIs
 - Version 1.10.0: Added support for GetPlayerItems (TF2) API
