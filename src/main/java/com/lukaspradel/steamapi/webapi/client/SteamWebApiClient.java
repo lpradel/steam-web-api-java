@@ -3,7 +3,6 @@ package com.lukaspradel.steamapi.webapi.client;
 import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lukaspradel.steamapi.constant.SteamWebApiConstant;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
@@ -66,7 +65,7 @@ public class SteamWebApiClient {
 
 		private boolean useHttps = true;
 
-        private String baseUrl = SteamWebApiConstant.WEB_API_BASE_URL;
+        private String baseUrl = "api.steampowered.com";
 
 		/**
 		 * Creates an instance of this class using your Steam Web API Key. Usage
