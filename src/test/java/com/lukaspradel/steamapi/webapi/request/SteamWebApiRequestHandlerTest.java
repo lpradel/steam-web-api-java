@@ -39,7 +39,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	private final URI uri = URI.create("http://localhost:80");
 
 	private final SteamWebApiRequestHandler requestHandlerHttps = new SteamWebApiRequestHandler(
-			true, key);
+			true, "api.steampowered.com", key);
 
 	private final SteamWebApiRequestHandler requestHandlerHttpsSpy = spy(requestHandlerHttps);
 
@@ -59,7 +59,6 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 		Map<String, String> parameters = new HashMap<String, String>();
 
-		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
 		when(requestMock.getApiInterface()).thenReturn(
 				SteamWebApiInterface.I_STEAM_NEWS);
 		when(requestMock.getInterfaceMethod()).thenReturn(
@@ -97,7 +96,7 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testGetRequestQueryApiKeyIsNull() throws SteamApiException {
-		var reqHandler = new SteamWebApiRequestHandler(true, null);
+		var reqHandler = new SteamWebApiRequestHandler(true, "api.steampowered.com", null);
 		reqHandler.getRequestQuery(null);
 	}
 
@@ -117,7 +116,6 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	@Test
 	public void testGetRequestPath() {
 
-		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
 		when(requestMock.getApiInterface()).thenReturn(
 				SteamWebApiInterface.I_STEAM_NEWS);
 		when(requestMock.getInterfaceMethod()).thenReturn(
@@ -210,7 +208,6 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 	@Test
 	public void testGetWebApiResponse() throws IOException, SteamApiException, InterruptedException {
 
-		when(requestMock.getBaseUrl()).thenReturn("api.steampowered.com");
 		when(requestMock.getApiInterface()).thenReturn(
 				SteamWebApiInterface.I_STEAM_NEWS);
 		when(requestMock.getInterfaceMethod()).thenReturn(

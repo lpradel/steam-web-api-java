@@ -3,6 +3,7 @@ package com.lukaspradel.steamapi.webapi.client;
 import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lukaspradel.steamapi.constant.SteamWebApiConstant;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequest;
 import com.lukaspradel.steamapi.webapi.request.SteamWebApiRequestHandler;
@@ -22,7 +23,7 @@ public class SteamWebApiClient {
 	private final SteamWebApiRequestHandler requestHandler;
 
 	SteamWebApiClient(SteamWebApiClientBuilder builder) {
-		this(new SteamWebApiRequestHandler(builder.useHttps, builder.key));
+		this(new SteamWebApiRequestHandler(builder.useHttps, builder.baseUrl, builder.key));
 	}
 
 	SteamWebApiClient(SteamWebApiRequestHandler requestHandler) {
@@ -65,6 +66,8 @@ public class SteamWebApiClient {
 
 		private boolean useHttps = true;
 
+        private String baseUrl = SteamWebApiConstant.WEB_API_BASE_URL;
+
 		/**
 		 * Creates an instance of this class using your Steam Web API Key. Usage
 		 * of HTTPS will be <strong>disabled</strong> by default, i.e. HTTP will
@@ -79,6 +82,11 @@ public class SteamWebApiClient {
 
 			this.key = key;
 		}
+
+        public SteamWebApiClientBuilder baseUrl(String baseUrl) {
+            this.baseUrl = baseUrl;
+            return this;
+        }
 
 		public SteamWebApiClientBuilder useHttps(boolean useHttps) {
 
