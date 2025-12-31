@@ -150,6 +150,30 @@ public class SteamWebApiRequestHandlerTest extends BaseTest {
 				"https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001?key=12345&format=json&input_json=%7B%22steamid%22%3A%2276561198039505218%22%7D");
 	}
 
+    @Test
+    public void testGetRequestUriWithParamValueIsNull() {
+        String scheme = "https";
+        String host = "api.steampowered.com";
+        String path = "/IPlayerService/GetOwnedGames/v0001";
+        var parameters = new LinkedHashMap<String, String>();
+        parameters.put("key", "12345");
+        parameters.put("format", "json");
+        parameters.put("input_json", "{\"steamid\":\"76561198039505218\"}");
+        parameters.put("value", null);
+
+        String query = requestHandlerHttps.getRequestQuery(parameters);
+        URI actual = requestHandlerHttps.getRequestUri(scheme, host, path, query);
+
+        assertEquals(actual.getScheme(), "https");
+        assertEquals(actual.getHost(), "api.steampowered.com");
+        assertEquals(actual.getPath(), "/IPlayerService/GetOwnedGames/v0001");
+        assertEquals(actual.getQuery(),
+                "key=12345&format=json&input_json={\"steamid\":\"76561198039505218\"}&value=");
+        assertEquals(
+                actual.toString(),
+                "https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001?key=12345&format=json&input_json=%7B%22steamid%22%3A%2276561198039505218%22%7D&value=");
+    }
+
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testGetRequestUriWithInvalidUri() {
 		String scheme = "";
