@@ -897,4 +897,27 @@ public class SteamWebApiClientTest extends BaseTest {
 		assertNotNull(getUGCFileDetails.getData());
 		assertNotNull(getUGCFileDetails.getData().getUrl());
 	}
+
+	@Test
+	public void testBuilderWithApiKeyOnly() {
+		String apiKey = "test-api-key-12345";
+
+		SteamWebApiClient builtClient = new SteamWebApiClient.SteamWebApiClientBuilder(apiKey).build();
+
+		assertNotNull(builtClient);
+	}
+
+	@Test
+	public void testBuilderWithAllParameters() {
+		String apiKey = "test-api-key-12345";
+		String customBaseUrl = "custom.api.example.com";
+		boolean useHttps = false;
+
+		SteamWebApiClient builtClient = new SteamWebApiClient.SteamWebApiClientBuilder(apiKey)
+				.baseUrl(customBaseUrl)
+				.useHttps(useHttps)
+				.build();
+
+		assertNotNull(builtClient);
+	}
 }

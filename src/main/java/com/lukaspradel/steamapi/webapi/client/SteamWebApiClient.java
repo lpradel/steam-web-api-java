@@ -22,7 +22,7 @@ public class SteamWebApiClient {
 	private final SteamWebApiRequestHandler requestHandler;
 
 	SteamWebApiClient(SteamWebApiClientBuilder builder) {
-		this(new SteamWebApiRequestHandler(builder.useHttps, builder.key));
+		this(new SteamWebApiRequestHandler(builder.useHttps, builder.baseUrl, builder.key));
 	}
 
 	SteamWebApiClient(SteamWebApiRequestHandler requestHandler) {
@@ -65,6 +65,8 @@ public class SteamWebApiClient {
 
 		private boolean useHttps = true;
 
+        private String baseUrl = "api.steampowered.com";
+
 		/**
 		 * Creates an instance of this class using your Steam Web API Key. Usage
 		 * of HTTPS will be <strong>disabled</strong> by default, i.e. HTTP will
@@ -79,6 +81,11 @@ public class SteamWebApiClient {
 
 			this.key = key;
 		}
+
+        public SteamWebApiClientBuilder baseUrl(String baseUrl) {
+            this.baseUrl = baseUrl;
+            return this;
+        }
 
 		public SteamWebApiClientBuilder useHttps(boolean useHttps) {
 

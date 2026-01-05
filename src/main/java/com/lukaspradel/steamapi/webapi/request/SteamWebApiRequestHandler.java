@@ -20,8 +20,8 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 
 
 
-	public SteamWebApiRequestHandler(boolean useHttps, String key) {
-		super(useHttps, key);
+	public SteamWebApiRequestHandler(boolean useHttps, String baseUrl, String key) {
+		super(useHttps, baseUrl, key);
 	}
 
 	public String getWebApiResponse(SteamWebApiRequest request) throws SteamApiException {
@@ -30,7 +30,7 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 
 	URI getRequestUrl(SteamWebApiRequest request) {
 		String scheme = getProtocol();
-		String host = request.getBaseUrl();
+		String host = getBaseUrl();
 		String path = getRequestPath(request);
 		String query = getRequestQuery(request.getParameters());
 

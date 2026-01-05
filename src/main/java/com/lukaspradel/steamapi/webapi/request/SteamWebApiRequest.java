@@ -17,8 +17,6 @@ import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
  */
 public class SteamWebApiRequest extends SteamApiRequest {
 
-	static final String WEB_API_BASE_URL = "api.steampowered.com";
-
 	private final SteamWebApiInterface apiInterface;
 
 	private final SteamWebApiInterfaceMethod interfaceMethod;
@@ -27,7 +25,7 @@ public class SteamWebApiRequest extends SteamApiRequest {
 
 	protected SteamWebApiRequest(SteamWebApiRequestBuilder builder) {
 
-		super(WEB_API_BASE_URL, builder.getParameters());
+		super(builder.getParameters());
 
 		this.apiInterface = builder.getInterface();
 		this.interfaceMethod = builder.getInterfaceMethod();

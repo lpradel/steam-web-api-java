@@ -14,17 +14,24 @@ public abstract class SteamApiRequestHandler {
 
 	private boolean useHttps;
 
+    private String baseUrl;
+
 	private String key;
 
-	public SteamApiRequestHandler(boolean useHttps, String key) {
+	public SteamApiRequestHandler(boolean useHttps,String baseUrl, String key) {
 
 		this.useHttps = useHttps;
+        this.baseUrl = baseUrl;
 		this.key = key;
 	}
 
 	public boolean isUseHttps() {
 		return useHttps;
 	}
+
+    public String getBaseUrl() {
+        return baseUrl;
+    }
 
 	public String getKey() {
 		return key;
